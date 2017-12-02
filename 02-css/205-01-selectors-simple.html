@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-01: Simple selectors</title>
+    <meta name="description" content="Simple selectors allow you to target HTML elements directly, as well as targeting elements that contain class or ID attributes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-01</h5>
+          <h1>Simple selectors</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Simple selectors</b> allow you to target HTML elements directly, as well as targeting elements that contain class or ID attributes.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Type selector (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>type selector</b> is written using an element type.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h1</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The type selector <b>targets every instance of the element type</b> regardless of their position in the document tree.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML 4.01, there were <b>91 different HTML elements</b> that could be targetted for styling.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML 5, there are now <b>118 different elements</b> that can be targetted for styling.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>p</code> selector targets <b>any instance of the <code>&lt;p&gt;</code> element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;</span>
+&lt;div&gt;&lt;/div&gt;
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The type selector is <b>well supported</b> across all modern browsers.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some type selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-01-01.html">exercises-start/exercise-205-01-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the <code>&lt;h1&gt;</code> element to <code>color: blueviolet</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the <code>&lt;b&gt;</code> element to <code>color: chocolate</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the <code>&lt;em&gt;</code> element to <code>color: cornflowerblue</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the <code>&lt;blockquote&gt;</code> element to <code>color: darkcyan</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+<span class="codeHighlight">h1</span> { color: blueviolet; }
+<span class="codeHighlight">b</span> { color: chocolate; }
+<span class="codeHighlight">em</span> { color: cornflowerblue; }
+<span class="codeHighlight">blockquote</span> { color: darkcyan; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-01-01.html">exercises-finished/exercise-205-01-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+CLASS SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Class selector (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>class selector</b> is written using an optional element, followed by a <code>"."</code>, followed by the class name.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">.class-name</span> { }
+<span class="codeHighlight">E.class-name</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">.intro</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">.class-name</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>. class-name</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Class values are <b>case-sensitive</b>. In the following example, browsers interpret <code>.intro</code> and <code>.Intro</code> as different classes.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* case sensitive classes */</span>
+<span class="codeHighlight">.Intro</span> { }
+<span class="codeHighlight">.intro</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Classes can begin with <b>letters, digits, hyphens and underscores</b>. They can also include colons and periods.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* class names */</span>
+<span class="codeHighlight">.active</span> { }
+<span class="codeHighlight">.480wide</span> { }
+<span class="codeHighlight">.-members</span> { }
+<span class="codeHighlight">._classname</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, if class values start with a number or a special character, they <b>must be escaped</b> when writing CSS selectors.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped number */</span>
+<span class="codeHighlight">.\34 80wide</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div <span class="codeHighlight">class="480wide"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The class selector targets any HTML element <b>that has the relevant class value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>.intro</code> selector targets any element that <b>contains a class</b> of <code>intro</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.intro</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro"</span>&gt;&lt;/p&gt;
+&lt;div class=<span class="codeHighlight">"intro"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The class selector is <b>well supported</b> across all modern browsers.</p>
+          </section>
+
+          <section data-background="#444">
+            <h3>Adding elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements can be added before the <code>"."</code> to <b>make a selector more specific</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selectors */</span>
+<span class="codeHighlight">div</span>.intro { }
+<span class="codeHighlight">p</span>.intro { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>p.intro</code> selector <b>targets only</b> <code>&lt;p&gt;</code> elements that contain a class of <code>intro</code>. The <code>&lt;div&gt;</code> with a class of <code>intro</code> is not targeted.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p.intro</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="intro"&gt;&lt;/div&gt;
+<span class="codeHighlight">&lt;p class="intro"&gt;&lt;/p&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Stringing classes together</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Classes can be added together</b> to make a selector more specific. The joined class selectors cannot contain whitespace.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>.one.two</code> selector <b>targets any element that has both class attribute values</b> of <code>one</code> and <code>two</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="one"&gt;&lt;/p&gt;
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+&lt;p class="two"&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The class attribute values within the HTML document can be <b>written in any order</b>. The value <code>one two</code> is the same as <code>two one</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+&lt;p class=<span class="codeHighlight">"two one"</span>&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Multiple classes can also be written in any order within the CSS. The selector <code>.one.two</code> is the <b>same as</b> <code>.two.one</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.two.one</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Multiple class selectors are <b>not supported by Internet Explorer 6</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some class selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-01-02.html">exercises-start/exercise-205-01-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the class of <code>intro</code> with a <code>color</code> of <code>steelblue</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write another CSS rule</b> to target only <code>&lt;p&gt;</code> elements with a class of <code>intro</code>. Set the <code>color</code> to <code>violet</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.intro {
+  color: steelblue;
+}
+
+p.intro {
+  color: violet;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-01-02.html">exercises-finished/exercise-205-01-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ID SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>ID selector (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>ID selector</b> is written using an optional element, followed by a <code>"#"</code>, followed by the ID name.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">#id-name</span> { }
+<span class="codeHighlight">E#id-name</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">#sidebar</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">#id-name</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s># id-name</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>ID names are <b>case-sensitive</b>. In the following example, browsers will interpret <code>#nav</code> and <code>#Nav</code> as different IDs.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Case sensitive */</span>
+<span class="codeHighlight">#nav</span> { }
+<span class="codeHighlight">#Nav</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before HTML 5, ID attribute values <b>had to begin with a letter</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML 5, ID attribute values are <b>allowed to have any characters or strings</b>, as long as the value is unique and does not contain whitespace.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* ID names */</span>
+<span class="codeHighlight">#active</span> { }
+<span class="codeHighlight">#480wide</span> { }
+<span class="codeHighlight">#-members</span> { }
+<span class="codeHighlight">#_classname</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, if ID values start with a number or a special character, these characters or numbers <b>must be escaped</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped number */</span>
+<span class="codeHighlight">#\34 80wide</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div <span class="codeHighlight">id="480wide"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ID selector targets any HTML element <b>that has the relevant ID value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>#nav</code> selector targets <b>any instance</b> of an element that contains an ID of <code>nav</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">#nav</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p <span class="codeHighlight">id="nav"</span>&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ID selector is <b>well supported</b> across all modern browsers.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some ID selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-01-03.html">exercises-start/exercise-205-01-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with an ID of <code>title</code> with <code>color: darkviolet</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Then write another CSS rule</b> to style the element with an ID of <code>pullout</code> with <code>color: deeppink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+#title {
+  color: darkviolet;
+}
+
+#pullout {
+  color: deeppink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-01-03.html">exercises-finished/exercise-205-01-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+UNIVERSAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Universal selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>universal selector</b> is written using a <code>"*"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">*</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The universal selector targets <b>all elements within the document</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the universal selector targets <b>every element in the document</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">*</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;body&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The universal selector is <b>well supported</b> across all modern browsers.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write the universal selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-01-04.html">exercises-start/exercise-205-01-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style all elements in the document using the universal selector. Use <code>color: darkmagenta</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+* {
+  color: darkmagenta;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-01-04.html">exercises-finished/exercise-205-01-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-02-selectors-combinator.html">205-02: Combinator selectors</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

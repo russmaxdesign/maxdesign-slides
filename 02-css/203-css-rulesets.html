@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>203: CSS Rulesets</title>
+    <meta name="description" content="This slide deck answers some basic CSS questions: What is CSS? What are rulesets? How can you write CSS rules more efficiently?">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>203</h5>
+           <h1>CSS Rulesets</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>This slide deck <b>answers some common CSS questions</b>: What is CSS? What are rulesets? How can you write CSS rules more efficiently?</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>CSS rules</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS is written using <b>a series of rules</b> - sometimes called <i>rulesets</i> or <i>statements</i>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS rules have <b>five different component</b>:</p>
+          </section>
+
+          <section data-background="#444">
+            <h3>Selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The selector <b>selects the elements</b> in an HTML document that you want to target for styling.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>p</code> selector will select <b>every paragraph element</b> in the HTML document.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Selector */</span>
+<span class="codeHighlight">p</span> {
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+    <span class="codeHighlight">&lt;p&gt;A paragraph element.&lt;/p&gt;
+    &lt;p&gt;A second paragraph element.&lt;/p&gt;</span>
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Declaration block</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>declaration block</b> is a container that consists of anything between (and including) the start brace <code>"{"</code> and end brace <code>"}"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Declaration block */</span>
+p <span class="codeHighlight">{
+  color: red;
+}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Declaration</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>declaration</b> consists of a property and a value. It tells browsers how to render any element that is selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Declaration */</span>
+p {
+  <span class="codeHighlight">color: red;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>property</b> defines what aspect of the element will be styled.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>color</code> property <b>will be styled</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Property */</span>
+p {
+  <span class="codeHighlight">color</span>: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS2.1 there were <b>98 properties</b>s.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS3 there are now approximately <b>510 properties</b>.</p>
+          </section>
+
+          <section data-background="#444">
+            <h3>Value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>value</b> is the exact style you wish to set for the property. In the following example, all paragraph elements will be styled with a value of <code>red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Value */</span>
+p {
+  color: <span class="codeHighlight">red</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write some CSS rules</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-203-01.html">exercises-start/exercise-203-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;h1&gt;</code> element with a <code>color</code> value of <code>blue</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write another CSS rule</b> to style the <code>&lt;p&gt;</code> element with a <code>color</code> of <code>red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h1 {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-203-01.html">exercises-finished/exercise-203-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Multiple selectors</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>When several selectors share the same declarations, they can be <b>grouped</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each selector must be separated by a comma. There must be <b>no comma after the last selector</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> elements <b>use the same declaration</b>. These two rules can be converted into one.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Individual rules */</span>
+<span class="codeHighlight">h1</span> {
+  color: red;
+}
+
+<span class="codeHighlight">h2</span> {
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Multiple selector rule */</span>
+<span class="codeHighlight">h1, h2</span> {
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Multiple selectors are designed to <b>make it easier for authors</b> - to save writing the same rule more than once.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write some multiple selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-203-02.html">exercises-start/exercise-203-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;h1&gt;</code> element and the <code>&lt;p&gt;</code> elements with a <code>color</code> of <code>green</code>. Make sure to add a comma between the selectors.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h1,
+p {
+  color: green;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-203-02.html">exercises-finished/exercise-203-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Multiple declarations</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Multiple declarations can be defined inside <b>a single declaration block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each declaration must be <b>separated by a semi-colon</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, there are two rules defining aspects of the <code>&lt;h1&gt;</code> element. <b>These two rules can be combined into one</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Individual rules */</span>
+h1 {
+  <span class="codeHighlight">color: red</span>;
+}
+
+h1 {
+  <span class="codeHighlight">margin: 0</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Multiple declarations */</span>
+h1 {
+  <span class="codeHighlight">color: red;
+  border: 1px solid blue;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The last declaration <b>does not need a semi-colon</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, semi-colon should be <b>placed after every declaration</b>, in case additional declarations are added later.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* Semi-colons */</span>
+h1 {
+  color: red<span class="codeHighlight">;</span>
+  border: 1px solid blue<span class="codeHighlight">;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>From the browser’s perspective, declarations <b>can be written in any order</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Color declared first */</span>
+h1 {
+  <span class="codeHighlight">color: red;
+  border: 1px solid blue;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Border declared first */</span>
+h1 {
+  <span class="codeHighlight">border: 1px solid blue;
+  color: red;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>From an author’s perspective, it is better to <b>write declarations in a consistent order</b>, so that the CSS is easier to maintain in the future.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The declaration order you choose is entirely up to you <b>as long as it is intuitive and consistent</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write some multiple declarations</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-203-03.html">exercises-start/exercise-203-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with <code>color: purple</code> and  <code>border: 1px solid lime</code>.</p> 
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p {
+  color: purple;
+  border: 1px solid lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-203-03.html">exercises-finished/exercise-203-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>White space</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>White space is <b>ignored inside CSS rules</b>. Declarations can be written in single or multiple lines.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* One line */</span>
+h1 { color: red; border: 1px solid blue; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Multiple lines */</span>
+h1 {
+  color: red;
+  border: 1px solid blue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Write some CSS rules with different whitespace</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-203-04.html">exercises-start/exercise-203-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> across multiple lines and set the <code>&lt;h1&gt;</code> with <code>color: teal</code> and <code>border: 1px solid fuchsia</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write another CSS rule</b> on one line and set the <code>&lt;p&gt;</code> element with <code>color: navy</code> and <code>border: 1px solid aqua</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+h1 {
+  color: teal;
+  border: 1px solid fuchsia;
+}
+
+p { color: navy; border: 1px solid aqua; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-203-04.html">exercises-finished/exercise-203-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>CSS comments</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can <b>insert comments in CSS</b>. CSS comments must begin with a forward slash and an asterisk <code>"/*"</code> and end with an asterisk and a forward slash <code>"*/"</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Any characters between the start and end of the comment <b>will be ignored by browsers</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">/* a CSS comment used in CSS files */</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS comments can be written on <b>single or multiple lines</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">/*
+  a CSS comment
+  over multiple lines
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS comments can be used to <b>create sections and notes</b> within CSS files.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These types of comments make CSS files <b>easier to understand and maintain</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">/* -------------------
+HEADER STYLES
+------------------- */</span>
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Write some CSS comments</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-203-05.html">exercises-start/exercise-203-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS</b> rule to set the <code>&lt;h1&gt;</code> to <code>color: olive</code> and the <code>&lt;p&gt;</code> to <code>color: maroon</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Then <b>add a comment above each rule</b> to help explain their purpose.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* heading style */</span>
+h1 {
+  color: olive;
+}
+
+<span class="codeComment">/* paragraph style */</span>
+p {
+  color: maroon;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-203-05.html">exercises-finished/exercise-203-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="204-applying-css.html">204: Applying CSS</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

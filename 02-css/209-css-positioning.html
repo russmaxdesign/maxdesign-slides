@@ -1,0 +1,1893 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>209: CSS Positioning</title>
+    <meta name="description" content="The position property specifies how HTML element are positioned. The possible values are: static, relative, absolute, fixed, and sticky">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>209</h5>
+          <h1>CSS Positioning</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>position</code> property specifies <b>how HTML elements are positioned</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>possible values</b> are: <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, and <code>sticky</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties allow authors to <b>define the location of positioned elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties <b>will be covered in a later slide deck</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>z-index</code> property allows authors to <b>specify the position of the element along the z-axis</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>z-index</code> property <b>will also be covered in a later slide deck</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>position: static</h2>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Static */</span>
+p {
+  position: <span class="codeHighlight">static</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>static</code> position is the default value and lays the element out <b>according to the normal flow of the document</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> and <code>z-index</code> properties have <b>no effect on statically positioned elements</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>position: absolute</h2>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute */</span>
+p {
+  position: <span class="codeHighlight">absolute;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Behaviour</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An element set to <code>absolute</code> will be <b>removed from the normal document flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements are positioned <b>relative to their closest positioned ancestor</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_02.svg" alt="Absolutely-positioned element which is positioned relative to positioned ancestor">
+          </section>
+
+          <section data-background="#fff">
+            <p>If no ancestor has positioning, they are positioned <b>relative to the initial containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_03.svg" alt="Absolutely-positioned element which is positioned relative to  initial containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are in normal document flow will ignore the absolutely-positioned element and <b>re-flow accordingly</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_04.svg" alt="In-flow content ignores absolutely-positioned element">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, left, right</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements <b>can be positioned</b> using any combination of <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">top: 20px;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, absolutely-positioned elements are set to <code>width: auto</code> which means they <b>collapse to the width of the widest content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements are also set to <code>left: auto</code> and <code>right: auto</code> which <b>also means they collapse</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that if you set apply absolute-positioning to a standard block-level element, it will immediately <b>change from stretched to collapsed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_05.svg" alt="Absolutely-positioned element width collapsed">
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements can be <b>sized using a length or percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width with length value */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">width: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width with percentage value */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">width: 30%;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_06.svg" alt="Absolutely-positioned element given a width">
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements <b>can be stretched</b> by setting <code>left</code> and <code>right</code> values and leaving the <code>width</code> value undefined.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left and right */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">left: 10px;
+  right: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_07.svg" alt="Absolutely-positioned element stretched">
+          </section>
+
+          <section data-background="#fff">
+            <p>If an absolutely-positioned element has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>, <b>the</b> <code>right</code> <b>value will be ignored</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">left: 10px;
+  width: 200px;
+  right: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_08.svg" alt="Right property ignored">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, in cases where the <code>dir</code> property (which defines the direction of text) is <code>rtl</code> (right to left), the <code>left</code> value would <b>ignored instead</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="content" <span class="codeHighlight">dir="rtl"</span>&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, absolutely-positioned elements are set to <code>height: auto</code> which means they <b>collapse to suit the height of content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_09.svg" alt="Absolutely-positioned element height collapsed">
+          </section>
+
+          <section data-background="#fff">
+            <p>Absolutely-positioned elements can be given height <b>using a length or percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height using length */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">height: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height using percentage */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">height: 50%;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_10.svg" alt="Absolutely-positioned element given a height">
+          </section>
+
+          <section data-background="#fff">
+            <p>The height of absolutely-positioned elements <b>can be stretched</b> by setting <code>top</code> and <code>bottom</code> values and leaving the <code>height</code> value undefined.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top and bottom */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">top: 10px;
+  bottom: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_11.svg" alt="Absolutely-positioned element height stretched">
+          </section>
+
+          <section data-background="#fff">
+            <p>If an absolutely-positioned element has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>, <b>the</b> <code>bottom</code> <b>value will be ignored</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">top: 10px;
+  height: 200px;
+  bottom: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_12.svg" alt="Bottom property ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins <b>push the element away from its position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_13.svg" alt="Absolutely-positioned element with margin pushed away from original position">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins applied to absolutely-positioned elements <b>do not collapse with any other margins</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding will <b>add to the width or height</b> of a collapsed or sized absolutely-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_14.svg" alt="Padding adds to width and height of sized element">
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding will <b>reduce the width or height</b> of the content area of a stretched absolutely-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_15.svg" alt="Padding reduces size of content area for stretched element">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Border will <b>add to the width or height</b> of a collapsed or sized absolutely-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_16.svg" alt="Border adds to width and height of sized element">
+          </section>
+
+          <section data-background="#fff">
+            <p>Border will <b>reduce the width or height</b> of the content area of a stretched absolutely-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-absolute_17.svg" alt="Border reduces size of content area for stretched element">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the element is given a <code>z-index</code> value of anything other than <code>"auto"</code>, it will <b>create a new stacking context</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Style some absolutely-positioned elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-209-01.html">exercises-start/exercise-209-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the element <b>sits above the other content</b>, and how the other content reflows below the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also, <b>set the element</b> with a <code>width</code> of <code>200px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how adding a <b>length width</b> affects the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: absolute;
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with a <code>width</code> of <code>50%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how adding a <b>percentage width</b> affects the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: absolute;
+  width: 50%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set the element with a class of <code>example4</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 0</code> and <code>right: 0</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how an element’s width can be <b>stretched</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to set the element with a class of <code>example5</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 0</code>, <code>right: 0</code> and <code>width: 300px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how the <code>right</code> value <b>is ignored</b> when <code>left</code> and <code>width</code> values are present.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 300px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to set the element with a class of <code>example6</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 150px</code>, <code>top: 0</code> and <code>height: 50px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how adding a <b>length height</b> affects the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  height: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a seventh CSS rule</b> to set the element with a class of <code>example7</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 150px</code>, <code>top: 0</code> and <code>height: 50%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how adding a <b>percentage height</b> affects the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example7 {
+  position: absolute;
+  left: 250px;
+  top: 0;
+  height: 50%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write an eigth CSS rule</b> to set the element with a class of <code>example8</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 350px</code>, <code>top: 0</code> and <code>bottom: 0</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how an element’s height can be <b>stretched</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example8 {
+  position: absolute;
+  left: 350px;
+  top: 0;
+  bottom: 0;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a ninth CSS rule</b> to set the element with a class of <code>example9</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>left: 450px</code>, <code>top: 0</code>, <code>bottom: 0</code> and <code>height: 100px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how the <code>bottom</code> value <b>is ignored</b> when <code>top</code> and <code>height</code> values are present.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example9 {
+  position: absolute;
+  left: 450px;
+  top: 0;
+  bottom: 0;
+  height: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a tenth CSS rule</b> to set the element with a class of <code>example10</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>margin: 30px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how the <code>margin</code> <b>affects an absolutely-positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example10 {
+  position: absolute;
+  margin: 30px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write an eleventh CSS rule</b> to set the element with a class of <code>example11</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>padding: 30px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how the <code>padding</code> <b>affects an absolutely-positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example11 {
+  position: absolute;
+  padding: 30px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a twelfth CSS rule</b> to set the element with a class of <code>example12</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element</b> with <code>border: 30px solid red</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This example shows how the <code>border</code> <b>affects an absolutely-positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example12 {
+  position: absolute;
+  border: 30px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-209-01.html">exercises-finished/exercise-209-01.html</a></p>
+          </section>
+        </section>
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>position: relative</h2>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Relative */</span>
+p {
+  position: <span class="codeHighlight">relative;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Behaviour</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An element set to <code>relative</code> will be <b>removed from the normal document flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Relatively-positioned elements are positioned <b>relative to their original position in normal flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_01.svg" alt="Element positioned relative to original position">
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are in normal document flow will <b>behave as if the positioned element was still in normal flow</b> - leaving space for it.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_02.svg" alt="Content behaving as it element was still in normal flow">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, left, right</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Relatively-positioned elements <b>can be positioned</b> using any combination of <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top using length */</span>
+p {
+  position: relative;
+  <span class="codeHighlight">top: 20px;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Relative positioning can be applied to any element regardless of whether they are <b>block-level, inline or inline-block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>When relatively-positioning is applied, <b>these elements will remain</b> block-level, inline or inline-block elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, block-level elements will <b>spread to the width</b> of the containing block or initial containing block.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>When given relative-positioning, block-level elements will <b>maintain their dimensions</b> and be positioned relative to their original position.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_03.svg" alt="Block-level relatively-positioned element">
+          </section>
+
+          <section data-background="#fff">
+            <p>Relatively-positioned block-level elements <b>can be given a length or percentage width</b>, like normal block-level elements.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width using length */</span>
+p {
+  position: relative;
+  <span class="codeHighlight">width: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_04.svg" alt="Block-level relatively-positioned element with width">
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, inline elements will <b>collapse</b> to the width of content inside the element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>When given relative-positioning, inline elements will <b>remain collapsed</b> and be positioned relative to their original position.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_05.svg" alt="Block-level relatively-positioned element with width">
+          </section>
+
+          <section data-background="#fff">
+            <p>For relatively-positioned inline elements <b>width will be ignored</b>, like normal inline elements.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, <b>block-level, inline and inline-block elements</b> are set to <code>height: auto</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means they <b>collapse to the height of the tallest content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block-level and inline-block relatively-positioned elements can be <b>sized using a length or percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Hei using lengthght using length */</span>
+p {
+  position: relative;
+  <span class="codeHighlight">height: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_06.svg" alt="Block-level relatively-positioned element with height">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, for inline relatively-positioned elements, <b>height will be ignored</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin can be <b>applied to all sides</b> of relatively-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For block-level and inline-block relatively-positioned elements, <b>margins will affect content on all sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins applied to the left and top will <b>push the element away from its position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_07.svg" alt="Margin pushing relatively-positioned element away from original position">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the case of stretched block-level elements, margins can sometimes <b>reduce the width of the overall element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_08.svg" alt="Margin reduces overall width of stretched elements">
+          </section>
+
+          <section data-background="#fff">
+            <p>For inline relatively-positioned elements, margins will affect content on either side <b>but not content above or below</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins applied to the left will <b>push the element away from its position</b>. Top margin will have no effect.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_09.svg" alt="Margin pushing away content on either side">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be <b>applied to all sides</b> of relatively-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For block-level and inline-block relatively-positioned elements, <b>padding will affect content on all sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For stretched block-level elements, padding can sometimes <b>reduce the width of content area of an element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_10.svg" alt="Padding reduces width of content area">
+          </section>
+
+          <section data-background="#fff">
+            <p>For sized block-level elements, padding can <b>add to the overall dimensions</b> of the element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For inline relatively-positioned elements, padding will be added to all sides, <b>increasing the overall dimensions of the element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, this padding will only affect content on either side <b>but not content above or below</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_11.svg" alt="Padding increases dimensions of the element">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Border can be <b>applied to all sides</b> of relatively-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For block-level and inline-block relatively-positioned elements, <b>border will affect content on all sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For stretched block-level elements, border can sometimes <b>reduce the width of content area of an element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_12.svg" alt="Border reduces width of content area">
+          </section>
+
+          <section data-background="#fff">
+            <p>For sized block-level elements, border can <b>add to the overall dimensions</b> of the element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For inline relatively-positioned elements, border will be added to all sides, <b>increasing the overall dimensions of the element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, this border will only affect content on either side <b>but not content above or below</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-relative_13.svg" alt="Border increases dimensions of the element">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the element is given a <code>z-index</code> value of anything other than <code>"auto"</code>, it will <b>create a new stacking context</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Style some relatively-positioned elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-209-02.html">exercises-start/exercise-209-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 20px</code> and <code>left: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>width: 200px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: relative;
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>height: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: relative;
+  height: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set the element with a class of <code>example4</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 20px</code>, <code>left: 20px</code> and <code>margin: 10px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  margin: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to set the element with a class of <code>example5</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 20px</code>, <code>left: 20px</code> and <code>padding: 10px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to set the element with a class of <code>example6</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 20px</code>, <code>left: 20px</code> and <code>border: 10px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  border: 10px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-209-02.html">exercises-finished/exercise-209-02.html</a></p>
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>position: fixed</h2>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Fix using lengthed */</span>
+p {
+  position: <span class="codeHighlight">fixed;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Behaviour</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An element set to <code>fixed</code> will be <b>removed from the normal document flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements are positioned <b>relative to the screen’s viewport</b>. The element does not move when the page is scrolled.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_01.svg" alt="Fixed positioning model - relative to the viewport">
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are in normal document flow will <b>ignore the fixed-positioned element</b> and re-flow accordingly.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_02.svg" alt="Fixed positioning model - relative to the viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, left, right</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements <b>can be positioned</b> using any combination of the following properties: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top using length */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">top: 20px;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, fixed-positioned elements are set to <code>width: auto</code> which means they <b>collapse to the width of the widest content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_03.svg" alt="Fixed width collapse">
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements can be <b>sized using a length or percentage value</b> such as <code>width: 200px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width using length */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">width: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_04.svg" alt="Fixed set with width">
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements <b>can be stretched</b> by setting <code>left</code> and <code>right</code> values and leaving the <code>width</code> value undefined.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left using length */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">left: 10px;
+  right: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_05.svg" alt="Fixed width stretched">
+          </section>
+
+          <section data-background="#fff">
+            <p>If an fixed-positioned element has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>, <b>the</b> <code>right</code> <b>value will be ignored</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">left: 10px;
+  width: 200px;
+  right: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_06.svg" alt="Fixed width right value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, fixed-positioned elements are set to <code>height: auto</code> which means they <b>collapse to suit the height of the content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_07.svg" alt="Fixed height collapse">
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements can be <b>sized using a length or percentage value</b> such as <code>height: 200px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height using length */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">height: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_08.svg" alt="Fixed set with height">
+          </section>
+
+          <section data-background="#fff">
+            <p>Fixed-positioned elements <b>can be stretched</b> by setting <code>top</code> and <code>bottom</code> values and leaving the <code>height</code> value undefined.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+p {
+  position: fixed;
+  <span class="codeHighlight">top: 10px;
+  bottom: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_09.svg" alt="Fixed height stretched">
+          </section>
+
+          <section data-background="#fff">
+            <p>If a fixed-positioned element has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>, <b>the</b> <code>bottom</code> <b>value will be ignored</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">top: 10px;
+  height: 200px;
+  bottom: 10px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_10.svg" alt="Fixed width right value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins <b>push the element away from its position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_11.svg" alt="Fixed margin">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins applied to fixed-positioned elements <b>do not collapse with any other margins</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding will <b>add to the width or height</b> of a collapsed or sized fixed-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_12.svg" alt="Fixed padding">
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding will <b>reduce the width or height</b> of the content area of a stretched fixed-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_13.svg" alt="Fixed padding">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Border will <b>add to the width or height</b> of a collapsed or sized fixed-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_14.svg" alt="Fixed border">
+          </section>
+
+          <section data-background="#fff">
+            <p>Border will <b>reduce the width or height</b> of the content area of a stretched fixed-positioned element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-fixed_15.svg" alt="Fixed border">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the element is given a <code>z-index</code> value of anything other than <code>"auto"</code>, it will <b>create a new stacking context</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Style some fixed-positioned elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-209-03.html">exercises-start/exercise-209-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 0</code> and <code>left: 0</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 50px</code>, <code>left: 50px</code> and <code>width: 200px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 100px</code>, <code>left: 100px</code> and <code>height: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  height: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set the element with a class of <code>example4</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 150px</code>, <code>left: 150px</code> and <code>margin: 10px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  position: fixed;
+  top: 150px;
+  left: 150px;
+  margin: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to set the element with a class of <code>example5</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 200px</code>, <code>left: 200px</code> and <code>padding: 10px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  padding: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to set the element with a class of <code>example6</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 250px</code>, <code>left: 250px</code> and <code>border: 10px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  position: fixed;
+  top: 250px;
+  left: 250px;
+  border: 10px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-209-03.html">exercises-finished/exercise-209-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>position: sticky</h2>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Sticky */</span>
+p {
+  position: <span class="codeHighlight">-webkit-sticky</span>;
+  position: <span class="codeHighlight">sticky</span>;
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Behaviour</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An element set to <code>sticky</code> will be <b>removed from the normal document flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>They are treated as <b>relatively-positioned</b> until their containing blocks crosses a specified threshold, at which point they are treated as <b>fixed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-sticky_01.svg" alt="position: relative">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/position-sticky_02.svg" alt="position: fixed">
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are in normal document flow will <b>behave as if the positioned element was still in normal flow</b> - leaving space for it.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, left, right</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stickily-positioned elements <b>can be positioned</b> using any combination of the following properties: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top using length */</span>
+p {
+  position: -webkit-sticky;
+  position: sticky;
+  <span class="codeHighlight">top: 20px;</span>
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stickily-positioned elements will <b>behave like relatively-positioned elements</b> in relation to their widths.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stickily-positioned elements will <b>behave like relatively-positioned elements</b> in relation to their heights.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin can be <b>applied to all sides</b> of stickily-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Just like relatively-positioned elements, margin will behave <b>differently for block-level and inline elements</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be <b>applied to all sides</b> of stickily-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Just like relatively-positioned elements, padding will behave <b>differently for block-level and inline elements</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Border can be <b>applied to all sides</b> of stickily-positioned elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Just like relatively-positioned elements, border will behave <b>differently for block-level and inline elements</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Any stickily-positioned element will <b>create a new stacking context</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Style some sticky-positioned elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-209-04.html">exercises-start/exercise-209-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>contacts-heading</code> to <code>position: sticky</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>position:  -webkit-sticky</code> for Webkit browsers that do not support <b>position: sticky</b>. </p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with <b>all browser-specific values</b>, the <code>-webkit-sticky</code> value should be placed above the native <code>sticky</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Finally <b>set the element with</b> <code>top: 0</code>, for when the element scrolls out of the viewport.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.contacts-heading {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that the Alphabetical headings should <b>“stick” to the top of the viewport</b> as the page scrolls up.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-209-04.html">exercises-finished/exercise-209-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="210-top-right-bottom-left.html">210: Top, right, bottom, left</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

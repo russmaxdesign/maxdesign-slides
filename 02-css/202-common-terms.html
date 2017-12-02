@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>202: Common Terms</title>
+    <meta name="description" content="This slide deck takes a look at a range of terms that are commonly used when defining aspects of CSS">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>202</h5>
+          <h1>Common Terms</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before diving into how CSS works, let’s will look at <b>a range of terms used to describe</b> aspects of HTML and CSS.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>What is HTML?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML, or Hyper Text Markup Language, is the standard markup language for <b>creating web documents</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML uses <a href="#/8">elements</a> and <a href="#/9">attributes</a> to <b>describe the structure of web documents</b> and provide meaning to content.</p>
+          </section>
+        </section>
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>What is CSS?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS stands for <b>“Cascading Style Sheets”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS is a language that works with HTML documents to <b>define the way web documents are presented</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS is used to control the <b>appearance and position</b> of HTML <a href="#/8">elements</a>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+        <section>
+          <section data-background="#568312">
+            <h2>The DOM, CSSOM and Render tree</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers follow a series of steps in order to <b>render a web document</b>. In simple terms, the steps are:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol>
+              <li>Construct the <b>DOM</b></li>
+              <li>Construct the <b>CSSOM</b></li>
+              <li>Construct the <b>Render tree</b></li>
+              <li><b>Layout</b> the Render tree</li>
+              <li><b>Paint</b> the Render tree on screen</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_01.svg" alt="Browser render process">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The DOM (Document Object Model)</h3>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_02.svg" alt="Browser render process - the DOM">
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers read the HTML document and construct a <b>DOM</b> (Document Object Model).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The DOM is a <b>application programming interface</b> (API) that treats HTML, XHTML, or XML documents as tree structures.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This is why the Document Object Model is also referred to as a <b>DOM tree</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The DOM tree is made up of <b>different types of nodes</b> including element, attribute, text and comment nodes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each node in the DOM tree is an object <b>representing a part of the document</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_01.svg" alt="The DOM tree nodes">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The CSSOM (CSS Object Model)</h3>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_03.svg" alt="Browser render process - CSSOM">
+          </section>
+
+          <section data-background="#fff">
+            <p>The browser also constructs a <b>CSSOM</b> (CSS Object Model)</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSS Object Model takes the CSS code, and <b>renders every selector and property</b> into a tree structure.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_02.svg" alt="The CSSOM tree">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The Render tree</h3>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_04.svg" alt="Browser render process - the Render tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSSOM and DOM trees are combined into a <b>Render tree</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_03.svg" alt="The Render tree">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Layout</h3>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_05.svg" alt="s Layout">
+          </section>
+
+          <section data-background="#fff">
+            <p>The coordinates for each Render tree element are then calculated. This is called the <b>“layout”</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Painting</h3>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/dom_06.svg" alt="Browser render process - Painting">
+          </section>
+
+          <section data-background="#fff">
+            <p>The layout is them used to render all of the pixels on the screen in a process called <b>“painting”</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The DOM tree</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The DOM tree is just like a family tree. An <b>ancestor</b> refers to any element that is further up the tree.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;body&gt;</code> element is the <b>ancestor</b> of the <code>&lt;p&gt;</code> and <code>&lt;span&gt;</code> elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_04.svg" alt="The HTML document tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>descendant</b> refers to any element that is connected but further down the document tree.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;9&gt;</code> and <code>&lt;span&gt;</code> elements are <b>descendants</b> of the <code>&lt;body&gt;</code> element. </p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_05.svg" alt="The HTML document tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>parent</b> is an element that is connected and directly above another element in the document tree.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;p&gt;</code> element is the <b>parent</b> of the <code>&lt;span&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_06.svg" alt="The HTML document tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>child</b> is an element that is connected and directly below another element in the DOM tree.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;span&gt;</code> element is the <b>child</b> element to the <code>&lt;p&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_07.svg" alt="The HTML document tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>sibling</b> is an element that shares the same parent as another element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;p&gt;</code> elements are all <b>siblings</b> as they share the same parent, the <code>&lt;body&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree_08.svg" alt="The HTML document tree">
+          </section>
+
+          <section data-background="#fff">
+            <p>At any time an element could <b>have many roles</b> - a parent, a child, a sibling, a descendant or an ancestor.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS allows authors to use <b>descendant, child and sibling elements</b> in order to style elements more easily and effectively.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Doctypes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before displaying HTML documents, browsers need to <b>which version of the HTML language</b> the document uses.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This is achieved using a <code>&lt;!doctype&gt;</code> <b>declaration</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;!doctype&gt;</code> declaration <b>must appear on the first line of code</b> within an HTML document.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which version?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the past, web authors had to write HTML in <b>one of two possible versions</b> of the language - HTML 4.01 or XHTML 1.0.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Today, almost all web authors write in <b>HTML 5</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This newer version of HTML is <b>simpler, more flexible</b> and allows authors to use a range new elements and functions.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>To <b>declare that your document is HTML 5</b>, you must use the following declaration:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;!doctype html&gt;</span>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+    &lt;p&gt;A paragraph element.&lt;/p&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>HTML elements</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>HTML elements</b> are the building blocks of HTML markup. They help us define the content and structure of web documents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In most cases, HTML elements consist of a <b>start tag</b> (or opening tag) and an <b>end tag</b> (or closing tag).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;p&gt;</span>This is a paragraph element.<span class="codeHighlight">&lt;/p&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a wide range of HTML elements that can be used to <b>give content specific meaning</b> - such as headings, paragraphs, lists etc.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These elements should always be written in <b>lower case only</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Heading levels --&gt;</span>
+<span class="codeHighlight">&lt;h1&gt;</span>Level 1 heading<span class="codeHighlight">&lt;/h1&gt;</span>
+<span class="codeHighlight">&lt;h2&gt;</span>Level 2 heading<span class="codeHighlight">&lt;/h2&gt;</span>
+<span class="codeHighlight">&lt;h3&gt;</span>Level 3 heading<span class="codeHighlight">&lt;/h3&gt;</span>
+<span class="codeHighlight">&lt;h4&gt;</span>Level 4 heading<span class="codeHighlight">&lt;/h4&gt;</span>
+<span class="codeHighlight">&lt;h5&gt;</span>Level 5 heading<span class="codeHighlight">&lt;/h5&gt;</span>
+<span class="codeHighlight">&lt;h6&gt;</span>Level 6 heading<span class="codeHighlight">&lt;/h6&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Paragraph --&gt;</span>
+<span class="codeHighlight">&lt;p&gt;</span>Paragraph element<span class="codeHighlight">&lt;/p&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Unordered list --&gt;</span>
+<span class="codeHighlight">&lt;ul&gt;</span>
+  <span class="codeHighlight">&lt;li&gt;</span>List item<span class="codeHighlight">&lt;/li&gt;</span>
+  <span class="codeHighlight">&lt;li&gt;</span>List item<span class="codeHighlight">&lt;/li&gt;</span>
+  <span class="codeHighlight">&lt;li&gt;</span>List item<span class="codeHighlight">&lt;/li&gt;</span>
+  <span class="codeHighlight">&lt;li&gt;</span>List item<span class="codeHighlight">&lt;/li&gt;</span>
+<span class="codeHighlight">&lt;/ul&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Push button --&gt;</span>
+<span class="codeHighlight">&lt;button&gt;</span>button element<span class="codeHighlight">&lt;/button&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Generic container --&gt;</span>
+<span class="codeHighlight">&lt;div&gt;</span>Division element<span class="codeHighlight">&lt;/div&gt;</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Void elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Void elements</b> are different to all other HTML elements as they have no content and no end tag. </p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Line break --&gt;</span>
+&lt;br&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>They can be <b>written in two different ways</b> depending on the doctype you use - with or without the trailing forward slash.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Without trailing slashes --&gt;</span>
+&lt;br&gt;
+&lt;hr&gt;
+&lt;img&gt;
+&lt;input&gt;
+&lt;link&gt;
+&lt;meta&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- With trailing slashes --&gt;</span>
+&lt;br <span class="codeHighlight">/</span>&gt;
+&lt;hr <span class="codeHighlight">/</span>&gt;
+&lt;img <span class="codeHighlight">/</span>&gt;
+&lt;input <span class="codeHighlight">/</span>&gt;
+&lt;link <span class="codeHighlight">/</span>&gt;
+&lt;meta <span class="codeHighlight">/</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Using the HTML 5 doctype, you can use <b>either of these methods</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though both of these methods can be used, it is best to <b>choose one method and use it consistently</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>HTML attributes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>HTML attributes</b> are used to assign additional properties to HTML elements.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In almost all cases, attributes consist of an attribute <b>name</b> and an attribute <b>value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Attribute name --&gt;</span>
+&lt;p <span class="codeHighlight">class</span>="intro"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Attribute value --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes <b>must appear in the start tag</b> (or within the tag in the case of void elements)</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside the start tag --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside void elements --&gt;</span>
+&lt;hr <span class="codeHighlight">class="special"</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There can be <b>any number of attributes</b> applied to an HTML element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Three attributes in an element --&gt;</span>
+&lt;input
+  <span class="codeHighlight">id="email"
+  name="email"
+  type="text"</span>
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes must be separated by spaces and <b>can appear in any order</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attribute values can be placed inside <b>double quotes, single quotes or even no quotes</b> at all.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>>
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class='intro'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- No quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class=intro</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some attributes allow <b>multiple values</b> inside the one attribute.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Two attribute --&gt;</span>
+&lt;p class="<span class="codeHighlight">intro highlight</span>"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes with more than one value <b>must be enclosed in single or double quotes</b>. They cannot be left unquoted.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro highlight"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">'intro highlight'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML 5, some attributes, called <b>boolean</b> attributes, do not require a value..</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input type="radio" <span class="codeHighlight">checked</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">disabled</span> /&gt;
+&lt;input type="email" <span class="codeHighlight">multiple</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">readonly</span> /&gt;
+&lt;option <span class="codeHighlight">selected</span>&gt; <span class="codeComment">...</span> &lt;/option&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Block-level elements</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML 4.01, there is a <b>distinction between</b> block-level and inline elements</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML 5 uses a <b>more complex set of content categories</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, it is still important to <b>understand the differences</b> between block-level and inline elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Block-level elements</b> are elements that are formatted visually as blocks.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-block.svg" alt="A series of block-level elements including a heading and two paragraphs">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Block-level elements</b> include elements such as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Block-level elements --&gt;</span>
+&lt;article&gt;
+&lt;aside&gt;
+&lt;blockquote&gt;
+&lt;div&gt;
+&lt;figure&gt;
+&lt;footer&gt;
+&lt;form&gt;
+&lt;h1&gt;
+&lt;header&gt;
+&lt;p&gt;
+&lt;section&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In almost all cases, block-level elements can be <b>nested inside other block-level elements</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Nested block-level elements --&gt;</span>
+&lt;div&gt;
+  &lt;div&gt;
+    &lt;h1&gt;&lt;/h1&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, block-level elements such as <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> and <code>&lt;p&gt;</code> <b>cannot contain other block-level elements</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Cannot contain blocks --&gt;</span>
+<span class="codeHighlight">&lt;h1&gt;Cannot contain blocks&lt;/h1&gt;
+&lt;p&gt;Cannot contain blocks&lt;/p&gt;</span>
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Inline elements</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline elements</b> are elements that do not form new blocks of content; the content is distributed in lines.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-inline.svg" alt="Two inline elements inside block-level elements - an emphasis and a bold element">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline elements</b> include elements such as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inline elements --&gt;</span>
+&lt;a&gt;
+&lt;abbr&gt;
+&lt;b&gt; 
+&lt;cite&gt;
+&lt;code&gt;
+&lt;em&gt;
+&lt;i&gt;
+&lt;span&gt;
+&lt;strong&gt;
+&lt;sub&gt;
+&lt;sup&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In almost all cases, inline elements can be <b>nested inside other inline elements</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Nested inline elements --&gt;</span>
+&lt;span&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;em&gt;&lt;/em&gt;
+&lt;/span&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Almost all inline elements <b>cannot contain block-level elements</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Block inside inline elements --&gt;</span>
+&lt;span&gt;
+  <s>&lt;div&gt;&lt;/div&gt;</s>
+&lt;/span&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, in HTML 5, the inline <code>&lt;a&gt;</code> element was redefined so that it <b>could wrap around block-level elements</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Block inside inline elements --&gt;</span>
+&lt;a href="#"&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/a&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Line boxes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline boxes are laid out horizontally <b>in a box called a line box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If there isn’t enough horizontal space to fit all elements into a single line, another line box is <b>created under the first one</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A single inline element <b>may then be split across lines</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Line boxes are <b>defined by the highest and lowest points</b> of any inline boxes that are part of the line.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-line-box.svg" alt="A series of line boxes inside block boxes">
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Anonymous boxes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Anonymous boxes are defined with <b>two criteria</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>1. Any content that inside a block-level parent element, but <b>not wrapped directly inside another element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>2. There is <b>at least one block-level element or inline element</b> inside the parent element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-anonymous-box.svg" alt="Anonymous boxes inside block boxes">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the example below, the “some text” is defined <b>as an anonymous box</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+   <span class="codeHighlight">Some text</span>
+   &lt;p&gt;Paragraph&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the example below, the “some text” is <b>NOT defined as an anonymous box</b> as there are no other elements present inside the parent element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+   <span class="codeHighlight">Some text</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The viewport</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>viewport</b> is the full extent of the viewing area within a browser window.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/viewport.svg" alt="The browser window showing the viewport area">
+          </section>
+
+          <section data-background="#fff">
+            <p>On a computer, you can <b>resize the browser window</b> to make it larger or smaller, automatically resizing the viewport as well.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The viewport also <b>varies with the device</b> and will be smaller on a mobile phone and tablet devices than on a computer screen.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Containing boxes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>From a CSS perspective, all HTML elements are <b>just a series of boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>containing box</b> is a box that contains other boxes - descendant boxes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-containing-box.svg" alt="A containing box wrapped around other block-level boxes">
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The initial containing box</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;html&gt;</code> element is the <b>top-level element</b> of all HTML documents.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;html&gt;</span>
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <span class="codeComment">...</span>
+  &lt;body&gt;
+<span class="codeHighlight">&lt;/html&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>It is also called the <b>root element</b> because all other elements are descendants of this element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This root element is housed in a containing box called the <b>“initial containing box”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The initial containing box is <b>the width of the viewport</b> or the widest element if wider than the viewport.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The initial containing box is also <b>the height of the viewport</b> or deeper than the viewport for longer documents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/initial-containing-box.svg" alt="The initial containing box spreading to the full width of the viewport and deeper than the viewport">
+          </section>
+
+          <section data-background="#fff">
+            <p>It is important to understand the initial containing box as it is <b>a critical component of CSS positioning</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements are often positioned against a parent element, but they may need to be <b>positioned in relation to this initial containing block</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Document flow</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Document flow is how each HTML element is laid out and how other elements <b>position themselves accordingly</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Imagine every HTML element is <b>just like a piece of paper</b>. You can stack some pieces of paper on top of others so that they overlap.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are stacked at the top are <b>closest to the user</b>. Elements that are below are further away.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are “in normal flow” will <b>flow down the page based on their order in the document</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Eements that have been given some sort of positioning (<code>absolute</code>, <code>relative</code>, <code>fixed</code>, <code>sticky</code>) <b>will be positioned “out of flow”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These “out of flow” elements are positioned on one or more layers <b>above “in flow” elements</b> so that they are closer to the user.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/out-of-flow.svg" alt="An out-of-flow element positioned on top of in-flow content">
+          </section>
+
+          <section data-background="#fff">
+            <p>These layers are described in detail in the <a href="211-css-zindex.html">Z-index and the stacking context</a> slide deck.</p>
+          </section>
+
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>User agents</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The term <b>“user agent”</b> was coined in the early days of the Internet when users could only be navigated using the keyboard.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Later, tools were developed to be the <b>users “agent”</b>, so that the user didn’t have to understand complex keyboard commands.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Today, nearly everyone uses a <b>web browser as a user agent</b>. Common web browsers include Firefox, Chrome, Safari and Opera.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, user agents can also include media players, search engine bots and <b>assistive technologies</b> (software to assist people with disabilities).</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="203-css-rulesets.html">203: CSS Rulesets</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

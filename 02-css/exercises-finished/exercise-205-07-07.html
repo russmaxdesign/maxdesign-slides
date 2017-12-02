@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 205-07-07: Write some :nth-child selectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+/* Add styles here */
+
+.one li:nth-child(3) {
+  color: lightsteelblue;
+}
+
+.two li:nth-child(3n) {
+  color: lightsteelblue;
+}
+
+.three li:nth-child(3n+1) {
+  color: lightsteelblue;
+}
+
+.four li:nth-child(3n-1) {
+  color: lightsteelblue;
+}
+
+.five li:nth-child(even) {
+  color: lightsteelblue;
+}
+
+.six li:nth-child(odd) {
+  color: lightsteelblue;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 205-07-07: Write some :nth-child selectors</h1>
+
+      <h2>Example 1 - :nth-child(3)</h2>
+      <ul class="one">
+        <li> 1st child </li>
+        <li> 2nd child </li>
+        <li> 3rd child </li>
+        <li> 4th child </li>
+        <li> 5th child </li>
+        <li> 6th child </li>
+        <li> 7th child </li>
+        <li> 8th child </li>
+        <li> 9th child </li>
+        <li> 10th child </li>
+        <li> 11th child </li>
+        <li> 12th child </li>
+      </ul>
+
+      <h2>Example 2 - :nth-child(3n)</h2>
+      <ul class="two">
+        <li> 1st child </li>
+        <li> 2nd child </li>
+        <li> 3rd child </li>
+        <li> 4th child </li>
+        <li> 5th child </li>
+        <li> 6th child </li>
+        <li> 7th child </li>
+        <li> 8th child </li>
+        <li> 9th child </li>
+        <li> 10th child </li>
+        <li> 11th child </li>
+        <li> 12th child </li>
+      </ul>
+
+      <h2>Example 3 - :nth-child(3n+1)</h2>
+      <ul class="three">
+        <li> 1st child </li>
+        <li> 2nd child </li>
+        <li> 3rd child </li>
+        <li> 4th child </li>
+        <li> 5th child </li>
+        <li> 6th child </li>
+        <li> 7th child </li>
+        <li> 8th child </li>
+        <li> 9th child </li>
+        <li> 10th child </li>
+        <li> 11th child </li>
+        <li> 12th child </li>
+      </ul>
+
+      <h2>Example 4 - :nth-child(3n-1)</h2>
+      <ul class="four">
+        <li> 1st child </li>
+        <li> 2nd child </li>
+        <li> 3rd child </li>
+        <li> 4th child </li>
+        <li> 5th child </li>
+        <li> 6th child </li>
+        <li> 7th child </li>
+        <li> 8th child </li>
+        <li> 9th child </li>
+        <li> 10th child </li>
+        <li> 11th child </li>
+        <li> 12th child </li>
+      </ul>
+
+      <h2>Example 5 - :nth-child(even)</h2>
+      <ul class="five">
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+      </ul>
+
+      <h2>Example 6 - :nth-child(odd)</h2>
+      <ul class="six">
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+        <li> odd </li>
+        <li> even </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{opacity:0.2;fill:#568312;}
+	.st3{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:4.5719,4.5719;}
+	.st5{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:4.6984,4.6984;}
+	.st6{fill:#B8CB9B;}
+	.st7{fill:#568312;}
+	.st8{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st9{fill:#B04636;}
+	.st10{fill:none;}
+	.st11{font-family:'HelveticaNeue';}
+	.st12{font-size:40px;}
+	.st13{font-family:'HelveticaNeue-Medium';}
+	.st14{font-family:'HelveticaNeue-Bold';}
+	.st15{font-size:23px;}
+</style>
+<rect class="st0" width="650" height="400"/>
+<g>
+	<g>
+		<g>
+			<g>
+				<path class="st1" d="M612,93v214H38V93H612 M615,90H35v220h580V90L615,90z"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<rect x="165" y="148" class="st6" width="257.1" height="51.8"/>
+</g>
+<rect x="46.5" y="107.8" class="st10" width="557" height="190"/>
+<text transform="matrix(1 0 0 1 46.5 136.381)"><tspan x="0" y="0" class="st11 st12">Lorem ipsum dolor sit amet, </tspan><tspan x="0" y="48" class="st11 st12">conse </tspan><tspan x="119.3" y="48" class="st13 st12">ctetuer adipis</tspan><tspan x="372" y="48" class="st11 st12"> cing elit, </tspan><tspan x="0" y="96" class="st11 st12">sed diam nonum my nibh euis </tspan><tspan x="0" y="144" class="st11 st12">mod tincid unt.</tspan></text>
+<g>
+	<g>
+		<line class="st8" x1="325" y1="132.9" x2="325" y2="33.3"/>
+		<g>
+			<polygon class="st9" points="335.5,129.9 325,148 314.5,129.9 			"/>
+		</g>
+	</g>
+</g>
+<rect x="222.2" y="33.3" class="st9" width="205.5" height="41"/>
+<text transform="matrix(1 0 0 1 236.6697 62.3333)" class="st0 st14 st15">Collapsed width</text>
+</svg>

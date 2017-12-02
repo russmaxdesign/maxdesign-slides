@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>213-04: Property - line-height</title>
+    <meta name="description" content="CSS line-height is one of the fundamentals of CSS, used to determine the space between lines">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>213-04</h5>
+          <h1>Property - line-height</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS <code>line-height</code> is <b>one of the fundamentals of CSS</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It can be used to make <b>content easier to read and comprehend</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It can be used to control the <b>vertical rhythm of layouts</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS <code>line-height</code> can even be used to <b>center content vertically</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before diving in, let’s go back in time and look at the term <b>“leading”</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Leading</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Back in the “good old days” type was set by hand <b>using printing presses</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Printed material was created by setting out letters in rows. Each letter was set <b>on an
+               individual block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Leading, or lead strips were <b>added between the lines of letters</b> when additional vertical space was required.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The term “leading” is <b>still used today in print typography</b>. It refers to the distance between the baselines of successive lines of type.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS, the <code>line-height</code> property is used to <b>control the vertical space between lines</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, the term “leading” is <b>still used in association with CSS <code>line-height</code></b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Line-height Syntax</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSS <code>line-height</code> property syntax <b>looks like this</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;'line-height'&gt;</span> =
+  normal |
+  &lt;number&gt; |
+  &lt;length&gt; |
+  &lt;percentage&gt; |
+  inherit
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The pipe symbols <code>"|"</code> stand for <code>"OR"</code>, so <b>it could be written as</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;'line-height'&gt;</span> =
+  normal OR
+  &lt;number&gt; OR
+  &lt;length&gt; OR
+  &lt;percentage&gt; OR
+  inherit
+</code></pre>
+          </section>
+          <section data-background="#fff">
+            <p>This means that <code>line-height</code> can be specified using <b>one of the following methods</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: <code>line-height</code> can be specified as <code>normal</code> which is the initial value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>normal</code> value is interpreted differently by each browser, but <b>most browsers</b> interpret this value to be somewhere between <code>1.0</code> and <code>1.2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  line-height: <span class="codeHighlight">normal</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: <code>line-height</code> can be specified as <code>inherit</code> which inherits the <code>line-height</code> from the parent.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  line-height: <span class="codeHighlight">inherit</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: <code>line-height</code> can be specified using a percentage value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  line-height: <span class="codeHighlight">120%</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: <code>line-height</code> can be specified using a length value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  line-height: <span class="codeHighlight">2em</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>A wide range of <b>different types of length values</b> can be used such as:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Font-relative</b> lengths:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* The width of the glyph "0"  */</span>
+p { line-height: <span class="codeHighlight">1ch</span>; }
+<span class="codeComment">/* The font-size of the element */</span>
+p { line-height: <span class="codeHighlight">1em</span>; }
+<span class="codeComment">/* The x-height of the element's font */</span>
+p { line-height: <span class="codeHighlight">1ex</span>; }
+<span class="codeComment">/* The font-size of the root element */</span>
+p { line-height: <span class="codeHighlight">1rem</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Viewport-percentage</b> lengths:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* 1% of the height of the viewport */</span>
+p { line-height: <span class="codeHighlight">1vh</span>
+<span class="codeComment">/* 1% of the width of the viewport */</span>
+p { line-height: <span class="codeHighlight">1vw</span>
+<span class="codeComment">/* Equal to the smaller of vw and vh */</span>
+p { line-height: <span class="codeHighlight">1vmin</span>
+<span class="codeComment">/* Equal to the larger of vw and vh */</span>
+p { line-height: <span class="codeHighlight">1vmax</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Absolute length</b> units:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* One device pixel */</span>
+p { line-height: <span class="codeHighlight">1px</span>
+<span class="codeComment">/* One millimeter */</span>
+p { line-height: <span class="codeHighlight">1mm</span>
+<span class="codeComment">/* A quarter of a millimeter */</span>
+p { line-height: <span class="codeHighlight">1q</span>
+<span class="codeComment">/* One centimeter */</span>
+p { line-height: <span class="codeHighlight">1cm</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* One inch */</span>
+p { line-height: <span class="codeHighlight">1in</span>
+<span class="codeComment">/* One point */</span>
+p { line-height: <span class="codeHighlight">1pt</span>
+<span class="codeComment">/* One pica */</span>
+p { line-height: <span class="codeHighlight">1pc</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: <code>line-height</code> can be specified using a number value (a unit-less value).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  line-height: <span class="codeHighlight">1.2</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Number values can be specified <b>in a range of different ways</b>, as long as they are positive values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+body { line-height: <span class="codeHighlight">3</span>; }
+body { line-height: <span class="codeHighlight">3.01</span>; }
+body { line-height: <span class="codeHighlight">.30</span>; }
+body { line-height: <span class="codeHighlight">.3</span>; }
+body { line-height: <span class="codeHighlight">0</span>; }
+body { line-height: <span class="codeHighlight">0.0</span>; }
+body { line-height: <span class="codeHighlight">-0.0</span>; }
+body { line-height: <span class="codeHighlight">+0.0</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write some line-height rules</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-04-01.html">exercises-start/exercise-213-04-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with a <code>line-height</code> keyword value of <code>normal</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  line-height: normal;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with a <code>line-height</code> percentage value of <code>130%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  line-height: 130%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set with a <code>line-height</code> length value of <code>1.4em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  line-height: 1.4em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set with a <code>line-height</code> number value of <code>1.5</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  line-height: 1.5;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-04-01.html">exercises-finished/exercise-213-04-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Shorthand line-height</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>line-height</code> property can also be specified within the <b>shorthand</b> <code>font</code> <b>property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>line-height</code> value is <b>written directly after the font-size value</b> - separated by a slash <code>"/"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  font:
+    &lt;font-style&gt;
+    &lt;font-variant&gt;
+    &lt;font-weight&gt;
+    &lt;font-size&gt;/<span class="codeHighlight">&lt;line-height&gt;</span>
+    &lt;font-family&gt;
+}
+</code></pre>
+          </section>
+
+
+          <section data-background="#fff">
+            <p>The same <b>five</b> <code>line-height</code> <b>value types</b> can still be used:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* normal */</span>
+body {
+  font: 
+    italic
+    small-caps
+    bold
+    1em/<span class="codeHighlight">normal</span>
+    Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* inherit */</span>
+body {
+  font:
+    italic
+    small-caps
+    bold
+    1em/<span class="codeHighlight">inherit</span>
+    Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* length */</span>
+body {
+  font:
+    italic
+    small-caps
+    bold
+    1em/<span class="codeHighlight">20px</span>
+    Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* percentage */</span>
+body {
+  font:
+    italic
+    small-caps
+    bold
+    1em/<span class="codeHighlight">120%</span>
+    Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* number */</span>
+body {
+  font:
+    italic
+    small-caps
+    bold
+    1em/<span class="codeHighlight">1.2</span>
+    Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write some shorthand line-height rules</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-04-02.html">exercises-start/exercise-213-04-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with <code>font: 1em/normal Cambria, Georgia, serif</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  font:
+    1em/<span class="codeHighlight">normal</span>
+    Cambria, Georgia, serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with <code>font: 1em/140% Futura, 'Trebuchet MS', sans-serif</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  font:
+    1em/<span class="codeHighlight">140%</span>
+    Futura, 'Trebuchet MS', sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set with <code>font: 1em/1.6em 'Hoefler Text', Garamond, serif</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  font:
+    1em/<span class="codeHighlight">1.6em</span>
+    'Hoefler Text', Garamond, serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set with <code>font: 1em/1.8 Helvetica, Arial, sans-serif</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  font:
+    1em/<span class="codeHighlight">1.8</span>
+    Helvetica, Arial, sans-serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-04-02.html">exercises-finished/exercise-213-04-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Inheritance</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some CSS properties are <b>inherited</b> - which means that their values are passed down to  descendant elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For the <code>line-height</code> property, inheritance is <b>a little more complicated</b> than many other properties.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>To see how <code>line-height</code> inheritance works, let’s look at four examples where the <code>line-height</code> is set on the <code>&lt;body&gt;</code> element only.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Percentage line-height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;body&gt;</code> element has a <code>line-height</code> <b>percentage value</b> of <code>120%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+body {
+    font-size: 16px;
+    line-height: <span class="codeHighlight">120%</span>;
+}
+
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+footer { font-size: 12px; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;body&gt;</code> element’s <code>font-size</code> of <code>16px</code> multiplied by the <code>line-height</code> value of <code>120%</code> creates a <b>calculated</b> <code>line-height</code> value of <code>19.2px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>16px x 120% = 19.2px</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This calculated value of <code>19.2px</code> is <b>inherited</b> by descendant elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>16px x 120% = 19.2px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;h1&gt;</code></td>
+                  <td><code>32px</code></td>
+                  <td>inherits <code>19.2px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td>inherits <code>19.2px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td><code>12px</code></td>
+                  <td>inherits <code>19.2px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>This results is a <code>line-height</code> which is acceptable for paragraph content, but <b>too small for headings</b> and <b>too large for the footer text</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length line-height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;body&gt;</code> element has a <code>line-height</code> <b>length value</b> of <code>20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+body {
+    font-size: 16px;
+    line-height: <span class="codeHighlight">20px</span>;
+}
+
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+footer { font-size: 12px; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The length value of <code>20px</code> is <b>inherited directly by descendant elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>20px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;h1&gt;</code></td>
+                  <td><code>32px</code></td>
+                  <td>inherits <code>20px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td>inherits <code>20px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td><code>12px</code></td>
+                  <td>inherits <code>20px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>Again, this results in a <code>line-height</code> which is acceptable for paragraph content, but <b>too small for headings</b> and <b>too large for the footer text</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Normal line-height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;body&gt;</code> element has a <code>line-height</code> <b>keyword value</b> of <code>normal</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+body {
+    font-size: 16px;
+    line-height: <span class="codeHighlight">normal</span>;
+}
+
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+footer { font-size: 12px; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>normal</code> value rather than a calculated value is <b>inherited by descendant elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers may interpret the actual normal value <b>in slightly different ways</b>, but the value is generally a number of <code>1.2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>16px x 1.2 = 19.2px</code> (approx)</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;h1&gt;</code></td>
+                  <td><code>32px</code></td>
+                  <td><code>32px x 1.2 = 38.4px</code> (approx)</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>16px x 1.2 = 19.2px</code> (approx)</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td><code>12px</code></td>
+                  <td><code>16px x 1.2 = 14.4px</code> (approx)</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>This method results in a <code>line-height</code> that is <b>acceptable for all elements</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Number line-height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;body&gt;</code> element has a <code>line-height</code> <b>number value</b> of <code>1.2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+body {
+    font-size: 16px;
+    line-height: <span class="codeHighlight">1.2</span>;
+}
+
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+footer { font-size: 12px; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The factor of <code>1.2</code> rather than a calculated value is <b>inherited by descendant elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>16px x 1.2 = 19.2px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;h1&gt;</code></td>
+                  <td><code>32px</code></td>
+                  <td><code>32px x 1.2 = 38.4px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px</code></td>
+                  <td><code>16px x 1.2 = 19.2px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td><code>12px</code></td>
+                  <td><code>16px x 1.2 = 14.4px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>This method results in a <code>line-height</code> which is <b>acceptable for all elements</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which method is best?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Number values</b> are the preferred method as they work well when inherited.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Unlike the “normal” keyword, number values allow us to set <b>specific <code>line-height</code> for different types of elements</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write some line-height rules to observe inheritance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-04-03.html">exercises-start/exercise-213-04-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with <code>line-height: normal</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  line-height: normal;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with <code>line-height: 120%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  line-height: 120%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set with <code>line-height: 1.2em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  line-height: 1.2em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set with <code>line-height: 1.2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  line-height: 1.2;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the different <code>line-height</code> values affect the smaller text. The percentage and length values have <code>line-height</code> that is <b>too large</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-04-03.html">exercises-finished/exercise-213-04-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Ideal Line-height?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Research has shown that <code>line-height</code> that is too small <b>can make content harder to read</b> as users have to work harder to move from line to line.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Similarly, <code>line-height</code> that is too large <b>can force users eyes to travel further</b> to read content, which can become tiring.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html">WCAG 2.0 guidelines</a></b> state that: <em>“line spacing is at least space-and-a-half within paragraphs”</em>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <b>general content such as paragraphs</b> should be set to:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  <span class="codeHighlight">line-height: 1.5;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The same rules should apply to <b>ordered and unordered lists</b> which have multiple lines of content inside each list item.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+ul li,
+ol li {
+  <span class="codeHighlight">line-height: 1.5;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, content-heavy list items <b>could then bleed into each other</b>, so you might want to add additional space after list items.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+ul li,
+ol li {
+  line-height: 1.5;
+  <span class="codeHighlight">margin-bottom: .5em;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>On the other hand, headings often <b>look strange when there is too much <code>line-height</code></b>, so they could be set to a smaller value:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  <span class="codeHighlight">line-height: 1.1;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with anything, the best way to determine the ideal line length for the content on your site is to <b>test with real users</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Inline boxes and line-height</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline elements are elements that <b>do not form new blocks of content</b>; the content is distributed in lines.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline elements</b> include elements such as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Inline elements --&gt;</span>
+&lt;a&gt;
+&lt;abbr&gt;
+&lt;b&gt; 
+&lt;cite&gt;
+&lt;code&gt;
+&lt;em&gt;
+&lt;i&gt;
+&lt;span&gt;
+&lt;sub&gt;
+&lt;sup&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline elements sit inside <b>inline boxes</b> - that help determine how width, height, margin, padding, borders and margins behave.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>How do browsers <b>determine the height</b> of these inline boxes?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline box height</b> is determined by the <code>line-height</code> and <code>font-size</code>, using the following steps.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Step 1</b>: Find the difference between the <code>font-size</code> and <code>line-height</code>. This determines the leading.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the <b>following example</b>, the <code>line-height</code> is <code>20px</code> and the <code>font-size</code> is <code>16px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;line-height&gt; - &lt;font-size&gt; = &lt;leading&gt;
+
+<span class="codeComment">/* Example */</span>
+20px - 16px = 4px leading
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Step 2</b>: Divide the leading in half to create a “half-leading” value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;leading&gt; / 2 = &lt;half-leading&gt;
+
+<span class="codeComment">/* Example */</span>
+4px / 2 = 2px half-leading
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Step 3</b>: Apply this half-leading value to the top and bottom of the content area.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Top half-leading</td>
+                  <td><code>2px</code></td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td>Bottom half-leading</td>
+                  <td><code>2px</code></td>
+                </tr>
+                <tr>
+                  <td><b>Total height</b></td>
+                  <td><code>20px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/line-height_01.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, if the <code>line-height</code> is smaller than the <code>font-size</code>, the inline box<b> becomes the height of the</b> <code>line-height</code> <b>only</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In these circumstances, the content area <b>pokes out the top and bottom</b> of the inline box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;line-height&gt; - &lt;font-size&gt; = &lt;leading&gt;
+
+<span class="codeComment">/* Example */</span>
+12px - 16px = -4px leading
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;leading&gt; / 2 = &lt;half-leading&gt;
+
+<span class="codeComment">/* Example */</span>
+-4px / 2 = -2px half-leading
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Top half-leading</td>
+                  <td><code>-2px</code></td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td>Bottom half-leading</td>
+                  <td><code>-2px</code></td>
+                </tr>
+                <tr>
+                  <td><b>Total height</b></td>
+                  <td><code>12px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/line-height_02.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>You can also set the <code>line-height</code> to a value of <code>0</code> which means the inline element <b> has no height at all</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;line-height&gt; - &lt;font-size&gt; = &lt;leading&gt;
+
+<span class="codeComment">/* Example */</span>
+0 - 16px = -16px leading
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;leading&gt; / 2 = &lt;half-leading&gt;
+
+<span class="codeComment">/* Example */</span>
+-16px / 2 = -8px half-leading
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Top half-leading</td>
+                  <td><code>-8px</code></td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td>Bottom half-leading</td>
+                  <td><code>-8px</code></td>
+                </tr>
+                <tr>
+                  <td><b>Total height</b></td>
+                  <td><code>0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/line-height_03.svg" alt="">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Using line-height to align content vertically</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>Line-height</code> can be used to vertically align content inside a parent container <b>as long as the content is one line only</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, you could have some text with font-size of <code>16px</code> that needs to be <b>vertically-aligned inside a parent</b> that is <code>200px</code> high.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you set the <code>line-height</code> to <code>200px</code>, the text <b>automatically sits in the vertical center</b> of the parent element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;line-height&gt; - &lt;font-size&gt; = &lt;leading&gt;
+
+<span class="codeComment">/* Example */</span>
+200px - 16px = 184px leading
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Formula */</span>
+&lt;leading&gt; / 2 = &lt;half-leading&gt;
+
+<span class="codeComment">/* Example */</span>
+184px / 2 = 92px half-leading
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Top half-leading</td>
+                  <td><code>92px</code></td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td>Bottom half-leading</td>
+                  <td><code>92px</code></td>
+                </tr>
+                <tr>
+                  <td><b>Total height</b></td>
+                  <td><code>200px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/line-height_04.svg" alt="">
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Write some line-height rules for inline boxes</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-04-04.html">exercises-start/exercise-213-04-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with <code>line-height: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  line-height: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with <code>line-height: 12px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  line-height: 12px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the line box has less height than the content area, so <b>text pokes out the top and bottom of the line box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set with <code>line-height: 0</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  line-height: 0;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the line box has no height at all, so <b>text pokes out the top and bottom of the line box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set with <code>line-height: 200px</code> and <code>text-align: center</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  line-height: 200px;
+  text-align: center;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how <code>line-height</code> is used here to <b>center the text vertically</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-04-04.html">exercises-finished/exercise-213-04-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

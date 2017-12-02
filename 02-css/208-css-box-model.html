@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>208: CSS Box Model</title>
+    <meta name="description" content="The CSS box model describes the rectangular boxes that are created for every element in the document tree">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>208</h5>
+          <h1>CSS Box Model</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>CSS box model</b> describes the rectangular boxes that are created for every element in the document tree.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Box model characteristics</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Content box</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The content box is the <b>invisible box</b> that wraps around the contents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_01.svg" alt="Content box">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding box</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be applied to the outside of the content box, <b>creating a padding box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding creates space <b>between the edge of the element and its content</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_02.svg" alt="Padded box">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border box</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The border box specifies the <b>width, color and style of a border</b> that is added on top of the outside of padding box.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_03.svg" alt="Border box">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Background-color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If present, background-color will spread <b>across the entire background area</b> of the box - including under the border box.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_04.svg" alt="Background-color behind border">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Background-image</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>One or more background-images can be applied <b>on top of the background-color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Background-images will initially be positioned <b>in the top left corner of the padding-box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_05.svg" alt="Background-image in front of background-color">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, background-images, can be positioned <b>anywhere inside and even outside</b> of the background area of the box.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin can be applied <b>to the outside of elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins create space between the edge of an element and <b>any adjacent elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-extracted_06.svg" alt="Margin around element">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin is not included in the calculation of the <b>width of the box model</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Box model sizing</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are three different ways that <b>width and height can be associated</b> with boxes. </p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>1. Boxes can be stretched by default</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A box is <b>stretched by default</b> when its default behaviour is to stretch to the full width of the parent container or the viewport.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, all block-level boxes <b>stretch by default</b> to the full width of the parent container or the viewport.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-size_01.svg" alt="Block box stretched by default">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, there are <b>no boxes that stretch to the full height</b> of the parent container or viewport by default.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>2. Boxes can be collapsed by default</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A box is <b>collapsed by default</b> when its default behaviour is to collapse so that the box is only as wide or tall as the content inside.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, inline, inline-block, absolute and float boxes are <b>collapsed by default</b> - they are only as wide or tall as the content inside.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-size_02.svg" alt="Inline box collapsed by default">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>3. Boxes can be sized by authors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some boxes <b>can be sized</b> by authors using length values to define a width or height.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box sized with length values */</span>
+.box {
+  <span class="codeHighlight">width: 200px;
+  height: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some boxes <b>can be sized</b> by authors using percentage values to define a width or height.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box sized with percentage values */</span>
+.box {
+  <span class="codeHighlight">width: 100%;
+  height: 100%;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some boxes <b>can be stretched</b> by authors using <code>left</code> and <code>right</code>, or <code>top</code> and <code>bottom</code> properties.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box given stretched width */</span>
+.box {
+  <span class="codeHighlight">left: 0;
+  right: 0</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box given stretched height */</span>
+.box {
+  <span class="codeHighlight">top: 0;
+  bottom: 0</span>
+}
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Additive vs subtractive boxes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The box model can work in one of two ways - using either <b>an additive or subtractive model</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Additive</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With the additive model, width or height are <b>applied to the content box</b>, and <code>padding</code> or <code>border</code> are added on top of the overall width.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s use <b>an example of a box</b> that is set to <code>200px</code> wide, and has <code>20px</code> of <code>padding</code> on all sides and a <code>5px</code> wide <code>border</code> on all side.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example {
+  <span class="codeHighlight">width: 200px;
+  padding: 20px;
+  border: 5px solid red;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This would produce the following <b>additive model</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Border left</td>
+                  <td class="right">5px</td>
+                </tr>
+                <tr>
+                  <td>Padding left</td>
+                  <td class="right">20px</td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td class="right">200px</td>
+                </tr>
+                <tr>
+                  <td>Padding right</td>
+                  <td class="right">20px</td>
+                </tr>
+                <tr>
+                  <td>Border right</td>
+                  <td class="right">5px</td>
+                </tr>
+                <tr>
+                  <td><b>Total width</b></td>
+                  <td class="right"><b>250px</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Subtractive</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With the subtractive model, width or height are <b>applied to the border box</b>, so the overall width includes any <code>padding</code> or <code>border</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Using the example above, a subtractive model would <b>produce a very different overall width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The content area is <b>reduced in width</b> to accommodate the overall width.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Border left</td>
+                  <td class="right">5px</td>
+                </tr>
+                <tr>
+                  <td>Padding left</td>
+                  <td class="right">20px</td>
+                </tr>
+                <tr>
+                  <td>Content area</td>
+                  <td class="right">150px</td>
+                </tr>
+                <tr>
+                  <td>Padding right</td>
+                  <td class="right">20px</td>
+                </tr>
+                <tr>
+                  <td>Border right</td>
+                  <td class="right">5px</td>
+                </tr>
+                <tr>
+                  <td><b>Total width</b></td>
+                  <td class="right"><b>200px</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which is used where?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>While the subtractive model seems more intuitive, <b>the additive model is the default behaviour in many cases</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, this depends on whether the box is <b>block, inline or inline-block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It also depends on whether the box is <b>stretched by default</b> or given a length or percentage width/height.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The box-sizing property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>box-sizing</code> property can be used to a box with an <b>additive or subtractive model</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>content-box</code> value is the default value and applies the <b>additive</b> box-sizing behaviour.
+            </p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box-sizing */</span>
+p {
+  box-sizing: <span class="codeHighlight">content-box</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>border-box</code> value applies the <b>subtractive</b> box-sizing behavior.
+            </p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Box-sizing */</span>
+p {
+  box-sizing: <span class="codeHighlight">border-box</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In recent years, some experts have recommend that <code>box-sizing: border-box</code> should be <b>applied to all elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This declaration makes it easier when calculating widths - <b>especially for responsive layouts</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Block boxes</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Appearance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes <b>form visually as blocks</b>; they flow down the page in normal flow.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-block.svg" alt="Block boxes">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Default width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, block boxes <b>stretch to the width of their containing block</b> or the width of the viewport.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>While in this stretched width state, block boxes <b>use a subtractive model for the overall width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>included in the overall width</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length or percentage widths</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes can be given <b>length or percentage widths</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Block box with length width */</span>
+p {
+  width: <span class="codeHighlight">200px</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Block box with percentage width */</span>
+p {
+  width: <span class="codeHighlight">50%</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When given a length or percentage width value, block boxes <b>use an additive model for the overall width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall width</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Collapsed width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes can even be forced to <b>behave like an inline element</b> by setting the <code>display</code> property with the <code>inline</code> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Collapsing a block element */</span>
+p {
+  <span class="codeHighlight">display: inline;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that the width will <b>collapse to the widest content inside</b> the element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Default height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, <b>the height of block boxes is collapsed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>While in this collapsed height state, block boxes <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes can be given a <b>height using a length value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Block box with length height */</span>
+p {
+  height: <span class="codeHighlight">200px</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When a length height is applied, block boxes <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Percentage height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes can also be given a <b>height using a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Block box with percentage height */</span>
+p {
+  height: <span class="codeHighlight">30%</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When a percentage height is applied, block boxes <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stretched height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block boxes can also be given a <b>stretched height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This will make the element’s height <b>stretch in relation to the parent element</b> or the initial containing box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  <span class="codeHighlight">position: absolute;
+  top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When a stretched height is applied, block boxes <b>use a subtractive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>included in the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margins</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins can be <b>applied to all sides of block boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This margin <b>affects elements on any side</b> of the block-level element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Top and bottom margins <b>will collapse</b> when in contact with other block box margins above or below.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-block-margins_02.svg" alt="Block box margins collapsing on the vertical plane">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be <b>applied to all sides of block boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This padding <b>affects elements on any side</b> of the block-level element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Borders can be <b>applied to all sides of block boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This border <b>affects elements on any side</b> of the block-level element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Overflow</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Overflow can be <b>applied to block boxes</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Style some block-level elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-208-01.html">exercises-start/exercise-208-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set a width of <code>200px</code> for the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set a width of <code>60%</code> for the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  width: 60%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>display: inline</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  display: inline;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set a height of <code>80px</code> for the element with a class of <code>example4</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  height: 80px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-208-01.html">exercises-finished/exercise-208-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Inline boxes</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Appearance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline boxes are <b>distributed in lines</b>. They can also wrap over multiple lines.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/elements-inline.svg" alt="Inline boxes">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, the <b>width of inline boxes is collapsed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline_01.svg" alt="Inline box width collapsed">
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline boxes <b>can only be given width</b> if their display property is changed to <code>block</code> or <code>inline-block</code>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, the <b>height of inline boxes is collapsed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline_02.svg" alt="Inline box height collapsed">
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline boxes <b>can only be given height</b> if their display property is changed to <code>block</code> or <code>inline-block</code>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, margin can be applied to all sides, but these margins <b>only affect content on left and right sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline_03.svg" alt="Inline box margins affecting sides only">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, padding can be applied to all sides, but this padding <b>only affects content on left and right sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline_04.svg" alt="Inline box padding affecting sides only">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, borders can be applied to all sides. These borders are visible on all side but <b>only affect content on left and right sides</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline_05.svg" alt="Inline box border affecting sides only">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Overflow</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, overflow does <b>not apply to inline boxes</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Style some inline elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-208-02.html">exercises-start/exercise-208-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set padding of <code>20px</code> for the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  padding: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set a border of <code>10px solid red</code> for the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  border: 10px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set a margin of <code>20px</code> for the element with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  margin: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set a width of <code>200px</code> for the element with a class of <code>example4</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This width should have <b>no effect on the element</b> as inline elements do not take a width.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to set a height of <code>50px</code> for the element with a class of <code>example5</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This width should have <b>no effect on the element</b> as inline elements do not take a height.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  height: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-208-02.html">exercises-finished/exercise-208-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Inline-block boxes</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Appearance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline-block boxes are <b>distributed in lines</b> like inline boxes. They can also wrap over multiple lines.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, width, height, margin, border and padding can be applied to inline-boxes <b>like  block boxes</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, <b>inline-block box width is collapsed</b>. However, the width can be sized or stretched.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline-block_01.svg" alt="Inline-block box with collapsed width">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, <b>inline-block box height is collapsed</b>. The height can be sized and stretched (if given positioning).</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline-block_02.svg" alt="Inline-block box with collapsed height">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin can be applied to <b>all sides of inline-block boxes</b>. This margin affects elements on all sides.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline-block_03.svg" alt="Inline-block box showing margins affecting all sides">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be applied to <b>all sides of inline-block boxes</b>. This padding affects elements on all sides.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline-block_04.svg" alt="Inline-block box shoeing padding affecting all sides">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Border can be applied to <b>all sides of inline-block boxes</b>. This border affects elements on all sides.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-model-inline-block_05.svg" alt="Inline-block box showing border affecting all sides">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Overflow</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Overflow <b>can be applied</b> to inline-block boxes.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Style some inline-block elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-208-03.html">exercises-start/exercise-208-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set padding of <code>20px</code> for the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  padding: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set a border of <code>10px solid red</code> for the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  border: 10px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set a margin of <code>20px</code> for the element with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  margin: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set a width of <code>200px</code> for the element with a class of <code>example4</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  width: 200px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to set a height of <code>50px</code> for the element with a class of <code>example5</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  height: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-208-03.html">exercises-finished/exercise-208-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="209-css-positioning.html">209: CSS Positioning</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 205-07-08: Write some :nth-last-child selectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+/* Add styles here */
+
+.one li:nth-last-child(3) {
+  color: mediumblue;
+}
+
+.two li:nth-last-child(3n) {
+  color: mediumblue;
+}
+
+.three li:nth-last-child(3n+1) {
+  color: mediumblue;
+}
+
+.four li:nth-last-child(3n-1) {
+  color: mediumblue;
+}
+
+.five li:nth-last-child(even) {
+  color: mediumblue;
+}
+
+.six li:nth-last-child(odd) {
+  color: mediumblue;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 205-07-08: Write some :nth-last-child selectors</h1>
+
+      <h2>Example 1 - :nth-last-child(3)</h2>
+      <ul class="one">
+        <li> 12th last child </li>
+        <li> 11th last child </li>
+        <li> 10th last child </li>
+        <li> 9th last child </li>
+        <li> 8th last child </li>
+        <li> 7th last child </li>
+        <li> 6th last child </li>
+        <li> 5th last child </li>
+        <li> 4th last child </li>
+        <li> 3rd last child </li>
+        <li> 2nd last child </li>
+        <li> Last child </li>
+      </ul>
+
+      <h2>Example 2 - :nth-last-child(3n)</h2>
+      <ul class="two">
+        <li> 12th last child </li>
+        <li> 11th last child </li>
+        <li> 10th last child </li>
+        <li> 9th last child </li>
+        <li> 8th last child </li>
+        <li> 7th last child </li>
+        <li> 6th last child </li>
+        <li> 5th last child </li>
+        <li> 4th last child </li>
+        <li> 3rd last child </li>
+        <li> 2nd last child </li>
+        <li> Last child </li>
+      </ul>
+
+      <h2>Example 3 - :nth-last-child(3n+1)</h2>
+      <ul class="three">
+        <li> 12th last child </li>
+        <li> 11th last child </li>
+        <li> 10th last child </li>
+        <li> 9th last child </li>
+        <li> 8th last child </li>
+        <li> 7th last child </li>
+        <li> 6th last child </li>
+        <li> 5th last child </li>
+        <li> 4th last child </li>
+        <li> 3rd last child </li>
+        <li> 2nd last child </li>
+        <li> Last child </li>
+      </ul>
+
+      <h2>Example 4 - :nth-last-child(3n-1)</h2>
+      <ul class="four">
+        <li> 12th last child </li>
+        <li> 11th last child </li>
+        <li> 10th last child </li>
+        <li> 9th last child </li>
+        <li> 8th last child </li>
+        <li> 7th last child </li>
+        <li> 6th last child </li>
+        <li> 5th last child </li>
+        <li> 4th last child </li>
+        <li> 3rd last child </li>
+        <li> 2nd last child </li>
+        <li> Last child </li>
+      </ul>
+
+      <h2>Example 5 - :nth-last-child(even)</h2>
+      <ul class="five">
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+      </ul>
+
+      <h2>Example 6 - :nth-last-child(odd)</h2>
+      <ul class="six">
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+        <li> Even last child </li>
+        <li> Odd last child </li>
+      </ul>
+    </div>
+  </body>
+</html>

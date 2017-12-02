@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#AAAAAA;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#568312;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#787878;}
+	.st4{fill:#646464;}
+	.st5{font-family:'Consolas';}
+	.st6{font-size:22px;}
+	.st7{fill:#B04636;}
+	.st8{opacity:0.5;fill:#FFFFFF;}
+	.st9{fill:#00487A;}
+	.st10{fill:#9BB79B;}
+	.st11{fill:none;stroke:#00487A;stroke-width:10;stroke-miterlimit:10;}
+	.st12{font-size:18px;}
+</style>
+<g id="lines">
+	<line class="st0" x1="152" y1="22" x2="152" y2="64"/>
+	<polyline class="st0" points="58,168 58,65 267,65 267,150 	"/>
+	<polyline class="st0" points="198,170 198,150 337,150 337,235 337,255 	"/>
+	<line class="st0" x1="198" y1="215" x2="198" y2="255"/>
+	<polyline class="st0" points="477,320 477,235 337,235 	"/>
+</g>
+<g id="nodes">
+	<g>
+		<rect x="95" class="st1" width="115" height="45"/>
+	</g>
+	<g>
+		<rect y="85" class="st1" width="115" height="45"/>
+	</g>
+	<g>
+		<rect y="145" class="st1" width="115" height="45"/>
+	</g>
+	<g>
+		<rect x="210" y="85" class="st1" width="115" height="45"/>
+	</g>
+	<g>
+		<g>
+			<rect x="420" y="255" class="st1" width="115" height="45"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 127.8086 28.5)" class="st2 st5 st6">html</text>
+	<text transform="matrix(1 0 0 1 34.3086 113.5)" class="st2 st5 st6">head</text>
+	<text transform="matrix(1 0 0 1 28.2607 174.5)" class="st2 st5 st6">title</text>
+	<text transform="matrix(1 0 0 1 243.3089 113.5)" class="st2 st5 st6">body</text>
+	<g>
+		<rect x="280" y="170" class="st1" width="115" height="45"/>
+	</g>
+	<text transform="matrix(1 0 0 1 331.2855 197.5)" class="st2 st5 st6">p</text>
+	<g>
+		<rect x="140" y="170" class="st1" width="115" height="45"/>
+	</g>
+	<text transform="matrix(1 0 0 1 191.2855 197.5)" class="st2 st5 st6">p</text>
+	<g>
+		<path class="st2" d="M311,303.4c-16,0-28.3-3.2-30.5-3.8v-44.1h114v43.8c-2.6-0.7-12.6-3.2-26.4-3.2c-10.1,0-20.1,1.3-29.7,3.9
+			C329.9,302.3,320.7,303.4,311,303.4L311,303.4z"/>
+		<path class="st3" d="M394,256v42.7c-3.3-0.9-12.8-3-25.9-3c-10.2,0-20.2,1.3-29.8,3.9c-8.5,2.3-17.6,3.4-27.2,3.4
+			c-15.2,0-27.1-2.9-30-3.7V256H394 M395,255H280v45c0,0,13.2,3.9,31,3.9c8.4,0,17.9-0.9,27.5-3.4c10.8-2.9,21-3.8,29.6-3.8
+			c16.2,0,26.9,3.3,26.9,3.3V255L395,255z"/>
+	</g>
+	<g>
+		<path class="st2" d="M171,303.4c-16,0-28.3-3.2-30.5-3.8v-44.1h114v43.8c-2.6-0.7-12.6-3.2-26.4-3.2c-10.1,0-20.1,1.3-29.7,3.9
+			C189.9,302.3,180.7,303.4,171,303.4L171,303.4z"/>
+		<path class="st3" d="M254,256v42.7c-3.3-0.9-12.8-3-25.9-3c-10.2,0-20.2,1.3-29.8,3.9c-8.5,2.3-17.6,3.4-27.2,3.4
+			c-15.2,0-27.1-2.9-30-3.7V256H254 M255,255H140v45c0,0,13.2,3.9,31,3.9c8.4,0,17.9-0.9,27.5-3.4c10.8-2.9,21-3.8,29.6-3.8
+			c16.2,0,26.9,3.3,26.9,3.3V255L255,255z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 167.0941 285)" class="st4 st5 st6">Hello</text>
+	<text transform="matrix(1 0 0 1 453.1419 283.5)" class="st2 st5 st6">span</text>
+	<text transform="matrix(1 0 0 1 313.1419 283.5)" class="st4 st5 st6">I am</text>
+	<g>
+		<path class="st2" d="M451,368.4c-16,0-28.3-3.2-30.5-3.8v-44.1h114v43.8c-2.6-0.7-12.6-3.2-26.4-3.2c-10.1,0-20.1,1.3-29.7,3.9
+			C469.9,367.3,460.7,368.4,451,368.4L451,368.4z"/>
+		<path class="st3" d="M534,321v42.7c-3.3-0.9-12.8-3-25.9-3c-10.2,0-20.2,1.3-29.8,3.9c-8.5,2.3-17.6,3.4-27.2,3.4
+			c-15.2,0-27.1-2.9-30-3.7V321H534 M535,320H420v45c0,0,13.2,3.9,31,3.9c8.4,0,17.9-0.9,27.5-3.4c10.8-2.9,21-3.8,29.6-3.8
+			c16.2,0,26.9,3.3,26.9,3.3V320L535,320z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 447.0941 348.5)" class="st4 st5 st6">happy</text>
+</g>
+<g id="labels">
+	<rect class="st8" width="650" height="400"/>
+	<g>
+		<rect x="305" y="19" class="st9" width="213" height="40"/>
+	</g>
+	<text transform="matrix(1 0 0 1 320.0002 43.02)" class="st2 st5 st12">font-size: 16px</text>
+	<g>
+		<rect x="372" y="105" class="st9" width="213" height="60"/>
+	</g>
+	<text transform="matrix(1 0 0 1 387.0002 129.02)"><tspan x="0" y="0" class="st10 st5 st12">font-size: 16px</tspan><tspan x="0" y="21.6" class="st2 st5 st12">color: #000</tspan></text>
+	<g>
+		<rect x="190" y="319" class="st9" width="213" height="60"/>
+	</g>
+	<text transform="matrix(1 0 0 1 205.0002 343.02)"><tspan x="0" y="0" class="st10 st5 st12">font-size: 16px</tspan><tspan x="0" y="21.6" class="st2 st5 st12">color: red</tspan></text>
+	<g>
+		<g>
+			<polyline class="st11" points="305,39 267,39 267,66.1 			"/>
+			<g>
+				<polygon class="st9" points="254.5,62.4 267,84 279.5,62.4 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<polyline class="st11" points="372,135 198,135 198,152.1 			"/>
+			<g>
+				<polygon class="st9" points="185.5,148.4 198,170 210.5,148.4 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st11" x1="337" y1="135" x2="337" y2="152.1"/>
+			<g>
+				<polygon class="st9" points="324.5,148.4 337,170 349.5,148.4 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<polyline class="st11" points="477,317.9 477,348 403,348 			"/>
+			<g>
+				<polygon class="st9" points="464.5,321.6 477,300 489.5,321.6 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

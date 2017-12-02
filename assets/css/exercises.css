@@ -1,0 +1,78 @@
+/* base styles */
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  margin: 0 0 1em;
+  font-size: 1.8em;
+}
+
+h2 {
+  margin: 2em 0 1em;
+  font-size: 1.4em;
+}
+
+h3 {
+  margin: 1em 0 .5em;
+  font-size: 1em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: black;
+}
+
+/* classes */
+
+.container {
+  max-width: 35em;
+  border: 1px solid #ddd;
+  padding: 1em;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin: 0 0 3px;
+}
+
+.form-input {
+  border: 1px solid #aaa;
+  padding: .5em;
+  font-size: 100%;
+  line-height: 1;
+}
+
+.form-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.parent {
+  border: 1px solid red;
+  margin: 1em;
+  padding: 1em;
+}
+
+.parent p {
+  margin: 0;
+}
