@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>201: CSS Terms</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home</a> | <a href="index.html">CSS</a> | <a href="#/">Start</a>
+        </div>
+
+        <section data-background="#222">
+          <h1 class="title">CSS</h1>
+          <h2 class="subtitle">Terms</h2>
+        </section>
+
+        <section>
+          <ul class="font-xs">
+            <li><a href="#/3">HTML elements</a></li>
+            <li><a href="#/12">HTML attributes</a></li>
+            <li><a href="#/35">The document tree</a></li>
+            <li><a href="#/55">Block-level elements</a></li>
+            <li><a href="#/60">Inline elements</a></li>
+            <li><a href="#/65">Containing boxes</a></li>
+            <li><a href="#/69">Line boxes</a></li>
+            <li><a href="#/72">Anonymous boxes</a></li>
+            <li><a href="#/75">User agents</a></li>
+            <li><a href="#/80">The viewport</a></li>
+          </ul>
+        </section>
+
+        <section data-background="#fff">
+          <p>Before we dive into how CSS works, we are going to look at <b>a
+          range of terms that are commonly used</b> when defining aspects of
+          CSS.</p>
+        </section>
+
+        <section data-background="#568312">
+          <h2>HTML elements</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>HTML elements</b> are the building blocks of HTML markup. They
+          help us define the content and structure of web pages.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>HTML elements generally consist of a <b>start tag</b> (or opening
+          tag) and an <b>end tag</b> (or closing tag).</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;p&gt;</span>
+  This is a paragraph element
+<span class="codeHighlight">&lt;/p&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Void elements</b> have no content and no end tag. </p>
+        </section>
+
+        <section data-background="#fff">
+          <p>They can be <b>written in two different ways</b> depending on the
+          doctype you use - with or without the trailing forward slash.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML 4.01 markup --&gt;</span>
+&lt;br&gt;
+&lt;hr&gt;
+&lt;img&gt;
+&lt;input&gt;
+&lt;link&gt;
+&lt;meta&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- XHTML 1.0 markup --&gt;</span>
+&lt;br /&gt;
+&lt;hr /&gt;
+&lt;img /&gt;
+&lt;input /&gt;
+&lt;link /&gt;
+&lt;meta /&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Using the HTML 5 doctype, you can use <b>either of these
+          methods</b>.</p>
+        </section>
+
+        <section data-background="#568312">
+          <h2>HTML attributes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>HTML attributes</b> are used to assign additional properties to
+          HTML elements.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Attributes generally consist of an <b>attribute</b> and an
+          attribute <b>value</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Attribute highlighted --&gt;</span>
+&lt;p <span class="codeHighlight">class</span>="intro"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Value highlighted --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Attributes <b>must appear in the start tag</b> (or within the tag
+          in the case of void elements)</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside the start tag --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside void elements --&gt;</span>
+&lt;hr <span class="codeHighlight">class="special"</span>&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>There can be <b>any number of attributes</b> applied to an HTML
+          element.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Three attributes in an element --&gt;</span>
+&lt;input
+  <span class="codeHighlight">id="email"
+  name="email"
+  type="text"</span>
+&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Attributes must be separated by spaces and <b>can appear in any
+          order</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Attribute values can be placed inside <b>double quotes, single
+          quotes or even no quotes</b> at all.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>>
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class='intro'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- No quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class=intro</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Some attributes allow <b>multiple values</b> inside the one attribute.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Two attribute --&gt;</span>
+&lt;p class="<span class="codeHighlight">intro highlight</span>"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>For attributes with more than one value, these values <b>must be
+          placed inside single or double quotes</b>. They cannot be left
+          unquoted.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro highlight"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">'intro highlight'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Some attributes <b>do not require a value</b> in HTML 5. These are
+          referred to as “boolean” attributes.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">&lt;input type="radio" <span class="codeHighlight">checked</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">disabled</span> /&gt;
+&lt;input type="email" <span class="codeHighlight">multiple</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">readonly</span> /&gt;
+&lt;option <span class="codeHighlight">selected</span>&gt; <span class="codeComment">...</span> &lt;/option&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#568312">
+          <h2>The document tree</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>All HTML documents are trees. Document trees are made from <b>HTML
+          elements</b>. The document tree is just like your family tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram01.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>An <b>ancestor</b> refers to any element that is connected but
+          further up the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;body&gt;</code> element is
+            the <b>ancestor</b> of the <code>&lt;ul&gt;</code> and
+            <code>&lt;li&gt;</code> elements.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram02.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>descendant</b> refers to any element that is connected but
+          lower down the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;ul&gt;</code> and
+            <code>&lt;li&gt;</code> elements are <b>descendants</b> of the
+            <code>&lt;body&gt;</code> element. </p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram03.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>parent</b> is an element that is connected and directly above
+          an element in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;body&gt;</code> element
+          is the <b>parent</b> of the <code>&lt;ul&gt;</code> element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram04.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>child</b> is an element that is connected and directly below
+          an element in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;ul&gt;</code> element is
+          the <b>child</b> element to the <code>&lt;body&gt;</code> element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram05.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>sibling</b> is an element that shares the same parent as
+          another element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;li&gt;</code> elements are
+          all <b>siblings</b> as they share the same parent, the
+          <code>&lt;ul&gt;</code> element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/tree-diagram06.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p>At any time an element could be <b>many things</b> - parent, child,
+          sibling, descendant, ancestor.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>CSS uses the document tree to <b>select and style elements</b>
+          within the document.</p>
+        </section>
+
+        <section data-background="#568312">
+          <h2>Block-level elements</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Block-level elements</b> are elements that are formatted
+          visually as blocks.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/box-modal-block.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Block-level elements</b> include elements such as: 
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">&lt;article&gt; <span class="codeComment">...</span> &lt;/article&gt;
+&lt;aside&gt; <span class="codeComment">...</span> &lt;/aside&gt;
+&lt;blockquote&gt; <span class="codeComment">...</span> &lt;/blockquote&gt;
+&lt;div&gt; <span class="codeComment">...</span> &lt;/div&gt;
+&lt;figure&gt; <span class="codeComment">...</span> &lt;/figure&gt;
+&lt;footer&gt; <span class="codeComment">...</span> &lt;/footer&gt;
+&lt;form&gt; <span class="codeComment">...</span> &lt;/form&gt;
+&lt;h1&gt; <span class="codeComment">...</span> &lt;/h1&gt;
+&lt;header&gt; <span class="codeComment">...</span> &lt;/header&gt;
+&lt;p&gt; <span class="codeComment">...</span> &lt;/p&gt;
+&lt;section&gt; <span class="codeComment">...</span> &lt;/section&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#568312">
+          <h2>Inline elements</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Inline elements</b> are elements that do not form new blocks of
+          content; the content is distributed in lines.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/box-model-inline.png" alt="">
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Inline elements</b> include elements such as:
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">&lt;a&gt; <span class="codeComment">...</span> &lt;/a&gt;
+&lt;abbr&gt; <span class="codeComment">...</span> &lt;/abbr&gt;
+&lt;b&gt; <span class="codeComment">...</span> &lt;/b&gt;
+&lt;cite&gt; <span class="codeComment">...</span> &lt;/cite&gt;
+&lt;code&gt; <span class="codeComment">...</span> &lt;/code&gt;
+&lt;em&gt; <span class="codeComment">...</span> &lt;/em&gt;
+&lt;i&gt; <span class="codeComment">...</span> &lt;/i&gt;
+&lt;span&gt; <span class="codeComment">...</span> &lt;/span&gt;
+&lt;strong&gt; <span class="codeComment">...</span> &lt;/strong&gt;
+&lt;sub&gt; <span class="codeComment">...</span> &lt;/sub&gt;
+&lt;sup&gt; <span class="codeComment">...</span> &lt;/sup&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#568312">
+          <h2>Containing boxes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>From a CSS perspective, all HTML elements - regardless of whether
+          they are block or inline elements - are <b>just a series of
+          boxes</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>containing box</b> is a box that contains other boxes -
+          descendant boxes.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/box-model-containing.png" alt="">
+        </section>
+
+        <section data-background="#568312">
+          <h2>Line boxes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Line boxes</b> wrap around lines of text inside block level
+          elements. They are defined by the highest and lowest points of any
+          inline boxes that are part of the line.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/box-model-line.png" alt="">
+        </section>
+
+        <section data-background="#568312">
+          <h2>Anonymous boxes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Anonymous boxes</b> are pieces of text inside block level
+          elements that are not made up of inline or block level elements.</p>
+        </section>
+
+        <section data-background="#fff">
+          <img src="../assets/img/box-model-anonymous.png" alt="">
+        </section>
+
+        <section data-background="#568312">
+          <h2>User agents</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The term <b>"user agent"</b> was coined in the early days of the
+          Internet. Back then, the Internet could only be navigated using the
+          keyboard.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Later, tools were developed to be the users “agent”, <b>acting on
+          the user’s behalf</b> so that the user didn't have to understand the
+          cryptic commands in order to retrieve information.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Today, nearly everyone uses a <b>web browser as their user
+          agent</b>. Common web browsers include Firefox, Chrome, Safari and
+          Opera.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>However, user agents can also include media players, search engine
+          bots and <b>assistive technologies</b> (software to assist people with
+          disabilities).</p>
+        </section>
+
+        <section data-background="#568312">
+          <h2>The viewport</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>viewport</b> is the full extent of the viewing area within
+          a browser window.</p>
+        </section>
+
+        <section data-background="#222">
+          <p class="font-xs">
+            <span class="authorDetails">Author:</span> <a class="highlightColorLight" href="http://maxdesign.com.au/about">Russ Weakley</a><br>
+            <span class="authorDetails">Site:</span> <a class="highlightColorLight" href="http://maxdesign.com.au">maxdesign.com.au</a><br>
+            <span class="authorDetails">Twitter:</span> <a class="highlightColorLight" href="http://twitter.com/russmaxdesign">twitter.com/russmaxdesign</a><br>
+            <span class="authorDetails">Slideshare:</span> <a class="highlightColorLight" href="http://slideshare.net/maxdesign">slideshare.net/maxdesign</a><br>
+            <span class="authorDetails">Linkedin:</span> <a class="highlightColorLight" href="http://linkedin.com/in/russweakley">linkedin.com/in/russweakley</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

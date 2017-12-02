@@ -1,0 +1,1726 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>204: CSS Selectors</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home</a> | <a href="index.html">CSS</a> | <a href="#/">Start</a>
+        </div>
+
+        <section data-background="#222">
+          <h1 class="title">CSS Selectors</h1>
+        </section>
+
+        <section data-background="#fff">
+          <p>This slideshow explores all 54 of the <b>CSS1, CSS2 and CSS3 selectors</b>.</p>
+        </section>
+
+        <section data-background="#568312">
+          <h2>Levels of CSS</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>World Wide Web Consortium</b>, or the W3C is an international community that develops open standards for the Web.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The W3C produces <b>specifications</b> on a wide range of web-related topics (including HTML, XHTML and CSS).</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>A <b>W3C Recommendation</b> is a specification that, after extensive consensus-building, has been endorsed by W3C Members and the Director.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The W3C follows the <b>five steps</b> when advancing a specification to Recommendation.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>1. Publication of the First Public Working Draft</b><br>
+          Document maturity level: Working Draft (WD)</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>2. Last Call announcement</b><br>
+          Document maturity level: Working Draft (WD)</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>3. Call for Implementations</b><br>
+          Document maturity level: Candidate Recommendation (CR)</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>4. Call for Review of a Proposed Recommendation</b><br>
+          Document maturity level: Proposed Recommendation (PR)</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>5. Publication as a Recommendation</b><br>
+          Document maturity level: W3C Recommendation (REC)</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>CSS Level 1 (CSS1)</b> became a W3C Recommendation on 17 December 1996. It was revised on 11 January 1999.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>CSS Level 2 (CSS2)</b> became a W3C Recommendation on 12 May 1998. It was revised on 11 April 2008.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>CSS Level 2 Revision 1 (CSS2.1)</b> became a W3C Recommendation on 7 June 2011.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Instead of writing CSS3 as a single specification, the W3C decided to <b>divide CSS3 into a series of individual specifications - called "modules"</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>This process allows the W3C to bring modules through the five step advancement process <b>at different rates</b> - rather than wait till all the individual modules are defined.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Despite some of the confusing titles given to various CSS3 modules, <b>there is no such things as CSS4</b>!</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Some of the modules start out at <b>level 3</b>, if they extend something from CSS2.1. Other modules <b>start out at level 1</b>, if they're something new, like flexbox.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>However, the level that a module is at has <b>no correlation with what version of CSS it's in</b>. They're all CSS3!</p>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Simple selectors</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Simple selectors</b> allow you to target HTML elements directly, as well as targeting elements that contain class or ID attributes.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>Type selector (CSS1)</li>
+            <li>Class selector (CSS1)</li>
+            <li>ID selector (CSS1)</li>
+            <li>Universal selector (CSS2)</li>
+          </ul>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Type selector (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>type selector</b> is written using an element type <code>(E)</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h1</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The type selector targets every instance of the element type regardless of their position in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>"p"</code> selector targets <b>any instance of the <code>&lt;p&gt;</code> element</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;</span>
+&lt;div&gt;&lt;/div&gt;
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The type selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at type selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+CLASS SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Class selector (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>class selector</b> is written using an optional element, followed by a <code>"."</code>, followed by the class name.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">.class-name</span> { }
+<span class="codeHighlight">E.class-name</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">.intro</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">.class-name</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>. class-name</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Class values are <b>case-sensitive</b>. In the following example, browsers interpret <code>".intro"</code> and <code>".Intro"</code> as different classes.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* case sensitive classes */</span>
+<span class="codeHighlight">.Intro</span> { }
+<span class="codeHighlight">.intro</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Classes can begin with <b>letters, digits, hyphens and underscores</b>. They can also include colons and periods.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* class names */</span>
+<span class="codeHighlight">.active</span> { }
+<span class="codeHighlight">.480wide</span> { }
+<span class="codeHighlight">.-members</span> { }
+<span class="codeHighlight">._classname</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>However, if class values start with a number or a special character, these characters or numbers <b>must be escaped</b> when writing CSS selectors.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped number */</span>
+<span class="codeHighlight">.\34 80wide</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div <span class="codeHighlight">class="480wide"</span>&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The class selector targets any HTML element that has the relevant class value regardless of their position in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>".intro"</code> selector targets any element that <b>contains a class</b> of <code>"intro"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.intro</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro"</span>&gt;&lt;/p&gt;
+&lt;div class=<span class="codeHighlight">"intro"</span>&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The class selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#444">
+          <h3>Adding elements</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p>Elements can be added before the <code>"."</code> to <b>make a selector more specific</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selectors */</span>
+<span class="codeHighlight">p</span>.intro { }
+<span class="codeHighlight">div</span>.intro { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>"p.intro"</code> selector <b>targets only</b> <code>&lt;p&gt;</code> elements that contain a class of <code>"intro"</code>. The <code>&lt;div&gt;</code> is not targeted.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p.intro</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;p class="intro"&gt;&lt;/p&gt;</span>
+&lt;div class="intro"&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#444">
+          <h3>Stringing classes together</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Classes can be added together</b> to make a selector more specific. The joined class selectors cannot contain whitespace.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>".one.two"</code> selector <b>targets any element that has both class attribute values</b> of <code>"one"</code> and <code>"two"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="one"&gt;&lt;/p&gt;
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+&lt;p class="two"&gt;&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>The class attribute values within the HTML document can be <b>written in any order</b>. The value <code>"one two"</code> is the same as <code>"two one"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.one.two</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+&lt;p class=<span class="codeHighlight">"two one"</span>&gt;&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Multiple classes can also be written in any order within the CSS. The selector <code>".one.two"</code> is the <b>same as</b> <code>".two.one"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.two.one</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class=<span class="codeHighlight">"one two"</span>&gt;&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          Multiple class selectors are not supported by Internet Explorer 6.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at class selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ID SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>ID selector (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>ID selector</b> is written using an optional element, followed by a <code>"#"</code>, followed by the ID name.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">#id-name</span> { }
+<span class="codeHighlight">E#id-name</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">#sidebar</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">#id-name</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s># id-name</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>ID names are <b>case-sensitive</b>. In the following example, browsers will interpret <code>"#nav"</code> and <code>"#Nav"</code> as different IDs.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Case sensitive */</span>
+<span class="codeHighlight">#nav</span> { }
+<span class="codeHighlight">#Nav</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Before HTML5, ID attribute values <b>had to begin with a letter</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In HTML5, ID attribute values are <b>allowed to have any characters or strings</b>, as long as the value is unique, is not an empty string, and does not contain whitespace.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* ID names */</span>
+<span class="codeHighlight">#active</span> { }
+<span class="codeHighlight">#480wide</span> { }
+<span class="codeHighlight">#-members</span> { }
+<span class="codeHighlight">#_classname</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>However, if ID values start with a number or a special character, these characters or numbers <b>must be escaped</b> when writing CSS selectors.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped number */</span>
+<span class="codeHighlight">#\34 80wide</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div <span class="codeHighlight">id="480wide"</span>&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The ID selector targets any HTML element that has the relevant ID value regardless of its position in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>"#nav"</code> selector targets <b>any instance</b> of the an element that contains an ID of <code>"nav"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">#nav</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p <span class="codeHighlight">id="nav"</span>&gt;&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The ID selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at ID selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+UNIVERSAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Universal selector (CSS2)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>universal selector</b> is written using a <code>"*"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">*</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The universal selector targets all elements within the document.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the universal selector targets <b>every element in the document</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">*</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;body&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The universal selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at universal selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Combinator selectors</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Combinators</b> allow you to combine individual selectors into new types of selectors.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>Descendant selectors (CSS1)</li>
+            <li>Child selectors (CSS2)</li>
+            <li>Adjacent sibling selectors (CSS2)</li>
+            <li>General sibling selectors (CSS3)</li>
+          </ul>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+DESCENDANT SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Descendant selectors (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>descendant selector</b> is written using two or more selectors separated by whitespace.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">ul li a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The descendant selector targets only elements that are descendants of other elements.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;a&gt;</code> that is a <b>descendant</b> of the <code>&lt;p&gt;</code> will be selected, but not the <code>&lt;a&gt;</code> that is a descendant of the <code>&lt;div&gt;</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p a</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;p&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/p&gt;</span>
+&lt;div&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>The key to descendant selectors is understanding <b>paths to elements</b>. There is a path to every element starting with the <code>&lt;html&gt;</code> element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Paths can be <b>written in full or in part to the element</b> or a partial path, depending on your need.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* example paths */</span>
+body .container .nav ul li <span class="codeHighlight">a</span> { }
+.container .nav ul li <span class="codeHighlight">a</span> { }
+.nav ul li <span class="codeHighlight">a</span> { }
+ul li <span class="codeHighlight">a</span> { }
+ul <span class="codeHighlight">a</span> { }
+li <span class="codeHighlight">a</span> { }
+<span class="codeHighlight">a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>When writing descendant selectors, try to keep your selectors as short as possible. Each selector should <b>only be as specific as needed</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* only as specific as needed */</span>
+.nav ul li a { }
+<span class="codeHighlight">.nav a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The descendant selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at descendant selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Child selectors (CSS2)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>child selector</b> is written using two selectors separated by a <code>"&gt;"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E > F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p > a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace within the selector is <b>optional</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p > a</span> { }
+<span class="codeHighlight">p>a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The child selector targets any element that is a direct child of another element. Only child elements, rather than descendant elements, will be selected.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, the <code>&lt;a&gt;</code> that is <b>a child</b> of the <code>&lt;div&gt;</code> will be selected, but not the <code>&lt;a&gt;</code> that is a descendant of the <code>&lt;div&gt;</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS Selector */</span>
+<span class="codeHighlight">div > a</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+<span class="codeHighlight">&lt;div&gt;&lt;a&gt;link&lt;/a&gt;&lt;/div&gt;</span>
+&lt;div&gt;&lt;p&gt;&lt;a&gt;link&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The child selector is not supported by Internet Explorer 6.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at child selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ADJACENT SIBLING SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+        <section data-background="#568312">
+          <h2>Adjacent sibling selectors (CSS2)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>adjacent sibling selector</b> is written using two selectors separated by a <code>"+"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E + F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace within the selector is <b>optional</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+<span class="codeHighlight">h2+h3</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The Adjacent sibling selector targets the sibling (element that shares the same parent) immediately following a defined element.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, only the <code>&lt;h3&gt;</code> <b>that is adjacent to (or comes directly after)</b> the <code>&lt;h2&gt;</code> will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;h2&gt;Content&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Content&lt;/h3&gt;</span>
+&lt;h3&gt;Content&lt;/h3&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The adjacent sibling selector is not supported by Internet Explorer 6.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at adjacent sibling selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+GENERAL SIBLING SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+        <section data-background="#568312">
+          <h2>General sibling selectors (CSS3)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>general sibling selector</b> is written using two selectors separated by a <code>"~"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E ~ F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace within the selector is <b>optional</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+<span class="codeHighlight">h2~h3</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, any <code>&lt;h3&gt;</code> <b>that appears after</b> the <code>&lt;h2&gt;</code> in source order will be selected - as long as they share the same parent.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;h2&gt;Content&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Content&lt;/h3&gt;
+&lt;h3&gt;Content&lt;/h3&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The general sibling selector is not supported by Internet Explorer 6.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at general sibling selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section data-background="#568312">
+          <h2>Link pseudo-classes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Pseudo-classes</b> (or "fake" classes) allow you to style specific attributes or states that do not exist in the document tree.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>:link pseudo-class (CSS1)</li>
+            <li>:visited pseudoclass (CSS1)</li>
+          </ul>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+LINK SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>:link pseudo-class (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:link pseudo-class selector</b> is written using an &lt;a&gt; element, followed by <code>":"</code>, followed by <code>"link"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:link</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:link</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:link</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :link</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :link pseudo-class selector targets any link that is defined as "unvisited".</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :link pseudo-class selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :link selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+VISITED SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>:visited pseudo-class (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:visited pseudo-class selector</b> is written using an &lt;a&gt; element, followed by <code>":"</code>, followed by <code>"visited"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:visited</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:visited</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:visited</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :visited</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :visited pseudo-class selector targets any link that is defined as "visited".</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>Due to <b>potential security issues</b>, there are only a few properties that you can use to style visited links.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>These include: <code>color</code>, <code>background-color</code>, <code>border-color</code>, <code>outline-color</code>, <code>fill</code>, and <code>stroke</code>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>You can <b>read more</b> about potential
+          security issues: <a href="http://dbaron.org/mozilla/visited-privacy">Article 1</a>, <a href="http://blog.mozilla.org/security/2010/03/31/plugging-the-css-historyleak/">Article 2</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector">Article 3</a>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :visited pseudo-class selector is well supported across all modern browsers.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :visted selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section data-background="#568312">
+          <h2>User-action pseudo-classes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>user-action pseudo-classes</b> allow you to style elements based on the way that users interact with these elements.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>:focus pseudo-class (CSS2)</li>
+            <li>:hover pseudo-class (CSS2)</li>
+            <li>:active pseudo-class (CSS1)</li>
+          </ul>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FOCUS SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>:focus pseudo-class (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:focus pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"focus"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:focus</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:focus</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:focus</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :focus</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :focus pseudo-class selector targets elements that have focus (ones that accept keyboard events).</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :focus pseudo-class selector is not supported by IE6 or IE7.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :focus selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+HOVER SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>:hover pseudo-class (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:hover pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"hover"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:hover</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:hover</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:hover</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :hover</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :hover pseudo-class selector targets any element when the user's cursor is over the element - but the user has not activated it.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :focus pseudo-class selector is not supported by IE6 or IE7.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :hover selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ACTIVE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>:active pseudo-class (CSS1)</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:active pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"active"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:active</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:active</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:active</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :active</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :active pseudo-class selector targets any element that is currently being activated by the user.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support issue 1</b><br>
+          IE6 and IE7 only support :active on elements with the HREF attribute.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support issue 2</b><br>
+          IE6 incorrectly applies this pseudo-class to links that have input focus (incorrectly applies :active for :focus).</p>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support issue 3</b><br>
+          IE6 has a "sticky active state" (active state remains active when user returns to page via the back button).</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :active selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>The :lang selector (CSS2</h2>
+        </section>
+
+        <section data-background="#444">
+          <h3>Defining a language</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p>All web pages <b>should be defined with a language</b> to assist devices, search engines, assistive technologies etc.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>primary language</b> for each web page can be defined using the <code>"lang"</code> attribute inside the <code>&lt;html&gt;</code> element.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;!doctype html&gt;
+&lt;html <span class="codeHighlight">lang="en"</span>&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello world&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>To define languages for sections of a web page, the <code>"lang"</code> attribute can be <b>added to relevant elements</b>.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Italian --&gt;</span>
+&lt;div <span class="codeHighlight">lang="it"</span>&gt;
+  Mi sei mancato molto
+&lt;/div&gt;!
+
+<span class="codeComment">&lt;!-- Latvian --&gt;</span>
+&lt;span <span class="codeHighlight">lang="lv"</span>&gt;
+  Labvakar
+&lt;/span&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>The values inside the "lang" attribute are called <b>Language subtags</b>. These subtags are defined in the <a href="http://www.iana.org/assignments/language-subtag-registry">IANA Language Subtag Registry</a>.</p>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+LANG SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#444">
+          <h3>The :lang selector</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <b>:lang(c) pseudo-class selector</b> is written using an optional element, followed by a <code>":"</code>, followed by <code>"lang"</code>, followed by a language subtag placed inside brackets <code>(c)</code>.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">:lang(c)</span> { }
+<span class="codeHighlight">E:lang(c)</span> { }
+
+<span class="codeComment">/* French example */</span>
+<span class="codeHighlight">p:lang(fr)</span> { }
+<span class="codeComment">/* Punjabi example */</span>
+<span class="codeHighlight">span:lang(pa)</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">:lang(bs)</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>: lang (bs)</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :lang(c) pseudo-class selector targets any element that contains the <code>"lang"</code> attribute and the relevant language subtag value.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, only the <code>&lt;p&gt;</code> element with the <code>(fr)</code> <b>lang subtag</b> will be selected.</p>
+        </section>
+
+       <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:lang(fr)</span> { }
+
+&lt;!-- HTML markup --&gt;
+<span class="codeHighlight">&lt;p lang="fr"&gt;Adieu&lt;/p&gt;</span>
+&lt;p lang="jw"&gt;Sugeng rawuh&lt;/p&gt;
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :lang(c) pseudo-class selector is not supported in IE6 or IE7.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :lang selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>The negation pseudo-class</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <code>:not()</code> <b>pseudo-class selector</b> is written using an element, followed by <code>":not"</code>, followed by a <code>"("</code>, followed by a simple selector, followed by a <code>")"</code>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:not(s)</span> { }
+<span class="codeHighlight">E :not(s)</span> { }
+
+<span class="codeComment">/* examples */</span>
+<span class="codeHighlight">div:not(p)</span> { }
+<span class="codeHighlight">:not(.intro)</span> { }
+<span class="codeHighlight">div :not(#news)</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Whitespace is <b>not permitted</b> within the selector.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">:not(.intro)</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>: not (.intro)</s> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Only <b>simple selectors</b> are allowed inside the brackets. This means type, class, ID, pseudo-class and attribute selectors.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* type selector */</span>
+p:not(<span class="codeHighlight">p</span>) { }
+<span class="codeComment">/* class selector */</span>
+p:not(<span class="codeHighlight">.intro</span>) { }
+<span class="codeComment">/* id selector */</span>
+p:not(<span class="codeHighlight">#nav</span>) { }
+<span class="codeComment">/* pseudo-class selector */</span>
+p:not(<span class="codeHighlight">:lang(fr)</span>) { }
+<span class="codeComment">/* attribute selector */</span>
+p:not(<span class="codeHighlight">[class="intro"]</span>) { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>The negation selector, multiple simple selectors and pseudo-elements are <b>not allowed inside the brackets</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* negation selector */</span>
+p:not(<span class="codeHighlight">:not</span>) { }
+<span class="codeComment">/* multiple simple selectors */</span>
+p:not(<span class="codeHighlight">p, .intro</span>) { }
+<span class="codeComment">/* pseudo-elements */</span>
+p:not(<span class="codeHighlight">::first-line</span>) { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>How does it work?</b><br>
+          The :not pseudo-class selector targets all elements except those defined by the selector.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, every element that is <b>not a</b> <code>&lt;p&gt;</code> element will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:not(p)</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;&lt;/p&gt;
+<span class="codeHighlight">&lt;div&gt;&lt;/div&gt;
+&lt;form&gt;
+  &lt;label&gt;&lt;/label&gt;
+  &lt;input&gt;
+&lt;/form&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, every element that <b>does not have a class of</b> <code>"intro"</code> will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:not(.intro)</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="intro"&gt;&lt;/p&gt;
+<span class="codeHighlight">&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, every element that <b>does not have an ID of</b> <code>"news"</code> will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:not(#news)</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p id="news"&gt;&lt;/p&gt;
+<span class="codeHighlight">&lt;div&gt;&lt;/div&gt;
+&lt;p class="news"&gt;&lt;/p&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, every element that <b>does not have a pseudo-class of</b> <code>"lang(fr)"</code> will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:not(:lang(fr))</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p lang="fr"&gt;&lt;/p&gt;
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;
+&lt;p lang="br"&gt;&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>In the following example, every element that <b>does not have an attribute of</b> <code>"disabled"</code> will be selected.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:not([disabled]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;input type="text" disabled&gt;
+<span class="codeHighlight">&lt;input type="text"&gt;</span>
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Support</b><br>
+          The :not pseudo-class selector is not supported in IE6, IE7 or IE8.</p>
+        </section>
+
+        <section data-background="#B04636">
+          <h3>Exercise: Let's look at :not selectors</h3>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Structural pseudo-classes</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Structural pseudo-classes</b> allow you to select elements based on their position within the overall document structure.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>:first-child pseudo-class (CSS2)</li>
+            <li>:last-child pseudo-class (CSS3)</li>
+            <li>:only-child pseudo-class (CSS3)</li>
+            <li>:first-of-type pseudo-class (CSS3)</li>
+            <li>:last-of-type pseudo-class (CSS3)</li>
+            <li>:only-of-type pseudo-class (CSS3)</li>
+            <li>:nth-child(n) pseudo-class (CSS3)</li>
+            <li>:nth-last-child(n) pseudo-class (CSS3)</li>
+            <li>:nth-of-type(n) pseudo-class (CSS3)</li>
+            <li>:nth-last-of-type(n) pseudo-class (CSS3)</li>
+            <li>:root pseudo-class (CSS3)</li>
+            <li>:empty pseudo-class (CSS3)</li>
+          </ul>
+        </section>
+
+        <section data-background="#444">
+          <h3>Structurally unstable</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p>Be aware structural pseudoclasses are <b>considered "unstable"</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>If the document structure changes, the structural pseudo-class <b>may be applied to a different element</b>, or no element at all.</p>
+        </section>
+
+        <section data-background="#444">
+          <h3>Understanding “(n)”</h3>
+        </section>
+
+        <section data-background="#fff">
+          <p>Four of the structural pseudo-class selectors include <code>"(n)"</code> <b>as part of the syntax</b>.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+:nth-child<span class="codeHighlight">(n)</span> { }
+:nth-last-child<span class="codeHighlight">(n)</span> { }
+:nth-of-type<span class="codeHighlight">(n)</span> { }
+:nth-last-of-type<span class="codeHighlight">(n)</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>Authors can use <b>six different types of values</b> inside these brackets.</p>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+:nth-child<span class="codeHighlight">(n)</span> { }
+:nth-child<span class="codeHighlight">([integer]n)</span> { }
+:nth-child<span class="codeHighlight">([integer]n+[integer])</span> { }
+:nth-child<span class="codeHighlight">([integer]n-[integer])</span> { }
+:nth-child<span class="codeHighlight">(odd)</span> { }
+:nth-child<span class="codeHighlight">(even)</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#fff">
+          <p>We will talk about these six options in more detail as we cover each selector. For now, let's look at <b>how the <code>"3n"</code>, <code>"3n+1"</code> and <code>"3n-1"</code> work</b>.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The <code>"n"</code> is an algebraic expression that represents <b>a set of all integers</b>, in this case starting at zero.</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The value <code>"3n"</code> is equivalent to <code>"(3 x n)"</code>, which means it would <b>target the following elements:</b></p>
+          <p class="font-xs">(3 x 0) = 0 = No element<br>
+          (3 x 1) = 3 = 3rd element<br>
+          (3 x 2) = 6 = 6th element<br>
+          (3 x 3) = 9 = 9th element</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The value <code>"3n+1"</code> is equivalent to <code>"(3 x n) + 1"</code>, which means it would <b>target the following elements</b>:</p>
+          <p>(3 x 0) + 1 = 1 = 1st element<br>
+          (3 x 1) + 1 = 4 = 4rd element<br>
+          (3 x 2) + 1 = 7 = 7th element<br>
+          (3 x 3) + 1 = 10 = 10th element</p>
+        </section>
+
+        <section data-background="#fff">
+          <p>The value <code>"3n-1"</code> is equivalent to <code>"(3 x n) - 1"</code>, which means it would <b>target the following elements</b>:</p>
+          <p>(3 x 0) - 1 = 0 = No element<br>
+          (3 x 1) - 1 = 2 = 2nd element<br>
+          (3 x 2) - 1 = 5 = 5th element<br>
+          (3 x 3) - 1 = 8 = 8th element</p>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#568312">
+          <h2>Attribute selectors</h2>
+        </section>
+
+        <section data-background="#fff">
+          <p><b>Attribute selectors</b> are used to select elements based on their attributes or their attribute and values.</p>
+        </section>
+
+        <section data-background="#fff">
+          <ul class="contents">
+            <li>[att] attribute selector (CSS2)</li>
+            <li>[att=val] attribute selector (CSS2)</li>
+            <li>[att~=val] attribute selector (CSS2)</li>
+            <li>[att|=val] attribute selector (CSS2)</li>
+            <li>[att^=val] attribute selector (CSS3)</li>
+            <li>[att$=val] attribute selector (CSS3)</li>
+            <li>[att*=val] attribute selector (CSS3)</li>
+          </ul>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+
+
+
+
+
+
+
+
+        <section data-background="#222">
+          <p class="font-xs">
+            <span class="authorDetails">Author:</span> <a class="highlightColorLight" href="http://maxdesign.com.au/about">Russ Weakley</a><br>
+            <span class="authorDetails">Site:</span> <a class="highlightColorLight" href="http://maxdesign.com.au">maxdesign.com.au</a><br>
+            <span class="authorDetails">Twitter:</span> <a class="highlightColorLight" href="http://twitter.com/russmaxdesign">twitter.com/russmaxdesign</a><br>
+            <span class="authorDetails">Slideshare:</span> <a class="highlightColorLight" href="http://slideshare.net/maxdesign">slideshare.net/maxdesign</a><br>
+            <span class="authorDetails">Linkedin:</span> <a class="highlightColorLight" href="http://linkedin.com/in/russweakley">linkedin.com/in/russweakley</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
