@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 213-01: Write a property to contain margins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+.example {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 10px;
+  background: lime;
+}
+
+
+/* Add styles here */
+
+.example1 {
+  background: yellow;
+}
+
+.example2 {
+  background: yellow;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.example3 {
+  background: yellow;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.example4 {
+  overflow: hidden;
+  background: yellow;
+}
+
+.example5 {
+  float: left;
+  width: 100%;
+  background: yellow;
+}
+
+.example6 {
+  display: inline-block;
+  width: 100%;
+  background: yellow;
+}
+
+.example7 {
+  display: flow-root;
+  background: yellow;
+}
+
+.example8 {
+  contain: layout;
+  background: yellow;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 213-01: Write a property to contain margins</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>Before</h2>
+      <div class="example1">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>border top and bottom</h2>
+      <div class="example2">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>padding top and bottom</h2>
+      <div class="example3">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>overflow: hidden</h2>
+      <div class="example4">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>float: left</h2>
+      <div class="example5">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: inline-block</h2>
+      <div class="example6">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: flow-root</h2>
+      <div class="example7">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>contain: layout</h2>
+      <div class="example8">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+    </div>
+  </body>
+</html>

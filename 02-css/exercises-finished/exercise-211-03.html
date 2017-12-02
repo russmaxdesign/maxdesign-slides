@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 211-03: Confusion around z-index and stacking contexts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+.example {
+  position: absolute;
+  outline: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+
+/* Add styles here */
+
+.example1 {
+  z-index: 1;
+  top: 120px;
+  left: 120px;
+  background: yellow;
+}
+
+.example2 {
+  z-index: 15;
+  top: 20px;
+  left: 20px;
+  background: lime;
+}
+
+.example3 {
+  z-index: 3;
+  top: 160px;
+  left: 160px;
+  background: pink;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 211-03: Confusion around z-index and stacking contexts</h1>
+
+      <div class="example example1">Example1
+        <div class="example example2">Example2</div>
+      </div>
+      <div class="example example3">Example3
+      </div>
+    </div>
+  </body>
+</html>

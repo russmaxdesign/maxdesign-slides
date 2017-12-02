@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{font-family:'HelveticaNeue-Bold';}
+	.st3{font-size:32px;}
+	.st4{font-family:'HelveticaNeue';}
+	.st5{font-size:22px;}
+	.st6{fill:#B0C590;}
+	.st7{fill:#568312;}
+	.st8{fill:#B04636;}
+	.st9{font-size:23px;}
+	.st10{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st11{fill:#91AE65;}
+</style>
+<rect class="st0" width="650" height="400"/>
+<g>
+	<rect x="26.5" y="105.5" class="st0" width="597" height="293"/>
+	<path class="st1" d="M622,107v290H28V107H622 M625,104H25v296h600V104L625,104z"/>
+</g>
+<g>
+	<rect x="46.5" y="125.5" class="st0" width="557" height="253"/>
+	<path class="st1" d="M602,127v250H48V127H602 M605,124H45v256h560V124L605,124z"/>
+</g>
+<g>
+	<rect x="66.5" y="145.5" class="st0" width="517" height="42"/>
+	<path class="st1" d="M582,147v39H68v-39H582 M585,144H65v45h520V144L585,144z"/>
+</g>
+<g>
+	<rect x="66.5" y="248.5" class="st0" width="517" height="110"/>
+	<path class="st1" d="M582,250v107H68V250H582 M585,247H65v113h520V247L585,247z"/>
+</g>
+<g>
+	<rect x="86.5" y="268.5" class="st0" width="477" height="35"/>
+	<path class="st1" d="M562,270v32H88v-32H562 M565,267H85v38h480V267L565,267z"/>
+</g>
+<g>
+	<rect x="86.5" y="303.5" class="st0" width="477" height="35"/>
+	<path class="st1" d="M562,305v32H88v-32H562 M565,302H85v38h480V302L565,302z"/>
+</g>
+<text transform="matrix(1 0 0 1 74.9998 176.4238)" class="st2 st3">This is a heading</text>
+<text transform="matrix(1 0 0 1 95.0003 290.8535)" class="st4 st5">Lorem ipsum dolor sit amet, consectetuer adip</text>
+<text transform="matrix(1 0 0 1 95.0004 325.8535)" class="st4 st5">iscing elit, sed diam euismod tincidunt ut</text>
+<g>
+	<rect x="66.5" y="200.5" class="st6" width="517" height="35"/>
+	<path class="st7" d="M582,202v32H68v-32H582 M585,199H65v38h520V199L585,199z"/>
+</g>
+<text transform="matrix(1 0 0 1 74.9997 224.418)" class="st4 st5">Test element</text>
+<rect x="99.6" y="25" class="st8" width="385" height="41"/>
+<text transform="matrix(1 0 0 1 114.1339 52.7109)" class="st0 st2 st9">Element before being positioned</text>
+<g>
+	<g>
+		<line class="st10" x1="424" y1="183.9" x2="424" y2="66"/>
+		<g>
+			<polygon class="st8" points="434.5,180.9 424,199 413.5,180.9 			"/>
+		</g>
+	</g>
+</g>
+</svg>

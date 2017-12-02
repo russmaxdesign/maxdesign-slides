@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#C8C8C8;}
+	.st2{fill:#B04636;}
+	.st3{fill:#568312;}
+	.st4{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st5{font-family:'HelveticaNeue-Bold';}
+	.st6{font-size:22px;}
+	.st7{font-family:'Times-Roman';}
+	.st8{font-size:34px;}
+</style>
+<g>
+	<polygon class="st0" points="31.2,226.8 31.2,31.2 618.8,33.2 618.8,228.8 	"/>
+	<path class="st1" d="M32.3,32.4l585.3,2v193.3l-585.3-2V32.4 M30,30v198l590,2V32L30,30L30,30z"/>
+</g>
+<rect x="219" y="288" class="st2" width="333" height="45"/>
+<g>
+	<text transform="matrix(1 0 0 1 236.3333 317.5)" class="st0 st5 st6">Generated content: counter</text>
+</g>
+<text transform="matrix(1 0 0 1 190 66)" class="st7 st8">A paragraph of text</text>
+<text transform="matrix(1 0 0 1 48 66)" class="st3 st7 st8">Section 1:</text>
+<text transform="matrix(1 0 0 1 190 110)" class="st7 st8">A paragraph of text</text>
+<text transform="matrix(1 0 0 1 48 110)" class="st3 st7 st8">Section 2:</text>
+<text transform="matrix(1 0 0 1 190 154)" class="st7 st8">A paragraph of text</text>
+<text transform="matrix(1 0 0 1 48 154)" class="st3 st7 st8">Section 3:</text>
+<text transform="matrix(1 0 0 1 190 198)" class="st7 st8">A paragraph of text</text>
+<text transform="matrix(1 0 0 1 48 198)" class="st3 st7 st8">Section 4:</text>
+<g>
+	<g>
+		<line class="st4" x1="121.4" y1="212.8" x2="223" y2="292"/>
+		<g>
+			<polygon class="st2" points="117.4,222.9 109.5,203.5 130.2,206.4 			"/>
+		</g>
+	</g>
+</g>
+</svg>

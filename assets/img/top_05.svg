@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#595959;}
+	.st2{fill:#D2D2D2;}
+	.st3{font-family:'HelveticaNeue-Bold';}
+	.st4{font-size:32px;}
+	.st5{font-family:'HelveticaNeue';}
+	.st6{font-size:22px;}
+	.st7{fill:#969696;}
+	.st8{fill:#E7C7C2;}
+	.st9{fill:#B04636;}
+	.st10{fill:#B0C590;}
+	.st11{fill:#568312;}
+	.st12{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st13{font-size:23px;}
+</style>
+<g id="base">
+	<g>
+		<g>
+			<rect x="26.5" y="82.5" class="st0" width="597" height="304"/>
+			<path class="st1" d="M622,84v301H28V84H622 M625,81H25v307h600V81L625,81z"/>
+		</g>
+		<g>
+			<rect x="25" y="81" class="st1" width="600" height="56"/>
+			<circle class="st0" cx="41.3" cy="95" r="6"/>
+			<circle class="st0" cx="56.7" cy="95" r="6"/>
+			<circle class="st0" cx="72" cy="95" r="6"/>
+			<polygon class="st0" points="53.2,120.1 40.8,120.1 45.9,115.1 44.6,113.8 38.3,120.1 38.2,120.1 38.2,121.9 38.7,121.9 
+				38.2,122.4 44.6,128.7 45.9,127.4 40.3,121.9 53.2,121.9 			"/>
+			<polygon class="st0" points="62.7,120.1 75.1,120.1 70.1,115.1 71.4,113.8 77.7,120.1 77.7,120.1 77.7,121.9 77.3,121.9 
+				77.7,122.4 71.4,128.7 70.1,127.4 75.6,121.9 62.7,121.9 			"/>
+			<path class="st0" d="M446.2,129.5H101.7c-2.8,0-5-2.2-5-5v-10c0-2.8,2.2-5,5-5h344.5c2.8,0,5,2.2,5,5v10
+				C451.2,127.2,449,129.5,446.2,129.5z"/>
+			<path class="st0" d="M599.2,129.5h-130c-5.5,0-10-4.5-10-10v0c0-5.5,4.5-10,10-10h130c5.5,0,10,4.5,10,10v0
+				C609.2,125,604.7,129.5,599.2,129.5z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="49.5" y="158.5" class="st0" width="551" height="205"/>
+		<g>
+			<path class="st2" d="M599,160v202H51V160H599 M602,157H48v208h554V157L602,157z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="69.5" y="178.5" class="st0" width="511" height="42"/>
+		<path class="st2" d="M579,180v39H71v-39H579 M582,177H68v45h514V177L582,177z"/>
+	</g>
+	<g>
+		<rect x="69.5" y="233.5" class="st0" width="511" height="110"/>
+		<path class="st2" d="M579,235v107H71V235H579 M582,232H68v113h514V232L582,232z"/>
+	</g>
+	<g>
+		<rect x="89.5" y="253.5" class="st0" width="471" height="35"/>
+		<path class="st2" d="M559,255v32H91v-32H559 M562,252H88v38h474V252L562,252z"/>
+	</g>
+	<g>
+		<rect x="89.5" y="288.5" class="st0" width="471" height="35"/>
+		<path class="st2" d="M559,290v32H91v-32H559 M562,287H88v38h474V287L562,287z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 77.9995 209.4238)" class="st3 st4">This is a heading</text>
+	<text transform="matrix(1 0 0 1 98.0005 275.8535)" class="st5 st6">Lorem ipsum dolor sit amet, consectetuer adip</text>
+	<text transform="matrix(1 0 0 1 98.0002 310.8535)" class="st5 st6">iscing elit, sed diam euismod tincidunt ut</text>
+</g>
+<g id="feature">
+	<g>
+		<g>
+			<rect x="68" y="177" class="st8" width="514" height="45"/>
+			<path class="st9" d="M582,177h-5v3h2v5h3V177L582,177z M572,177h-5v3h5V177L572,177z M562,177h-5v3h5V177L562,177z M552,177h-5v3
+				h5V177L552,177z M542,177h-5v3h5V177L542,177z M532,177h-5v3h5V177L532,177z M522,177h-5v3h5V177L522,177z M512,177h-5v3h5V177
+				L512,177z M502,177h-5v3h5V177L502,177z M492,177h-5v3h5V177L492,177z M482,177h-5v3h5V177L482,177z M472,177h-5v3h5V177L472,177
+				z M462,177h-5v3h5V177L462,177z M452,177h-5v3h5V177L452,177z M442,177h-5v3h5V177L442,177z M432,177h-5v3h5V177L432,177z
+				 M422,177h-5v3h5V177L422,177z M412,177h-5v3h5V177L412,177z M402,177h-5v3h5V177L402,177z M392,177h-5v3h5V177L392,177z
+				 M382,177h-5v3h5V177L382,177z M372,177h-5v3h5V177L372,177z M362,177h-5v3h5V177L362,177z M352,177h-5v3h5V177L352,177z
+				 M342,177h-5v3h5V177L342,177z M332,177h-5v3h5V177L332,177z M322,177h-5v3h5V177L322,177z M312,177h-5v3h5V177L312,177z
+				 M302,177h-5v3h5V177L302,177z M292,177h-5v3h5V177L292,177z M282,177h-5v3h5V177L282,177z M272,177h-5v3h5V177L272,177z
+				 M262,177h-5v3h5V177L262,177z M252,177h-5v3h5V177L252,177z M242,177h-5v3h5V177L242,177z M232,177h-5v3h5V177L232,177z
+				 M222,177h-5v3h5V177L222,177z M212,177h-5v3h5V177L212,177z M202,177h-5v3h5V177L202,177z M192,177h-5v3h5V177L192,177z
+				 M182,177h-5v3h5V177L182,177z M172,177h-5v3h5V177L172,177z M162,177h-5v3h5V177L162,177z M152,177h-5v3h5V177L152,177z
+				 M142,177h-5v3h5V177L142,177z M132,177h-5v3h5V177L132,177z M122,177h-5v3h5V177L122,177z M112,177h-5v3h5V177L112,177z
+				 M102,177h-5v3h5V177L102,177z M92,177h-5v3h5V177L92,177z M82,177h-5v3h5V177L82,177z M72,177h-4v3h4V177L72,177z M71,183h-3v5
+				h3V183L71,183z M71,193h-3v5h3V193L71,193z M71,203h-3v5h3V203L71,203z M71,213h-3v5h3V213L71,213z M74,219h-5v3h5V219L74,219z
+				 M84,219h-5v3h5V219L84,219z M94,219h-5v3h5V219L94,219z M104,219h-5v3h5V219L104,219z M114,219h-5v3h5V219L114,219z M124,219h-5
+				v3h5V219L124,219z M134,219h-5v3h5V219L134,219z M144,219h-5v3h5V219L144,219z M154,219h-5v3h5V219L154,219z M164,219h-5v3h5V219
+				L164,219z M174,219h-5v3h5V219L174,219z M184,219h-5v3h5V219L184,219z M194,219h-5v3h5V219L194,219z M204,219h-5v3h5V219L204,219
+				z M214,219h-5v3h5V219L214,219z M224,219h-5v3h5V219L224,219z M234,219h-5v3h5V219L234,219z M244,219h-5v3h5V219L244,219z
+				 M254,219h-5v3h5V219L254,219z M264,219h-5v3h5V219L264,219z M274,219h-5v3h5V219L274,219z M284,219h-5v3h5V219L284,219z
+				 M294,219h-5v3h5V219L294,219z M304,219h-5v3h5V219L304,219z M314,219h-5v3h5V219L314,219z M324,219h-5v3h5V219L324,219z
+				 M334,219h-5v3h5V219L334,219z M344,219h-5v3h5V219L344,219z M354,219h-5v3h5V219L354,219z M364,219h-5v3h5V219L364,219z
+				 M374,219h-5v3h5V219L374,219z M384,219h-5v3h5V219L384,219z M394,219h-5v3h5V219L394,219z M404,219h-5v3h5V219L404,219z
+				 M414,219h-5v3h5V219L414,219z M424,219h-5v3h5V219L424,219z M434,219h-5v3h5V219L434,219z M444,219h-5v3h5V219L444,219z
+				 M454,219h-5v3h5V219L454,219z M464,219h-5v3h5V219L464,219z M474,219h-5v3h5V219L474,219z M484,219h-5v3h5V219L484,219z
+				 M494,219h-5v3h5V219L494,219z M504,219h-5v3h5V219L504,219z M514,219h-5v3h5V219L514,219z M524,219h-5v3h5V219L524,219z
+				 M534,219h-5v3h5V219L534,219z M544,219h-5v3h5V219L544,219z M554,219h-5v3h5V219L554,219z M564,219h-5v3h5V219L564,219z
+				 M574,219h-5v3h5V219L574,219z M582,219h-3v3h3V219L582,219z M582,210h-3v5h3V210L582,210z M582,200h-3v5h3V200L582,200z
+				 M582,190h-3v5h3V190L582,190z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="69.5" y="193.5" class="st10" width="511" height="42"/>
+			<g>
+				<path class="st11" d="M579,195v39H71v-39H579 M582,192H68v45h514V192L582,192z"/>
+			</g>
+		</g>
+		<text transform="matrix(1 0 0 1 77.9995 224.4238)" class="st3 st4">This is a heading</text>
+	</g>
+</g>
+<g id="label">
+	<rect x="25" y="15" class="st9" width="489" height="41"/>
+	<text transform="matrix(1 0 0 1 39.5288 42.7109)" class="st0 st3 st13">Relative: down 20px from original position</text>
+	<g>
+		<g>
+			<line class="st12" x1="100" y1="176.9" x2="100" y2="56"/>
+			<g>
+				<polygon class="st9" points="110.5,173.9 100,192 89.5,173.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

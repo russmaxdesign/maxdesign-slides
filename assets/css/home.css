@@ -1,0 +1,298 @@
+/* ---------------------
+global
+-----------------------*/
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #f2f2f2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+  font-size: 1.2em;
+}
+
+
+/* ---------------------
+headings
+-----------------------*/
+
+h1,
+h2 {
+  font-family: 'Paytone One', 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 .5em;
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: none;
+  letter-spacing: normal;
+  text-transform: none;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: 3.8em;
+}
+
+h2 {
+  margin: 0 0 .5em;
+  font-size: 2.2em;
+  font-weight: normal;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+h4 {
+  margin: .6em 0;
+  color: #999;
+  font-size: 90%;
+}
+
+
+/* ---------------------
+paragraphs
+-----------------------*/
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* ---------------------
+links
+-----------------------*/
+
+a {
+  color: #222;
+}
+
+a:focus {
+  color: #000;
+}
+
+a:hover {
+  color: #333;
+}
+
+a:active {
+  color: #000;
+}
+
+
+/* ---------------------
+banner
+-----------------------*/
+
+.banner {
+  background: url(../img/banner.jpg) no-repeat center center;
+}
+
+.banner-title-small {
+  display: block;
+  color: #fff;
+  font-size: 1em;
+}
+
+.banner-title-large {
+  display: block;
+  margin-top: -.2em;
+  color: #8cbd2e;
+  font-size: 1.6em;
+}
+
+.download {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  margin-bottom: 0;
+  padding: .7em 1em;
+  cursor: pointer;
+  color: #fff;
+  background-color: #759a3e;
+  background-image: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+  font-size: .8em;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.button:focus,
+.button:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #568312;
+}
+
+
+/* ---------------------
+content
+-----------------------*/
+
+.content {
+  position: relative;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+
+/* ---------------------
+slides
+-----------------------*/
+
+.slide-container {
+  border-radius: .1em;
+  margin: 1.5em 0;
+  padding: 1.2em;
+  background: #fff;
+}
+
+.slide-container-link {
+  display: block;
+  text-decoration: none;
+}
+
+.slide-container-link:focus .slide-container,
+.slide-container-link:active .slide-container {
+  background: #ddd;
+}
+
+.slide-container-link:hover .slide-container {
+  background: #eaeaea;
+}
+
+.slide-heading {
+  color: #333;
+  font-weight: bold;
+}
+
+.slide-number {
+  color: #759a3e;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+  font-size: 90%;
+  font-weight: normal;
+}
+
+.slide-details {
+  margin: .6em 0;
+  color: #999;
+  font-size: 90%;
+}
+
+.slide-content {
+  color: #333;
+}
+
+.highlight {
+  color: #759a3e;
+}
+
+/* ---------------------
+filter
+-----------------------*/
+
+.filter {
+  margin: 20px 0;
+  font-size: .8em;
+}
+
+.filter-button {
+  position: relative;
+  top: -2px;
+  margin: 0 0 0 .5em;
+  padding: .4em .6em;
+  color: #444;
+  background: #ddd;
+  font-size: 1em;
+}
+
+.filter-button:focus,
+.filter-button:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.filter-button:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+
+/* ---------------------
+filters on containers
+-----------------------*/
+
+div.container.all a {
+  display: block;
+}
+
+div.container.beginner a.beginner {
+  display: block;
+}
+
+div.container.intermediate a.intermediate {
+  display: block;
+}
+
+div.container.advanced a.advanced {
+  display: block;
+}
+
+div.container a {
+  display: none;
+}
+
+
+/* ---------------------
+small screen
+-----------------------*/
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .download {
+    position: static;
+    font-size: 1em;
+  }
+}

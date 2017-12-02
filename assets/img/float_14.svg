@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{fill:#B04636;}
+	.st3{font-family:'HelveticaNeue-Bold';}
+	.st4{font-size:32px;}
+	.st5{fill:none;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:22px;}
+	.st8{fill:#B0C590;}
+	.st9{fill:#568312;}
+	.st10{fill:#99B370;}
+	.st11{fill:#CBF8CB;}
+	.st12{fill:#9FB978;}
+	.st13{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st14{font-size:23px;}
+</style>
+<g id="content">
+	<g>
+		<rect x="26.5" y="88.5" class="st0" width="577" height="240"/>
+		<path class="st1" d="M602,90v237H28V90H602 M605,87H25v243h580V87L605,87z"/>
+	</g>
+	<g>
+		<rect x="46.5" y="108.5" class="st0" width="537" height="200"/>
+		<path class="st1" d="M582,110v197H48V110H582 M585,107H45v203h540V107L585,107z"/>
+	</g>
+	<g>
+		<rect x="56.5" y="173.5" class="st0" width="517" height="125"/>
+		<path class="st1" d="M572,175v122H58V175H572 M575,172H55v128h520V172L575,172z"/>
+	</g>
+	<g>
+		<rect x="56.5" y="118.5" class="st0" width="517" height="42"/>
+		<path class="st1" d="M572,120v39H58v-39H572 M575,117H55v45h520V117L575,117z"/>
+	</g>
+	<g>
+		<rect x="116.5" y="183.5" class="st0" width="447" height="35"/>
+		<path class="st1" d="M562,185v32H118v-32H562 M565,182H115v38h450V182L565,182z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 57.9998 149.4238)" class="st3 st4">This is a heading</text>
+	<rect x="118" y="190" class="st5" width="447" height="30"/>
+	<text transform="matrix(1 0 0 1 118.0002 205.708)" class="st6 st7">Lorem ipsum dolor sit amet, consect etuer</text>
+	<g>
+		<rect x="116.5" y="218.5" class="st0" width="447" height="35"/>
+		<path class="st1" d="M562,220v32H118v-32H562 M565,217H115v38h450V217L565,217z"/>
+	</g>
+	<rect x="118" y="225" class="st5" width="447" height="30"/>
+	<text transform="matrix(1 0 0 1 118.0002 240.708)" class="st6 st7">elit sed diam nibh euismod tincidunt ut</text>
+	<g>
+		<rect x="66.5" y="253.5" class="st0" width="497" height="35"/>
+		<path class="st1" d="M562,255v32H68v-32H562 M565,252H65v38h500V252L565,252z"/>
+	</g>
+	<rect x="68" y="260" class="st5" width="497" height="30"/>
+	<text transform="matrix(1 0 0 1 68.0002 275.708)" class="st6 st7">laoreet dolore magna aliquam erat volutpat.</text>
+</g>
+<g id="feature">
+	<g>
+		<rect x="56.5" y="173.5" class="st8" width="57" height="57"/>
+		<g>
+			<path class="st9" d="M112,175v54H58v-54H112 M115,172H55v60h60V172L115,172z"/>
+		</g>
+	</g>
+</g>
+<g id="label">
+	<g>
+		<g>
+			<line class="st13" x1="85" y1="228.9" x2="85" y2="50"/>
+			<g>
+				<polygon class="st2" points="95.5,225.9 85,244 74.5,225.9 				"/>
+			</g>
+		</g>
+	</g>
+	<rect x="25" y="10" class="st2" width="203" height="41"/>
+	<text transform="matrix(1 0 0 1 39.5289 37.7117)" class="st0 st3 st14">Gap under float</text>
+</g>
+</svg>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 213-02: Write a property to contain floats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+hr {
+  clear: both;
+  height: 1px;
+  border: none;
+}
+
+.example {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: lime;
+}
+
+/* Add styles here */
+
+.example1 {
+  background: yellow;
+}
+
+.example2 {
+  overflow: hidden;
+  background: yellow;
+}
+
+.example3 {
+  float: left;
+  width: 100%;
+  background: yellow;
+}
+
+.example4 {
+  display: inline-block;
+  width: 100%;
+  background: yellow;
+}
+
+.example5 {
+  display: flow-root;
+  width: 100%;
+  background: yellow;
+}
+
+.example6 {
+  contain: layout;
+  background: yellow;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 213-02: Write a property to contain floats</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>Before</h2>
+      <div class="example1">
+        <div class="example">example</div>
+      </div>
+
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>overflow: hidden</h2>
+      <div class="example2">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>float: left</h2>
+      <div class="example3">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: inline-block</h2>
+      <div class="example4">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: flow-root</h2>
+      <div class="example5">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>contain: layout</h2>
+      <div class="example6">
+        <div class="example">example</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+    </div>
+  </body>
+</html>

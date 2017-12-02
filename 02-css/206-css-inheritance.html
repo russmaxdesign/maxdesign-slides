@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>206: CSS Inheritance</title>
+    <meta name="description" content="CSS inheritance is where CSS properties are passed down from parent elements to descendant elements">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>206</h5>
+          <h1>CSS Inheritance</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS inheritance allows some CSS properties to be <b>passed down from parent elements</b> to descendant elements.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>1. Inheritance in action</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>To see <b>inheritance in action</b>, let’s look at an <code>&lt;em&gt;</code> (child) element inside a <code>&lt;p&gt;</code> (parent) element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/document-tree-inheritance.svg" alt="Document tree with parent paragraph and child emphasis element">
+          </section>
+
+          <section data-background="#fff">
+            <p>This would produce the following <b>HTML markup</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <span class="codeHighlight">&lt;p&gt;</span>
+      Lorem <span class="codeHighlight">&lt;em&gt;</span>ipsum<span class="codeHighlight">&lt;/em&gt;</span> dolor etuer.
+    <span class="codeHighlight">&lt;/p&gt;</span>
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>What would happen if you <b>style</b> the <code>&lt;p&gt;</code> element to <code>color: red</code>?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* basic CSS rule */</span>
+p {
+  <span class="codeHighlight">color: red</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In a browser, the <code>&lt;p&gt;</code> and <code>&lt;em&gt;</code> elements will <b>both be colored red</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, why is the <code>&lt;em&gt;</code> element colored red <b>when it has not been given any style of its own</b>?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Because the <code>&lt;em&gt;</code> element (the child element) has <b>inherited the color property</b> from the <code>&lt;p&gt;</code> element (the parent element).</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Apply color to the paragraph</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-206-01.html">exercises-start/exercise-206-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with a <code>color</code> value of <code>chocolate</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p {
+  color: chocolate;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the <code>color</code> value <b>is inherited by the</b> <code>&lt;em&gt;</code> <b>element</b> inside the <code>&lt;p&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-206-01.html">exercises-finished/exercise-206-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>2. Why is inheritance useful?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inheritance is designed to make it <b>easier for authors</b>. Otherwise, you would need to style all descendant elements as well as their parents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, you would need to style the <code>&lt;em&gt;</code> element inside the <code>&lt;p&gt;</code> element <b>as well</b> so that it was also red.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* if inheritance didn’t exist */</span>
+p {
+  color: red;
+}
+
+<span class="codeHighlight">p em</span> {
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS files would be <b>much larger</b>, harder to create and harder to maintain.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>3. Are all properties inherited?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Many CSS properties are <b>not inherited</b>. If all CSS properties were inherited, it would make things much harder for authors.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Authors would have to <b>turn off unwanted CSS properties</b> for descendant elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, what would happen if the border property was inherited by default, and you <b>applied a border</b> to the <code>&lt;p&gt;</code> element?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* adding border to the p element */</span>
+p {
+  <span class="codeHighlight">border: 1px solid red</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;em&gt;</code> inside the <code>&lt;p&gt;</code> would also have a <b>red border</b> - even though you may not want this to occur.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Then you would need to <b>specifically turn off the border</b> if you didn’t want it to appear for the <code>&lt;em&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* turn off the border */</span>
+p {
+  border: 1px solid red;
+}
+
+p em {
+  <span class="codeHighlight">border: 0</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Luckily, <b>the border property is not inherited</b>, so the <code>&lt;em&gt;</code> would not have a red border.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Generally speaking, <b>only properties that make your job easier</b> are inherited!</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Apply a border to the paragraph</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-206-02.html">exercises-start/exercise-206-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with <code>border: 1px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p {
+  border: 1px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the <code>border</code> value <b>is not inherited by the</b> <code>&lt;em&gt;</code> <b>element</b> inside the <code>&lt;p&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-206-02.html">exercises-finished/exercise-206-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>4. Which properties are inherited?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The following <b>CSS2.1 properties</b> are inherited:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">azimuth:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">border-collapse:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">border-spacing:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">caption-side:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">color:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">cursor:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">direction:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">elevation:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">empty-cells:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-family:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">font-size:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-style:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-variant:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-weight:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">letter-spacing:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">line-height:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style-image:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style-position:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">list-style-type:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">orphans:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">pitch-range:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">pitch:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">quotes:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">richness:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">speak-header:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">speak-numeral:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">speak-punctuation:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">speak:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">speech-rate:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">stress:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">text-align:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">text-indent:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">text-transform:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">visibility:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">voice-family:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">volume:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">white-space:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">widows:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">word-spacing:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This list might seem a bit overwhelming, so Let’s focus on some of the <b>key groups of properties</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>All <b>text-related properties</b> are inherited.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">font-family:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-size:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-style:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-variant:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font-weight:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">font:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">letter-spacing:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">line-height:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">orphans:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">text-align:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">text-indent:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">text-transform:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">widows:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">word-spacing:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>All <b>list-related properties</b> are inherited.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">list-style-image:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style-position:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style-type:</span> <span class="codeComment">value</span>; }
+p { <span class="codeHighlight">list-style:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>And, importantly, the <b>color property</b> is also inherited.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { <span class="codeHighlight">color:</span> <span class="codeComment">value</span>; }
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>5. Font-size inheritance</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The font-size property is inherited in a <b>different way</b> to many other properties.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before explaining how font-size inheritance works, let’s look at <b>why font-size is not directly inherited</b> using the previous example.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  <span class="codeHighlight">&lt;body&gt;</span>
+    <span class="codeHighlight">&lt;p&gt;</span>
+      Lorem <span class="codeHighlight">&lt;em&gt;</span>ipsum<span class="codeHighlight">&lt;/em&gt;</span> dolor etuer.
+    <span class="codeHighlight">&lt;/p&gt;</span>
+  <span class="codeHighlight">&lt;body&gt;</span>
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, the <code>&lt;body&gt;</code> element has a <code>font-size</code> of <b>approximately</b> <code>16px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>What would happen</b> if you set the <code>&lt;p&gt;</code> element to a <code>font-size</code> of <code>80%</code>?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* setting the font-size */</span>
+body {
+  font-size: 100%;
+}
+
+<span class="codeHighlight">p {
+  font-size: 80%;
+}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;p&gt;</code> element <b>would be</b> <code>80% x 16px</code> which would be a <code>font-size</code> of <code>12.8px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Calculation</th>
+                  <th>Final value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px x 100%</code></td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px x 80%</code></td>
+                  <td><code>12.8px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>But <b>what would happen</b> to the <code>&lt;em&gt;</code> element inside the <code>&lt;p&gt;</code> element?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the font-size value of <code>80%</code> were to be inherited, the <code>&lt;em&gt;</code> would be <code>80%</code> of the <code>&lt;p&gt;</code> element and would be a <b>font-size</b> of <code>10.24px</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Calculation</th>
+                  <th>Final value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px x 100%</code></td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px x 80%</code></td>
+                  <td><code>12.8px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;em&gt;</code></td>
+                  <td><code>12.8px x 80%</code></td>
+                  <td><code>10.24px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>this is not the case</b>! The <code>&lt;em&gt;</code> is the same size as the <code>&lt;p&gt;</code>. So how does inheritance work for font-size?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The answer is that the <b>calculated value is inherited</b>, rather than the value itself.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the <code>&lt;p&gt;</code> element is given a font-size of <code>80%</code>, the <b>calculated value</b> of <code>12.8px</code> is then passed on to the <code>&lt;em&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Calculation</th>
+                  <th>Final value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;body&gt;</code></td>
+                  <td><code>16px x 100%</code></td>
+                  <td><code>16px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;p&gt;</code></td>
+                  <td><code>16px x 80%</code></td>
+                  <td><code>12.8px</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;em&gt;</code></td>
+                  <td>Unspecified</td>
+                  <td>Inherited value: <code>12.8px</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Apply a font-size to the paragraph</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-206-03.html">exercises-start/exercise-206-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with <code>font-size: 80%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p {
+  font-size: 80%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice how the <code>font-size</code> value <b>does not affect</b> the <code>&lt;em&gt;</code> <b>element</b> inside the <code>&lt;p&gt;</code> element. The <code>&lt;em&gt;</code> element is not smaller than the <code>&lt;p&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-206-03.html">exercises-finished/exercise-206-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>6. Using inheritance for efficiency</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Authors can use inheritance to <b>write efficient CSS</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, you can set the <b>font-size and font-family</b> on the <code>&lt;body&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">body {
+  <span class="codeHighlight">font-family</span>: arial, helvetica, sans-serif;
+  <span class="codeHighlight">font-size</span>: .9em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>These properties will be <b>inherited by all descendant elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can then <b>override the properties as needed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the <b>following example</b>, the heading elements have been given different <code>font-size</code> and <code>font-family</code> values - overriding the <code>&lt;body&gt;</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">body {
+  <span class="codeHighlight">font-family</span>: arial, helvetica, sans-serif;
+  <span class="codeHighlight">font-size</span>: .9em;
+}
+
+h1,
+h2 {
+  <span class="codeHighlight">font-family</span>: georgia, times, serif;
+}
+
+h1 { <span class="codeHighlight">font-size</span>: 2em; }
+h2 { <span class="codeHighlight">font-size</span>: 1.8em; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Apply font-size and font-family</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-206-04.html">exercises-start/exercise-206-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;body&gt;</code> element with <code>font-family: arial, helvetica, sans-serif</code> and <code>font-size: 1em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+body {
+  font-family:
+    arial, helvetica, sans-serif;
+  font-size: 1em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> elements with <code>font-family: georgia, times, serif</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h1,
+h2 {
+  font-family: georgia, times, serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the <code>&lt;h1&gt;</code> element with <code>font-size: 2.5em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h1 {
+  font-size: 2.5em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the <code>&lt;h2&gt;</code> element with <code>font-size: 1.5em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h2 {
+  font-size: 1.5em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-206-04.html">exercises-finished/exercise-206-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="207-css-cascade.html">207: CSS Cascade</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{fill:#568312;}
+	.st3{fill:#B0C590;}
+	.st4{fill:#B04636;}
+	.st5{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#B04636;stroke-width:7.7406;stroke-miterlimit:10;}
+	.st7{font-family:'HelveticaNeue-Bold';}
+	.st8{font-size:32px;}
+	.st9{font-family:'HelveticaNeue';}
+	.st10{font-size:22px;}
+	.st11{font-size:23px;}
+</style>
+<polygon class="st0" points="650,400 0,400 1,0 651,0 "/>
+<g>
+	<rect x="26.5" y="100.5" class="st0" width="597" height="298"/>
+	<path class="st1" d="M622,102v295H28V102H622 M625,99H25v301h600V99L625,99z"/>
+</g>
+<g>
+	<rect x="46.5" y="120.5" class="st0" width="557" height="258"/>
+	<path class="st1" d="M602,122v255H48V122H602 M605,119H45v261h560V119L605,119z"/>
+</g>
+<g>
+	<rect x="66.5" y="140.5" class="st0" width="517" height="42"/>
+	<path class="st1" d="M582,142v39H68v-39H582 M585,139H65v45h520V139L585,139z"/>
+</g>
+<g>
+	<rect x="66.5" y="283.5" class="st0" width="517" height="75"/>
+	<path class="st1" d="M582,285v72H68v-72H582 M585,282H65v78h520V282L585,282z"/>
+</g>
+<g>
+	<rect x="66.5" y="194.5" class="st0" width="517" height="75"/>
+	<path class="st1" d="M582,196v72H68v-72H582 M585,193H65v78h520V193L585,193z"/>
+</g>
+<g>
+	<rect x="86.5" y="303.5" class="st0" width="477" height="35"/>
+	<path class="st1" d="M562,305v32H88v-32H562 M565,302H85v38h480V302L565,302z"/>
+</g>
+<text transform="matrix(1 0 0 1 74.9998 171.4238)" class="st7 st8">This is a heading</text>
+<text transform="matrix(1 0 0 1 95.0004 325.8535)" class="st9 st10">Lorem ipsum dolor sit amet, consectetuer adip</text>
+<g>
+	<rect x="86.5" y="214.5" class="st0" width="477" height="35"/>
+	<g>
+		<path class="st1" d="M562,216v32H88v-32H562 M565,213H85v38h480V213L565,213z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 94.9996 237.8535)" class="st9 st10">Lorem ipsum:</text>
+<text transform="matrix(1 0 0 1 427.0001 237.8535)" class="st9 st10">dolor sit amet</text>
+<rect x="47" y="25" class="st4" width="533" height="41"/>
+<text transform="matrix(1 0 0 1 62.0288 52.7109)" class="st0 st7 st11">Padding increases dimensions of the element</text>
+<g>
+	<path class="st2" d="M412.5,213h-7.8v3.5h7.8V213L412.5,213z M396.9,213h-7.8v3.5h7.8V213L396.9,213z M381.4,213h-7.8v3.5h7.8V213
+		L381.4,213z M365.8,213h-7.8v3.5h7.8V213L365.8,213z M350.3,213h-7.8v3.5h7.8V213L350.3,213z M334.7,213H327v3.5h7.8V213L334.7,213
+		z M319.2,213h-7.8v3.5h7.8V213L319.2,213z M303.6,213h-7.8v3.5h7.8V213L303.6,213z M288.1,213h-7.8v3.5h7.8V213L288.1,213z
+		 M272.6,213h-7.8v3.5h7.8V213L272.6,213z M257,213h-7.8v3.5h7.8V213L257,213z M241.5,213h-7.8v3.5h7.8V213L241.5,213z M235.5,219.1
+		H232v7.8h3.5V219.1L235.5,219.1z M235.5,234.6H232v7.8h3.5V234.6L235.5,234.6z M238.9,247.5H232v2.7l0,0v-2.7v2.7l0,0v0.8h3.5l0,0
+		l0,0l0,0l0,0c1.7,0,3.4,0,3.4,0V247.5L238.9,247.5z M254.5,247.5h-7.8v3.5h7.8V247.5L254.5,247.5z M270,247.5h-7.8v3.5h7.8V247.5
+		L270,247.5z M285.6,247.5h-7.8v3.5h7.8V247.5L285.6,247.5z M301.1,247.5h-7.8v3.5h7.8V247.5L301.1,247.5z M316.6,247.5h-7.8v3.5
+		h7.8V247.5L316.6,247.5z M332.2,247.5h-7.8v3.5h7.8V247.5L332.2,247.5z M347.7,247.5H340v3.5h7.8V247.5L347.7,247.5z M363.3,247.5
+		h-7.8v3.5h7.8V247.5L363.3,247.5z M378.8,247.5h-7.8v3.5h7.8V247.5L378.8,247.5z M394.4,247.5h-7.8v3.5h7.8V247.5L394.4,247.5z
+		 M409.9,247.5h-7.8v3.5h7.8V247.5L409.9,247.5z M425.5,247.5h-7.8v3.5h7.8V247.5L425.5,247.5z M428,238h-3.5v7.8h3.5V238L428,238z
+		 M428,222.5h-3.5v7.8h3.5V222.5L428,222.5z M428,213h-7.8v3.5h7.8V213L428,213z"/>
+</g>
+<g>
+	<rect x="254.5" y="209.5" class="st3" width="196" height="75"/>
+	<g>
+		<path class="st2" d="M449,211v72H256v-72H449 M452,208H253v78h199V208L452,208z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="264" y1="212.9" x2="264" y2="66"/>
+		<g>
+			<polygon class="st4" points="274.5,209.9 264,228 253.5,209.9 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 283.0001 253.418)" class="st9 st10">Inline element</text>
+</g>
+</svg>

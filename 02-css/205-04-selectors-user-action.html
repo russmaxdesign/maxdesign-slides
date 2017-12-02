@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-04: User-action pseudo-classes</title>
+    <meta name="description" content="The user-action pseudo-classes, :focus, :hover and :active, allow you to style elements based on the way that users interact with these elements">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-04</h5>
+          <h1>User-action pseudo-classes</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>user-action pseudo-classes</b> allow you to style elements based on the way that users interact with these elements.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FOCUS SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:focus pseudo-class (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:focus pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"focus"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:focus</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:focus</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+         <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:focus</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :focus</s> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :focus pseudo-class selector targets <b>elements that have focus</b> (ones that accept keyboard events).</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#focus-pseudo">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#the-user-action-pseudo-classes-hover-act">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#dynamic-pseudo-classes">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :focus pseudo-class selector is <b>not supported by IE6 or IE7</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write a :focus selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-04-01.html">exercises-start/exercise-205-04-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;a&gt;</code> element to be <code>color: olivedrab</code>, but only when it is in the focus state.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You will need to use <kbd>TAB</kbd> keystrokes to focus on the link <b>to see the :focus state in action</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a:focus {
+  color: olivedrab;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-04-01.html">exercises-finished/exercise-205-04-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+HOVER SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:hover pseudo-class (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:hover pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"hover"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:hover</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:hover</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+         <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:hover</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :hover</s> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>This selector targets <b>any element when the user’s cursor is over the element</b>, but the user has not activated it.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#the-hover-pseudo">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#the-user-action-pseudo-classes-hover-act">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#dynamic-pseudo-classes">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :focus pseudo-class selector is <b>not supported by IE6 or IE7</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write a :hover selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-04-02.html">exercises-start/exercise-205-04-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;a&gt;</code> element to be <code>color: orangered</code>, but only when it is in the hover state.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You will need to hover over the link <b>to see the :hover state in action</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a:hover {
+  color: orangered;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-04-02.html">exercises-finished/exercise-205-04-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ACTIVE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:active pseudo-class (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:active pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"active"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:active</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a:active</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+         <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">a:active</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>a :active</s> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :active pseudo-class selector targets <b>any element that is currently being activated by the user</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#active-pseudo">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#useraction-pseudos">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#dynamic-pseudo-classes">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>IE6 and IE7 only support :active <b>on elements with the HREF attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>IE6 <b>incorrectly applies this pseudo-class to links that have input focus</b> (incorrectly applies :active for :focus).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>IE6 has a <b>“sticky active state”</b> (active state remains active when the user returns to the page via the back button).</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write an :active selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-04-03.html">exercises-start/exercise-205-04-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;a&gt;</code> element to be <code>color: orchid</code>, but only when it is in the active state.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You will need to click on the link <b>to see the :active state in action</b> - just as the link is activated.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a:active {
+  color: orchid;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-04-03.html">exercises-finished/exercise-205-04-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-05-selectors-lang.html">205-05: The :lang selector</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

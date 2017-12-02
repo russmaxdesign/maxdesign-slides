@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 213-03: Write a property to stop elements from sliding under floats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+.example-parent {
+  overflow: hidden;
+  background: pink;
+}
+
+.example-parent p {
+  margin: 0;
+}
+
+.example {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  background: lime;
+}
+
+/* Add styles here */
+
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 213-03: Write a property to stop elements from sliding under floats</h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>Before</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <h2>overflow: hidden</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>float: left</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: inline-block</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>display: flow-root</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+      <h2>contain: layout</h2>
+      <div class="example-parent">
+        <div class="example">example</div>
+        <p class="example6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis.</p>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, aliquam, eos? Enim ipsa repellat culpa expedita omnis, repudiandae error architecto a nam, consequuntur incidunt molestiae deleniti explicabo eius aut aliquam.</p>
+
+    </div>
+  </body>
+</html>

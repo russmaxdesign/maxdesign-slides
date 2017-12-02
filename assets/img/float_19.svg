@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{fill:#B04636;}
+	.st3{font-family:'HelveticaNeue-Bold';}
+	.st4{font-size:32px;}
+	.st5{fill:none;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:22px;}
+	.st8{fill:#B0C590;}
+	.st9{fill:#568312;}
+	.st10{fill:#99B370;}
+	.st11{fill:#CBF8CB;}
+	.st12{fill:#9FB978;}
+	.st13{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st14{font-size:23px;}
+</style>
+<g id="content">
+	<g>
+		<rect x="26.5" y="88.5" class="st0" width="577" height="310"/>
+		<path class="st1" d="M602,90v307H28V90H602 M605,87H25v313h580V87L605,87z"/>
+	</g>
+	<g>
+		<rect x="46.5" y="108.5" class="st0" width="537" height="270"/>
+		<path class="st1" d="M582,110v267H48V110H582 M585,107H45v273h540V107L585,107z"/>
+	</g>
+	<g>
+		<g>
+			<path class="st2" d="M572,245v122H58V245H572 M575,242H55v128h520V242L575,242z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="56.5" y="118.5" class="st0" width="517" height="42"/>
+		<path class="st1" d="M572,120v39H58v-39H572 M575,117H55v45h520V117L575,117z"/>
+	</g>
+	<g>
+		<rect x="66.5" y="253.5" class="st0" width="497" height="35"/>
+		<path class="st1" d="M562,255v32H68v-32H562 M565,252H65v38h500V252L565,252z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 57.9998 149.4238)" class="st3 st4">This is a heading</text>
+	<rect x="68" y="260" class="st5" width="494" height="30"/>
+	<text transform="matrix(1 0 0 1 68 275.708)" class="st6 st7">Lorem ipsum dolor sit amet, consect etuer adipisc</text>
+	<g>
+		<rect x="66.5" y="288.5" class="st0" width="497" height="35"/>
+		<path class="st1" d="M562,290v32H68v-32H562 M565,287H65v38h500V287L565,287z"/>
+	</g>
+	<rect x="68" y="295" class="st5" width="494" height="30"/>
+	<text transform="matrix(1 0 0 1 68 310.708)" class="st6 st7">elit sed diam nibh euismod tincidunt ut laoreet  </text>
+	<g>
+		<rect x="66.5" y="323.5" class="st0" width="497" height="35"/>
+		<path class="st1" d="M562,325v32H68v-32H562 M565,322H65v38h500V322L565,322z"/>
+	</g>
+	<rect x="68" y="330" class="st5" width="494" height="30"/>
+	<text transform="matrix(1 0 0 1 68 345.708)" class="st6 st7">dolore magna aliquam erat volutpat.</text>
+</g>
+<g id="feature">
+	<g>
+		<rect x="516.5" y="173.5" class="st8" width="57" height="57"/>
+		<g>
+			<path class="st9" d="M572,175v54h-54v-54H572 M575,172h-60v60h60V172L575,172z"/>
+		</g>
+	</g>
+</g>
+<g id="label">
+	<g>
+		<g>
+			<line class="st13" x1="339" y1="228.4" x2="339" y2="50"/>
+			<g>
+				<polygon class="st2" points="349.5,225.4 339,243.5 328.5,225.4 				"/>
+			</g>
+		</g>
+	</g>
+	<rect x="25" y="10" class="st2" width="503" height="41"/>
+	<text transform="matrix(1 0 0 1 39.5289 37.7117)" class="st0 st3 st14">clear: right to clear right floated item above</text>
+</g>
+</svg>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#444444;}
+	.st2{font-family:'HelveticaNeue';}
+	.st3{font-size:22px;}
+	.st4{fill:#568312;}
+	.st5{font-family:'HelveticaNeue-Bold';}
+	.st6{font-size:24px;}
+	.st7{fill:none;stroke:#568312;stroke-width:5;stroke-miterlimit:10;}
+</style>
+<g>
+	<rect x="234.9" y="108.7" class="st0" width="179" height="179"/>
+	<g>
+		<path class="st1" d="M413.4,109.2v178h-178v-178H413.4 M414.4,108.2h-180v180h180V108.2L414.4,108.2z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 302.9451 93.6361)" class="st2 st3">1em</text>
+<text transform="matrix(1 0 0 1 317.6785 142.6361)" class="st4 st5 st6">1</text>
+<text transform="matrix(1 0 0 1 248.4989 202.7345)" class="st4 st5 st6">1</text>
+<text transform="matrix(1 0 0 1 383.4989 202.7345)" class="st4 st5 st6">1</text>
+<text transform="matrix(1 0 0 1 317.6785 271.6361)" class="st4 st5 st6">1</text>
+<text transform="matrix(1 0 0 1 173.5941 202.3581)" class="st2 st3">1em</text>
+<text transform="matrix(1 0 0 1 433.5941 202.3581)" class="st2 st3">1em</text>
+<text transform="matrix(1 0 0 1 302.9451 314.6361)" class="st2 st3">1em</text>
+<g>
+	<g>
+		<g>
+			<line class="st7" x1="290.6" y1="198.2" x2="358.1" y2="198.2"/>
+			<g>
+				<polygon class="st4" points="292.8,205.7 279.9,198.2 292.8,190.7 				"/>
+			</g>
+			<g>
+				<polygon class="st4" points="355.9,205.7 368.9,198.2 355.9,190.7 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st7" x1="324.4" y1="232" x2="324.4" y2="164.5"/>
+			<g>
+				<polygon class="st4" points="331.8,229.8 324.4,242.7 316.9,229.8 				"/>
+			</g>
+			<g>
+				<polygon class="st4" points="331.8,166.7 324.4,153.7 316.9,166.7 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

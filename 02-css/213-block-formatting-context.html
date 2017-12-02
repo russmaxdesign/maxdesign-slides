@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>213: Block formatting context</title>
+    <meta name="description" content="The block formatting context is important to understand as it affects the flow, floats, clear, and margins">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>213</h5>
+          <h1>Block formatting context</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The block formatting context is <b>important to understand</b> as it affects aspects of the layout including floats, clear, and margins.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block formatting contexts are laid out in normal flow and behave more or less like any block box, <b>apart from three important exceptions</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-sm">
+            <li>They <b>contain margins</b></li>
+            <li>They <b>contain floats</b></li>
+            <li>They <b>stop elements from sliding under floats</b></li>
+            </ul>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>How are they created?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>A block formatting context is created if <b>any one of the following properties</b> is applied to a block-level element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Absolute positioning</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { position: <span class="codeHighlight">absolute</span>; }
+p { position: <span class="codeHighlight">fixed</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Floats</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { float: <span class="codeHighlight">left</span>; }
+p { float: <span class="codeHighlight">right</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Overflow</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { overflow: <span class="codeHighlight">hidden</span>; }
+p { overflow: <span class="codeHighlight">auto</span>; }
+p { overflow: <span class="codeHighlight">scroll</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Display</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { display: <span class="codeHighlight">inline-block</span>; }
+p { display: <span class="codeHighlight">table-caption</span>; }
+p { display: <span class="codeHighlight">table-cell</span>; }
+p { display: <span class="codeHighlight">flex</span>; }
+p { display: <span class="codeHighlight">inline-flex</span>; }
+p { display: <span class="codeHighlight">grid</span>; }
+p { display: <span class="codeHighlight">inline-grid</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>flow-root</code> value generates a block container box for the element and <b>establishes a new block formatting context</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { display: <span class="codeHighlight">flow-root</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Contain</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>contain</code> property allows an author to indicate that an element and its contents are <b>independent of the rest of the document tree</b>. </p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This allows browsesr to recalculate the layout for a limited area of the DOM <b>and not the entire page</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Of the seven possible values, <b>three trigger the block formatting context</b>: <code>strict</code>, <code>content</code> and <code>layout</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { contain: <span class="codeHighlight">strict</span>; }
+p { contain: <span class="codeHighlight">content</span>; }
+p { contain: <span class="codeHighlight">layout</span>; }
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Containing margins</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block formatting contexts will <b>contain the top and bottom margins of child elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <code>&lt;div&gt;</code> with a class of <code>example1</code> has a <b>nested child element</b> with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;
+  &lt;div class="<span class="codeHighlight">example2</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> has <b>the following properties</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  <span class="codeHighlight">margin-top: 2em;</span>
+  <span class="codeHighlight">margin-bottom: 2em;</span>
+  <span class="codeHighlight">background: lime;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The top and bottom margins of <code>example2</code> will <b>“poke out” the top and bottom</b> of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These margins will affect content above and below <code>example1</code> <b>but not affect this element directly</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_01.svg" alt="Margins not contained">
+          </section>
+
+          <section data-background="#fff">
+            <p>There are a range of different methods that can be used to <b>contain these margins inside the parent element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you add <code>padding</code> or <code>border</code> to the top and/or bottom of <code>example1</code>, <b>these margins will be contained</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">padding-top: 1px;</span>
+  <span class="codeHighlight">padding-bottom: 1px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">border-top: 1px solid red;</span>
+  <span class="codeHighlight">border-bottom: 1px solid red;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_02.svg" alt="Margins contained">
+          </section>
+
+          <section data-background="#fff">
+            <p>However, you could also <b>trigger a block formatting context</b> and achieve the same result, without having to add <code>padding</code> or <code>border</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">overflow: hidden;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_02.svg" alt="Margins contained">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write a property to contain margins</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-01.html">exercises-start/exercise-213-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This rule <b>sets a background-color</b> on <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, as there is nothing to contain the margins of the child element, <code>example1</code> will <b>collapse in height until it is the height of the child</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For this reason, <b>you will not see the yellow background</b> for <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  background: yellow;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The borders on top and bottom of <code>example2</code> will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  background: yellow;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The padding on top and bottom of <code>example2</code> will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  overflow: hidden;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>overflow: hidden</code> will trigger the block formatting context for <code>example4</code> and will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style the element with a class of <code>example5</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  float: left;
+  width: 100%;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>float: left</code> will trigger the block formatting context for <code>example5</code> and will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice that <code>width</code> also needs to be added to <code>example5</code> <b>in order for this method to be effective</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style the element with a class of <code>example6</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  display: inline-block;
+  width: 100%;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: inline-block</code> will trigger the block formatting context for <code>example6</code> and will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with <code>example5</code>, a <code>width</code> also needs to be added to <code>example6</code> <b>in order for this method to be effective</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a seventh CSS rule</b> to style the element with a class of <code>example7</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example7 {
+  display: flow-root;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: flow-root</code> will trigger the block formatting context for <code>example7</code> and will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write an eighth CSS rule</b> to style the element with a class of <code>example8</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example8 {
+  contain: layout;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>contain: layout</code> will trigger the block formatting context for <code>example8</code> and will <b>contain the margins of the child element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-01.html">exercises-finished/exercise-213-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Containing floats</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block formatting contexts will <b>contain floating child elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <code>&lt;div&gt;</code> with a class of <code>example1</code> has a <b>nested child element</b> with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;
+  &lt;div class="<span class="codeHighlight">example2</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> has <b>the following properties</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  <span class="codeHighlight">float: left;</span>
+  <span class="codeHighlight">width: 100px;</span>
+  <span class="codeHighlight">height: 100px;</span>
+  <span class="codeHighlight">background: lime;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>As soon as <code>example2</code> is floated, it will <b>move out of normal flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As there are no “in-flow” elements inside <code>example1</code>, <b>the element will collapse until it has no height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This will make <code>example2</code> <b>poke out the bottom</b> of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_03.svg" alt="Parent ignores float and height collapses">
+          </section>
+
+          <section data-background="#fff">
+            <p>There are <b>a range of different methods</b> that can be used to force <code>example1</code> to wrap around <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, a <b>clearfix solution</b> could be used to solve the problem.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1:after {
+  <span class="codeHighlight">content: "";</span>
+  <span class="codeHighlight">display: block;</span>
+  <span class="codeHighlight">clear: both;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, you could also <b>trigger a block formatting context</b> and achieve the same result.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">overflow: hidden;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_04.svg" alt="Parent contains float">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write a property to contain floats</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-02.html">exercises-start/exercise-213-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This rule <b>sets a background-color</b> on <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, as there is nothing to contain the child floated element, <code>example1</code> will <b>collapse in height until it is invisible</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For this reason, <b>you will not see the yellow background</b> for <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  overflow: hidden;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>overflow: hidden</code> will trigger the block formatting context for <code>example2</code> and will <b>contain the child floated element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  float: left;
+  width: 100%;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>float: left</code> will trigger the block formatting context for <code>example3</code> and will <b>contain the child floated element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Notice that <code>width</code> also needs to be added to <code>example3</code> <b>in order for this method to be effective</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  display: inline-block;
+  width: 100%;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: inline-block</code> will trigger the block formatting context for <code>example4</code> and will <b>contain the child floated element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with <code>example3</code>, a <code>width</code> also needs to be added to <code>example4</code> <b>in order for this method to be effective</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style the element with a class of <code>example5</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  display: flow-root;
+  width: 100%;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: flow-root</code> will trigger the block formatting context for <code>example5</code> and will <b>contain the child floated element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style the element with a class of <code>example6</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  contain: layout;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>contain: layout</code> will trigger the block formatting context for <code>example6</code> and will <b>contain the child floated element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-02.html">exercises-finished/exercise-213-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Stopping elements from sliding under floats</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Block formatting contexts can <b>stop elements from sliding under floats</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <code>&lt;div&gt;</code> with a class of <code>example1</code> has a <b>nested child element</b> with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example1</code> also has a <b>nested</b> <code>&lt;p&gt;</code> <b>element</b> with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;
+  &lt;div class="<span class="codeHighlight">example2</span>"&gt;&lt;/div&gt;
+  &lt;div class="<span class="codeHighlight">example3</span>"&gt;<span class="codeComment">Lorem...</span>&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> has <b>the following properties</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  <span class="codeHighlight">float: left;</span>
+  <span class="codeHighlight">width: 100px;</span>
+  <span class="codeHighlight">height: 100px;</span>
+  <span class="codeHighlight">margin-right: 10px;</span>
+  <span class="codeHighlight">background: lime;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;p&gt;</code> element will <b>slide under the floating element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The line-boxes inside this <code>&lt;p&gt;</code> element <b>will shorten</b> to accommodate the floating element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This will give the appearance that the <b>text flows beside the float and then wraps below</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_05.svg" alt="Parent contains float">
+          </section>
+
+          <section data-background="#fff">
+            <p>The block formatting context can be used to <b>force the</b> <code>&lt;p&gt;</code> <b>element to sit beside the float</b> so that the text will not wrap below.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  <span class="codeHighlight">overflow: hidden;</span>
+}</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bfc_06.svg" alt="Parent contains float">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write a property to stop elements from sliding under floats</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-213-03.html">exercises-start/exercise-213-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This rule <b>sets a background-color</b> on <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, the element slides under the floated element to the left <b>rather than sitting beside it</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  overflow: hidden;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>overflow: hidden</code> will trigger the block formatting context for <code>example2</code> and will <b>force the element to sit beside the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  float: left;
+  width: calc(100% - 110px);
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>float: left</code> will trigger the block formatting context for <code>example3</code> and will <b>force the element to sit beside the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>calc()</code> value allows you to <b>set a width minus a specific amount</b>. In this case, the width is 100% minus the width of the float and its margin.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  display: inline-block;
+  width: calc(100% - 110px);
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: inline-block</code> will trigger the block formatting context for <code>example4</code> and will <b>force the element to sit beside the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As above, the <code>calc()</code> value is used to <b>set the width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style the element with a class of <code>example5</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example5 {
+  display: flow-root;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>display: flow-root</code> will trigger the block formatting context for <code>example5</code> and will <b>force the element to sit beside the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style the element with a class of <code>example6</code>. Set the following properties:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example6 {
+  contain: layout;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adding <code>contain: layout</code> will trigger the block formatting context for <code>example6</code> and will <b>force the element to sit beside the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-213-03.html">exercises-finished/exercise-213-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="214-01-property-value-syntax.html">214-01: CSS Property Value syntax</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

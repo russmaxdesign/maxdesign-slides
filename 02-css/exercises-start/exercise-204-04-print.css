@@ -1,0 +1,9 @@
+/* Add styles here */
+body {
+  font-family: 'Georgia', 'Times', serif;
+}
+
+h1,
+p {
+  color: black;
+}

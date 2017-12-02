@@ -1,0 +1,1559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>211: z-index and the stacking context</title>
+    <meta name="description" content="This slide deck looks at the z-index property as well as exploring the stacking context in depth">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>211</h5>
+          <h1>z-index and the stacking context</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>This slide deck looks at the <code>z-index</code> property as well as exploring the <b>stacking context</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The z-axis</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS allows you to position elements on the <b>“x”, “y” and “z” axes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_01.svg" alt="X, Y and Z axes">
+          </section>
+
+          <section data-background="#fff">
+            <p>The easiest way to understand the “z-axis” is to imagine that every HTML element is <b>just like a piece of paper</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can stack some pieces of paper on top of others <b>so that they overlap</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are stacked at the top are <b>closest to the user</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements that are stacked below are <b>further away from the user</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_02.svg" alt="Elements closest to the user">
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The z-index property</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>z-index</code> property defines the <b>z-order of positioned elements</b> along the z-axis.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>z-index</code> property can only be applied to <b>positioned elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>positioned element</b> is an element with a <code>position</code> value of <code>absolute</code>, <code>relative</code>, <code>fixed</code> or <code>sticky</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { position: <span class="codeHighlight">absolute</span>; }
+p { position: <span class="codeHighlight">relative</span>; }
+p { position: <span class="codeHighlight">fixed</span>; }
+p { position: <span class="codeHighlight">sticky</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>z-index</code> property <b>syntax</b> is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;'z-index'&gt; =
+  <span class="codeHighlight">auto | &lt;integer&gt; | inherit</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The auto value</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { z-index: <span class="codeHighlight">auto</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>auto</code> value is the <b>initial value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>auto</code> value sets the <b>stack level of the box</b> to <code>0</code> in the current stacking context.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>&lt;integer&gt; values</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { z-index: <span class="codeHighlight">-2</span>; }
+p { z-index: <span class="codeHighlight">0</span>; }
+p { z-index: <span class="codeHighlight">9</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>An <code>&lt;integer&gt;</code> consists of <b>one or more digits</b> between <code>0</code> and <code>9</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>An <code>&lt;integer&gt;</code> <b>may be preceded by</b> a <code>"-"</code> (negative) or <code>"+"</code> (positive) symbol.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A value of <code>-0</code> is equivalent to <code>0</code> and is <b>not a negative number</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;integer&gt;</code> value <b>defines the stack level of the box</b> along the z-axis.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Elements with a larger <code>z-index</code> value will normally <b>sit above elements with a smaller</b> <code>z-index</code> <b>value</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The inherit value</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { z-index: <span class="codeHighlight">inherit</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>inherit</code> value <b>inherits</b> the <code>z-index</code> from the parent element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Apply some z-index values</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-211-01.html">exercises-start/exercise-211-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: auto</code>, <code>top: 100px</code>, <code>left: 100px</code> and <code>background: yellow</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  z-index: auto;
+  top: 100px;
+  left: 100px;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 0</code>, <code>top: 120px</code>, <code>left: 120px</code> and <code>background: lime</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  z-index: 0;
+  top: 120px;
+  left: 120px;
+  background: lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> should <b>overlap</b> <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 1</code>, <code>top: 140px</code>, <code>left: 140px</code> and <code>background: pink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  z-index: 1;
+  top: 140px;
+  left: 140px;
+  background: pink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example3</code> should <b>overlap</b> <code>example1</code> and <code>example4</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: -1</code>, <code>top: 160px</code>, <code>left: 160px</code> and <code>background: silver</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  z-index: -1;
+  top: 160px;
+  left: 160px;
+  background: silver;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example4</code> should <b>sit behind all other boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-211-01.html">exercises-finished/exercise-211-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The stacking context</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Every element in an HTML document can either be displayed <b>on top of or beneath</b> other elements in the document.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The “stacking context” defines <b>how elements can be stacked on top of each other</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The root (HTML) element forms <b>the root stacking context</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Unless specific conditions are met, all HTML elements <b>are stacked in relation to this root element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, some types of elements <b>can form their own stacking contexts</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_03.svg" alt="An element that forms a new stacking context">
+          </section>
+
+          <section data-background="#fff">
+            <p>Then, all descendants are <b>stacked in relation to this new stacking context element</b> rather than the root element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>New stacking contexts</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A new stacking context is formed, anywhere in the document, by any element that matches <b>one of the following criteria</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>1. The <b>root</b> (HTML) element of document</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>2. <b>Any element</b> with a <code>position</code> value of <code>absolute</code> and <code>z-index</code> value other than <code>auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  position: <span class="codeHighlight">absolute</span>;
+  z-index: <span class="codeHighlight">1</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>3. <b>Any element</b> with a <code>position</code> value of <code>relative</code> and <code>z-index</code> value other than <code>auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  position: <span class="codeHighlight">relative</span>;
+  z-index: <span class="codeHighlight">1</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>4. <b>Any element</b> with a <code>position</code> value of <code>fixed</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  position: <span class="codeHighlight">fixed</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>5. <b>Any element</b> with a <code>position</code> value of <code>sticky</code> (for mobile devices only).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  position: <span class="codeHighlight">sticky</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>6. <b>Any child</b> of an element set with a <code>display</code> value of <code>flex</code> where the child has a <code>z-index</code> value of anything other than <code>auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.parent {
+  display: <span class="codeHighlight">flex</span>;
+}
+
+.child-of-parent {
+  z-index: <span class="codeHighlight">1</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>7. <b>Any element</b> with an <code>opacity</code> value less than <code>1</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  opacity: <span class="codeHighlight">.5</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>8. <b>Any element</b> with a <code>transform</code> value of anything other than <code>none</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  transform: <span class="codeHighlight">translate(25px, 5px)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>9. <b>Any element</b> with a <code>filter</code> value of anything other than <code>none</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  filter: <span class="codeHighlight">blur(5px)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>10. <b>Any element</b> with a <code>perspective</code> value of anything other than <code>0</code> or <code>none</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  perspective: <span class="codeHighlight">350px</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>11. <b>Any element</b> with a <code>isolation</code> value of <code>isolate</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  isolation: <span class="codeHighlight">isolate</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some other properties <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">trigger the stacking context</a>. However, they won’t be covered here as they are very obscure.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stacks within stacks</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stacking contexts <b>can contain other stacking contexts</b>, and these create a hierarchy of stacking contexts.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_04.svg" alt="A stacking context inside another stacking context">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Self-contained</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each stacking context is <b>self-contained</b>. Child elements are considered part of the stacking order of the parent stacking context.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_05.svg" alt="Boxes in stacking contexts are self-contained">
+          </section>
+
+          <section data-background="#fff">
+            <p>Boxes in one stacking context <b>cannot come between boxes in another stacking context</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_06.svg" alt="Boxes in one stacking context cannot come between boxes in another stacking context">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Descendants with z-index</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If <code>z-index</code> values are applied to a child of a stacking context, these values <b>are only relevant inside the parent stacking context</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_07.svg" alt="z-index values only relevant inside that stacking context">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Create some stacking contexts</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-211-02.html">exercises-start/exercise-211-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 1</code>, <code>top: 120px</code>, <code>left: 120px</code> and <code>background: yellow</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  z-index: 1;
+  top: 120px;
+  left: 120px;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>example1 is <b>now a stacking context</b> as it has positioning as well as a <code>z-index</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 1</code>, <code>top: 20px</code>, <code>left: 20px</code> and <code>background: lime</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  background: lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> will be <b>positioned in relation to</b> <code>example1</code> - the parent element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 1</code>, <code>top: 180px</code>, <code>left: 180px</code> and <code>background: pink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  z-index: 1;
+  top: 180px;
+  left: 180px;
+  background: pink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>example3 is <b>also a stacking context</b> as it has positioning as well as a <code>z-index</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a class of <code>example4</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 1</code>, <code>top: 20px</code>, <code>left: 20px</code> and <code>background: silver</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  background: silver;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example4</code> will be <b>positioned in relation to</b> <code>example3</code> - the parent element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> and <code>example4</code> cannot interact as boxes in one stacking context <b>cannot come between boxes in another stacking context</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-211-02.html">exercises-finished/exercise-211-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Stack order</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>For every stacking context, there is a complex series of steps to <b>determine how descendant elements will be displayed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This is referred to as the <b>“stack order”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This stack order is described from <b>back-to-front</b> (furthest away from the user to closest to the user).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It has been <b>simplified slightly</b> from the <a href="https://www.w3.org/TR/css-position-3/#layered-presentation">CSS Positioned Layout Module Level 3</a> specification.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>1. Root element stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the stacking context is <b>the root element</b>, this layer displays in order:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li><b>background color</b> of the element</li>
+              <li><b>background image</b> of the element</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_08.svg" alt="Background of root element stacking context">
+          </section>
+
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>2. Block, list-item or table stacking context</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the stacking context is a <b>block, list-item, or other block equivalent</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li><b>background color</b> of the element</li>
+              <li><b>background image</b> of the element</li>
+              <li><b>column rule</b> of the element</li>
+              <li><b>border</b> of the element</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_09.svg" alt="Background and borders of block-level stacking context">
+          </section>
+
+          <section data-background="#fff">
+            <p>Otherwise, if the stacking context is a <b>block-level table</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li><b>table background</b> (color then image)</li>
+              <li><b>column group backgrounds</b> (color then image)</li>
+              <li><b>column backgrounds</b> (color then image)</li>
+              <li><b>row group backgrounds</b> (color then image)</li>
+              <li><b>row backgrounds</b> (color then image)</li>
+              <li><b>cell backgrounds</b> (color then image)</li>
+              <li><b>cell column rule</b> for multi-column</li>
+              <li><b>all table borders</b> (in tree order)</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_10.svg" alt="Background and borders of table stacking context">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>3. Negative positioned descendants</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stacking contexts formed by <b>positioned descendants with negative z-indices</b> (excluding <code>0</code>) in <code>z-index</code> order (most negative first) then tree order.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_11.svg" alt="Positioned element with negative z-index">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>4. block-level or table descendants</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>For all its in-flow, non-positioned, <b>block-level descendants</b> in tree order: If the element is a block, list-item, or other block equivalent:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li><b>background color</b> of the element</li>
+              <li><b>background image</b> of the element</li>
+              <li><b>column rule</b> of the element</li>
+              <li><b>border</b> of the element</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_12.svg" alt="Backgrounds and borders of in-flow block-level elements">
+          </section>
+
+          <section data-background="#fff">
+            <p>Otherwise, the element is a <b>table</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li><b>table background</b> (color then image)</li>
+              <li><b>column group backgrounds</b> (color then image)</li>
+              <li><b>column backgrounds</b> (color then image)</li>
+              <li><b>row group backgrounds</b> (color then image)</li>
+              <li><b>row backgrounds</b> (color then image)</li>
+              <li><b>cell backgrounds</b> (color then image)</li>
+              <li><b>cell column rule</b> for multi-column</li>
+              <li><b>all table borders</b> (in tree order)</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_13.svg" alt="Backgrounds and borders of in-flow table elements">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>5. Floats</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>All non-positioned <b>floating descendants</b>, in tree order.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_14.svg" alt="Floating elements">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>6. Inline elements that generate stacking contexts</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If the element is an <b>inline element</b> that generates a stacking context, then:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-xs">
+              <li>1. For <b>each child of the line box</b>, in that line box, in tree order:
+                <ul>
+                  <li>1.2 <b>background color</b> of the element</li>
+                  <li>1.3 <b>background image</b> of the element</li>
+                  <li>1.4 <b>column rule</b> of the element</li>
+                  <li>1.5 <b>border</b> of the element</li>
+                  <li>1.6 For <b>inline elements</b>: any underlining, any overlining, the text, any line-through</li>
+                  <li>1.7 Optionally, the <b>outline</b> of the element</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_15.svg" alt="Backgrounds, borders, text and outline of inline stacking context">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>7. Other elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Otherwise: first for the <b>element</b>, then for all its <b>in-flow, non-positioned, block-level descendants</b> in tree order:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-xs">
+              <li>7.1 If the element is a <b>block-level replaced element</b>, then: the replaced content, atomically.</li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-xs">
+              <li>7.2 Otherwise, for <b>each child of the line box</b>, in that line box, in tree order:
+                <ul>
+                  <li>7.2.1 <b>background color</b> of the element</li>
+                  <li>7.2.2 <b>background image</b> of the element</li>
+                  <li>7.2.3 <b>column rule</b> of the element</li>
+                  <li>7.2.4 <b>border</b> of the element</li>
+                  <li>7.2.5 For <b>inline elements</b>: any underlining, any overlining, the text, any line-through</li>
+                  <li>7.2.6 Optionally, the <b>outline</b> of the element</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-xs">
+              <li>7.3 Optionally, if the element is <b>block-level</b>, the outline of the element.</li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_16.svg" alt="Backgrounds, borders, text and outlines of other elements">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>8. Elements with position, opacity or transform</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>All <b>positioned, <code>opacity</code> or <code>transform</code> descendants</b>, in tree order that fall into the following categories:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ol class="font-xs">
+              <li>All <b>positioned descendants</b> with <code>z-index: auto</code> or <code>z-index: 0</code>, in tree order.</li>
+              <li>All <code>opacity</code> <b>descendants</b> with <code>opacity</code> less than <code>1</code>, in tree order.</li>
+              <li>All <code>transform</code> <b>descendants</b> with <code>transform</code> other than <code>none</code>, in tree order.</li>
+            </ol>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_17.svg" alt="Positioned elements with z-index: 0 or z-index: auto">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>9. Positioned dependants with z-index</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Stacking contexts formed by <b>positioned descendants</b> with z-indices greater than or equal to <code>1</code> in <code>z-index</code> order (smallest first) then tree order.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_18.svg" alt="Positioned elements with z-index of 1 or greater">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>10. Outlines</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Finally, implementations that do not draw outlines in steps above must <b>draw outlines from this stacking context</b> at this stage.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Confusion with stacking contexts</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are some <b>common areas of confusion</b> people experience when dealing with stacking contexts.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Confusion around z-index and stacking contexts</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Applying <code>z-index</code> to elements <b>seems very simple</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>All you need to do is <b>use a higher</b> <code>z-index</code> <b>value</b> for the element to sit on top.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, this simple rule <b>does not work</b> when you apply <code>z-index</code> to elements inside stacking contexts.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s use an example with <b>three positioned elements</b>, all with different <code>z-index</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;
+  &lt;div class="<span class="codeHighlight">example2</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="<span class="codeHighlight">example3</span>"&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1,
+.example2,
+.example3 { position: <span class="codeHighlight">absolute</span>; }
+
+.example1 { z-index: <span class="codeHighlight">1</span>; }
+.example2 { z-index: <span class="codeHighlight">15</span>; }
+.example3 { z-index: <span class="codeHighlight">3</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In theory, <code>example2</code> <b>should sit on top of the other two elements</b> as it has a higher <code>z-index</code> value than the other two elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <code>example3</code> <b>will sit on top</b> of both of the other elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_19.svg" alt="example3 sits on top">
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example1</code> <b>forms a new stacking context</b> because it has position and a <code>z-index</code> value of <code>1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+              <p><code>example2</code> is a child of the <code>example1</code> stacking context, so its <code>z-index</code> value is <b>only relevant inside</b> <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_20.svg" alt="example2 is only relevant inside example1">
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that only two <code>z-index</code> <b>values that matter</b> - the values for <code>example1</code> and <code>example3</code>.</p>
+          </section>
+
+
+          <section data-background="#fff">
+            <p><code>example1</code> stacking context has a value of <code>1</code>, while <code>example2</code> has a value of <code>3</code>. <b>So,</b> <code>example3</code> <b>wins</b>!</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_21.svg" alt="z-index: 1 and z-index: 3">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Confusion around z-index and stacking contexts</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-211-03.html">exercises-start/exercise-211-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: auto</code>, <code>top: 120px</code>, <code>left: 120px</code> and <code>background: yellow</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  z-index: 1;
+  top: 120px;
+  left: 120px;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>example1 is <b>now a stacking context</b> as it has positioning as well as a <code>z-index</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 15</code>, <code>top: 20px</code>, <code>left: 20px</code> and <code>background: lime</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  z-index: 15;
+  top: 20px;
+  left: 20px;
+  background: lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> will be <b>positioned in relation to</b> <code>example1</code> - the parent element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>z-index: 3</code>, <code>top: 160px</code>, <code>left: 160px</code> and <code>background: pink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  z-index: 3;
+  top: 160px;
+  left: 160px;
+  background: pink;
+}
+
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though <code>example2</code> has the highest <code>z-index</code>, it is inside the <code>example1</code> stacking context, so <code>example3</code> <b>will be highest in stack order</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-211-03.html">exercises-finished/exercise-211-03.html</a></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Confusion around backgrounds and text</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s use an example with two <code>&lt;div&gt;</code> elements, <b>one below the other</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Both of these are <b>in-flow block-level elements</b> without any positioning.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_22.svg" alt="example2 not overlapping">
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;&lt;/div&gt;
+&lt;div class="<span class="codeHighlight">example2</span>"&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you were to <b>apply negative margins to the top of</b> <code>example2</code>, this element would overlap <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background: yellow;
+}
+
+.example2 {
+  background: lime;
+  <span class="codeHighlight">margin-top: -1em;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_23.svg" alt="example2 overlapping slightly">
+          </section>
+
+          <section data-background="#fff">
+            <p>If the negative margin value is increased, <code>example2</code> will overlap <code>example1</code> <b>more fully</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background: yellow;
+}
+
+.example2 {
+  background: lime;
+  <span class="codeHighlight">margin-top: -2em;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though <code>example2</code> is overlapping, the background-color of <code>example2</code> <b>sits under the text</b> from <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_24.svg" alt="example2 overlapping further">
+          </section>
+
+          <section data-background="#fff">
+            <p>Some developers <b>assume this is a rendering bug</b>, but this is not correct.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The strange overlap is <b>due to the stack order of elements and their properties</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As described before, the bottom of the stack is the <b>furthest from the user</b>, the top of the stack is the nearest to the user.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The backgrounds of in-flow block-level elements <b>are rendered as part of</b> <a href="#/6/19">Layer 4</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The text for <code>example1</code> <b>is rendered as part of</b> <a href="#/6/33">Layer 7</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that both pieces of text <b>are on a higher layer</b> than the two background-colors.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though the second element overlaps the first, <b>the overlapping happens on two different layers</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Confusion around backgrounds and text</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-211-04.html">exercises-start/exercise-211-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>margin-top: -2em;</code> and <code>background: lime</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  margin-top: -2em;
+  background: lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though <code>example2</code> overlaps <code>example1</code>, the backgrounds and text <b>overlap at different levels</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-211-04.html">exercises-finished/exercise-211-04.html</a></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Confusion around negative z-index</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you place a child positioned box on top of a parent positioned box and give the child box a negative <code>z-index</code> value, will the child <b>go behind the parent</b>?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In some circumstances the answer is <b>“yes”</b>, but in other circumstances, <b>“no”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The answer depends on whether there is a <b>stacking context involved</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s use an example with <b>two</b> <code>&lt;div&gt;</code> <b>elements</b>, one inside the other.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div class="<span class="codeHighlight">example1</span>"&gt;
+  <span class="codeComment">Example1</span>
+  &lt;div class="<span class="codeHighlight">example2</span>"&gt;<span class="codeComment">Example2</span>&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example1</code> <b>needs to be given</b> positioning, <code>z-index</code>, <code>padding</code> and <code>background-color</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">position: absolute;
+  z-index: 1;
+  padding: 20px;
+  background-color: lime;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This parent element is <b>now a stacking context</b> as it has been given positioning and <code>z-index</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> <b>also needs to be given</b> positioning, <code>z-index</code>, <code>padding</code> and <code>background-color</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, the <code>z-index</code> property <b>needs a negative value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  <span class="codeHighlight">position: absolute;
+  z-index: -1;
+  padding: 20px;
+  background-color: yellow;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some developers will assume that <code>example2</code> will now <b>move below</b> <code>example1</code> due to the negative <code>z-index</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <code>example2</code> will <b>move below the text</b> of <code>example1</code>, but not below its background.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/stack-order_25.svg" alt="example2 has a negative z-index but sits on top of the background of example2">
+          </section>
+
+          <section data-background="#fff">
+            <p>This is because <code>example1</code> is a block-level stacking context and <b>follows the stacking order described earlier</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The backgrounds of block-level stacking contexts <b>are rendered as part of</b> <a href="#/6/9">Layer 2</a>.</p>
+          </section>
+
+
+          <section data-background="#fff">
+            <p><code>example2</code> is a child elements with a negative <code>z-index</code> value and therefore is <b>rendered as part of</b> <a href="#/6/16">Layer 3</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The text for both elements <b>is rendered as part of</b> <a href="#/6/33">Layer 7</a>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Confusion around negative z-index</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-211-05.html">exercises-start/exercise-211-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>position: absolute</code>, <code>z-index: 1</code>, <code>left: 120px</code>, <code>top: 120px</code> and <code>background: lime</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+  z-index: 1;
+  left: 120px;
+  top: 120px;
+  background: lime;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set with</b> <code>position: absolute</code>, <code>z-index: -1</code>, <code>left: 20px</code>, <code>top: 20px</code> and <code>background: yellow</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: absolute;
+  z-index: -1;
+  left: 20px;
+  top: 20px;
+  background: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>example2</code> will be <b>positioned in relation to</b> <code>example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though <code>example2</code> has a negative <code>z-index</code> value, the background of <code>example1</code> will be <b>lower in stack order</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-211-05.html">exercises-finished/exercise-211-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="212-css-floats.html">212: CSS Floats</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

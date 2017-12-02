@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-10: Attribute selectors</title>
+    <meta name="description" content="Attribute selectors are used to select elements based on their attributes or their attribute and values">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-10</h5>
+          <h1>Attribute selectors</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Attribute selectors</b> are used to select elements based on their attributes or their attribute and values.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att] attribute selector</b> is written as <code>"E[att]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">input[required]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att] attribute selector targets <b>any element with the relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;input&gt;</code> <b>element with a required attribute</b> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">input[required]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;input type="text" <span class="codeHighlight">required</span>&gt;
+&lt;input type="text"&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att] attribute selector is <b>not supported by IE6 or IE7</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write an [att] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-01.html">exercises-start/exercise-205-10-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;input&gt;</code> with a boolean <code>required</code> attribute. Set with <code>border: 1px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+input[required] { 
+  border: 1px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-01.html">exercises-finished/exercise-205-10-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT-VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att=val] attribute selector</b> is written as <code>"E[att=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att=val]</span> { }
+<span class="codeHighlight">E[att='val']</span> { }
+<span class="codeHighlight">E[att="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p[class="blue"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att=val] attribute selector targets <b>any element with the relevant attribute value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;p&gt;</code> <b>with a class of</b> <code>blue</code> <b>will be selected</b>. Multiple values and hyphen-separated values will not be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p[class="blue"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="<span class="codeHighlight">blue</span>"&gt;&lt;/p&gt;
+&lt;p class="blue red"&gt;&lt;/p&gt;
+&lt;p class="red blue"&gt;&lt;/p&gt;
+&lt;p class="blue-new"&gt;&lt;/p&gt;
+&lt;p class="new-blue"&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write an [att=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-02.html">exercises-start/exercise-205-10-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;p&gt;</code> element with a <code>class</code> value of <code>one</code>. Set to <code>color: burlywood</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p[class="one"] {
+  color: burlywood;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-02.html">exercises-finished/exercise-205-10-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT~VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att~=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att~=val] attribute selector</b> is written as <code>"E[att~=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"~"</code> symbol after the <code>"att"</code> means the value must be <b>"space-separated"</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att~=val]</span> { }
+<span class="codeHighlight">E[att~='val']</span> { }
+<span class="codeHighlight">E[att~="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p[class~="blue"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att~=val] attribute selector targets <b>any space-separated instances of a value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;p&gt;</code> <b>element with a class value of</b> <code>blue</code>, including space separated instances, will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p[class~="blue"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="<span class="codeHighlight">blue</span>"&gt;&lt;/p&gt;
+&lt;p class="<span class="codeHighlight">blue</span> red"&gt;&lt;/p&gt;
+&lt;p class="red <span class="codeHighlight">blue</span>"&gt;&lt;/p&gt;
+&lt;p class="blue-new"&gt;&lt;/p&gt;
+&lt;p class="new-blue"&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att~=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write an [att~=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-03.html">exercises-start/exercise-205-10-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;p&gt;</code> element with a <code>class</code> value of <code>one</code>. Set to <code>color: palevioletred</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also, you need to style any <b>space-separated instances</b> of the class value of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p[class~="one"] {
+  color: palevioletred;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-03.html">exercises-finished/exercise-205-10-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT|VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att|=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att|=val] attribute selector</b> is written as <code>"E[att|=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"|"</code> symbol after the <code>"att"</code> means the value must be <b>"hyphen-separated"</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att|=val]</span> { }
+<span class="codeHighlight">E[att|='val']</span> { }
+<span class="codeHighlight">E[att|="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p[class|="blue"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att|=value] attribute selector targets <b>any element with an attribute value that matches</b>, including hyphen-separated values.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;p&gt;</code> <b>element with a class value of</b> <code>blue</code> or <code>blue-</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p[class|="blue"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p class="<span class="codeHighlight">blue</span>"&gt;&lt;/p&gt;
+&lt;p class="blue red"&gt;&lt;/p&gt;
+&lt;p class="red blue"&gt;&lt;/p&gt;
+&lt;p class="<span class="codeHighlight">blue-</span>new"&gt;&lt;/p&gt;
+&lt;p class="new-blue"&gt;&lt;/p&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att|=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Write an [att|=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-04.html">exercises-start/exercise-205-10-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;p&gt;</code> element with a <code>class</code> value of <code>one</code>. Set to <code>color: mediumspringgreen</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also, you need to style any <b>hyphen-separated instances</b> of the class value of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p[class|="one"] {
+  color: mediumspringgreen;
+}
+
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-04.html">exercises-finished/exercise-205-10-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT^VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att^=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att^=val] attribute selector</b> is written as <code>"E[att^=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"^"</code> symbol after the <code>"att"</code> means the value must <b>"start with the relevant string"</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att^=val]</span> { }
+<span class="codeHighlight">E[att^='val']</span> { }
+<span class="codeHighlight">E[att^="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a[href^="http"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att^=val] attribute selector targets <b>any element whose attribute starts with the value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;a&gt;</code> <b>element with an</b> <code>href</code> <b>that starts with</b> <code>http</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">a[href^="http"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;a href="<span class="codeHighlight">http</span>://abc.com"&gt;&lt;/a&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att^=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Write an [att^=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-05.html">exercises-start/exercise-205-10-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;a&gt;</code> element with <code>href</code> value that starts with <code>http</code>. Set to <code>color: cyan</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a[href^="http"] {
+  color: cyan;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-05.html">exercises-finished/exercise-205-10-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT$VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att$=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att$=val] attribute selector</b> is written as <code>"E[att$=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"$"</code> symbol after the <code>"att"</code> means the value must <b>"end with the relevant string"</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att$=val]</span> { }
+<span class="codeHighlight">E[att$='val']</span> { }
+<span class="codeHighlight">E[att$="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a[href$=".pdf"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att$=val] attribute selector targets <b>any element whose attribute ends with the value</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;a&gt;</code> <b>element with an</b> <code>href</code> <b>that ends with</b> <code>.pdf</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">a[href$=".pdf"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;a href="form<span class="codeHighlight">.pdf</span>&gt;&lt;/a&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att$=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 6: Write an [att$=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-06.html">exercises-start/exercise-205-10-06.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;a&gt;</code> element with <code>href</code> value that ends with <code>.pdf</code>. Set to <code>color: mediumorchid</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a[href$=".pdf"] {
+  color: mediumorchid;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-06.html">exercises-finished/exercise-205-10-06.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ATT*VAL SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>[att*=val] attribute selector (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>[att*=val] attribute selector</b> is written as <code>"E[att*=value]"</code>. 
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"E"</code> is for an <b>optional element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"att"</code> is for the <b>relevant attribute</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"val"</code> is for the <b>relevant attribute value</b> which can be placed inside single, double or no quotes.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"*"</code> symbol after the <code>"att"</code> means the value must <b>"contain the relevant string"</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E[att*=val]</span> { }
+<span class="codeHighlight">E[att*='val']</span> { }
+<span class="codeHighlight">E[att*="val"]</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">a[href*="abc.com"]</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att*=val] attribute selector targets <b>any element whose attribute value matches a string</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;a&gt;</code> <b>element with an</b> <code>href</code> value with a string of <code>abc.com</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">a[href*="abc.com"]</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;a href="http://www.<span class="codeHighlight">abc.com</span>&gt;&lt;/a&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#attribute-selectors">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#attribute-selectors">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#attribute-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The [att*=val] attribute selector is <b>not supported by IE6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 7: Write an [att*=val] selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-10-07.html">exercises-start/exercise-205-10-07.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any <code>&lt;a&gt;</code> element with <code>href</code> value that contains the string <code>example.com</code>. Set to <code>color: mediumpurple</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+a[href*="example.com"] {
+  color: mediumpurple;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-10-07.html">exercises-finished/exercise-205-10-07.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="206-css-inheritance.html">206: CSS Inheritance</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 211-01: Apply some z-index values</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+.example {
+  position: absolute;
+  outline: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+
+/* Add styles here */
+
+.example1 {
+  z-index: auto;
+  top: 100px;
+  left: 100px;
+  background: yellow;
+}
+
+.example2 {
+  z-index: 0;
+  top: 120px;
+  left: 120px;
+  background: lime;
+}
+
+.example3 {
+  z-index: 1;
+  top: 140px;
+  left: 140px;
+  background: pink;
+}
+
+.example4 {
+  z-index: -1;
+  top: 160px;
+  left: 160px;
+  background: silver;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 211-01: Apply some z-index values</h1>
+
+      <div class="example example1">Example1</div>
+      <div class="example example2">Example2</div>
+      <div class="example example3">Example3</div>
+      <div class="example example4">Example4</div>
+    </div>
+  </body>
+</html>

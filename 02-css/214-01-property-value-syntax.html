@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>214-01: CSS property value syntax</title>
+    <meta name="description" content="This slide deck will give you a basic understanding of the W3C property/value syntax and help you understand the various W3C CSS Specifications">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>214-01</h5>
+          <h1>CSS property value syntax</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>This slide deck will give you a basic understanding of the <b>W3C property/value syntax</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This will help you <b>understand the various W3C CSS Specifications</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Backus-Naur Form</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s start with a quick look at <b>Backus-Naur Form</b>, as this will help to explain the CSS property value syntax.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In computer science, Backus–Naur Form (BNF) is one of the main notation techniques used to <b>describe the syntax of computing languages</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A Backus-Naur Form specification is <b>a set of derivation rules</b>, written as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">// BNF Syntax example</span>
+&lt;symbol&gt; ::= __expression__
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>At the left, there is a <b>“non-terminal symbol”</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">// BNF Syntax example</span>
+<span class="codeHighlight">&lt;symbol&gt;</span> ::= __expression__
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>After this is a symbol that means <b>“may be replaced with”</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">// BNF Syntax example</span>
+&lt;symbol&gt; <span class="codeHighlight">::=</span> __expression__
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>And at the right is an <b>“expression”</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">// BNF Syntax example</span>
+&lt;symbol&gt; ::= <span class="codeHighlight">__expression__</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>__expression__</code> consists of one or more sequences of symbols that are used to <b>derive the meaning of the symbol on the left</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Backus-Naur specifications are basically saying: <b>“Whatever is on the left may be replaced with whatever is on the right”</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Non-terminal symbols</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Non-terminal symbols</b> appear between angle brackets <code>"&lt; &gt;"</code>. These symbols can be broken down or replaced further.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, in the following example, the <code>&lt;digit&gt;</code> non-terminal symbol <b>can be broken down further</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Non-terminal symbols */</span>
+&lt;integer&gt; ::= <span class="codeHighlight">&lt;digit&gt;</span> | <span class="codeHighlight">&lt;digit&gt;</span>&lt;integer&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;digit&gt;</span> ::=
+  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Terminal symbols</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>terminal symbol</b> indicates that the value cannot be broken down or replaced further.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the digits <b>cannot be broken down further</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;digit&gt; ::=
+  <span class="codeHighlight">0</span> | <span class="codeHighlight">1</span> | <span class="codeHighlight">2</span> | <span class="codeHighlight">3</span> | <span class="codeHighlight">4</span> | <span class="codeHighlight">5</span> | <span class="codeHighlight">6</span> | <span class="codeHighlight">7</span> | <span class="codeHighlight">8</span> | <span class="codeHighlight">9</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Variations of BNF</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are variants of the BNF used today, such as <b>“Extended Backus–Naur Form”</b> (EBNF) and <b>“Augmented Backus–Naur Form”</b> (ABNF).</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The CSS Property Value Syntax</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>While the W3C CSS property value syntax has some similarities to BNF and EBNF, <b>it also has some differences</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Like BNF and EBNF, it begins with a <b>non-terminal symbol</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Non-terminal symbol */</span>
+<span class="codeHighlight">&lt;line-width&gt;</span> =
+  &lt;length&gt; | thin | medium | thick
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Like EBNF, it uses an equals <code>"="</code> after the initial non-terminal symbol. This also means <b>“may be replaced with”</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Equals symbol */</span>
+&lt;line-width&gt; <span class="codeHighlight">=</span>
+  &lt;length&gt; | thin | medium | thick
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, unlike BNF and EBNF, the CSS property value syntax describes symbols as <b>“component values”</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component values */</span>
+&lt;line-width&gt; =
+  <span class="codeHighlight">&lt;length&gt;</span> | <span class="codeHighlight">thin</span> | <span class="codeHighlight">medium</span> | <span class="codeHighlight">thick</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are <b>three different types of component values</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>1. Keyword values</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>These values appear without quotes or angle brackets. <b>They are used “as is” as property values</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As they cannot be replaced or broken down further, <b>they are terminal</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Keyword value examples */</span>
+&lt;line-width&gt; =
+  &lt;length&gt; | <span class="codeHighlight">thin</span> | <span class="codeHighlight">medium</span> | <span class="codeHighlight">thick</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>2. Property data types</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>These types define <b>the actual property name</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>They are defined using the property name (complete with single quotes) between the angle brackets <code>"&lt; &gt;"</code>. <b>They are non-terminal</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Property data type example */</span>
+<span class="codeHighlight">&lt;'border'&gt;</span> =
+  &lt;line-width&gt; || &lt;line-style&gt; || &lt;color&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>3. Non-property data types</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>These are non-terminal data types that are used to <b>help define property data types</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>&lt;line-width&gt;</code> is not a property, but it <b>helps to define the various</b> <code>&lt;border&gt;</code> <b>properties</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Non-property data type */</span>
+<span class="codeHighlight">&lt;line-width&gt;</span> =
+  &lt;length&gt; | thin | medium | thick
+
+<span class="codeComment">/* Property syntax */</span>
+&lt;'border-width'&gt; = <span class="codeHighlight">&lt;line-width&gt;</span>{1,4}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>How do you identify the difference between<b> property and non-property data types</b>? </p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Property data types contain <b>single quotes around the name</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Property data type */</span>
+&lt;'border'&gt;
+
+<span class="codeComment">/* Non-property data type */</span>
+&lt;line-width&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are some property and non-property data types that <b>share the same name</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>For example</b>, the <code>&lt;'color'&gt;</code> property data type and <code>&lt;color&gt;</code> non-property data types:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Property data type */</span>
+&lt;'color'&gt;
+
+<span class="codeComment">/* Non-property data type */</span>
+&lt;color&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This allows the non-property data type to be used <b>where ever that value needs to be defined</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* The color non-property data type */</span>
+&lt;'color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+&lt;'background-color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+&lt;'border-color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+</code></pre>
+          </section>
+        </section>
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Component value combinators</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Component values can be <b>arranged into property value combinators</b> using the following methods:</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>1. Any order</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Component values written directly after each other means that <b>all of them must occur, in the given order</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component arrangement */</span>
+&lt;property&gt; = value1 value2 value3
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Example */</span>
+.example {
+  property: <span class="codeHighlight">value1 value2 value3</span>; 
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>2. Double ampersand</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A double ampersand <code>"&&"</code> separating two or more components means that <b>all of them must occur, in any order</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component arrangement */</span>
+&lt;property&gt; = value1 <span class="codeHighlight">&&</span> value2
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">value1 value2</span>; }
+.example { property: <span class="codeHighlight">value2 value1</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Real-world example */</span>
+&lt;'text-emphasis-position'&gt; =
+  [ over | under ] <span class="codeHighlight">&&</span> [ right | left ]
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>3. Single pipe</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A single pipe <code>"|"</code> separates two or more alternatives means that <b>only one of them must occur</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component arrangement */</span>
+&lt;property&gt; = value1 <span class="codeHighlight">|</span> value2 <span class="codeHighlight">|</span> value3
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example {  property: <span class="codeHighlight">value1</span>; }
+.example { property: <span class="codeHighlight">value2</span>; }
+.example { property: <span class="codeHighlight">value3</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Real world example */</span>
+&lt;attachment&gt; =
+  scroll <span class="codeHighlight">|</span> fixed <span class="codeHighlight">|</span> local
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>4. Double pipe</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A double pipe <code>"||"</code> separating two or more options means that <b>one or more of them must occur, in any order</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component arrangement */</span>
+&lt;property&gt; = value1 <span class="codeHighlight">||</span> value2 <span class="codeHighlight">||</span> value3
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">value1</span>; }
+.example { property: <span class="codeHighlight">value2</span>; }
+.example { property: <span class="codeHighlight">value3</span>; }
+.example { property: <span class="codeHighlight">value1 value2</span>; }
+<span class="codeComment">...etc</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;'border'&gt; = 
+  &lt;line-width&gt; <span class="codeHighlight">||</span> &lt;line-style&gt; <span class="codeHighlight">||</span> &lt;color&gt;
+</code></pre>
+          </section>
+
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>5. Square brackets</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Square brackets <code>"[ ]"</code> surrounding two or more alternatives means that <b>the components inside are a single grouping</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component arrangement */</span>
+&lt;property&gt; = <span class="codeHighlight">[</span> value1 | value2 <span class="codeHighlight">]</span> value3
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">value1 value3</span>; }
+.example { property: <span class="codeHighlight">value2 value3</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;'border-radius'&gt; =
+  &lt;length-percentage&gt;{1,4}
+  <span class="codeHighlight">[</span> / &lt;length-percentage&gt;{1,4} <span class="codeHighlight">]</span>?
+</code></pre>
+          </section>
+
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Component value multipliers</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Component values <b>can also be multiplied</b> using the following methods:</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>1. Question mark</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A question mark <code>"?"</code> indicates that the preceding type, word, or group is <b>optional and occurs zero or one times</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = value1 [, value2 ]<span class="codeHighlight">?</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">value1</span>; }
+.example { property: <span class="codeHighlight">value1, value2</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>2. An asterisk</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An asterisk <code>"*"</code> indicates that the preceding type, word, or group <b>occurs zero or more times</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = value1 [, &lt;value2&gt; ]<span class="codeHighlight">*</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: value1; }
+.example { property: value1, <span class="codeHighlight">&lt;value2&gt;</span>; }
+.example {
+  property: value1, <span class="codeHighlight">&lt;value2&gt;, &lt;value2&gt;</span>; }
+<span class="codeComment">...etc</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>3. A plus symbol</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A plus <code>"+"</code> indicates that the preceding type, word, or group <b>occurs one or more times</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = &lt;value&gt;<span class="codeHighlight">+</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">&lt;value&gt;</span>; }
+.example { property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt;</span>; }
+.example {
+  property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt; &lt;value&gt;</span>; }
+<span class="codeComment">...etc</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>4. A single number in curly braces</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A single number in curly braces <code>"{A}"</code> indicates that the preceding type, word, or group <b>occurs</b> <code>"A"</code> <b>times</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = &lt;value&gt;<span class="codeHighlight">{2}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt;</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>5. A comma-separated pair of numbers</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A comma-separated pair of numbers in curly braces <code>"{A,B}"</code> indicates that the preceding type, word, or group occurs <b>at least</b> <code>"A"</code> <b>and at most</b> <code>"B"</code> <b>times</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = &lt;value&gt;<span class="codeHighlight">{1,3}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">&lt;value&gt;</span>; }
+.example { property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt;</span>; }
+.example {
+  property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt; &lt;value&gt;</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>6. The “B” may be omitted</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>"B"</code> may be omitted <code>"{A,}"</code> to indicate that <b>there must be at least</b> <code>"A"</code> <b>repetitions, with no upper limit on the number of repetitions</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = &lt;value&gt;<span class="codeHighlight">{1,}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">&lt;value&gt;</span>; }
+.example { property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt;</span>; }
+.example {
+  property: <span class="codeHighlight">&lt;value&gt; &lt;value&gt; &lt;value&gt;</span>; }
+<span class="codeComment">...etc</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>7. A hash</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A hash <code>"#"</code> indicates that the preceding type, word, or group <b>occurs one or more times, separated by comma tokens</b>. (Whitespace is optional)</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = &lt;value&gt;<span class="codeHighlight">#</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">&lt;value&gt;</span>; }
+.example { property: <span class="codeHighlight">&lt;value&gt;, &lt;value&gt;</span>; }
+.example {
+  property: <span class="codeHighlight">&lt;value&gt;, &lt;value&gt;, &lt;value&gt;</span>; }
+<span class="codeComment">...etc</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>8. An exclamation point</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>An exclamation point <code>"!"</code> after a group indicates that the group is <b>required and must produce at least one value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Component multiplier */</span>
+&lt;property&gt; = value1 [ value2 | value3 ]<span class="codeHighlight">!</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Examples */</span>
+.example { property: <span class="codeHighlight">value1 value2</span>; }
+.example { property: <span class="codeHighlight">value1 value3</span>; }
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>An example</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s look at the <code>&lt;'text-shadow'&gt;</code> property <b>as an example</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+<span class="codeHighlight">&lt;'text-shadow'&gt;</span> =
+  none | [ &lt;length&gt;{2,3} && &lt;color&gt;? ]#
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This can be <b>broken down to</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+&lt;'text-shadow'&gt; =
+  <span class="codeHighlight">none |</span> [ &lt;length&gt;{2,3} && &lt;color&gt;? ]#
+
+<span class="codeComment">/* Explanation */</span>
+<span class="codeHighlight">None OR</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+&lt;'text-shadow'&gt; =
+  none | [ <span class="codeHighlight">&lt;length&gt;{2,3}</span> && &lt;color&gt;? ]#
+
+<span class="codeComment">/* Explanation */</span>
+<span class="codeHighlight">Two or three length values</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+&lt;'text-shadow'&gt; =
+  none | [ &lt;length&gt;{2,3} && <span class="codeHighlight">&lt;color&gt;?</span> ]#
+
+<span class="codeComment">/* Explanation */</span>
+<span class="codeHighlight">And zero or one color value</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+&lt;'text-shadow'&gt; =
+  none | [ &lt;length&gt;{2,3} <span class="codeHighlight">&&</span> &lt;color&gt;? ]#
+
+<span class="codeComment">/* Explanation */</span>
+<span class="codeHighlight">In any order</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* text-shadow */</span>
+&lt;'text-shadow'&gt; =
+  none | <span class="codeHighlight">[</span> &lt;length&gt;{2,3} && &lt;color&gt;? <span class="codeHighlight">]#</span>
+
+<span class="codeComment">/* Explanation */</span>
+<span class="codeHighlight">One or more text-shadow separated by commas</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This would allow <b>a wide range of options</b> such as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* None */</span>
+.example {
+  text-shadow: <span class="codeHighlight">none</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* 2 lengths values */</span>
+.example {
+  text-shadow: <span class="codeHighlight">10px 10px</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* 3 length values */</span>
+.example {
+  text-shadow: <span class="codeHighlight">10px 10px 10px</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* 3 length values + color */</span>
+.example {
+  text-shadow: <span class="codeHighlight">10px 10px 10px red</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* In any order */</span>
+.example {
+  text-shadow: <span class="codeHighlight">red 10px 10px 10px</span>; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Multiple text-shadows */</span>
+.example {
+  text-shadow: 
+    <span class="codeHighlight">10px 10px red,
+    lime 20px 20px 30px;</span>
+}
+</code></pre>
+          </section>
+        </section>
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write the syntax for a burger</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>How would you define <b>the syntax of a burger</b> if you had to use a specific set of ingredients in a specific order?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Write the syntax for the burger, <b>in the correct order from bottom to the top of the bun</b>. The ingredients are:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ul class="font-xs">
+              <li>bottom bun</li>
+              <li>1 of the following: mustard or mayonnaise</li>
+              <li>lettuce (optional)</li>
+              <li>tomato (optional)</li>
+              <li>1 of the following meats: chicken or beef</li>
+              <li>1 to 3 slices of the following cheese: swiss or cheddar</li>
+              <li>1 of the following sauces: tomato or bbq</li>
+              <li>top bun</li>
+            </ul>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Answer</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;burger&gt;</span> =
+  bottom-bun
+  [ mustard | mayonnaise ]
+  lettuce?
+  tomato?
+  [ chicken | beef ]
+  [ swiss-cheese | cheddar-cheese ]{1,3}
+  [ tomato-sauce | bbq-sauce]
+  top-bun
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

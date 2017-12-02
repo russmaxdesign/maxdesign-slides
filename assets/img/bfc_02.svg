@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#595959;}
+	.st2{fill:#D2D2D2;}
+	.st3{fill:#B04636;}
+	.st4{fill:#B0C590;}
+	.st5{fill:#568312;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:22px;}
+	.st8{fill:#9FBACD;}
+	.st9{fill:#00487A;}
+	.st10{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st11{font-family:'HelveticaNeue-Bold';}
+	.st12{font-size:23px;}
+</style>
+<g id="base">
+	<g>
+		<g>
+			<rect x="26.5" y="77.5" class="st0" width="597" height="316"/>
+			<path class="st1" d="M622,79v313H28V79H622 M625,76H25v319h600V76L625,76z"/>
+		</g>
+		<g>
+			<rect x="25" y="76" class="st1" width="600" height="56"/>
+			<circle class="st0" cx="41.3" cy="90" r="6"/>
+			<circle class="st0" cx="56.7" cy="90" r="6"/>
+			<circle class="st0" cx="72" cy="90" r="6"/>
+			<polygon class="st0" points="53.2,115.1 40.8,115.1 45.9,110.1 44.6,108.8 38.3,115.1 38.2,115.1 38.2,116.9 38.7,116.9 
+				38.2,117.4 44.6,123.7 45.9,122.4 40.3,116.9 53.2,116.9 			"/>
+			<polygon class="st0" points="62.7,115.1 75.1,115.1 70.1,110.1 71.4,108.8 77.7,115.1 77.7,115.1 77.7,116.9 77.3,116.9 
+				77.7,117.4 71.4,123.7 70.1,122.4 75.6,116.9 62.7,116.9 			"/>
+			<path class="st0" d="M446.2,124.5H101.7c-2.8,0-5-2.2-5-5v-10c0-2.8,2.2-5,5-5h344.5c2.8,0,5,2.2,5,5v10
+				C451.2,122.2,449,124.5,446.2,124.5z"/>
+			<path class="st0" d="M599.2,124.5h-130c-5.5,0-10-4.5-10-10v0c0-5.5,4.5-10,10-10h130c5.5,0,10,4.5,10,10v0
+				C609.2,120,604.7,124.5,599.2,124.5z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="49.5" y="152.5" class="st0" width="551" height="35"/>
+		<path class="st2" d="M599,154v32H51v-32H599 M602,151H48v38h554V151L602,151z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 58.0004 174.8535)" class="st6 st7">Lorem ipsum dolor sit amet, consectetuer adip</text>
+	<g>
+		<g>
+			<rect x="49.5" y="209.5" class="st8" width="551" height="108"/>
+			<path class="st9" d="M599,211v105H51V211H599 M602,208H48v111h554V208L602,208z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="49.5" y="244.5" class="st4" width="551" height="35"/>
+		<g>
+			<path class="st5" d="M599,246v32H51v-32H599 M602,243H48v38h554V243L602,243z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="49.5" y="339.5" class="st0" width="551" height="35"/>
+		<path class="st2" d="M599,341v32H51v-32H599 M602,338H48v38h554V338L602,338z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 58.0004 361.8535)" class="st6 st7">Lorem ipsum dolor sit amet, consectetuer adip</text>
+	<text transform="matrix(1 0 0 1 58.0004 268.8535)" class="st6 st7">Example2</text>
+</g>
+<g id="feature">
+</g>
+<g id="label">
+	<rect y="10" class="st3" width="238" height="41"/>
+	<text transform="matrix(1 0 0 1 14.5288 37.7109)" class="st0 st11 st12">Margins contained</text>
+	<g>
+		<g>
+			<line class="st10" x1="165" y1="51" x2="165" y2="192.9"/>
+			<g>
+				<polygon class="st3" points="154.5,189.9 165,208 175.5,189.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

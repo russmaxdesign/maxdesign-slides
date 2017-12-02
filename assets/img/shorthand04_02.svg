@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#444444;}
+	.st2{fill:none;stroke:#568312;stroke-width:5;stroke-miterlimit:10;}
+	.st3{fill:#568312;}
+	.st4{font-family:'HelveticaNeue';}
+	.st5{font-size:22px;}
+	.st6{font-family:'HelveticaNeue-Bold';}
+	.st7{font-size:24px;}
+	.st8{fill:#A210FF;}
+	.st9{fill:#B04636;}
+	.st10{fill:#4571FF;}
+	.st11{fill:none;stroke:#B04636;stroke-width:5;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#4571FF;stroke-width:5;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#A210FF;stroke-width:5;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<rect x="234.7" y="109.5" class="st0" width="179" height="179"/>
+		<g>
+			<path class="st1" d="M413.2,110v178h-178V110H413.2 M414.2,109h-180v180h180V109L414.2,109z"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 302.7651 93.6361)" class="st4 st5">1em</text>
+	<text transform="matrix(1 0 0 1 317.499 142.6361)" class="st3 st6 st7">1</text>
+	<g>
+		<text transform="matrix(1 0 0 1 248.499 203.479)" class="st8 st6 st7">4</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 383.499 203.479)" class="st9 st6 st7">2</text>
+	</g>
+	<text transform="matrix(1 0 0 1 317.499 271.6362)" class="st10 st6 st7">3</text>
+	<text transform="matrix(1 0 0 1 173.5942 203.1026)" class="st4 st5">4em</text>
+	<text transform="matrix(1 0 0 1 433.5942 203.1026)" class="st4 st5">2em</text>
+	<text transform="matrix(1 0 0 1 302.7651 314.6362)" class="st4 st5">3em</text>
+</g>
+<g>
+	<g>
+		<g>
+			<line class="st11" x1="337" y1="198.5" x2="359.2" y2="198.5"/>
+			<g>
+				<polygon class="st9" points="357,206 370,198.5 357,191 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

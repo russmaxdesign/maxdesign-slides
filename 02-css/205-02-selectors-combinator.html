@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-02: Combinator selectors</title>
+    <meta name="description" content="Combinators allow you to combine individual selectors into new types of selectors">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-02</h5>
+          <h1>Combinator selectors</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Combinators</b> allow you to combine individual selectors into new types of selectors.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+DESCENDANT COMBINATOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Descendant combinators (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Descendant combinators</b> are written using two or more selectors separated by whitespace.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">ul li a</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Descendant combinators target <b>only elements that are descendants of other elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;a&gt;</code> that is a <b>descendant</b> of the <code>&lt;p&gt;</code> will be selected, but not the <code>&lt;a&gt;</code> that is a descendant of the <code>&lt;div&gt;</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p a</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;
+  <span class="codeHighlight">&lt;a&gt;&lt;/a&gt;</span>
+&lt;/p&gt;
+&lt;div&gt;
+  &lt;a&gt;&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The key to descendant combinators is understanding <b>paths to elements</b>. There is a path to every element starting with the <code>&lt;html&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Paths can be <b>written in full or in part to the element</b> or a partial path, depending on your need.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* example paths */</span>
+html body .container .nav ul li <span class="codeHighlight">a</span> { }
+body .container .nav ul li <span class="codeHighlight">a</span> { }
+.container .nav ul li <span class="codeHighlight">a</span> { }
+.nav ul li <span class="codeHighlight">a</span> { }
+ul li <span class="codeHighlight">a</span> { }
+ul <span class="codeHighlight">a</span> { }
+li <span class="codeHighlight">a</span> { }
+<span class="codeHighlight">a</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When writing descendant combinators, try to keep your selectors as short as possible. Each selector should <b>only be as specific as needed</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* unnecessarily long */</span>
+.nav ul li a { }
+
+<span class="codeComment">/* only as specific as needed */</span>
+<span class="codeHighlight">.nav a</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#descendant-combinators">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#descendant-combinators">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#descendant-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Descendant combinators are <b>well supported</b> across all modern browsers.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write a descendant combinator</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-02-01.html">exercises-start/exercise-205-02-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;a&gt;</code> element to be <code>color: firebrick</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>only style the</b> <code>&lt;a&gt;</code> <b>element inside the</b> <code>&lt;p&gt;</code> <b>element</b> (Link 2), not the <code>&lt;a&gt;</code> element inside the <code>&lt;div&gt;</code> element (Link 1).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;a href="#"&gt;Link 1&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;
+  <span class="codeHighlight">&lt;a href="#"&gt;Link 2&lt;/a&gt;</span>
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p a {
+   color: firebrick;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-02-01.html">exercises-finished/exercise-205-02-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+CHILD COMBINATOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Child combinators (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Child combinators</b> are written using two selectors separated by a <code>"&gt;"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E > F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p > a</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace within the selector is <b>optional</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p > a</span> { }
+<span class="codeHighlight">p>a</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Child combinators target <b>any element that is a direct child of another element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Only child elements</b>, rather than descendant elements, will be selected.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;a&gt;</code> that is <b>a child</b> of the <code>&lt;div&gt;</code> will be selected, but not the <code>&lt;a&gt;</code> that is a descendant of the <code>&lt;div&gt;</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS Selector */</span>
+<span class="codeHighlight">div > a</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div&gt;
+  <span class="codeHighlight">&lt;a&gt;&lt;/a&gt;</span>
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt; &lt;a&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#child-combinators">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#child-combinators">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#child-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Child combinators are <b>not supported by Internet Explorer 6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write a child combinator</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-02-02.html">exercises-start/exercise-205-02-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;a&gt;</code> element to be <code>color: forestgreen</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>only style the</b> <code>&lt;a&gt;</code> <b>that is a child</b> of the <code>&lt;div&gt;</code> element (Link 1), not the <code>&lt;a&gt;</code> that is a descendant of the <code>&lt;div&gt;</code> element (Link 2).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  <span class="codeHighlight">&lt;a href="#"&gt;Link 1&lt;/a&gt;</span>
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;
+    &lt;a href="#"&gt;Link 2&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+div > a {
+  color: forestgreen;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-02-02.html">exercises-finished/exercise-205-02-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ADJACENT SIBLING SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Adjacent sibling combinators (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Adjacent sibling combinators</b> are written using two selectors separated by a <code>"+"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E + F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace within the selector is <b>optional</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+<span class="codeHighlight">h2+h3</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adjacent sibling combinators target <b>the sibling immediately following a defined element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, only the <code>&lt;h3&gt;</code> <b>that is adjacent to</b> (or comes directly after) the <code>&lt;h2&gt;</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">h2 + h3</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;h2&gt;Content&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Content&lt;/h3&gt;</span>
+&lt;h3&gt;Content&lt;/h3&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#adjacent-sibling-combinators">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#adjacent-sibling-combinators">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+
+<p class="font-sm"><a href="https://www.w3.org/TR/CSS2/selector.html#adjacent-selectors">CSS Level 2 (Revision 1)</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Adjacent sibling combinators are <b>not supported by Internet Explorer 6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write an adjacent sibling combinator</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-02-03.html">exercises-start/exercise-205-02-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;h3&gt;</code> element to be <code>color: hotpink</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>only style the</b> <code>&lt;h3&gt;</code> that comes directly after the <code>&lt;h2&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;h2&gt;Heading level 2&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Heading level 3&lt;/h3&gt;</span>
+&lt;h3&gt;Heading level 3&lt;/h3&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h2 + h3 {
+  color: hotpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-02-02.html">exercises-finished/exercise-205-02-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+GENERAL SIBLING SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>General sibling combinators (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>General sibling combinators</b> are written using two selectors separated by a <code>"~"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E ~ F</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace within the selector is <b>optional</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+<span class="codeHighlight">h2~h3</span> { }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>General sibling combinators target <b>any sibling that follows a defined element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>any</b> <code>&lt;h3&gt;</code> <b>that appears after</b> the <code>&lt;h2&gt;</code> in source order will be selected - as long as they share the same parent.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">h2 ~ h3</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;h2&gt;Content&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Content&lt;/h3&gt;
+&lt;h3&gt;Content&lt;/h3&gt;</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Specifications</h3>
+          </section>
+
+          <section data-background="#fff">
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-4/#general-sibling-combinators">W3C Selectors Level 4</a><br>
+<em class="font-xs">Status: Working Draft</em></p>
+
+<p class="font-sm"><a href="https://drafts.csswg.org/selectors-3/#general-sibling-combinators">Selectors Level 3</a><br>
+<em class="font-xs">Status: Recommendation</em></p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>General sibling combinators are <b>not supported by Internet Explorer 6</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Write a general sibling combinator</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-02-04.html">exercises-start/exercise-205-02-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;h3&gt;</code> element to be <code>color: lawngreen</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>only style all</b> <code>&lt;h3&gt;</code> elements that come after the <code>&lt;h2&gt;</code> element, rather than those that come before</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;h3&gt;Heading level 3&lt;/h3&gt;
+&lt;h2&gt;Heading level 2&lt;/h2&gt;
+<span class="codeHighlight">&lt;h3&gt;Heading level 3&lt;/h3&gt;
+&lt;h3&gt;Heading level 3&lt;/h3&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h2 ~ h3 {
+  color: lawngreen;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-02-02.html">exercises-finished/exercise-205-02-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-03-selectors-link.html">205-03: Link pseudo-classes</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

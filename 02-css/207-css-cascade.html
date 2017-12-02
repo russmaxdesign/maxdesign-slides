@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>207: CSS cascade</title>
+    <meta name="description" content="Which CSS declaration wins when there is conflict? The winner is determined by the rules of the cascade">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>207</h5>
+          <h1>CSS cascade</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers often have to deal with situations where <b>more than one declaration</b> refers to the same element and property.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: blue; }
+<span class="codeHighlight">h2</span>.intro { <span class="codeHighlight">color</span>: green; }
+.container <span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: red; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When there are conflicting declarations, the winner is determined by <b>the rules of the cascade</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Types of style sheets</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML documents may have <b>three types of style sheets</b> applied to them.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Type 1: User-agent styles</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you look at a web page in a browser, even a web page without any CSS file attached, <b>there are some styles already in place</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Headings are often <b>larger than other text</b>. Unvisited links are usually blue and visited links are frequently purple.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Why? Because all browsers have an <b>in-built style sheet</b> that is used to define the default behaviour of HTML elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This style sheet is referred to as a <b>“user-agent” style sheet</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Type 2: User styles</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>“Users” are the <b>people who visit our websites</b> and interact with our content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some browsers have mechanisms that allow users to write their own style sheets. These style sheets are referred to as <b>“user style sheets”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>User style sheets allow users to <b>override style sheets</b> for specific websites or for all websites that they visit.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some browsers, like Chrome, have <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=347016">dropped support for user style sheets entirely</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, there is a range of extensions that can perform this function to a lesser degree such as <a href="https://chrome.google.com/webstore/category/extensions?hl=205-09-selectors-pseudo-elements.html">User CSS</a>, <a href="https://chrome.google.com/webstore/detail/stylebot/oiaejidbmkiecgbjeifoejpgmdaleoha?hl=en">StyleBot</a> and <a href="https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en">Stylish</a>.</p>
+          </section>
+          
+
+
+          <section data-background="#444">
+            <h3>Type 3: Author styles</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As a web author, you can <b>apply CSS styles</b> to HTML document.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can apply styles using <b>three different methods</b>; inline styles, header styles or external style sheets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline styles</b> are applied to elements in the HTML markup using the <code>style</code> attribute.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- inline style --&gt;</span>
+&lt;p <span class="codeHighlight">style="color:blue;"</span>&gt;
+  Content here
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Header styles</b> are placed in the head of HTML documents using the <code>&lt;style&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Site name&lt;/title&gt;
+    <span class="codeHighlight">&lt;style&gt;
+      p { color: green; }
+    &lt;/style&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>External style sheets</b> are applied using the <code>&lt;link&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Site name&lt;/title&gt;
+    <span class="codeHighlight">&lt;link
+      rel="stylesheet"
+      href="styles.css"&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Normal vs important</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Users and authors can define any declaration as <b>“more important”</b> than other declarations.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important declarations</b> are written with the <code>"!"</code> delimiter token and <code>"important"</code> keyword following the declaration.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* example of important */</span>
+h2 {
+  color: red <span class="codeHighlight">!important</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>As you will see, the CSS Cascade treats important declarations <b>differently to normal declarations</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Understanding Conflict</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers (or user-agents) have to deal with CSS rules coming from three possible origins - <b>user-agent, user and author</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers also have to deal with different types of declarations - <b>important vs normal</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>At some point, browsers have to deal with declarations that <b>conflict</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Conflict is where more than one declaration refers to the <b>same element and property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>conflict occurs</b> because three different rules all target the <code>&lt;h2&gt;</code> element, and define the same property - <code>color</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: blue; }
+<span class="codeHighlight">h2</span>.intro { <span class="codeHighlight">color</span>: green; }
+.container <span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: red; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When conflicts like this occur, browsers need to determine <b>which declarations will “win”</b> (be applied to an HTML document).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Will the <code>&lt;h2&gt;</code> element <b>be styled</b> with a <code>color</code> value of <code>blue</code>, <code>green</code> or <code>red</code>?</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS2.1, there are four steps to <b>determine which declaration will “win”</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 1: Gather the declarations</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers must <b>gather all the declarations</b> that apply to an element and property from user-agent, user and author style sheets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, there are <b>four different declarations</b> where the <code>&lt;h2&gt;</code> element has conflicting <code>color</code> properties.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+<span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: black; }
+
+<span class="codeComment">/* user styles */</span>
+<span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: green; }
+
+<span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: blue; }
+#nav <span class="codeHighlight">h2</span> { <span class="codeHighlight">color</span>: lime; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Because there are conflicts, you will need to proceed to <b>step 2</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 2: Sort by origin and importance</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>For this second step, the gathered declarations are sorted according to <b>origin</b> (user-agent, user, author) and <b>importance</b> (normal or important).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS2.1, there are <b>five steps</b> to determine how declarations are sorted.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>From lowest to highest priority:</b><br>
+            1. Normal user-agent declarations<br>
+            2. Normal user declarations<br>
+            3. Normal author declarations<br>
+            4. Important author declarations<br>
+            5. Important user declarations</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This sort order means that if no other declarations exist, <b>user-agent declarations win</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+<span class="codeHighlight">h2 { color: black; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Normal user declarations</b> beat user-agent declarations.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+<span class="codeHighlight">h2 { color: green; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Normal author declarations</b> beat user-agent declarations and normal user declarations.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+
+<span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">h2 { color: blue; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important author declarations</b> beat all normal declarations.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+<span class="codeHighlight">h2 { color: purple !important; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important user declarations</b> beat important author declarations and all normal declarations.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+<span class="codeHighlight">h2 { color: red !important; }</span>
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+h2 { color: purple !important; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>But what if two declarations <b>have the same origin or importance</b> - like the two author declarations in the following example?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+h2 { color: red; }
+
+<span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">h2 { color: blue; }
+h2 { color: purple; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>If any declarations have the <b>same origin or importance</b> you will need to proceed to Step 3.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 3: Determine specificity</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>If declarations have the same origin or importance, then the declaration’s <b>selectors need to be scored</b> to see which declaration will “win”.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Four scores are <b>concatenated</b> (linked together as a chain) to create a final score. This score is referred to as a selector’s specificity.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>selector specificity</b> = a,b,c,d</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>How is specificity calculated?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>A. Is there an <b>inline style</b>?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;p <span class="codeHighlight">style="color:red;"</span>&gt;&lt;/p&gt;
+
+<span class="codeHighlight">a = 1 x inline styles</span>
+b = 0 x IDs
+c = 0 x classes, pseudo-classes
+d = 0 x elements, pseudo-elements
+
+Specificity = 1,0,0,0
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>B. Count the number of <b>ID selectors</b> in the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">#nav</span> { }
+
+a = 0 x inline styles
+<span class="codeHighlight">b = 1 x IDs</span>
+c = 0 x classes, pseudo-classes
+d = 0 x elements, pseudo-elements
+
+Specificity = 0,1,0,0
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>C. Count the number of <b>class selectors, attribute selectors or pseudo-class</b> selectors in the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">.intro</span> { }
+
+a = 0 x inline styles
+b = 0 x ID
+<span class="codeHighlight">c = 1 x classes, pseudo-classes</span>
+d = 0 x elements, pseudo-elements
+
+Specificity = 0,0,1,0
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>D. Count the number of <b>element type or pseudo-element</b> selectors in the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">p</span> { }
+
+a = 0 x inline styles
+b = 0 x ID
+c = 0 x classes, pseudo-classes
+<span class="codeHighlight">d = 1 x elements, pseudo-elements</span>
+
+Specificity = 0,0,0,1
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>E. Ignore the <b>universal selector</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">*</span> { }
+
+a = 0 x inline styles
+b = 0 x ID
+c = 0 x classes
+d = 0 x element
+
+Specificity = 0,0,0,0
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Some examples</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">#nav ul { }</span>
+
+a = 0 x inline styles
+<span class="codeHighlight">b = 1 x ID (#nav)</span>
+c = 0 x classes
+<span class="codeHighlight">d = 1 x element (ul)</span>
+
+Specificity = 0,1,0,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">blockquote.special { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x class (.special)</span>
+<span class="codeHighlight">d = 1 x element (blockquote)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">a:link { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x pseudo-class (:link)</span>
+<span class="codeHighlight">d = 1 x elements (a)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">input[required] { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x attribute selector ([required])</span>
+<span class="codeHighlight">d = 1 x elements (input)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">p[class="a"] { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x attribute selector ([class="a"])</span>
+<span class="codeHighlight">d = 1 x elements (p)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">div[id="news"] { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x attribute selector ([id="news"])</span>
+<span class="codeHighlight">d = 1 x elements (div)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">::first-line { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+c = 0 x classes
+<span class="codeHighlight">d = 1 x pseudo-element (::first-line)</span>
+
+Specificity = 0,0,0,1
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">#nav ul li a:hover { }</span>
+
+a = 0 x inline styles
+<span class="codeHighlight">b = 1 x ID (#nav)</span>
+<span class="codeHighlight">c = 1 x pseudo-class (:hover)</span>
+<span class="codeHighlight">d = 3 x elements (ul,li,a)</span>
+
+Specificity = 0,1,1,3
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>A note on concatenation</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Generally speaking</b>, A will always beat B, which will always beat C, which will always beat D.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>No matter how many IDs are used in a selector, <b>an inline style will always beat an ID selector</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>the inline style wins</b> due to specificity - 1,0,0,0 beats 0,10,0,0.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">#one #two #three #four
+#five #six #seven #eight
+#nine #ten</span> { color: green; }
+
+<span class="codeComment">&lt;!-- HTML document --&gt;</span>
+&lt;h2 <span class="codeHighlight">style="color: purple;"</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Theoretically, no matter how many classes are applied to a selector, <b>an ID will always beat classes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Older Firefox browsers <b>incorrectly implement the specification</b> so that 256 classes will “beat” an ID.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>the ID selector wins</b> due to specificity - 0,1,0,0 beats 0,0,10,0.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">.one .two .three .four
+.five .six .seven .eight
+.nine .ten</span> { color: green; }
+
+<span class="codeHighlight">#nav</span> { color: lime; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Theoretically, no matter how many element types are applied to a selector, <b>a class will always beat element types</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Older Firefox browsers <b>incorrectly implement the specification</b> so that 256 element types will "beat" a class.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>the class selector wins</b> due to specificity - 0,0,1,0 beats 0,0,0,10.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">div div div div div
+div div div div div</span> { color: green; }
+
+<span class="codeHighlight">.intro</span> { color: lime; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>What if there is still no clear winner?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, two author styles <b>have the same
+              specificity (0,0,1,1)</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">.intro h2</span> { color: blue; }
+<span class="codeHighlight">h2.new</span> { color: lime; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>If there is still no clear winner then you will need to <b>proceed to Step 4</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 4: Determining order specified</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>If two declarations have the same importance, origin and specificity, <b>the declaration that appears last in document order win</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the second rule will win <b>as it is written after the first rule</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* author styles */</span>
+.intro h2 { color: blue; }
+<span class="codeHighlight">h2.new { color: lime; }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Order within inported, linked and header styles</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Declarations from <b>imported style sheets</b> are ordered as if their style sheets are substituted in place of the @import rule.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, declarations are <b>ordered</b> from <code>a.css</code>, then <code>b.css</code> then <code>c.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">@import "a.css";
+@import "b.css";
+@import "c.css";
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Declarations from <b>linked style sheets</b> are treated as if they were concatenated in linking order, as determined by the host HTML document.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, declarations are <b>ordered</b> from <code>a.css</code>, then <code>b.css</code> then <code>c.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="a.css"&gt;
+    &lt;link rel="stylesheet" href="b.css"&gt;
+    &lt;link rel="stylesheet" href="c.css"&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Declarations from <b>header style sheets</b> are treated the same as linked style sheets - as if they were concatenated in linking order.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, declarations are <b>ordered</b> from <code>a.css</code>, then the header style, then <code>b.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    <span class="codeHighlight">&lt;link rel="style sheet" href="a.css"&gt;
+    &lt;style&gt;h2 {color:blue;}&lt;/style&gt;
+    &lt;link rel="style sheet" href="b.css"&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Quizzes</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Quiz 1: Origin and importance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>what color</b> would the <code>&lt;h2&gt;</code> element be?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent style sheet */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user style sheet */</span>
+h2 { color: green; }
+h2 { color: lime important; }
+
+<span class="codeComment">/* author style sheet */</span>
+h2 { color: blue; }
+h2 { color: red important; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Answer</b>: The <code>&lt;h2&gt;</code> element will be lime because important user styles beat important author styles and all normal styles.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* user-agent style sheet */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user style sheet */</span>
+h2 { color: green; }
+<span class="codeHighlight">h2 { color: lime important; }</span>
+
+<span class="codeComment">/* author style sheet */</span>
+h2 { color: blue; }
+h2 { color: red !important; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Quiz 2: Specificity</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>what color</b> would the <code>&lt;p&gt;</code> element be?</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">#nav p { color: lime; }
+p { color: blue; }
+div#container p { color: purple; }
+p.intro { color: green; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Answer</b>: The <code>&lt;p&gt;</code> element will be purple because this selector has more specificity (0,1,0,2) than the other selectors.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">#nav p { color: lime; }
+<span class="codeComment">/* 0,1,0,1 */</span>
+
+p { color: blue; }
+<span class="codeComment">/* 0,0,0,1 */</span>
+
+<span class="codeHighlight">div#container p { color: purple; }</span>
+<span class="codeComment">/* 0,1,0,2 */</span>
+
+p.intro { color: green; }
+<span class="codeComment">/* 0,0,1,1 */</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Quiz 3: More specificity</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Part 1</b>: Guess the specificity of the following selector:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">#header h1 span a</span> { }
+</code></pre>
+        </section>
+
+        <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">#header h1 span a</span> { }
+
+a = 0 x inline styles
+<span class="codeHighlight">b = 1 x ID (#header)</span>
+c = 0 x classes
+<span class="codeHighlight">d = 3 x elements (h1,span,a)</span>
+
+Specificity = 0,1,0,3
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Part 2</b>: Guess the specificity of the following selector:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">.intro :first-letter { }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">.intro :first-letter { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x class (.intro)</span>
+<span class="codeHighlight">d = 1 x pseudo-element (:first-letter)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Part 3</b>: Guess the specificity of the following selector:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">a[href^="http:"] { }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">a[href^="http:"] { }</span>
+
+a = 0 x inline styles
+b = 0 x IDs
+<span class="codeHighlight">c = 1 x attribute selector ([href^="http:"])</span>
+<span class="codeHighlight">d = 1 x element (a)</span>
+
+Specificity = 0,0,1,1
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>CSS3 Cascade</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS3, there have been <b>several additions</b> to the overall cascade process.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Origin and Importance</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS 2.1, there were five steps to determine origin and importance. In CSS3, there are now some <b>extra steps</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p class="font-sm">1. Normal user-agent declarations<br>
+            2. Normal user declarations<br>
+            3. Normal author declarations<br>
+            <b>4. Animation declarations</b><br>
+            5. Important author declarations<br>
+            6. Important user declarations<br>
+            <b>7. Important user-agent declarations<br>
+            8. Transition declarations</b></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s take a look at these <b>new steps</b> and what they mean.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Animation declarations</b> are declarations that involve animating the relevant element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">h2 {
+  -webkit-animation: heading 3s;
+  animation: heading 3s;
+}
+
+@-webkit-keyframes heading { 
+  from {color: red;} to {color: lime;}
+}
+
+@keyframes heading {
+  from {color: red;} to {color: lime;}
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Animation declarations</b> beat normal user-agent, author and user declarations.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important user-agent declarations</b> are declarations within the user-agent style sheet.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important user-agent declarations</b> beat normal user-agent, author, user, and animation declarations.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Important user-agent declarations</b> also override important author and user declarations.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Transition declarations</b> are declarations that transition an element to another state.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">h2 {
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+h2:hover {
+  color: purple;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Where relevant, <b>transition declarations</b> beat all other types of declaration.</p>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+<span class="codeHighlight">h2 { color: black; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+<span class="codeHighlight">h2 { color: green; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+
+<span class="codeComment">/* author styles */</span>
+<span class="codeHighlight">h2 { color: blue; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+<span class="codeHighlight">h2{ animation: aaa 3s; }
+@keyframes a {0% {color:red;} 100% {color:lime;}}</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+h2{ animation: aaa 3s; }
+@keyframes a {0% {color:red;} 100% {color:lime;}}
+<span class="codeHighlight">h2 { color: purple !important; }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+<span class="codeHighlight">h2 { color: red !important; }</span>
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+h2{ animation: aaa 3s; }
+@keyframes a {0% {color:red;} 100% {color:lime;}}
+h2 { color: purple !important; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+<span class="codeHighlight">h2 { color: pink !important; }</span>
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+h2 { color: red !important; }
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+h2{ animation: aaa 3s; }
+@keyframes a {0% {color:red;} 100% {color:lime;}}
+h2 { color: purple !important; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre class="small"><code contenteditable="true"><span class="codeComment">/* user-agent styles */</span>
+h2 { color: black; }
+h2 { color: pink !important; }
+
+<span class="codeComment">/* user styles */</span>
+h2 { color: green; }
+h2 { color: red !important; }
+
+<span class="codeComment">/* author styles */</span>
+h2 { color: blue; }
+h2{ animation: aaa 3s; }
+@keyframes a {0% {color:red;} 100% {color:lime;}}
+h2 { color: purple !important; }
+<span class="codeHighlight">h2 { transition: color 0.5s ease; }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Override</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As part of the “origin and importance” process, the CSS3 Cascade specification mentions <b>override declarations</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Override declarations</b> allow authors to manipulate the DOM using JavaScript and change a style, without having to modify any associated style sheets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>“The <code>getOverrideStyle</code> allows DOM author to <a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSSDocumentCSS">change to the style of an element</a> without modifying the style sheets of a document.”</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, <b>none of the modern browsers support</b> the <code>getOverrideStyle</code> method, so this can be quite confusing for authors.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Simplified</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some aspects of the CSS3 cascade have been simplified here <b>to make it easier to understand</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can read more here: <a href="https://www.w3.org/TR/css-cascade-3/">CSS Cascading and Inheritance Level 3</a>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="208-css-box-model.html">208: CSS Box Model</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

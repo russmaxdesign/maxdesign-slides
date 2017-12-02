@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.3;fill:#568312;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#BEBEBE;}
+	.st3{opacity:0.2;fill:#568312;}
+	.st4{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:7.0741,7.0741;}
+	.st6{fill:none;stroke:#568312;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:7.2857,7.2857;}
+	.st7{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st8{fill:#B04636;}
+	.st9{opacity:0.3;}
+	.st10{fill:#568312;}
+	.st11{font-family:'HelveticaNeue-Bold';}
+	.st12{font-size:20px;}
+</style>
+<rect x="45" y="60" class="st0" width="560" height="230"/>
+<g class="st9">
+	<g>
+		<path class="st10" d="M105,120v110h440V120H105z"/>
+	</g>
+</g>
+<rect x="209" y="317.5" class="st8" width="232" height="45"/>
+<text transform="matrix(1 0 0 1 232.1614 346.0239)" class="st1 st11 st12">Total width = 220px</text>
+<text transform="matrix(1 0 0 1 248.7906 178.7596)" class="st11 st12">content = 200px</text>
+<text transform="matrix(1 0 0 1 286.3102 95.4263)" class="st11 st12">padding</text>
+<g>
+	<text transform="matrix(1 0 0 1 52.4004 178.7596)" class="st11 st12">10px</text>
+	<text transform="matrix(1 0 0 1 552.4004 178.7598)" class="st11 st12">10px</text>
+</g>
+<g>
+	<g>
+		<line class="st7" x1="325" y1="303.1" x2="325" y2="333"/>
+		<g>
+			<polygon class="st8" points="314.5,306.1 325,288 335.5,306.1 			"/>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#95B16A;}
+	.st2{fill:#FFFFFF;}
+	.st3{opacity:0.2;fill:#568312;}
+	.st4{fill:#568312;}
+	.st5{fill:none;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:30px;}
+	.st8{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st9{fill:#B04636;}
+	.st10{font-family:'HelveticaNeue-Bold';}
+	.st11{font-size:23px;}
+	.st12{fill:url(#SVGID_2_);}
+	.st13{fill:#D2D2D2;}
+	.st14{fill:url(#SVGID_3_);}
+	.st15{fill:url(#SVGID_4_);}
+	.st16{fill:url(#SVGID_5_);}
+	.st17{fill:url(#SVGID_6_);}
+	.st18{font-family:'HelveticaNeue-Medium';}
+	.st19{font-size:40px;}
+	.st20{fill:url(#SVGID_7_);}
+	.st21{fill:url(#SVGID_8_);}
+	.st22{fill:url(#SVGID_9_);}
+	.st23{fill:url(#SVGID_10_);}
+	.st24{fill:none;stroke:#B04636;stroke-width:9.3109;stroke-miterlimit:10;}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="405.5" y1="294.6212" x2="405.5" y2="143.1375">
+		<stop  offset="0" style="stop-color:#568312"/>
+		<stop  offset="2.840545e-02" style="stop-color:#4C7C05"/>
+		<stop  offset="1" style="stop-color:#568312"/>
+	</linearGradient>
+	<path class="st0" d="M288,304.5c-1.9,0-3.5-1.6-3.5-3.5V145c0-1.9,1.6-3.5,3.5-3.5h235c1.9,0,3.5,1.6,3.5,3.5v156
+		c0,1.9-1.6,3.5-3.5,3.5H288z"/>
+	<path class="st1" d="M523,143c1.1,0,2,0.9,2,2v156c0,1.1-0.9,2-2,2H288c-1.1,0-2-0.9-2-2V145c0-1.1,0.9-2,2-2H523 M523,140H288
+		c-2.8,0-5,2.2-5,5v156c0,2.8,2.2,5,5,5h235c2.8,0,5-2.2,5-5V145C528,142.2,525.8,140,523,140L523,140z"/>
+</g>
+<rect x="118" y="34.3" class="st5" width="325" height="110"/>
+<text transform="matrix(1 0 0 1 118.0002 55.7533)"><tspan x="0" y="0" class="st6 st7">Lorem ipsum dolor sit </tspan><tspan x="0" y="36" class="st6 st7">amet, conse ctetuer </tspan><tspan x="0" y="72" class="st6 st7">adipis cing elit, sed.</tspan></text>
+<g>
+	<g>
+		<line class="st8" x1="405.6" y1="302.1" x2="405.6" y2="325.7"/>
+		<g>
+			<polygon class="st9" points="395.2,305.1 405.6,287 416.1,305.1 			"/>
+		</g>
+	</g>
+</g>
+<rect x="233.9" y="325" class="st9" width="301.8" height="41"/>
+<text transform="matrix(1 0 0 1 248.3364 354)" class="st2 st10 st11">Padding affects all sides</text>
+<g>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="200.5" y1="250.9367" x2="200.5" y2="191.8487">
+		<stop  offset="0" style="stop-color:#CCCCCC"/>
+		<stop  offset="1" style="stop-color:#FFFFFF"/>
+	</linearGradient>
+	<path class="st12" d="M123,254.8c-2.1,0-3.8-1.7-3.8-3.8v-56c0-2.1,1.7-3.8,3.8-3.8h155c2.1,0,3.8,1.7,3.8,3.8v56
+		c0,2.1-1.7,3.8-3.8,3.8H123z"/>
+	<path class="st13" d="M278,192.4c1.4,0,2.6,1.2,2.6,2.6v56c0,1.4-1.2,2.6-2.6,2.6H123c-1.4,0-2.6-1.2-2.6-2.6v-56
+		c0-1.4,1.2-2.6,2.6-2.6H278 M278,190H123c-2.8,0-5,2.2-5,5v56c0,2.8,2.2,5,5,5h155c2.8,0,5-2.2,5-5v-56
+		C283,192.2,280.8,190,278,190L278,190z"/>
+</g>
+<rect x="124.8" y="207.2" class="st5" width="148.5" height="40.8"/>
+<text transform="matrix(1 0 0 1 134.9839 235.7143)" class="st18 st19">Cancel</text>
+<rect x="338.8" y="207.2" class="st5" width="126.5" height="40.8"/>
+<text transform="matrix(1 0 0 1 356.5034 235.7143)" class="st2 st18 st19">Save</text>
+</svg>

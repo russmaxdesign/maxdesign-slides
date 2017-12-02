@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#595959;}
+	.st2{fill:#B0C590;}
+	.st3{fill:#568312;}
+	.st4{fill:#D2D2D2;}
+	.st5{fill:#DAA8A1;}
+	.st6{fill:#B04636;}
+	.st7{fill:#969696;}
+	.st8{fill:#E6E6E6;}
+	.st9{fill:#C8C8C8;}
+	.st10{fill:#B4B4B4;}
+	.st11{opacity:0.4;}
+	.st12{font-family:'HelveticaNeue';}
+	.st13{font-size:22px;}
+	.st14{fill:none;stroke:#005BF6;stroke-width:7;stroke-miterlimit:10;}
+	.st15{fill:#005BF6;}
+	.st16{fill:none;stroke:#55A400;stroke-width:7;stroke-miterlimit:10;}
+	.st17{fill:#55A400;}
+	.st18{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#B04636;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:5;}
+	.st20{fill:#3A7100;}
+	.st21{fill:#005BA5;}
+	.st22{font-family:'HelveticaNeue-Bold';}
+	.st23{font-size:23px;}
+</style>
+<g id="base">
+	<g>
+		<g>
+			<rect x="26.5" y="77.5" class="st0" width="597" height="312"/>
+			<path class="st1" d="M622,79v309H28V79H622 M625,76H25v315h600V76L625,76z"/>
+		</g>
+		<g>
+			<rect x="25" y="76" class="st1" width="600" height="56"/>
+			<circle class="st0" cx="41.3" cy="90" r="6"/>
+			<circle class="st0" cx="56.7" cy="90" r="6"/>
+			<circle class="st0" cx="72" cy="90" r="6"/>
+			<polygon class="st0" points="53.2,115.1 40.8,115.1 45.9,110.1 44.6,108.8 38.3,115.1 38.2,115.1 38.2,116.9 38.7,116.9 
+				38.2,117.4 44.6,123.7 45.9,122.4 40.3,116.9 53.2,116.9 			"/>
+			<polygon class="st0" points="62.7,115.1 75.1,115.1 70.1,110.1 71.4,108.8 77.7,115.1 77.7,115.1 77.7,116.9 77.3,116.9 
+				77.7,117.4 71.4,123.7 70.1,122.4 75.6,116.9 62.7,116.9 			"/>
+			<path class="st0" d="M446.2,124.5H101.7c-2.8,0-5-2.2-5-5v-10c0-2.8,2.2-5,5-5h344.5c2.8,0,5,2.2,5,5v10
+				C451.2,122.2,449,124.5,446.2,124.5z"/>
+			<path class="st0" d="M599.2,124.5h-130c-5.5,0-10-4.5-10-10v0c0-5.5,4.5-10,10-10h130c5.5,0,10,4.5,10,10v0
+				C609.2,120,604.7,124.5,599.2,124.5z"/>
+		</g>
+	</g>
+</g>
+<g id="feature">
+	<g>
+		<rect x="49.8" y="153.8" class="st2" width="550.5" height="66.5"/>
+		<path class="st3" d="M598.5,155.5v62.9H51.5v-62.9H598.5 M602,152H48v70h554V152L602,152z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 72.0002 193.8531)" class="st12 st13">example1</text>
+	<g>
+		<rect x="49.8" y="223.8" class="st5" width="550.5" height="66.5"/>
+		<path class="st6" d="M598.5,225.5v62.9H51.5v-62.9H598.5 M602,222H48v70h554V222L602,222z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 71.9998 263.8531)" class="st12 st13">example2</text>
+</g>
+<g id="label">
+	<rect y="10" class="st6" width="320.4" height="41"/>
+	<text transform="matrix(1 0 0 1 14.5285 37.7102)" class="st0 st22 st23">example2 not overlapping</text>
+	<g>
+		<g>
+			<line class="st18" x1="255" y1="51" x2="255" y2="206.9"/>
+			<g>
+				<polygon class="st6" points="244.6,203.9 255,222 265.5,203.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

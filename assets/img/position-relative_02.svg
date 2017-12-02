@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{fill:#568312;}
+	.st3{fill:#B0C590;}
+	.st4{font-family:'HelveticaNeue-Bold';}
+	.st5{font-size:32px;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:22px;}
+	.st8{fill:#B04636;}
+	.st9{font-size:23px;}
+	.st10{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#B04636;stroke-width:7.7406;stroke-miterlimit:10;}
+</style>
+<rect class="st0" width="650" height="400"/>
+<g>
+	<rect x="26.5" y="100.5" class="st0" width="597" height="298"/>
+	<path class="st1" d="M622,102v295H28V102H622 M625,99H25v301h600V99L625,99z"/>
+</g>
+<g>
+	<rect x="46.5" y="120.5" class="st0" width="557" height="258"/>
+	<path class="st1" d="M602,122v255H48V122H602 M605,119H45v261h560V119L605,119z"/>
+</g>
+<g>
+	<rect x="66.5" y="140.5" class="st0" width="517" height="42"/>
+	<path class="st1" d="M582,142v39H68v-39H582 M585,139H65v45h520V139L585,139z"/>
+</g>
+<g>
+	<rect x="66.7" y="283.7" class="st0" width="516.5" height="74.5"/>
+	<path class="st1" d="M581.5,285.5v71h-513v-71H581.5 M585,282H65v78h520V282L585,282z"/>
+</g>
+<g>
+	<rect x="66.7" y="194.7" class="st0" width="516.5" height="74.5"/>
+	<path class="st1" d="M581.5,196.5v71h-513v-71H581.5 M585,193H65v78h520V193L585,193z"/>
+</g>
+<g>
+	<rect x="86.5" y="303.5" class="st0" width="477" height="35"/>
+	<path class="st1" d="M562,305v32H88v-32H562 M565,302H85v38h480V302L565,302z"/>
+</g>
+<text transform="matrix(1 0 0 1 74.9998 171.4238)" class="st4 st5">This is a heading</text>
+<text transform="matrix(1 0 0 1 95.0003 325.8535)" class="st6 st7">Lorem ipsum dolor sit amet, consectetuer adip</text>
+<g>
+	<rect x="86.5" y="214.5" class="st0" width="477" height="35"/>
+	<g>
+		<path class="st1" d="M562,216v32H88v-32H562 M565,213H85v38h480V213L565,213z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 94.9997 237.8535)" class="st6 st7">Lorem ipsum:</text>
+<text transform="matrix(1 0 0 1 409.0001 237.8535)" class="st6 st7">dolor sit amet</text>
+<g>
+	<path class="st2" d="M383,213h-7v3.2h7V213L383,213z M369,213h-7v3.2h7V213L369,213z M355,213h-7v3.2h7V213L355,213z M341,213h-7
+		v3.2h7V213L341,213z M327,213h-7v3.2h7V213L327,213z M313,213h-7v3.2h7V213L313,213z M299,213h-7v3.2h7V213L299,213z M285,213h-7
+		v3.2h7V213L285,213z M271,213h-7v3.2h7V213L271,213z M257,213h-7v3.2h7V213L257,213z M243,213h-5v3.2h5V213L243,213z M241.2,222
+		H238v7h3.2V222L241.2,222z M241.2,236H238v7h3.2V236L241.2,236z M244,247.8h-6v2.2l0,0v-2.2v2.2l0,0v1h3.2l0,0l0,0l0,0l0,0
+		c1.4,0,2.8,0,2.8,0V247.8L244,247.8z M258,247.8h-7v3.2h7V247.8L258,247.8z M272,247.8h-7v3.2h7V247.8L272,247.8z M286,247.8h-7
+		v3.2h7V247.8L286,247.8z M300,247.8h-7v3.2h7V247.8L300,247.8z M314,247.8h-7v3.2h7V247.8L314,247.8z M328,247.8h-7v3.2h7V247.8
+		L328,247.8z M342,247.8h-7v3.2h7V247.8L342,247.8z M356,247.8h-7v3.2h7V247.8L356,247.8z M370,247.8h-7v3.2h7V247.8L370,247.8z
+		 M384,247.8h-7v3.2h7V247.8L384,247.8z M397,247.8h-6v3.2h6V247.8L397,247.8z M397,236h-3.2v7h3.2V236L397,236z M397,222h-3.2v7
+		h3.2V222L397,222z M397,213h-7v3.2h7V213L397,213z"/>
+</g>
+<g>
+	<g>
+		<rect x="254.6" y="229.6" class="st3" width="155.8" height="34.8"/>
+		<path class="st2" d="M408.8,231.2v31.6H256.2v-31.6H408.8 M412,228H253v38h159V228L412,228z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 263.0002 253.418)" class="st6 st7">Inline element</text>
+</g>
+<rect x="160" y="25" class="st8" width="349" height="41"/>
+<text transform="matrix(1 0 0 1 175.0286 52.7109)" class="st0 st4 st9">In-flow content leaves space</text>
+<g>
+	<g>
+		<line class="st10" x1="238" y1="197.4" x2="238" y2="66"/>
+		<g>
+			<polygon class="st8" points="248.5,194.4 238,212.5 227.5,194.4 			"/>
+		</g>
+	</g>
+</g>
+</svg>
