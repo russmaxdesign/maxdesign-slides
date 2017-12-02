@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D2D2D2;}
+	.st1{fill:#568312;}
+	.st2{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st3{fill:#B04636;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:none;}
+	.st6{font-family:'HelveticaNeue';}
+	.st7{font-size:20px;}
+	.st8{font-family:'HelveticaNeue-BoldItalic';}
+	.st9{font-family:'HelveticaNeue-Bold';}
+	.st10{font-size:32px;}
+	.st11{font-size:22px;}
+	.st12{font-size:23px;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M602.1,62.9v219.2H27.9V62.9H602.1 M605,60H25v225h580V60L605,60z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st0" d="M599,83v39H31V83H599 M602,80H28v45h574V80L602,80z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st0" d="M599,138v119H31V138H599 M602,135H28v125h574V135L602,135z"/>
+	</g>
+</g>
+<rect x="40" y="145" class="st5" width="552" height="120"/>
+<text transform="matrix(1 0 0 1 40 159.2793)"><tspan x="0" y="0" class="st6 st7">Lorem ipsum dolor sit amet, </tspan><tspan x="256.4" y="0" class="st8 st7">consectetuer</tspan><tspan x="382.3" y="0" class="st6 st7"> adipiscing elit, </tspan><tspan x="0" y="30" class="st6 st7">sed diam nonummy nibh euismod tincidunt ut laoreet dolore </tspan><tspan x="0" y="60" class="st6 st7">magna aliquam erat volutpat. Ut wisi enim ad minim veniam, </tspan><tspan x="0" y="90" class="st6 st7">quis nostrud exerci tation ullamcorper suscipit.</tspan></text>
+<text transform="matrix(1 0 0 1 40 113.4238)" class="st9 st10">This is a heading</text>
+<text transform="matrix(1 0 0 1 235.5703 45.8535)" class="st9 st11">Containing box</text>
+<rect x="267" y="317" class="st3" width="186" height="41"/>
+<text transform="matrix(1 0 0 1 279 345)" class="st4 st9 st12">Collapsed box</text>
+<g>
+	<g>
+		<path class="st1" d="M424,138v30H295v-30H424 M427,135H292v36h135V135L427,135z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st2" x1="368.2" y1="180.1" x2="368.2" y2="321"/>
+		<g>
+			<polygon class="st3" points="357.8,183.1 368.2,165 378.7,183.1 			"/>
+		</g>
+	</g>
+</g>
+</svg>

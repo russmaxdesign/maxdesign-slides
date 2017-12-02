@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#595959;}
+	.st2{fill:#D2D2D2;}
+	.st3{font-family:'HelveticaNeue-Bold';}
+	.st4{font-size:32px;}
+	.st5{font-family:'HelveticaNeue';}
+	.st6{font-size:22px;}
+	.st7{fill:#E7C7C2;}
+	.st8{fill:#B04636;}
+	.st9{fill:#B0C590;}
+	.st10{fill:#568312;}
+	.st11{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st12{font-size:23px;}
+</style>
+<g id="base">
+	<g>
+		<g>
+			<rect x="26.5" y="82.5" class="st0" width="597" height="304"/>
+			<path class="st1" d="M622,84v301H28V84H622 M625,81H25v307h600V81L625,81z"/>
+		</g>
+		<g>
+			<rect x="25" y="81" class="st1" width="600" height="56"/>
+			<circle class="st0" cx="41.3" cy="95" r="6"/>
+			<circle class="st0" cx="56.7" cy="95" r="6"/>
+			<circle class="st0" cx="72" cy="95" r="6"/>
+			<polygon class="st0" points="53.2,120.1 40.8,120.1 45.9,115.1 44.6,113.8 38.3,120.1 38.2,120.1 38.2,121.9 38.7,121.9 
+				38.2,122.4 44.6,128.7 45.9,127.4 40.3,121.9 53.2,121.9 			"/>
+			<polygon class="st0" points="62.7,120.1 75.1,120.1 70.1,115.1 71.4,113.8 77.7,120.1 77.7,120.1 77.7,121.9 77.3,121.9 
+				77.7,122.4 71.4,128.7 70.1,127.4 75.6,121.9 62.7,121.9 			"/>
+			<path class="st0" d="M446.2,129.5H101.7c-2.8,0-5-2.2-5-5v-10c0-2.8,2.2-5,5-5h344.5c2.8,0,5,2.2,5,5v10
+				C451.2,127.2,449,129.5,446.2,129.5z"/>
+			<path class="st0" d="M599.2,129.5h-130c-5.5,0-10-4.5-10-10v0c0-5.5,4.5-10,10-10h130c5.5,0,10,4.5,10,10v0
+				C609.2,125,604.7,129.5,599.2,129.5z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="49.5" y="158.5" class="st0" width="551" height="205"/>
+		<g>
+			<path class="st2" d="M599,160v202H51V160H599 M602,157H48v208h554V157L602,157z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="69.5" y="178.5" class="st0" width="511" height="42"/>
+		<path class="st2" d="M579,180v39H71v-39H579 M582,177H68v45h514V177L582,177z"/>
+	</g>
+	<g>
+		<rect x="69.5" y="233.5" class="st0" width="511" height="110"/>
+		<path class="st2" d="M579,235v107H71V235H579 M582,232H68v113h514V232L582,232z"/>
+	</g>
+	<g>
+		<rect x="89.5" y="253.5" class="st0" width="471" height="35"/>
+		<path class="st2" d="M559,255v32H91v-32H559 M562,252H88v38h474V252L562,252z"/>
+	</g>
+	<g>
+		<rect x="89.5" y="288.5" class="st0" width="471" height="35"/>
+		<path class="st2" d="M559,290v32H91v-32H559 M562,287H88v38h474V287L562,287z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 77.9995 209.4238)" class="st3 st4">This is a heading</text>
+	<text transform="matrix(1 0 0 1 98.0004 275.8535)" class="st5 st6">Lorem ipsum dolor sit amet, consectetuer adip</text>
+	<text transform="matrix(1 0 0 1 98.0002 310.8535)" class="st5 st6">iscing elit, sed diam euismod tincidunt ut</text>
+</g>
+<g id="feature">
+	<g>
+		<g>
+			<rect x="49.5" y="158.5" class="st9" width="147" height="117"/>
+			<path class="st10" d="M195,160v114H51V160H195 M198,157H48v120h150V157L198,157z"/>
+		</g>
+		<text transform="matrix(1 0 0 1 57.9995 182.8535)" class="st5 st6">Test element</text>
+	</g>
+</g>
+<g id="label">
+	<rect x="25" y="15" class="st8" width="540" height="41"/>
+	<text transform="matrix(1 0 0 1 39.5287 42.7109)" class="st0 st3 st12">Absolute: height applied, bottom value ignored</text>
+	<g>
+		<g>
+			<line class="st11" x1="100" y1="141.9" x2="100" y2="56"/>
+			<g>
+				<polygon class="st8" points="110.5,138.9 100,157 89.5,138.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

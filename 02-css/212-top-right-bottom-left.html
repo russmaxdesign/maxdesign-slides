@@ -1,0 +1,1977 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>212: Top, right, bottom, left</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>212</h5>
+          <h1>Top, right, bottom, left</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties allow authors to <b>define the location of positioned elements</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>1. Top</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code> property helps to specify the <b>vertical position of a positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top using length */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">top</span>: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The effect of <code>top</code> depends on <b>how the element is positioned</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>absolute</code> positioning, the <code>top</code> property specifies the distance <b>between the element’s top edge and the top edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If no ancestors have positioning, the element will be positioned <b>in relation to the initial containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>top: 20px</code> will move an absolutely positioned element <code>20px</code> <b>down from the top edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_01.svg" alt="Absolute: down 20px from top edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>top: -20px</code> will move an absolutely positioned element <code>20px</code> <b>up from the top edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_02.svg" alt="Absolute: up 20px from top edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>top: 50%</code> will move an absolutely positioned element <b>down 50% of the height of the containing block, from its top edge</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_03.svg" alt="Absolute: down 50% of the height of containing block">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>fixed</code> positioning, the <code>top</code> property specifies the distance <b>between the element’s top edge and the top edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>top: 20px</code> will move a fixed positioned element <code>20px</code> <b>down from the top edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_04.svg" alt="Fixed: down 20px from top edge of viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>relative</code> positioning, the <code>top</code> property specifies the distance <b>the element’s top edge is moved away from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>top: 20px</code> will move a relatively positioned element <code>20px</code> <b>down from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_05.svg" alt="Relative: down 20px from original position">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top and sticky positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When position is set to <code>sticky</code>, the <code>top</code> property is <b>ignored until the element is outside of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, the <code>top</code> property behaves as if it set to <code>position: fixed</code> <b>when the element is outside the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>top: 20px</code> will <b>initially be ignored</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, if the page is scrolled up and the element is outside the viewport, the element will sit <code>20px</code> <b>down from the top edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_06.svg" alt="Sticky: down 20px from the top edge of viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top and static positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When position is set to <code>static</code>, the <code>top</code> property <b>has no effect</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which property wins?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are times when <b>three different properties are defined</b> for a specific element: <code>top</code>, <code>bottom</code> and <code>height</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a possibility that <b>some of these properties may clash</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>top: 0</code> and <code>bottom: 0</code> will <b>stretch the element to the top and bottom of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>But what happens if there is also <code>height: 200px</code>? <b>Which properties will be applied</b> and which will be ignored?</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>top</code> and <code>bottom</code> values, and either no <code>height</code> or <code>height: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example1 {
+  position: absolute;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+.example2 {
+  position: absolute;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;
+  height: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>top</code> and <code>bottom</code> values will be respected so the element will <b>stretch to the full height of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_07.svg" alt="Absolute: top and bottom values but no height">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height using a length */</span>
+.example3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  <span class="codeHighlight">height: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the top of the containing block <b>with a height of</b> <code>100px</code>. The <code>bottom</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_08.svg" alt="Absolute: height applied, bottom value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>top</code> and <code>bottom</code> values, and either no <code>height</code> or <code>height: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example4 {
+  position: fixed;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+.example5 {
+  position: fixed;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;
+  height: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>top</code> and <code>bottom</code> values will be respected so the element will <b>stretch to the full height of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_09.svg" alt="Fixed: top and bottom values but no height">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height as a length */</span>
+.example6 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  <span class="codeHighlight">height: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the top of the viewport <b>with a height of</b> <code>100px</code>. The <code>bottom</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/top_10.svg" alt="Fixed: height applied, bottom value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>relatively-positioned element</b> has been given <code>top</code> and <code>bottom</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example7 {
+  position: relative;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Regardless of whether a <code>height</code> has been specified, if <code>top</code> and <code>bottom</code> values have been specified, the <code>bottom</code> value is <b>ignored</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Use the top property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-212-01.html">exercises-start/exercise-212-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 50px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+  top: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: fixed;
+  top: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>top: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: relative;
+  top: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to set the element with a class of <code>example4</code> to <code>position: sticky</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>position:  -webkit-sticky</code> for Webkit browsers that do not support <b>position: sticky</b>. </p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with <b>all browser-specific values</b>, the <code>-webkit-sticky</code> value should be placed above the native <code>sticky</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Finally, <b>set the element with</b> <code>top: 0</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-212-01.html">exercises-finished/exercise-212-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>2. Right</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>right</code> property helps to specify the <b>horizontal position of a positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Right as a length */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">right</span>: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The effect of <code>right</code> depends on <b>how the element is positioned</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Right and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>absolute</code> positioning, the <code>right</code> property specifies the distance <b>between the element’s right edge and the right edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If no ancestors have positioning, the element will be positioned <b>in relation to the initial containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>right: 20px</code> will move an absolutely positioned element <code>20px</code> <b>to the left of the right edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_01.svg" alt="Absolute: left 20px from right edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>right: -20px</code> will move an absolutely positioned element <code>20px</code> <b>to the right of the right edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_02.svg" alt="Absolute: right 20px from right edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>right: 50%</code> will move an absolutely positioned element <b>to the left 50% of the width of the containing block, from its right edge</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_03.svg" alt="Absolute: left 50% of the width of containing block">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Right and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>fixed</code> positioning, the <code>right</code> property specifies the distance <b>between the element’s right edge and the right edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>right: 20px</code> will move a fixed positioned element <code>20px</code> <b>to the left from the right edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_04.svg" alt="Fixed: left 20px from right edge of viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Right and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>relative</code> positioning, the <code>right</code> property specifies the distance <b>the element’s right edge is moved away from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>right: 20px</code> will move a relatively positioned element <code>20px</code> <b>to the left of its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_05.svg" alt="Relative: left 20px from original position">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Right and static positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When position is set to <code>static</code>, the <code>right</code> property <b>has no effect</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which property wins?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are times when <b>three different properties are defined</b> for a specific element: <code>left</code>, <code>right</code> and <code>width</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a possibility that <b>some of these properties may clash</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>left: 0</code> and <code>right: 0</code> will <b>stretch the element to the left and right of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>But what happens if there is also <code>width: 200px</code>? <b>Which properties will be applied</b> and which will be ignored?</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>left</code> and <code>right</code> values, and either no <code>width</code> or <code>width: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example1 {
+  position: absolute;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+.example2 {
+  position: absolute;
+  <span class="codeHighlight">left: 0;
+  right: 0;
+  width: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>left</code> and <code>right</code> values will be respected so the element will <b>stretch to the full width of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_06.svg" alt="Absolute: left and right values but no width">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width as a length */</span>
+.example3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  <span class="codeHighlight">width: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the <code>right</code> value <b>will be ignored</b>. The element will be positioned at the left of the containing block with a width of <code>100px</code>. </p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_07.svg" alt="Absolute: width applied, right value ignored">
+          </section>
+
+          <section data-background="#fff">
+            <p>In cases where the direction of the document, or section of the document has the <code>dir</code> set to <code>rtl</code> (right to left), the <code>left</code> value would be <b>ignored instead</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="content" <span class="codeHighlight">dir="rtl"</span>&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>left</code> and <code>right</code> values, and either no <code>width</code> or <code>width: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example4 {
+  position: fixed;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+.example5 {
+  position: fixed;
+  <span class="codeHighlight">left: 0;
+  right: 0;
+  width: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>left</code> and <code>right</code> values will be respected so the element will <b>stretch to the full width of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_08.svg" alt="Fixed: left and right values but no width">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width as a length */</span>
+.example6 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  <span class="codeHighlight">width: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the left of the viewport <b>with a width of</b> <code>100px</code>. The <code>right</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/right_09.svg" alt="Fixed: width applied, right value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>relatively-positioned element</b> has been given <code>left</code> and <code>right</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example7 {
+  position: relative;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Regardless of whether a <code>width</code> has been specified, if <code>left</code> and <code>right</code> values have been specified, the <code>right</code> value is <b>ignored</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In cases where the direction of the document, or section of the document has the <code>dir</code> set to <code>rtl</code> (right to left), the <code>left</code> value would be <b>ignored instead</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="content" <span class="codeHighlight">dir="rtl"</span>&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Use the right property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-212-02.html">exercises-start/exercise-212-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>right: 50px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+  right: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>right: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: fixed;
+  right: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>right: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: relative;
+  right: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-212-02.html">exercises-finished/exercise-212-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>3. Bottom</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>bottom</code> property helps to specify the <b>vertical position of a positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Bottom */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">bottom</span>: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The effect of <code>bottom</code> depends on <b>how the element is positioned</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Bottom and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>absolute</code> positioning, the <code>bottom</code> property specifies the distance <b>between the element’s bottom edge and the bottom edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If no ancestors have positioning, the element will be positioned <b>in relation to the initial containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>bottom: 20px</code> will move an absolutely positioned element <code>20px</code> <b>up from the bottom edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_01.svg" alt="Absolute: up 20px from bottom edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>bottom: -20px</code> will move an absolutely positioned element <code>20px</code> <b>down from the bottom edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_02.svg" alt="Absolute: down 20px from bottom of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>bottom: 50%</code> will move an absolutely positioned element <b>up 50% of the height of the containing block, from its bottom edge</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_03.svg" alt="Absolute: up 50% of the height of containing block">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Bottom and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>fixed</code> positioning, the <code>bottom</code> property specifies the distance <b>between the element’s bottom edge and the bottom edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>bottom: 20px</code> will move a fixed positioned element <code>20px</code> <b>up from the bottom edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_04.svg" alt="Fixed: up 20px from bottom edge of viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Bottom and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>relative</code> positioning, the <code>bottom</code> property specifies the distance <b>the element’s bottom edge is moved away from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>bottom: 20px</code> will move a relatively positioned element <code>20px</code> <b>up from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_05.svg" alt="Relative: up 20px from bottom of original position">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Bottom and static positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When position is set to <code>static</code>, the <code>bottom</code> property <b>has no effect</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which property wins?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are times when <b>three different properties are defined</b> for a specific element: <code>top</code>, <code>bottom</code> and <code>height</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a possibility that <b>some of these properties may clash</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>top: 0</code> and <code>bottom: 0</code> will <b>stretch the element to the top and bottom of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>But what happens if there is also <code>height: 200px</code>? <b>Which properties will be applied</b> and which will be ignored?</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>top</code> and <code>bottom</code> values, and either no <code>height</code> or <code>height: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example1 {
+  position: absolute;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+.example2 {
+  position: absolute;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;
+  height: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>top</code> and <code>bottom</code> values will be respected so the element will <b>stretch to the full height of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_06.svg" alt="Absolute: top and bottom values but no height">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height as a length */</span>
+.example3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  <span class="codeHighlight">height: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the top of the containing block <b>with a height of</b> <code>100px</code>. The <code>bottom</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_07.svg" alt="Absolute: height applied, bottom value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>top</code> and <code>bottom</code> values, and either no <code>height</code> or <code>height: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example4 {
+  position: fixed;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom and height */</span>
+.example5 {
+  position: fixed;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;
+  height: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>top</code> and <code>bottom</code> values will be respected so the element will <b>stretch to the full height of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_08.svg" alt="Fixed: top and bottom values but no height">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>top</code> and <code>bottom</code> values as well as a <code>height</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Height as a length */</span>
+.example6 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  <span class="codeHighlight">height: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the top of the viewport <b>with a height of</b> <code>100px</code>. The <code>bottom</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/bottom_09.svg" alt="Fixed: height applied, bottom value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Top, bottom, height and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>relatively-positioned element</b> has been given <code>top</code> and <code>bottom</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Top, bottom */</span>
+.example7 {
+  position: relative;
+  <span class="codeHighlight">top: 0;
+  bottom: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Regardless of whether a <code>height</code> has been specified, if <code>top</code> and <code>bottom</code> values have been specified, the <code>bottom</code> value is <b>ignored</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Use the bottom property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-212-03.html">exercises-start/exercise-212-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>bottom: 50px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+  bottom: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>bottom: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: fixed;
+  bottom: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>bottom: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: relative;
+  bottom: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-212-03.html">exercises-finished/exercise-212-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>4. Left</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>left</code> property helps to specify the <b>horizontal position of a positioned element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left as a length */</span>
+p {
+  position: absolute;
+  <span class="codeHighlight">left</span>: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The effect of <code>left</code> depends on <b>how the element is positioned</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>absolute</code> positioning, the <code>left</code> property specifies the distance <b>between the element’s left edge and the left edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If no ancestors have positioning, the element will be positioned <b>in relation to the initial containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>left: 20px</code> will move an absolutely positioned element <code>20px</code> <b>to the right of the left edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_01.svg" alt="Absolute: right 20px from left edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>left: -20px</code> will move an absolutely positioned element <code>20px</code> <b>to the left of the left edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_02.svg" alt="Absolute: left 20px from left edge of containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>Setting <code>left: 50%</code> will move an absolutely positioned element <b>to the right 50% of the width of the containing block, from its left edge</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_03.svg" alt="Absolute: right 50% of the width of containing block">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>fixed</code> positioning, the <code>left</code> property specifies the distance <b>between the element’s left edge and the left edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>left: 20px</code> will move a fixed positioned element <code>20px</code> <b>to the right from the left edge of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_04.svg" alt="Fixed: right 20px from left edge of viewport">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>With <code>relative</code> positioning, the <code>left</code> property specifies the distance <b>the element’s left edge is moved away from its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, setting <code>left: 20px</code> will move a relatively positioned element <code>20px</code> <b>to the right of its normal position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_05.svg" alt="Relative: right 20px from original position">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left and static positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When position is set to <code>static</code>, the <code>left</code> property <b>has no effect</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which property wins?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are times when <b>three different properties are defined</b> for a specific element: <code>left</code>, <code>right</code> and <code>width</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a possibility that <b>some of these properties may clash</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>left: 0</code> and <code>right: 0</code> will <b>stretch the element to the left and right of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>But what happens if there is also <code>width: 200px</code>? <b>Which properties will be applied</b> and which will be ignored?</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and absolute positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>left</code> and <code>right</code> values, and either no <code>width</code> or <code>width: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example1 {
+  position: absolute;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+.example2 {
+  position: absolute;
+  <span class="codeHighlight">left: 0;
+  right: 0;
+  width: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>left</code> and <code>right</code> values will be respected so the element will <b>stretch to the full width of the containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_06.svg" alt="Absolute: left and right values but no width">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, an <b>absolutely-positioned element</b> has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width as a length */</span>
+.example3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  <span class="codeHighlight">width: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the <code>right</code> value <b>will be ignored</b>. The element will be positioned at the left of the containing block with a width of <code>100px</code>. </p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_07.svg" alt="Absolute: width applied, right value ignored">
+          </section>
+
+          <section data-background="#fff">
+            <p>In cases where the direction of the document, or section of the document has the <code>dir</code> set to <code>rtl</code> (right to left), the <code>left</code> value would be <b>ignored instead</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="content" <span class="codeHighlight">dir="rtl"</span>&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and fixed positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>left</code> and <code>right</code> values, and either no <code>width</code> or <code>width: auto</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example4 {
+  position: fixed;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right and width */</span>
+.example5 {
+  position: fixed;
+  <span class="codeHighlight">left: 0;
+  right: 0;
+  width: auto;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, both <code>left</code> and <code>right</code> values will be respected so the element will <b>stretch to the full width of the viewport</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_08.svg" alt="Fixed: left and right values but no width">
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>fixed-positioned element</b> has been given <code>left</code> and <code>right</code> values as well as a <code>width</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Width as a length */</span>
+.example6 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  <span class="codeHighlight">width: 100px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this cases, the element will be positioned at the left of the viewport <b>with a width of</b> <code>100px</code>. The <code>right</code> value will be ignored.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/left_09.svg" alt="Fixed: width applied, right value ignored">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Left, right, width and relative positioning</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, a <b>relatively-positioned element</b> has been given <code>left</code> and <code>right</code> values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Left, right */</span>
+.example7 {
+  position: relative;
+  <span class="codeHighlight">left: 0;
+  right: 0;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Regardless of whether a <code>width</code> has been specified, if <code>left</code> and <code>right</code> values have been specified, the <code>right</code> value is <b>ignored</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In cases where the direction of the document, or section of the document has the <code>dir</code> set to <code>rtl</code> (right to left), the <code>left</code> value would be <b>ignored instead</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="content" <span class="codeHighlight">dir="rtl"</span>&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Use the left property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-212-04.html">exercises-start/exercise-212-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>position: absolute</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>left: 50px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  position: absolute;
+  left: 50px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>position: fixed</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>left: 100px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  position: fixed;
+  left: 100px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>position: relative</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also <b>set the element with</b> <code>left: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  position: relative;
+  left: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-212-04.html">exercises-finished/exercise-212-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>5. Values</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties <b>can be defined</b> using length values, percentage values, the <code>auto</code> keyword or the <code>inherit</code> keyword.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length values</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Length values must be a <b>positive or negative number</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* length values */</span>
+p { top: <span class="codeHighlight">3px</span>; }
+p { right: <span class="codeHighlight">-3px</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Length values can include <b>any of the following length types</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Font-relative lengths */</span>
+p { top: <span class="codeHighlight">.7cap</span>; }
+p { top: <span class="codeHighlight">1.2ch</span>; }
+p { top: <span class="codeHighlight">.9em</span>; }
+p { top: <span class="codeHighlight">1.8ex</span>; }
+p { top: <span class="codeHighlight">.9ic</span>; }
+p { top: <span class="codeHighlight">1.1lh</span>; }
+p { top: <span class="codeHighlight">1.5rem</span>; }
+p { top: <span class="codeHighlight">.9rlh</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Viewport-percentage lengths */</span>
+p { top: <span class="codeHighlight">1vh</span>; }
+p { top: <span class="codeHighlight">2vw</span>; }
+p { top: <span class="codeHighlight">3vi</span>; }
+p { top: <span class="codeHighlight">4vb</span>; }
+p { top: <span class="codeHighlight">5vmin</span>; }
+p { top: <span class="codeHighlight">6vmax</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute length units */</span>
+p { top: <span class="codeHighlight">14px</span>; }
+p { top: <span class="codeHighlight">10mm</span>; }
+p { top: <span class="codeHighlight">12q</span>; }
+p { top: <span class="codeHighlight">1cm</span>; }
+p { top: <span class="codeHighlight">.25in</span>; }
+p { top: <span class="codeHighlight">12pt</span>; }
+p { top: <span class="codeHighlight">14pc</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>For absolutely positioned elements, length defines <b>the distance that the element is moved away from its containing block</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For relatively positioned elements, length defines <b>the distance that the element is moved away from its normal position</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Percentage values</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Percentage values must be a <b>positive or negative percentage number</b> followed by the percent <code>"%"</code> sign.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Percentages define a <b>percentage of the containing block’s width or height</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* percentage values */</span>
+p { top: <span class="codeHighlight">10%</span>; }
+p { right: <span class="codeHighlight">-10%</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The auto keyword value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>top: auto</code> means that the position of the element is <b>based on the bottom property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>right: auto</code> means that the position of the element is <b>based on the left property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>bottom: auto</code> means that the position of the element is <b>based on the top property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>left: auto</code> means that the position of the element is <b>based on the right property</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For relatively-positioned elements, if any of the opposite edges are also set to <code>auto</code>, the element is <b>not moved at all</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* auto value */</span>
+p { top: <span class="codeHighlight">auto</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The inherit keyword value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>inherit</code> keyword specifies that the value is <b>the same as the computed value from its parent element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Keyword values */</span>
+p { top: <span class="codeHighlight">inherit</span>; }
+</code></pre>
+          </section>
+
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Use some different values</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-212-05.html">exercises-start/exercise-212-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to set the element with a class of <code>example1</code> to <code>left: 2em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  left: 2em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to set the element with a class of <code>example2</code> to <code>left: -1em</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  left: -1em;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to set the element with a class of <code>example3</code> to <code>left: 15%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  left: 15%;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-212-05.html">exercises-finished/exercise-212-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="213-css-zindex.html">213: CSS z-index</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

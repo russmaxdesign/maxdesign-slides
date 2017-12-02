@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>207: CSS Shorthand</title>
+    <title>207: CSS Shorthand Properties</title>
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reveal.css">
     <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
@@ -27,11 +28,23 @@
       <div class="slides">
 
         <div class="menu">
-          <a href="../index.html">Home</a> | <a href="index.html">CSS</a> | <a href="#/">Start</a>
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
         </div>
 
         <section data-background="#222">
-          <h1 class="title">CSS Shorthand</h1>
+          <h5>207</h5>
+          <h1>CSS Shorthand Properties</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
         </section>
 
 
@@ -44,21 +57,11 @@
 
         <section>
           <section data-background="#568312">
-             <h2>What are shorthand properties?</h2>
+             <h2>Introduction</h2>
           </section>
 
           <section data-background="#fff">
-            <p>CSS <b>properties</b> are the aspect of the element that can be styled - such as the element's color, border, padding.</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">/* A CSS property */</span>
-p { <span class="codeHighlight">color</span>: red; }
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p>Some CSS properties can be <b>combined into shorthand properties</b>.</p>
+            <p>Some CSS properties can be <b>combined into shorthand properties</b>, to save writing multiple properties.</p>
           </section>
 
           <section data-background="#222">
@@ -68,14 +71,28 @@ li {
   <span class="codeHighlight">list-style-image</span>: none;
   <span class="codeHighlight">list-style-position</span>: inside;
 }
+</code></pre>
+          </section>
 
+          <section data-background="#222">
+<pre><code contenteditable="true">
 <span class="codeComment">/* shorthand property */</span>
 li { <span class="codeHighlight">list-style</span>: disc none inside; }
 </code></pre>
           </section>
+        </section>
 
-          <section data-background="#fff">
-            <p>Shorthand properties are designed to make it <b>easier for authors</b> - to save writing multiple declarations.</p>
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+             <h2>1. CSS 2.1 shorhand properties</h2>
           </section>
 
           <section data-background="#fff">
@@ -83,7 +100,7 @@ li { <span class="codeHighlight">list-style</span>: disc none inside; }
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">p { <span class="codeHighlight">background</span>: <span class="codeComment">...</span>; }
+<pre><code contenteditable="true">
 p { <span class="codeHighlight">border-bottom</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">border-color</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">border-left</span>: <span class="codeComment">...</span>; }
@@ -96,13 +113,13 @@ p { <span class="codeHighlight">border</span>: <span class="codeComment">...</sp
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">p { <span class="codeHighlight">cue</span>: <span class="codeComment">...</span>; }
+<pre><code contenteditable="true">
+p { <span class="codeHighlight">background</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">font</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">list-style</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">margin</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">outline</span>: <span class="codeComment">...</span>; }
 p { <span class="codeHighlight">padding</span>: <span class="codeComment">...</span>; }
-p { <span class="codeHighlight">pause</span>: <span class="codeComment">...</span>; }
 </code></pre>
           </section>
         </section>
@@ -117,7 +134,7 @@ p { <span class="codeHighlight">pause</span>: <span class="codeComment">...</spa
 
         <section>
           <section data-background="#568312">
-             <h2>Order of values</h2>
+             <h2>2. Order of values</h2>
           </section>
 
           <section data-background="#fff">
@@ -154,11 +171,11 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/207-shorthand01.svg" alt="">
+            <img src="../assets/img/shorthand01.svg" alt="Element with one margin value on all sides">
           </section>
 
           <section data-background="#fff">
-            <p>If <b>two value</b> are defined, the first value defines the top and bottom edges of the element, and the second value defines the left and right edges of the element.</p>
+            <p>If <b>two values</b> are defined, the first value defines the top and bottom edges of the element, and the second value defines the left and right edges of the element.</p>
           </section>
 
           <section data-background="#222">
@@ -167,7 +184,11 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/207-shorthand02.svg" alt="">
+            <img src="../assets/img/shorthand02_01.svg" alt="Element with two margin values - the first value is top and bottom">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/shorthand02_02.svg" alt="Element with two margin values - the second value is left and right">
           </section>
 
           <section data-background="#fff">
@@ -180,11 +201,19 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/207-shorthand03.svg" alt="">
+            <img src="../assets/img/shorthand03_01.svg" alt="Element with three margin values - the first value is top">
           </section>
 
           <section data-background="#fff">
-            <p>If <b>four values</b> are defined, the first value defines the top, the second value defines the right, the third value defines the bottom and the fourth value defines the left edge.</p>
+            <img src="../assets/img/shorthand03_02.svg" alt="Element with three margin values - the second value is left and right">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/shorthand03_03.svg" alt="Element with three margin values - the third value is bottom">
+          </section>
+
+          <section data-background="#fff">
+            <p>If <b>four values</b> are defined, they define in order, top, right, bottom and left edge.</p>
           </section>
 
           <section data-background="#222">
@@ -193,7 +222,19 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/207-shorthand04.svg" alt="">
+            <img src="../assets/img/shorthand04_01.svg" alt="Element with four margin values - the first value is top">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/shorthand04_02.svg" alt="Element with four margin values - the second value is right">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/shorthand04_03.svg" alt="Element with four margin values - the third value is bottom">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/shorthand04_04.svg" alt="Element with four margin values - the fourth value is left">
           </section>
 
           <section data-background="#fff">
@@ -201,7 +242,7 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/207-shorthand05.svg" alt="">
+            <img src="../assets/img/shorthand-clockwise.svg" alt="Element with four margin values - in a clockwise direction">
           </section>
         </section>
 
@@ -215,11 +256,48 @@ p { margin: <span class="codeHighlight">1em 2em 3em 4em</span>; }
 
         <section>
           <section data-background="#568312">
-             <h2>Initial values</h2>
+             <h2>3. Initial values</h2>
           </section>
 
           <section data-background="#fff">
             <p>All CSS properties have an <b>initial value</b> - a value that is used if the value is not specified by the author.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For shorthand properties, the initial values are normally based on the <b>initial values of the longhand properties</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>For example</b>, the shorthand <code>border</code> property uses the longhand <code>border-width</code>, <code>border-style</code> and <code>border-color</code> properties.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>initial values</b> for the <code>border-width</code>, <code>border-style</code> and <code>border-color</code> properties are:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">/* initial values */</span>
+p { border-width: <span class="codeHighlight">medium</span>; }
+
+p { border-style: <span class="codeHighlight">none</span>; }
+
+p { border-color:
+  <span class="codeHighlight">[inherits the 'color' value]</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Therefore the <b>initial values</b> for the <code>border</code> property are:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">p { border:
+  <span class="codeHighlight">medium</span>
+  <span class="codeHighlight">none</span>
+  <span class="codeHighlight">[inherits the 'color' value]</span>;
+}
+</code></pre>
           </section>
 
           <section data-background="#fff">
@@ -392,43 +470,6 @@ word-spacing: <span class="codeHighlight">normal</span>
 z-index: <span class="codeHighlight">auto</span>
 </code></pre>
           </section>
-
-          <section data-background="#fff">
-            <p>For shorthand properties, the initial values are normally based on the <b>initial values of the longhand properties</b>.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p><b>For example</b>, the shorthand <code>border</code> property uses the longhand <code>border-width</code>, <code>border-style</code> and <code>border-color</code> properties.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <b>initial values</b> for the <code>border-width</code>, <code>border-style</code> and <code>border-color</code> properties are:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">/* initial values */</span>
-p { border-width: <span class="codeHighlight">medium</span>; }
-
-p { border-style: <span class="codeHighlight">none</span>; }
-
-p { border-color:
-  <span class="codeHighlight">[inherits the 'color' value]</span>;
-}
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p>Therefore the <b>initial values</b> for the <code>border</code> property are:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">p { border:
-  <span class="codeHighlight">medium</span>
-  <span class="codeHighlight">none</span>
-  <span class="codeHighlight">[inherits the 'color' value]</span>;
-}
-</code></pre>
-          </section>
         </section>
 
 
@@ -441,7 +482,7 @@ p { border-color:
 
         <section>
           <section data-background="#568312">
-             <h2>1. Margin</h2>
+             <h2>4. Margin</h2>
           </section>
 
           <section data-background="#fff">
@@ -457,7 +498,7 @@ p { margin: <span class="codeHighlight">
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial value</b> for <code>&lt;margin-width&gt;</code> is <code>"0"</code>. Therefore, the <b>initial value</b> for the shorthand <code>margin</code> property is also <code>"0"</code>:</p>
+            <p>The <b>initial value</b> for <code>&lt;margin-width&gt;</code> is <code>0</code>. Therefore, the <b>initial value</b> for the shorthand <code>margin</code> property is also <code>0</code>:</p>
           </section>
 
           <section data-background="#222">
@@ -527,7 +568,81 @@ p { <span class="codeHighlight">margin: 1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 1: shorthand margin</h3>
+            <h3>Exercise 1: Write some shorthand margin properties</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-01.html">exercises-start/exercise-207-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>margin</code> property with one value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to convert the following series of properties to a single shorthand <code>margin</code> property with two values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to convert the following series of properties to a single shorthand <code>margin</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to convert the following series of properties to a single shorthand <code>margin</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-01.html">exercises-finished/exercise-207-01.html</a></p>
           </section>
         </section>
 
@@ -541,7 +656,7 @@ p { <span class="codeHighlight">margin: 1em 2em 3em 4em</span>; }
 
         <section>
           <section data-background="#568312">
-             <h2>2. Padding</h2>
+             <h2>5. Padding</h2>
           </section>
 
           <section data-background="#fff">
@@ -557,7 +672,7 @@ p { padding: <span class="codeHighlight">
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial value</b> for <code>&lt;padding-width&gt;</code> is <code>"0"</code>. Therefore, the <b>initial value</b> for the shorthand <code>padding</code> property is also <code>"0"</code>:</p>
+            <p>The <b>initial value</b> for <code>&lt;padding-width&gt;</code> is <code>0</code>. Therefore, the <b>initial value</b> for the shorthand <code>padding</code> property is also <code>0</code>:</p>
           </section>
 
           <section data-background="#222">
@@ -627,7 +742,81 @@ p { <span class="codeHighlight">padding: 1em 2em 3em 4em</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 2: shorthand padding</h3>
+            <h3>Exercise 2: Write some shorthand padding properties</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-02.html">exercises-start/exercise-207-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>padding</code> property with one value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to convert the following series of properties to a single shorthand <code>padding</code> property with two values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to convert the following series of properties to a single shorthand <code>padding</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to convert the following series of properties to a single shorthand <code>padding</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-02.html">exercises-finished/exercise-207-02.html</a></p>
           </section>
         </section>
 
@@ -641,7 +830,7 @@ p { <span class="codeHighlight">padding: 1em 2em 3em 4em</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>3. Border-width</h2>
+            <h2>6. Border-width</h2>
           </section>
 
           <section data-background="#fff">
@@ -657,12 +846,12 @@ p { border-width: <span class="codeHighlight">
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial value</b> for <code>&lt;border-width&gt;</code> is <code>"medium"</code>. Therefore, the <b>initial value</b> for the shorthand <code>border-width</code> property is also <code>"medium"</code>:</p>
+            <p>The <b>initial value</b> for <code>&lt;border-width&gt;</code> is <code>medium</code>. Therefore, the <b>initial value</b> for the shorthand <code>border-width</code> property is also <code>medium</code>:</p>
           </section>
 
           <section data-background="#222">
 <pre><code contenteditable="true"><span class="codeComment">/* initial shorthand values */</span>
-p { padding: <span class="codeHighlight">medium</span>; }
+p { border-width: <span class="codeHighlight">medium</span>; }
 </code></pre>
           </section>
 
@@ -727,7 +916,81 @@ p { border-width: <span class="codeHighlight">1px 3px 4px 1px</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 3: shorthand border-width</h3>
+            <h3>Exercise 3: Write some shorthand border-width properties</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-03.html">exercises-start/exercise-207-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-width</code> property with one value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to convert the following series of properties to a single shorthand <code>border-width</code> property with two values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  border-top-width: 1px;
+  border-right-width: 20px;
+  border-bottom-width: 1px;
+  border-left-width: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to convert the following series of properties to a single shorthand <code>border-width</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  border-top-width: 1px;
+  border-right-width: 20px;
+  border-bottom-width: 8px;
+  border-left-width: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to convert the following series of properties to a single shorthand <code>border-width</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  border-top-width: 1px;
+  border-right-width: 20px;
+  border-bottom-width: 8px;
+  border-left-width: 12px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-03.html">exercises-finished/exercise-207-03.html</a></p>
           </section>
         </section>
 
@@ -741,7 +1004,7 @@ p { border-width: <span class="codeHighlight">1px 3px 4px 1px</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>4. Border-style</h2>
+            <h2>7. Border-style</h2>
           </section>
 
           <section data-background="#fff">
@@ -757,7 +1020,7 @@ p { border-style: <span class="codeHighlight">
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial value</b> for <code>&lt;border-style&gt;</code> is <code>"none"</code>. Therefore, the <b>initial value</b> for the shorthand <code>border-style</code> property is also <code>"none"</code>:</p>
+            <p>The <b>initial value</b> for <code>&lt;border-style&gt;</code> is <code>none</code>. Therefore, the <b>initial value</b> for the shorthand <code>border-style</code> property is also <code>none</code>:</p>
           </section>
 
           <section data-background="#222">
@@ -829,7 +1092,81 @@ p { border-style:
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 4: shorthand border-style</h3>
+            <h3>Exercise 4: Write some shorthand border-style properties</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-04.html">exercises-start/exercise-207-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-style</code> property with one value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to convert the following series of properties to a single shorthand <code>border-style</code> property with two values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  border-top-style: solid;
+  border-right-style: dotted;
+  border-bottom-style: solid;
+  border-left-style: dotted;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to convert the following series of properties to a single shorthand <code>border-style</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  border-top-style: solid;
+  border-right-style: dotted;
+  border-bottom-style: dashed;
+  border-left-style: dotted;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to convert the following series of properties to a single shorthand <code>border-style</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  border-top-style: solid;
+  border-right-style: dotted;
+  border-bottom-style: dashed;
+  border-left-style: double;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-04.html">exercises-finished/exercise-207-04.html</a></p>
           </section>
         </section>
 
@@ -843,7 +1180,7 @@ p { border-style:
 
         <section>
           <section data-background="#568312">
-            <h2>5. Border-color</h2>
+            <h2>8. Border-color</h2>
           </section>
 
           <section data-background="#fff">
@@ -932,7 +1269,81 @@ p { border-color:
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 5: shorthand border-color</h3>
+            <h3>Exercise 5: Write some shorthand border-color properties</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-05.html">exercises-start/exercise-207-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-color</code> property with one value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  border-top-color: red;
+  border-right-color: red;
+  border-bottom-color: red;
+  border-left-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to convert the following series of properties to a single shorthand <code>border-color</code> property with two values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: red;
+  border-left-color: blue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to convert the following series of properties to a single shorthand <code>border-color</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: green;
+  border-left-color: blue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to convert the following series of properties to a single shorthand <code>border-color</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4 {
+  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: green;
+  border-left-color: yellow;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-05.html">exercises-finished/exercise-207-05.html</a></p>
           </section>
         </section>
 
@@ -946,7 +1357,7 @@ p { border-color:
 
         <section>
           <section data-background="#568312">
-            <h2>6. Border-top</h2>
+            <h2>9. Border-top</h2>
           </section>
 
           <section data-background="#fff">
@@ -1000,7 +1411,32 @@ p { border-top: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 6: shorthand border-top</h3>
+            <h3>Exercise 6: Write a shorthand border-top property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-06.html">exercises-start/exercise-207-06.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-top</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  border-top-width: 10px;
+  border-top-style: solid;
+  border-top-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-06.html">exercises-finished/exercise-207-06.html</a></p>
           </section>
         </section>
 
@@ -1014,7 +1450,7 @@ p { border-top: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>7. Border-right</h2>
+            <h2>10. Border-right</h2>
           </section>
 
           <section data-background="#fff">
@@ -1068,7 +1504,32 @@ p { border-right: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 7: shorthand border-right</h3>
+            <h3>Exercise 7: Write a shorthand border-right property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-07.html">exercises-start/exercise-207-07.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-right</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  border-right-width: 10px;
+  border-right-style: solid;
+  border-right-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-07.html">exercises-finished/exercise-207-07.html</a></p>
           </section>
         </section>
 
@@ -1082,7 +1543,7 @@ p { border-right: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>8. Border-bottom</h2>
+            <h2>11. Border-bottom</h2>
           </section>
 
           <section data-background="#fff">
@@ -1136,7 +1597,32 @@ p { border-bottom: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 8: shorthand border-bottom</h3>
+            <h3>Exercise 8: Write a shorthand border-bottom property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-08.html">exercises-start/exercise-207-08.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-bottom</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-08.html">exercises-finished/exercise-207-08.html</a></p>
           </section>
         </section>
 
@@ -1150,7 +1636,7 @@ p { border-bottom: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>9. Border-left</h2>
+            <h2>12. Border-left</h2>
           </section>
 
           <section data-background="#fff">
@@ -1204,7 +1690,32 @@ p { border-left: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 9: shorthand border-left</h3>
+            <h3>Exercise 9: Write a shorthand border-left property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-09.html">exercises-start/exercise-207-09.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border-left</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  border-left-width: 10px;
+  border-left-style: solid;
+  border-left-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-09.html">exercises-finished/exercise-207-09.html</a></p>
           </section>
         </section>
 
@@ -1218,7 +1729,7 @@ p { border-left: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>10. Border</h2>
+            <h2>13. Border</h2>
           </section>
 
           <section data-background="#fff">
@@ -1272,7 +1783,32 @@ p { border: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 10: shorthand border</h3>
+            <h3>Exercise 10: Write a shorthand border property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-10.html">exercises-start/exercise-207-10.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>border</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  border-width: 10px;
+  border-style: solid;
+  border-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-10.html">exercises-finished/exercise-207-10.html</a></p>
           </section>
         </section>
 
@@ -1286,7 +1822,7 @@ p { border: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>11. Outline</h2>
+            <h2>14. Outline</h2>
           </section>
 
           <section data-background="#fff">
@@ -1337,7 +1873,32 @@ p { outline: <span class="codeHighlight">1px solid #000</span>; }
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 11: shorthand outline</h3>
+            <h3>Exercise 11: Write a shorthand outline property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-11.html">exercises-start/exercise-207-11.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>outline</code> property with three values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  outline-width: 10px;
+  outline-style: solid;
+  outline-color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-11.html">exercises-finished/exercise-207-11.html</a></p>
           </section>
         </section>
 
@@ -1351,15 +1912,19 @@ p { outline: <span class="codeHighlight">1px solid #000</span>; }
 
         <section>
           <section data-background="#568312">
-            <h2>12. Background</h2>
+            <h2>15. Background</h2>
           </section>
 
           <section data-background="#fff">
-            <p>The <code>background</code> <b>shorthand property</b> is defined using <code>background-color</code>, <code>background-image</code>, <code>background-attachment</code>, <code>background-repeat</code> and <code>background-position</code> values:</p>
+            <p>The <code>background</code> <b>shorthand property</b> is defined using five different properties.</p>
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial values</b> for the <code>background-color</code>, <code>background-image</code>, <code>background-attachment</code>, <code>background-repeat</code> and <code>background-position</code> properties are:</p>
+            <p><b>These properties are</b>: <code>background-color</code>, <code>background-image</code>, <code>background-attachment</code>, <code>background-repeat</code>, <code>background-position</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>initial values</b> for these properties are:</p>
           </section>
 
           <section data-background="#222">
@@ -1406,7 +1971,34 @@ p { background:
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 12: shorthand background</h3>
+            <h3>Exercise 12: Write a shorthand background property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-12.html">exercises-start/exercise-207-12.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>background</code> property with five values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example { 
+  background-color: yellow;
+  background-image: url(exercise-205-09-04.png);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: 50% 0; 
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-12.html">exercises-finished/exercise-207-12.html</a></p>
           </section>
         </section>
 
@@ -1420,7 +2012,7 @@ p { background:
 
         <section>
           <section data-background="#568312">
-            <h2>13. Font</h2>
+            <h2>16. Font</h2>
           </section>
 
           <section data-background="#fff">
@@ -1447,6 +2039,7 @@ p { font-family: <span class="codeHighlight">[up to user agent]</span>; }
 
           <section data-background="#222">
 <pre><code contenteditable="true">p { font:
+  <span class="codeHighlight">normal</span>
   <span class="codeHighlight">normal</span>
   <span class="codeHighlight">normal</span>
   <span class="codeHighlight">medium</span>/<span class="codeHighlight">normal</span>
@@ -1485,7 +2078,35 @@ p { font:
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 13: shorthand font</h3>
+            <h3>Exercise 13: Write a shorthand font property</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-13.html">exercises-start/exercise-207-13.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>font</code> property with six values.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1.4;
+  font-family: Georgia, Garamond, 'Times New Roman', serif;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-13.html">exercises-finished/exercise-207-13.html</a></p>
           </section>
         </section>
 
@@ -1499,7 +2120,7 @@ p { font:
 
         <section>
           <section data-background="#568312">
-            <h2>14. List-style</h2>
+            <h2>17. List-style</h2>
           </section>
 
           <section data-background="#fff">
@@ -1551,121 +2172,32 @@ li { list-style:
           </section>
 
           <section data-background="#B04636">
-            <h3>Exercise 14: shorthand list-style</h3>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#568312">
-            <h2>15. Cue</h2>
+            <h3>Exercise 14: Write a shorthand list-style property</h3>
           </section>
 
           <section data-background="#fff">
-            <p>The <code>cue</code> <b>shorthand property</b> is defined using <code>cue-after</code> and <code>cue-before</code> values:</p>
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-207-14.html">exercises-start/exercise-207-14.html</a></p>
           </section>
 
           <section data-background="#fff">
-            <p>The <b>initial values</b> for the <code>cue-after</code> and <code>cue-before</code> properties are:</p>
+            <p><b>Write a CSS rule</b> to convert the following series of properties to a single shorthand <code>list-style</code> property with three values.</p>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">p { cue-after: <span class="codeHighlight">none</span>; }
-p { cue-before: <span class="codeHighlight">none</span>; }
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p>Therefore, the <b>initial values</b> for the shorthand <code>cue</code> property are:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">p { cue:
-  <span class="codeHighlight">none none</span>; 
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example li {
+  list-style-type: none; 
+  list-style-image: url(exercise-207-14.png);
+  list-style-position: outside; 
 }
 </code></pre>
           </section>
 
           <section data-background="#fff">
-            <p><b>An example</b> of the shorthand <code>cue</code> property:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">/* longhand example */</span>
-p {
-  cue-after: <span class="codeHighlight">url(s1.wav)</span>; 
-  cue-before: <span class="codeHighlight">url(s2.wav)</span>;
-}
-
-<span class="codeComment">/* shorthand example */</span>
-p { cue:
-  <span class="codeHighlight">url(s1.wav) url(s2.wav)</span>;
-}
-</code></pre>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#568312">
-            <h2>16. Pause</h2>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>pause</code> <b>shorthand property</b> is defined using <code>pause-after</code> and <code>pause-before</code> values:</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <b>initial values</b> for the <code>pause-after</code> and <code>pause-before</code> properties are:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">p { pause-after: <span class="codeHighlight">none</span>; }
-p { pause-before: <span class="codeHighlight">none</span>; }
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p>Therefore, the <b>initial values</b> for the shorthand <code>pause</code> property are:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">p { pause:
-  <span class="codeHighlight">none none</span>; 
-}
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p><b>An example</b> of the shorthand <code>pause</code> property:</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">/* longhand example */</span>
-p {
-  pause-after: <span class="codeHighlight">20ms</span>; 
-  pause-before: <span class="codeHighlight">10ms</span>;
-}
-
-<span class="codeComment">/* shorthand example */</span>
-p { pause:
-  <span class="codeHighlight">20ms 10ms</span>;
-}
-</code></pre>
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-207-14.html">exercises-finished/exercise-207-14.html</a></p>
           </section>
         </section>
 
@@ -1678,12 +2210,17 @@ p { pause:
 
 
         <section data-background="#222">
-          <p class="font-xs">
-            <span class="authorDetails">Author:</span> <a class="highlightColorLight" href="http://maxdesign.com.au/about">Russ Weakley</a><br>
-            <span class="authorDetails">Site:</span> <a class="highlightColorLight" href="http://maxdesign.com.au">maxdesign.com.au</a><br>
-            <span class="authorDetails">Twitter:</span> <a class="highlightColorLight" href="http://twitter.com/russmaxdesign">twitter.com/russmaxdesign</a><br>
-            <span class="authorDetails">Slideshare:</span> <a class="highlightColorLight" href="http://slideshare.net/maxdesign">slideshare.net/maxdesign</a><br>
-            <span class="authorDetails">Linkedin:</span> <a class="highlightColorLight" href="http://linkedin.com/in/russweakley">linkedin.com/in/russweakley</a>
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="208-css-inheritance.html">208: CSS Inheritance</a>
           </p>
         </section>
 

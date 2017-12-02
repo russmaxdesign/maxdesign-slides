@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#AAAAAA;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#444444;}
+	.st3{fill:#E2EAD6;}
+	.st4{fill:#568312;}
+	.st5{font-family:'Consolas';}
+	.st6{font-size:22px;}
+	.st7{font-family:'HelveticaNeue-Bold';}
+</style>
+<line class="st0" x1="252" y1="62" x2="252" y2="109"/>
+<polyline class="st0" points="107,227 107,109 397,109 397,324 "/>
+<polyline class="st0" points="252,322 252,275 542,275 542,322 "/>
+<g>
+	<rect x="195.5" y="40.5" class="st1" width="114" height="44"/>
+	<path class="st2" d="M309,41v43H196V41H309 M310,40H195v45h115V40L310,40z"/>
+</g>
+<g>
+	<rect x="50.5" y="135.5" class="st1" width="114" height="44"/>
+	<path class="st2" d="M164,136v43H51v-43H164 M165,135H50v45h115V135L165,135z"/>
+</g>
+<g>
+	<rect x="50.5" y="205.5" class="st1" width="114" height="44"/>
+	<path class="st2" d="M164,206v43H51v-43H164 M165,205H50v45h115V205L165,205z"/>
+</g>
+<g>
+	<rect x="340.5" y="135.5" class="st3" width="114" height="44"/>
+	<g>
+		<path class="st2" d="M454,136v43H341v-43H454 M455,135H340v45h115V135L455,135z"/>
+	</g>
+</g>
+<g>
+	<rect x="340" y="205" class="st4" width="115" height="45"/>
+</g>
+<g>
+	<g>
+		<rect x="340.5" y="300.5" class="st1" width="114" height="44"/>
+		<path class="st2" d="M454,301v43H341v-43H454 M455,300H340v45h115V300L455,300z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="195.5" y="300.5" class="st1" width="114" height="44"/>
+		<path class="st2" d="M309,301v43H196v-43H309 M310,300H195v45h115V300L310,300z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="485.5" y="300.5" class="st1" width="114" height="44"/>
+		<path class="st2" d="M599,301v43H486v-43H599 M600,300H485v45h115V300L600,300z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 227.8086 69.5)" class="st5 st6">html</text>
+<text transform="matrix(1 0 0 1 84.3086 164.5)" class="st5 st6">head</text>
+<text transform="matrix(1 0 0 1 78.2607 235.5)" class="st5 st6">title</text>
+<text transform="matrix(1 0 0 1 373.1419 164.5)" class="st5 st6">body</text>
+<text transform="matrix(1 0 0 1 385.2376 235.5)" class="st1 st5 st6">ul</text>
+<text transform="matrix(1 0 0 1 238.9043 329.5)" class="st5 st6">li</text>
+<text transform="matrix(1 0 0 1 385.2376 329.5)" class="st5 st6">li</text>
+<text transform="matrix(1 0 0 1 529.9043 329.5)" class="st5 st6">li</text>
+<text transform="matrix(1 0 0 1 469.3333 164.5)" class="st7 st6">Parent</text>
+<text transform="matrix(1 0 0 1 469.3333 235.5)" class="st7 st6">Child</text>
+</svg>

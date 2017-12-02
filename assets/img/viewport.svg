@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#595959;}
+	.st2{fill:none;stroke:#B04636;stroke-width:4.5594;stroke-miterlimit:10;}
+	.st3{fill:#B04636;}
+	.st4{font-family:'HelveticaNeue-Bold';}
+	.st5{font-size:23px;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M34,364.5c-1.9,0-3.5-1.6-3.5-3.5V41c0-1.9,1.6-3.5,3.5-3.5h570c1.9,0,3.5,1.6,3.5,3.5v320
+			c0,1.9-1.6,3.5-3.5,3.5H34z"/>
+		<path class="st1" d="M604,39c1.1,0,2,0.9,2,2v320c0,1.1-0.9,2-2,2H34c-1.1,0-2-0.9-2-2V41c0-1.1,0.9-2,2-2H604 M604,36H34
+			c-2.8,0-5,2.2-5,5v320c0,2.8,2.2,5,5,5h570c2.8,0,5-2.2,5-5V41C609,38.2,606.8,36,604,36L604,36z"/>
+	</g>
+	<g>
+		<path class="st1" d="M30,89V38c0-2.8,2.2-5,5-5h570c2.8,0,5,2.2,5,5v51H30z"/>
+		<circle class="st0" cx="45.3" cy="47" r="6"/>
+		<circle class="st0" cx="60.7" cy="47" r="6"/>
+		<circle class="st0" cx="76" cy="47" r="6"/>
+		<polygon class="st0" points="57.2,72.1 44.8,72.1 49.9,67.1 48.6,65.8 42.3,72.1 42.2,72.1 42.2,73.9 42.7,73.9 42.2,74.4 
+			48.6,80.7 49.9,79.4 44.3,73.9 57.2,73.9 		"/>
+		<polygon class="st0" points="66.7,72.1 79.1,72.1 74.1,67.1 75.4,65.8 81.7,72.1 81.7,72.1 81.7,73.9 81.3,73.9 81.7,74.4 
+			75.4,80.7 74.1,79.4 79.6,73.9 66.7,73.9 		"/>
+		<path class="st0" d="M431.2,81.5H105.7c-2.8,0-5-2.2-5-5v-10c0-2.8,2.2-5,5-5h325.5c2.8,0,5,2.2,5,5v10
+			C436.2,79.2,434,81.5,431.2,81.5z"/>
+		<path class="st0" d="M584.2,81.5h-130c-5.5,0-10-4.5-10-10v0c0-5.5,4.5-10,10-10h130c5.5,0,10,4.5,10,10v0
+			C594.2,77,589.7,81.5,584.2,81.5z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st2" x1="40.3" y1="224.8" x2="597.2" y2="224.8"/>
+		<g>
+			<polygon class="st3" points="42.3,231.6 30.5,224.8 42.3,217.9 			"/>
+		</g>
+		<g>
+			<polygon class="st3" points="595.2,231.6 607,224.8 595.2,217.9 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st2" x1="318.8" y1="351.4" x2="318.8" y2="98.1"/>
+		<g>
+			<polygon class="st3" points="325.6,349.4 318.8,361.2 311.9,349.4 			"/>
+		</g>
+		<g>
+			<polygon class="st3" points="325.6,100.1 318.8,88.2 311.9,100.1 			"/>
+		</g>
+	</g>
+</g>
+<rect x="253" y="202" class="st3" width="134.3" height="41"/>
+<text transform="matrix(1 0 0 1 271.6862 231)" class="st0 st4 st5">Viewport</text>
+</svg>

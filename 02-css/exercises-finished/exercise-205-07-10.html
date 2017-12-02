@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 205-07-10: Write some :nth-last-of-type selectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/exercises.css">
+<style>
+
+p {
+  margin: 0;
+}
+
+/* Add styles here */
+
+.one p:nth-last-of-type(3) {
+  color: khaki;
+}
+
+.two p:nth-last-of-type(3n) {
+  color: khaki;
+}
+
+.three p:nth-last-of-type(3n+1) {
+  color: khaki;
+}
+
+.four p:nth-last-of-type(3n-1) {
+  color: khaki;
+}
+
+.five p:nth-last-of-type(even) {
+  color: khaki;
+}
+
+.six p:nth-last-of-type(odd) {
+  color: khaki;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise 205-07-10: Write some :nth-last-of-type selectors</h1>
+
+      <h2>Example 1 - :nth-last-of-type(3)</h2>
+      <div class="one">
+        <p> 12th last of type </p>
+        <p> 11th last of type </p>
+        <p> 10th last of type </p>
+        <p> 9th last of type </p>
+        <p> 8th last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 7th last of type </p>
+        <p> 6th last of type </p>
+        <p> 5th last of type </p>
+        <p> 4th last of type </p>
+        <p> 3rd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 2nd last of type </p>
+        <p> Last of type </p>
+      </div>
+
+      <h2>Example 2 - :nth-last-of-type(3n)</h2>
+      <div class="two">
+        <p> 12th last of type </p>
+        <p> 11th last of type </p>
+        <p> 10th last of type </p>
+        <p> 9th last of type </p>
+        <p> 8th last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 7th last of type </p>
+        <p> 6th last of type </p>
+        <p> 5th last of type </p>
+        <p> 4th last of type </p>
+        <p> 3rd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 2nd last of type </p>
+        <p> Last of type </p>
+      </div>
+
+      <h2>Example 3 - :nth-last-of-type(3n+1)</h2>
+      <div class="three">
+        <p> 12th last of type </p>
+        <p> 11th last of type </p>
+        <p> 10th last of type </p>
+        <p> 9th last of type </p>
+        <p> 8th last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 7th last of type </p>
+        <p> 6th last of type </p>
+        <p> 5th last of type </p>
+        <p> 4th last of type </p>
+        <p> 3rd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 2nd last of type </p>
+        <p> Last of type </p>
+      </div>
+
+      <h2>Example 4 - :nth-last-of-type(3n-1)</h2>
+      <div class="four">
+        <p> 12th last of type </p>
+        <p> 11th last of type </p>
+        <p> 10th last of type </p>
+        <p> 9th last of type </p>
+        <p> 8th last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 7th last of type </p>
+        <p> 6th last of type </p>
+        <p> 5th last of type </p>
+        <p> 4th last of type </p>
+        <p> 3rd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> 2nd last of type </p>
+        <p> Last of type </p>
+      </div>
+
+      <h2>Example 5 - :nth-last-of-type(even)</h2>
+      <div class="five">
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+      </div>
+
+      <h2>Example 6 - :nth-last-of-type(odd)</h2>
+      <div class="six">
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <div>DIV element should be ignored</div>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+        <p> even last of type </p>
+        <p> odd last of type </p>
+      </div>
+    </div>
+  </body>
+</html>

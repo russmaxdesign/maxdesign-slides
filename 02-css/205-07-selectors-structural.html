@@ -1,0 +1,2563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-07: Structural pseudo-classes</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-07</h5>
+          <h1>Structural pseudo-classes</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Structural pseudo-classes</b> allow you to select elements based on their position within the overall document structure.</p>
+          </section>
+
+          <section data-background="#444">
+            <h3>Structural pseudo-class confusion</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When styling structural selectors, it is easy to get confused as to <b>which element is being styled</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;em&gt;</code> element that is an only child is being styled, <b>NOT the only child of the</b> <code>&lt;em&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">em:only-child</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;
+  <span class="codeHighlight">&lt;em&gt;&lt;/em&gt;</span>
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;em&gt;&lt;/em&gt; &lt;span&gt;&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Understanding “(n)”</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Four of the structural pseudo-class selectors include <code>"(n)"</code> <b>as part of the syntax</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+:nth-child<span class="codeHighlight">(n)</span> { }
+:nth-last-child<span class="codeHighlight">(n)</span> { }
+:nth-of-type<span class="codeHighlight">(n)</span> { }
+:nth-last-of-type<span class="codeHighlight">(n)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Authors can use <b>six different types of values</b> inside these brackets.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+:nth-child<span class="codeHighlight">(n)</span> { }
+:nth-child<span class="codeHighlight">([integer]n)</span> { }
+:nth-child<span class="codeHighlight">([integer]n+[integer])</span> { }
+:nth-child<span class="codeHighlight">([integer]n-[integer])</span> { }
+:nth-child<span class="codeHighlight">(odd)</span> { }
+:nth-child<span class="codeHighlight">(even)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s look at <b>how the <code>3n</code>, <code>3n+1</code> and <code>3n-1</code> work</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>n</code> is an algebraic expression that represents <b>a set of all integers</b>, in this case starting at zero.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The value <code>3n</code> is equivalent to <code>(3 x n)</code>, which means it would <b>target the following elements:</b></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>(3 x 0) = 0 = No element<br>
+            (3 x 1) = 3 = 3rd element<br>
+            (3 x 2) = 6 = 6th element<br>
+            (3 x 3) = 9 = 9th element</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The value <code>3n+1</code> is equivalent to <code>(3 x n) + 1</code>, which means it would <b>target the following elements</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>(3 x 0) + 1 = 1 = 1st element<br>
+            (3 x 1) + 1 = 4 = 4rd element<br>
+            (3 x 2) + 1 = 7 = 7th element<br>
+            (3 x 3) + 1 = 10 = 10th element</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The value <code>3n-1</code> is equivalent to <code>(3 x n) - 1</code>, which means it would <b>target the following elements</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>(3 x 0) - 1 = 0 = No element<br>
+            (3 x 1) - 1 = 2 = 2nd element<br>
+            (3 x 2) - 1 = 5 = 5th element<br>
+            (3 x 3) - 1 = 8 = 8th element</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FIRST-CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:first-child  pseudo-class (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:first-child pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"first-child"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:first-child</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:first-child</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:first-child</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :first-child</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :first-child pseudo-class selector targets <b>elements that are the first child of some other element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>only the first</b> <code>&lt;li&gt;</code> element will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:first-child</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;ul&gt;
+  <span class="codeHighlight">&lt;li&gt; 1st child &lt;/li&gt;</span>
+  &lt;li&gt; 2nd child &lt;/li&gt;
+  &lt;li&gt; 3rd child &lt;/li&gt;
+  &lt;li&gt; 4th child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :first-child selector is <b>not supported in IE6</b>. IE7 and IE8 have buggy support.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If an element is added dynamically as a first-child, <b>IE7 does not update the styles</b> to target this new element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If an element is added dynamically as a first-child, <b>IE8 will style the newly inserted first-child element and the old</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a :first-child selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-01.html">exercises-start/exercise-205-07-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style an <code>&lt;li&gt;</code> element with a <code>color</code> value of <code>sandybrown</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, only style the <b>first child</b> of a parent that has a <code>class</code> of <code>example</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example li:first-child {
+  color: sandybrown;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-01.html">exercises-finished/exercise-205-07-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+LAST-CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:last-child pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:last-child pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"last-child"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:last-child</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:last-child</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:last-child</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :last-child</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :last-child pseudo-class selector targets <b>elements that are the last child of some other element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>only the last</b> <code>&lt;li&gt;</code> element will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:last-child</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;ul&gt;
+  &lt;li&gt; 4th last child &lt;/li&gt;
+  &lt;li&gt; 3rd last child &lt;/li&gt;
+  &lt;li&gt; 2nd last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; Last child &lt;/li&gt;</span>
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :last-child pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a :last-child selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-02.html">exercises-start/exercise-205-07-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style an <code>&lt;li&gt;</code> element with a <code>color</code> value of <code>rosybrown</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, only style the <b>last child</b> of a parent that has a <code>class</code> of <code>example</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example li:last-child {
+  color: rosybrown;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-02.html">exercises-finished/exercise-205-07-02.html</a></p>
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+ONLY-CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:only-child pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:only-child pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"only-child"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:only-child</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p em:only-child</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">em:only-child</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>em :only-child</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :only-child pseudo-class selector targets <b>elements that are the only child of some other element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, any <code>&lt;em&gt;</code> that is <b>an only child</b> of a <code>&lt;p&gt;</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p em:only-child</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;
+  <span class="codeHighlight">&lt;em&gt;&lt;/em&gt;</span>
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;em&gt;&lt;/em&gt; &lt;span&gt;&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :only-child pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write an only-child selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-03.html">exercises-start/exercise-205-07-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element that is an only-child. Set with a <code>color</code> value of <code>powderblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.p:only-child {
+  color: powderblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-03.html">exercises-finished/exercise-205-07-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FIRST-OF-TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:first-of-type pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:first-of-type pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"first-of-type"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:first-of-type</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p:first-of-type</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p:first-of-type</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p :first-of-type</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :first-of-type pseudo-class selector targets <b>elements that are the first of its type within a parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>only the first</b> <code>&lt;p&gt;</code> element within a parent with a class of <code>main</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.main p:first-of-type</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="main"&gt;
+  <span class="codeHighlight">&lt;p&gt;Content&lt;/p&gt;</span>
+  &lt;p&gt;Content&lt;/p&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :first-of-type pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a :first-of-type selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-04.html">exercises-start/exercise-205-07-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with a <code>color</code> value of <code>peachpuff</code>. However, only style the first of its type.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p:first-of-type {
+  color: peachpuff;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-04.html">exercises-finished/exercise-205-07-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+LAST-OF-TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:last-of-type pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:last-of-type pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"last-of-type"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:last-of-type</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p:last-of-type</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p:last-of-type</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p :last-of-type</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :last-of-type pseudo-class selector targets <b>elements that are the last of its type within a parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>only the last</b> <code>&lt;p&gt;</code> element within a parent with a class of <code>main</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.main p:last-of-type</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="main"&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt;Content&lt;/p&gt;</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :last-of-type pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a :last-of-type selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-05.html">exercises-start/exercise-205-07-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with a <code>color</code> value of <code>paleturquoise</code>. However, only style the last of its type.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p:last-of-type {
+  color: paleturquoise;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-05.html">exercises-finished/exercise-205-07-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ONLY-OF-TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:only-of-type pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:only-of-type pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"only-of-type"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:only-of-type</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p:only-of-type</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p:only-of-type</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p :only-of-type</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :only-of-type pseudo-class selector targets <b>elements that are the only element of its type within a parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <code>&lt;p&gt;</code> that is the <b>only element of its type</b> within a parent with a class of <code>main</code> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">.main p:only-of-type</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;div class="main"&gt;
+  &lt;div&gt;Content&lt;/div&gt;
+  &lt;div&gt;Content&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt;Content&lt;/p&gt;</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :only-of-type pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write an :only-of-type selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-06.html">exercises-start/exercise-205-07-06.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;p&gt;</code> element with a <code>color</code> value of <code>mistyrose</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, only style the element if it is the <b>only one of its type</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p:only-of-type {
+  color: mistyrose;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-06.html">exercises-finished/exercise-205-07-06.html</a></p>
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+NTH-CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:nth-child(n) pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:nth-child pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"nth-child"</code>, followed by brackets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The brackets can contain <b>six different types of values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:nth-child(n)</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:nth-child(4)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:nth-child</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :nth-child</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-child pseudo-class selector targets <b>specific child elements within the parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The six different types of values used inside the brackets <b>dictate which child elements will be targeted</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: The brackets can contain an integer value. In the example below, the selector targets only the third <code>&lt;li&gt;</code> child element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(3)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 1st child &lt;/li&gt;
+  &lt;li&gt; 2nd child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 3rd child &lt;/li&gt;</span>
+  &lt;li&gt; 4rd child &lt;/li&gt;
+  &lt;li&gt; 5th child &lt;/li&gt;
+  &lt;li&gt; 6th child &lt;/li&gt;
+  &lt;li&gt; 7th child &lt;/li&gt;
+  &lt;li&gt; 8th child &lt;/li&gt;
+  &lt;li&gt; 8th child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: The brackets can contain an integer value and the letter <code>"n"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(3n)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) = 0 = No element
+(3 x 1) = 3 = 3rd element
+(3 x 2) = 6 = 6th element
+(3 x 3) = 9 = 9th element
+(3 x 4) = 12 = 12th element
+(3 x 5) = 15 = 15th element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 1st child &lt;/li&gt;
+  &lt;li&gt; 2nd child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 3rd child &lt;/li&gt;</span>
+  &lt;li&gt; 4th child &lt;/li&gt;
+  &lt;li&gt; 5th child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 6th child &lt;/li&gt;</span>
+  &lt;li&gt; 7th child &lt;/li&gt;
+  &lt;li&gt; 8th child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 9th child &lt;/li&gt;</span>
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a plus <code>"(+)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(3n+1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) + 1 = 1 = 1st element
+(3 x 1) + 1 = 4 = 4th element
+(3 x 2) + 1 = 7 = 6th element
+(3 x 3) + 1 = 10 = 10th element
+(3 x 4) + 1 = 13 = 13th element
+(3 x 5) + 1 = 16 = 16th element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  <span class="codeHighlight">&lt;li&gt; 1st child &lt;/li&gt;</span>
+  &lt;li&gt; 2nd child &lt;/li&gt;
+  &lt;li&gt; 3rd child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 4th child &lt;/li&gt;</span>
+  &lt;li&gt; 5th child &lt;/li&gt;
+  &lt;li&gt; 6th child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 7th child &lt;/li&gt;</span>
+  &lt;li&gt; 8th child &lt;/li&gt;
+  &lt;li&gt; 9th child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a minus <code>"(-)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(3n-1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) - 1 = -1 = No element
+(3 x 1) - 1 = 2 = 2nd element
+(3 x 2) - 1 = 5 = 5th element
+(3 x 3) - 1 = 8 = 8th element
+(3 x 4) - 1 = 11 = 11th element
+(3 x 5) - 1 = 14 = 14th element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 1st child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 2nd child &lt;/li&gt;</span>
+  &lt;li&gt; 3rd child &lt;/li&gt;
+  &lt;li&gt; 4th child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 5th child &lt;/li&gt;</span>
+  &lt;li&gt; 6th child &lt;/li&gt;
+  &lt;li&gt; 7th child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 8th child &lt;/li&gt;</span>
+  &lt;li&gt; 9th child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: The brackets can contain the <code>"even"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(even)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 6</b>: The brackets can contain the <code>"odd"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-child(odd)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt;&lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-child pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some :nth-child selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-07.html">exercises-start/exercise-205-07-07.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the third only <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.one li:nth-child(3) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style every third <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>two</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.two li:nth-child(3n) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style every third <code>&lt;li&gt;</code> (starting one forward) within a parent with a <code>class</code> of <code>three</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.three li:nth-child(3n+1) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style every third <code>&lt;li&gt;</code> (starting one backwards) within a parent with a <code>class</code> of <code>four</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.four li:nth-child(3n-1) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style every even <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>five</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.five li:nth-child(even) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style every odd <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>six</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightsteelblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.six li:nth-child(odd) {
+  color: lightsteelblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-07.html">exercises-finished/exercise-205-07-07.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+NTH-LAST-CHILD SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:nth-last-child(n) pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:nth-last-child pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"nth-last-child"</code>, followed by brackets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The brackets can contain <b>six different types of values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:nth-last-child(n)</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:nth-last-child(4)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:nth-last-child</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :nth-last-child</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-last-child pseudo-class selector targets <b>specific child elements within the parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The six different types of values used inside the brackets <b>dictate which child elements will be targeted</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: The brackets can contain an integer value. In the example below, the selector targets only the third <code>&lt;li&gt;</code> child element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(3)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 9th last child &lt;/li&gt;
+  &lt;li&gt; 8th last child &lt;/li&gt;
+  &lt;li&gt; 7th last child &lt;/li&gt;
+  &lt;li&gt; 6th last child &lt;/li&gt;
+  &lt;li&gt; 5th last child &lt;/li&gt;
+  &lt;li&gt; 4th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 3rd last child &lt;/li&gt;</span>
+  &lt;li&gt; 2nd last child &lt;/li&gt;
+  &lt;li&gt; Last child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: The brackets can contain an integer value and the letter <code>"n"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(3n)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) = 0 = No element
+(3 x 1) = 3 = 3rd last element
+(3 x 2) = 6 = 6th last element
+(3 x 3) = 9 = 9th last element
+(3 x 4) = 12 = 12th last element
+(3 x 5) = 15 = 15th last element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  <span class="codeHighlight">&lt;li&gt; 9th last child &lt;/li&gt;</span>
+  &lt;li&gt; 8th last child &lt;/li&gt;
+  &lt;li&gt; 7th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 6th last child &lt;/li&gt;</span>
+  &lt;li&gt; 5th last child &lt;/li&gt;
+  &lt;li&gt; 4th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 3rd last child &lt;/li&gt;</span>
+  &lt;li&gt; 2nd last child &lt;/li&gt;
+  &lt;li&gt; Last child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a plus <code>"(+)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(3n+1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) + 1 = 1 = Last element
+(3 x 1) + 1 = 4 = 4th last element
+(3 x 2) + 1 = 7 = 6th last element
+(3 x 3) + 1 = 10 = 10th last element
+(3 x 4) + 1 = 13 = 13th last element
+(3 x 5) + 1 = 16 = 16th last element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 9th last child &lt;/li&gt;
+  &lt;li&gt; 8th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 7th last child &lt;/li&gt;</span>
+  &lt;li&gt; 6th last child &lt;/li&gt;
+  &lt;li&gt; 5th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 4th last child &lt;/li&gt;</span>
+  &lt;li&gt; 3rd last child &lt;/li&gt;
+  &lt;li&gt; 2nd last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; Last child &lt;/li&gt;</span>
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a minus <code>"(-)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(3n-1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) - 1 = -1 = No element
+(3 x 1) - 1 = 2 = 2nd last element
+(3 x 2) - 1 = 5 = 5th last element
+(3 x 3) - 1 = 8 = 8th last element
+(3 x 4) - 1 = 11 = 11th last element
+(3 x 5) - 1 = 14 = 14th last element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 9th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 8th last child &lt;/li&gt;</span>
+  &lt;li&gt; 7th last child &lt;/li&gt;
+  &lt;li&gt; 6th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 5th last child &lt;/li&gt;</span>
+  &lt;li&gt; 4th last child &lt;/li&gt;
+  &lt;li&gt; 3rd last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; 2nd last child &lt;/li&gt;</span>
+  &lt;li&gt; Last child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: The brackets can contain the <code>"even"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(even)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  &lt;li&gt; 9th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt; 7th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt; 5th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt; 3rd last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; even &lt;/li&gt;</span>
+  &lt;li&gt; Last child &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 6</b>: The brackets can contain the <code>"odd"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">li:nth-last-child(odd)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;ul&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt; 8th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt; 6th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt; 4th last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+  &lt;li&gt; 2nd last child &lt;/li&gt;
+  <span class="codeHighlight">&lt;li&gt; odd &lt;/li&gt;</span>
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-last-child pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some :nth-last-child selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-08.html">exercises-start/exercise-205-07-08.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the third last only <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.one li:nth-last-child(3) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style every third <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>two</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.two li:nth-last-child(3n) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style every third <code>&lt;li&gt;</code> (starting one forward) within a parent with a <code>class</code> of <code>three</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.three li:nth-last-child(3n+1) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style every third <code>&lt;li&gt;</code> (starting one backwards) within a parent with a <code>class</code> of <code>four</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.four li:nth-last-child(3n-1) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style every even <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>five</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.five li:nth-last-child(even) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style every odd <code>&lt;li&gt;</code> within a parent with a <code>class</code> of <code>six</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>mediumblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.six li:nth-last-child(odd) {
+  color: mediumblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-08.html">exercises-finished/exercise-205-07-08.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+NTH-OF-TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:nth-of-type(n) pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:nth-of-type pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"nth-of-type"</code>, followed by brackets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The brackets can contain <b>six different types of values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:nth-of-type(n)</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:nth-of-type(4)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:nth-of-type(4)</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :nth-of-type (4)</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-of-type pseudo-class selector targets <b>specific child elements within the parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The six different types of values used inside the brackets <b>dictate which child elements will be targeted</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: The brackets can contain an integer value.
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(3)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 1st of type &lt;/p&gt;
+  &lt;p&gt; 2nd of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd of type &lt;/p&gt;</span>
+  &lt;p&gt; 4th of type &lt;/p&gt;
+  &lt;p&gt; 5th of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 6th of type &lt;/p&gt;
+  &lt;p&gt; 7th of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: The brackets can contain an integer value and the letter <code>"n"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(3n)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) = 0 = No element
+(3 x 1) = 3 = 3rd &lt;p&gt; element
+(3 x 2) = 6 = 6th &lt;p&gt; element
+(3 x 3) = 9 = 9th &lt;p&gt; element
+(3 x 4) = 12 = 12th &lt;p&gt; element
+(3 x 5) = 15 = 15th &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 1st of type &lt;/p&gt;
+  &lt;p&gt; 2nd of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd of type &lt;/p&gt;</span>
+  &lt;p&gt; 4th of type &lt;/p&gt;
+  &lt;p&gt; 5th of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 6th of type &lt;/p&gt;</span>
+  &lt;p&gt; 7th of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a plus <code>"(+)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(3n+1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) + 1 = 1 = 1st &lt;p&gt; element
+(3 x 1) + 1 = 4 = 4th &lt;p&gt; element
+(3 x 2) + 1 = 7 = 6th &lt;p&gt; element
+(3 x 3) + 1 = 10 = 10th &lt;p&gt; element
+(3 x 4) + 1 = 13 = 13th &lt;p&gt; element
+(3 x 5) + 1 = 16 = 16th &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  <span class="codeHighlight">&lt;p&gt; 1st of type &lt;/p&gt;</span>
+  &lt;p&gt; 2nd of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 3rd of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 4th of type &lt;/p&gt;</span>
+  &lt;p&gt; 5th of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 6th of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 7th of type &lt;/p&gt;</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a minus <code>"(-)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(3n-1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) - 1 = -1 = No element
+(3 x 1) - 1 = 2 = 2nd &lt;p&gt; element
+(3 x 2) - 1 = 5 = 5th &lt;p&gt; element
+(3 x 3) - 1 = 8 = 8th &lt;p&gt; element
+(3 x 4) - 1 = 11 = 11th &lt;p&gt; element
+(3 x 5) - 1 = 14 = 14th &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 1st of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 2nd of type&lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 3rd of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 4th of type &lt;/p&gt;</span>
+  &lt;p&gt; 5th of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 6th of type &lt;/p&gt;
+  &lt;p&gt; 7th of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: The brackets can contain the <code>"even"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(even)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 1st of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 2nd of type&lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 3rd of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 4th of type &lt;/p&gt;</span>
+  &lt;p&gt; 5th of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 6th of type &lt;/p&gt;</span>
+  &lt;p&gt; 7th of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 6</b>: The brackets can contain the <code>"odd"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-of-type(odd)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  <span class="codeHighlight">&lt;p&gt; 1st of type &lt;/p&gt;</span>
+  &lt;p&gt; 2nd of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd of type &lt;/p&gt;</span>
+  &lt;p&gt; 4th of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 5th of type &lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 6th of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 7th of type &lt;/p&gt;</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-of-type pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some :nth-of-type selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-09.html">exercises-start/exercise-205-07-09.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the third only <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.one p:nth-of-type(3) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style every third <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>two</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.two p:nth-of-type(3n) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style every third <code>&lt;p&gt;</code> (starting one forward) within a parent with a <code>class</code> of <code>three</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.three p:nth-of-type(3n+1) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style every third <code>&lt;p&gt;</code> (starting one backwards) within a parent with a <code>class</code> of <code>four</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.four p:nth-of-type(3n-1) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style every even <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>five</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.five p:nth-of-type(even) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style every odd <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>six</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>lightpink</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.six p:nth-of-type(odd) {
+  color: lightpink;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-09.html">exercises-finished/exercise-205-07-09.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+NTH-LAST-OF-TYPE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:nth-last-of-type(n) pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:nth-last-of-type pseudo-class selector</b> is written using an element followed by <code>":"</code>, followed by <code>"nth-last-of-type"</code>, followed by brackets.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The brackets can contain <b>six different types of values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:nth-last-of-type(n)</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">li:nth-last-of-type(4)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">li:nth-last-of-type(4)</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>li :nth-last-of-type (4)</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-last-of-type pseudo-class selector targets <b>specific child elements within the parent</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The six different types of values used inside the brackets <b>dictate which child elements will be targeted</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: The brackets can contain an integer value.
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(3)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 7th last of type &lt;/p&gt;
+  &lt;p&gt; 6th last of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 5th last of type &lt;/p&gt;
+  &lt;p&gt; 4th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd last of type &lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 2nd last of type &lt;/p&gt;
+  &lt;p&gt; Last of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: The brackets can contain an integer value and the letter <code>"n"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(3n)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) = 0 = No element
+(3 x 1) = 3 = 3rd last &lt;p&gt; element
+(3 x 2) = 6 = 6th last &lt;p&gt; element
+(3 x 3) = 9 = 9th last &lt;p&gt; element
+(3 x 4) = 12 = 12th last &lt;p&gt; element
+(3 x 5) = 15 = 15th last &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 7th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 6th last of type&lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 5th last of type &lt;/p&gt;
+  &lt;p&gt; 4th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd last of type &lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 2nd last of type &lt;/p&gt;
+  &lt;p&gt; Last of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a plus <code>"(+)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(3n+1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) + 1 = 1 = 1st last &lt;p&gt; element
+(3 x 1) + 1 = 4 = 4th last &lt;p&gt; element
+(3 x 2) + 1 = 7 = 6th last &lt;p&gt; element
+(3 x 3) + 1 = 10 = 10th last &lt;p&gt; element
+(3 x 4) + 1 = 13 = 13th last &lt;p&gt; element
+(3 x 5) + 1 = 16 = 16th last &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  <span class="codeHighlight">&lt;p&gt; 7th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 6th last of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 5th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 4th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 3rd last of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 2nd last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; Last of type &lt;/p&gt;</span>
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: The brackets can contain an integer value, the letter <code>"n"</code>, a minus <code>"(-)"</code> symbol and another integer value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(3n-1)</span> { }
+
+<span class="codeComment">/*
+(3 x 0) - 1 = -1 = No element
+(3 x 1) - 1 = 2 = 2nd last &lt;p&gt; element
+(3 x 2) - 1 = 5 = 5th last &lt;p&gt; element
+(3 x 3) - 1 = 8 = 8th last &lt;p&gt; element
+(3 x 4) - 1 = 11 = 11th last &lt;p&gt; element
+(3 x 5) - 1 = 14 = 14th last &lt;p&gt; element
+*/</span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 7th last of type &lt;/p&gt;
+  &lt;p&gt; 6th last of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 5th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 4th last of type &lt;/p&gt;
+  &lt;p&gt; 3rd last of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 2nd last of type &lt;/p&gt;</span>
+  &lt;p&gt; Last of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: The brackets can contain the <code>"even"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(even)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  &lt;p&gt; 7th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 6th last of type&lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 5th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 4th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 3rd last of type &lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 2nd last of type &lt;/p&gt;</span>
+  &lt;p&gt; Last of type &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 6</b>: The brackets can contain the <code>"odd"</code> keyword.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:nth-last-of-type(odd)</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;div&gt;
+  <span class="codeHighlight">&lt;p&gt; 7th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 6th last of type&lt;/p&gt;
+  &lt;div&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;p&gt; 5th last of type &lt;/p&gt;</span>
+  &lt;p&gt; 4th last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; 3rd last of type &lt;/p&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+  &lt;p&gt; 2nd last of type &lt;/p&gt;
+  <span class="codeHighlight">&lt;p&gt; Last of type &lt;/p&gt;</span>
+&lt;/div&gt;
+
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :nth-last-of-type pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some :nth-last-of-type selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-10.html">exercises-start/exercise-205-07-10.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the third last <code>&lt;p&gt;</code> only within a parent with a <code>class</code> of <code>one</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.one p:nth-last-of-type(3) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style every third <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>two</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.two p:nth-last-of-type(3n) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style every third <code>&lt;p&gt;</code> (starting one forward) within a parent with a <code>class</code> of <code>three</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.three p:nth-last-of-type(3n+1) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style every third <code>&lt;p&gt;</code> (starting one backwards) within a parent with a <code>class</code> of <code>four</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.four p:nth-last-of-type(3n-1) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style every even <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>five</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.five p:nth-last-of-type(even) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a sixth CSS rule</b> to style every odd <code>&lt;p&gt;</code> within a parent with a <code>class</code> of <code>six</code> - starting from the last child.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the</b> <code>color</code> <b>value</b> for this rule to <code>khaki</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.six p:nth-last-of-type(odd) {
+  color: khaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-10.html">exercises-finished/exercise-205-07-10.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ROOT SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:root pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:root pseudo-class selector</b> is written using a <code>":"</code>, followed by <code>"root"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">:root</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">:root</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>: root</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :root pseudo-class selector targets <b>the document root element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In HTML documents, the root element is <b>always the</b> <code>&lt;html&gt;</code> <b>element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, <b>the</b> <code>&lt;html&gt;</code> <b>element</b> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">:root</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;!doctype html&gt;
+<span class="codeHighlight">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title - site name&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :root pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a :root selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-11.html">exercises-start/exercise-205-07-11.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the <code>&lt;root&gt;</code> element. Set the <code>color</code> value to <code>yellowgreen</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+:root {
+  color: yellowgreen;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-11.html">exercises-finished/exercise-205-07-11.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+EMPTY SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>:empty pseudo-class (CSS3)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>:empty pseudo-class selector</b> is written using an element, followed by <code>":"</code>, followed by <code>"empty"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E:empty</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p:empty</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p:empty</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p: empty</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :empty pseudo-class selector targets <b>elements that have no children</b> (including character spaces).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, only the <b>empty</b> <code>&lt;p&gt;</code> element will be selected.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;p&gt;</code> that does not contain content, but does contain a character space, <b>will not be selected</b> as it is not considered empty.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p:empty</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;Content&lt;/p&gt;
+<span class="codeHighlight">&lt;p&gt;&lt;/p&gt;</span>
+&lt;p&gt;Content&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The :empty pseudo-class selector is <b>not supported by IE6, IE7 or IE8</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write an :empty selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-07-12.html">exercises-start/exercise-205-07-12.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style any empty <code>&lt;p&gt;</code> elements. Set with <code>border: 1px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p:empty {
+  border: 1px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-07-12.html">exercises-finished/exercise-205-07-12.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-08-selectors-user-interface.html">205-08: User-interface pseudo-classes</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

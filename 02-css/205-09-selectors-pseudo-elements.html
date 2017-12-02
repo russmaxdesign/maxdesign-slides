@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>205-09: Pseudo-elements</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>205-09</h5>
+          <h1>Pseudo-elements</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Pseudo-elements</b> (or “fake” elements) allow you to style elements that are not in the document tree - such as the first line or first letter of some text.</p>
+          </section>
+
+          <section data-background="#444">
+            <h3>Double or single colons?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS1 and CSS2, pseudo-elements were defined using a <b>single</b> <code>":"</code>. In CSS3, pseudo-elements are defined using <b>double</b> <code>"::"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS2.1 syntax */</span>
+p<span class="codeHighlight">:</span>first-line { }
+
+<span class="codeComment">/* CSS3 syntax */</span>
+p<span class="codeHighlight">::</span>first-line { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The double <code>"::"</code> notation was introduced to <b>make it easier to tell the difference</b> between pseudo-classes and pseudo-elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Most browsers support both variations. However, <b>if you need to support IE6-8</b>, it may be best to continue using the single <code>":"</code> notation.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FIRST_LINE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>::first-line pseudo-element (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>::first-line pseudo-element selector</b> is written using an element, followed by <code>":"</code> or <code>"::"</code>, followed by <code>"first-line"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E::first-line</span> { }
+<span class="codeHighlight">E:first-line</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p::first-line</span> { }
+<span class="codeHighlight">p:first-line</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p::first-line</span> { }
+<span class="codeHighlight">p:first-line</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p:: first-line</s> { }
+<s>p: first-line</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::first-line pseudo-element selector targets <b>the first line of content within the relevant element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <b>first line of the paragraph</b> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p::first-line</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;<span class="codeHighlight">This is the first line</span>
+of a paragraph of text&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::first-line pseudo-element selector is <b>buggy in IE6 and IE7</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a ::first-line selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-09-01.html">exercises-start/exercise-205-09-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the first line of any <code>&lt;p&gt;</code> element. Set the <code>color</code> value to <code>cadetblue</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p::first-line {
+  color: cadetblue;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-09-01.html">exercises-finished/exercise-205-09-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+FIRST-LETTER SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>::first-letter pseudo-element (CSS1)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>::first-letter pseudo-element selector</b> is written using an element, followed by <code>":"</code> or <code>"::"</code>, followed by <code>"first-letter"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E::first-letter</span> { }
+<span class="codeHighlight">E:first-letter</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">p::first-letter</span> { }
+<span class="codeHighlight">p:first-letter</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p::first-letter</span> { }
+<span class="codeHighlight">p:first-letter</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p:: first-letter</s> { }
+<s>p: first-letter</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::first-letter pseudo-element selector targets <b>the first letter of content within the relevant element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the following example, the <b>first letter of the paragraph</b> will be selected.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+<span class="codeHighlight">p::first-letter</span> { }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;<span class="codeHighlight">T</span>his is the first line
+of a paragraph of text&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::first-letter pseudo-element selector is <b>buggy in IE6 and IE7</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write a ::first-letter selector</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-09-02.html">exercises-start/exercise-205-09-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the first letter of any <code>&lt;p&gt;</code> element. Set the <code>color</code> value to <code>darkgoldenrod</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+p::first-letter {
+  color: darkgoldenrod;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-09-02.html">exercises-finished/exercise-205-09-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+BEFORE SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>::before pseudo-element (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>::before pseudo-element selector</b> is written using an element, followed by <code>":"</code> or <code>"::"</code>, followed by <code>"before"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E::before</span> { }
+<span class="codeHighlight">E:before</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">.intro::before</span> { }
+<span class="codeHighlight">.intro:before</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p::before</span> { }
+<span class="codeHighlight">p:before</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p:: before</s> { }
+<s>p: before</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::before pseudo-element selector is <b>used in conjunction with the</b> <code>content</code> <b>property</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+p::before { 
+  <span class="codeHighlight">content</span>: "hello";
+}
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::before pseudo-element selector is used to <b>generate content</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This generated content is rendered within the specified element - <b>before the elements real content</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;
+  <span class="codeHighlight">[generated content]</span>content
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated text should not be used for any meaningful content as it is <b>inaccessible to assistive technologies</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: Generated content can include a text string. The generated text string is placed before the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - text string */</span>
+p::before { content: <span class="codeHighlight">"hello"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_01.svg" alt="Text generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Text strings can be written <b>inside single or double quotes</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* single quotes */</span>
+p::before { content: <span class="codeHighlight">'hello'</span>; }
+
+<span class="codeComment">/* double quotes */</span>
+p::before { content: <span class="codeHighlight">"hello"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Single quotes <b>can be used inside double quotes</b> - and visa versa.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* double inside single */</span>
+p::before { content: <span class="codeHighlight">'a "string"'</span>; }
+
+<span class="codeComment">/* single inside double */</span>
+p::before { content: <span class="codeHighlight">"a 'string'"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Double quotes cannot occur inside double quotes unless they are <b>escaped with a backslash</b> <code>"\"</code> symbol.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped singe quotes inside */</span>
+p::before { content: <span class="codeHighlight">'a \'string\''</span>; }
+
+<span class="codeComment">/* escaped double quotes inside */</span>
+p::before { content: <span class="codeHighlight">"a \"string\""</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: Generated content can include an image. This will place the generated image before the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - image */</span>
+p::before { content: <span class="codeHighlight">url(a.gif)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_02.svg" alt="Image generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: Generated content can include an attribute. This will place the value of the attribute as text before the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - attribute value */</span>
+p::before { content: <span class="codeHighlight">attr(cite)</span>; }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;blockquote cite="<span class="codeHighlight">http://www.abc.com"</span>&gt;
+  This is a paragraph of text.
+&lt;/blockquote&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_04.svg" alt="Attribute generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: Generated content can include a counter.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This allows authors to change the number order and numbering method of ordered lists, as well as <b>add counter-increments to any element</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - counter-increment */</span>
+body {
+  counter-reset: section;
+}
+
+p:before {
+  <span class="codeHighlight">content: counter(section)</span>;
+  counter-increment: section;
+  color: red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_03.svg" alt="Counter generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 5</b>: Generated content can include nothing. This allows authors to position and style a newly generated element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - empty */</span>
+p::before { content: <span class="codeHighlight">""</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_05.svg" alt="Blank generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated content can also include <b>combinations of any of these five different options</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The following example will render the <b>generated text string</b> <code>"class: "</code> and then render any class names applied to the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - combinations */</span>
+p::before {
+  content: <span class="codeHighlight">"class: " attr(class)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_06.svg" alt="Multiple types of generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated content <b>cannot include HTML markup</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Invalid */</span>
+p::before {
+  content: <s>&lt;p&gt;test&lt;p&gt;</s>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::before pseudo-element selector is <b>not supported by IE6 or IE7</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some ::before selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-09-03.html">exercises-start/exercise-205-09-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a <code>class</code> value of <code>.example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::before pseudo-element to add a <b>generated content text string</b> of <code>"hello"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1::before {
+  content: "Hello";
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a <code>class</code> value of <code>.example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::before pseudo-element to add a <b>generated content background-image</b> using <code>url(exercise-205-09-03.png)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2::before {
+  content: url(exercise-205-09-03.png);
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a <code>class</code> value of <code>.example3</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::before pseudo-element to add <b>generated content of an attribute's value</b>. In this case, display the ID value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3::before {
+   content: attr(id);
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a <code>class</code> value of <code>.example4</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::before pseudo-element to add <b>blank generated content</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>position: absolute</code>, <code>left: 0</code> and <code>top: 0</code> so that it will sit in the top left corner of the element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>display: block</code>, <code>width: 20px</code> and <code>height: 20px</code> to change it to a block-level element and give it size.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>background-color: darkkhaki</code> to give it a background color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   display: block;
+   width: 20px;
+   height: 20px;
+   background-color: darkkhaki;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-09-03.html">exercises-finished/exercise-205-09-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+AFTER SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>::after pseudo-element (CSS2)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>::after pseudo-element selector</b> is written using an element, followed by <code>":"</code> or <code>"::"</code>, followed by <code>"after"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* syntax */</span>
+<span class="codeHighlight">E::after</span> { }
+<span class="codeHighlight">E:after</span> { }
+
+<span class="codeComment">/* example */</span>
+<span class="codeHighlight">.intro::after</span> { }
+<span class="codeHighlight">.intro:after</span> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Whitespace is <b>not permitted</b> within the selector.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Valid */</span>
+<span class="codeHighlight">p::after</span> { }
+<span class="codeHighlight">p:after</span> { }
+
+<span class="codeComment">/* Invalid */</span>
+<s>p:: after</s> { }
+<s>p: after</s> { }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::after pseudo-element selector is <b>used in conjunction with the</b> <code>content</code> <b>property</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS selector */</span>
+p::after { 
+  <span class="codeHighlight">content</span>: "hello";
+}
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>How does it work?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::after pseudo-element selector is used to <b>generate content</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This generated content is rendered within the specified element - <b>after the elements real content</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;p&gt;
+  content<span class="codeHighlight">[generated content]</span>
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated text should not be used for any meaningful content as it is <b>inaccessible to assistive technologies</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 1</b>: Generated content can include a text string. This will place the generated text string after the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - text string */</span>
+p::after { content: <span class="codeHighlight">"hello"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_07.svg" alt="Text generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Text strings can be written <b>inside single or double quotes</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* single quotes */</span>
+p::after { content: <span class="codeHighlight">'hello'</span>; }
+
+<span class="codeComment">/* double quotes */</span>
+p::after { content: <span class="codeHighlight">"hello"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Single quotes <b>can be used inside double quotes</b> - and visa versa.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* double inside single */</span>
+p::after { content: <span class="codeHighlight">'a "string"'</span>; }
+
+<span class="codeComment">/* single inside double */</span>
+p::after { content: <span class="codeHighlight">"a 'string'"</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Double quotes cannot occur inside double quotes unless they are <b>escaped with a backslash</b> <code>"\"</code> symbol.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* escaped singe quotes inside */</span>
+p::after { content: <span class="codeHighlight">'a \'string\''</span>; }
+
+<span class="codeComment">/* escaped double quotes inside */</span>
+p::after { content: <span class="codeHighlight">"a \"string\""</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 2</b>: Generated content can include an image. This will place the generated image after the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - image */</span>
+p::after { content: <span class="codeHighlight">url(a.gif)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_08.svg" alt="Image generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 3</b>: Generated content can include an attribute. This will place the value of the attribute as text after the element’s content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - attribute value */</span>
+p::after { content: <span class="codeHighlight">attr(cite)</span>; }
+
+<span class="codeComment">&lt;!-- HTML markup --&gt;</span>
+&lt;blockquote cite="<span class="codeHighlight">http://www.abc.com"</span>&gt;
+  This is a paragraph of text.
+&lt;/blockquote&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_09.svg" alt="Attribute generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Option 4</b>: Generated content can include nothing. This allows authors to position and style a newly generated element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - empty */</span>
+p::after { content: <span class="codeHighlight">""</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_10.svg" alt="Blank generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated content can also include <b>combinations of any of these four different options</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The following example will render the <b>generated text string</b> <code>"class: "</code> and then render any class names applied to the element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Generated content - combinations */</span>
+p::after {
+  content: <span class="codeHighlight">"class: " attr(class)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/generated-content_11.svg" alt="Multiple types of generated content before content">
+          </section>
+
+          <section data-background="#fff">
+            <p>Generated content <b>cannot include HTML markup</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Invalid */</span>
+p::after {
+  content: <s>&lt;p&gt;test&lt;p&gt;</s>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#444">
+            <h3>Support</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The ::after pseudo-element selector is <b>not supported by IE6 or IE7</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise: Write some ::after selectors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-205-09-04.html">exercises-start/exercise-205-09-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a <code>class</code> value of <code>.example1</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::after pseudo-element to add a <b>generated content text string</b> of <code>"Goodbye"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1::after {
+  content: "Goodbye";
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a <code>class</code> value of <code>.example2</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::after pseudo-element to add a <b>generated content background-image</b> using <code>url(exercise-205-09-04.png)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2::after {
+  content: url(exercise-205-09-04.png);
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a <code>class</code> value of <code>.example3</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::after pseudo-element to add <b>generated content of an attribute's value</b>. In this case, display the ID value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3::after {
+   content: attr(id);
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style the element with a <code>class</code> value of <code>.example4</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use a ::after pseudo-element to add <b>blank generated content</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>position: absolute</code>, <code>right: 0</code> and <code>top: 0</code>, so that it will sit in the top right corner of the element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>display: block</code>, <code>width: 20px</code> and <code>height: 20px</code> to change it to a block-level element and give it size.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Set the pseudo-element</b> with <code>background-color: moccasin</code> to give it a background color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example4::after {
+   content: "";
+   position: absolute;
+   right: 0;
+   top: 0;
+   display: block;
+   width: 20px;
+   height: 20px;
+   background-color: moccasin;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-205-09-04.html">exercises-finished/exercise-205-09-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-10-selectors-attribute.html">205-10: Attribute selectors</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

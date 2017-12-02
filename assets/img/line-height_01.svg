@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFF8E;}
+	.st1{fill:#B0C590;}
+	.st2{fill:#A3FFD5;}
+	.st3{fill:#646464;}
+	.st4{font-family:'HelveticaNeue';}
+	.st5{font-size:82px;}
+	.st6{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st7{fill:#B04636;}
+	.st8{fill:#FFFFFF;}
+	.st9{font-family:'HelveticaNeue-Bold';}
+	.st10{font-size:23px;}
+</style>
+<g id="content">
+	<g>
+		<g>
+			<path d="M580,155v170H60V155H580 M583,152H57v176h526V152L583,152z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="60" y="185" class="st1" width="520" height="110"/>
+	</g>
+	<g>
+		<rect x="60" y="295" class="st2" width="520" height="30"/>
+	</g>
+	<text transform="matrix(1 0 0 1 65.9998 269.4238)" class="st3 st4 st5">ÙAbcdefghijkl</text>
+	<g>
+		<rect x="60" y="155" class="st0" width="520" height="30"/>
+	</g>
+</g>
+<g id="feature">
+</g>
+<g id="label">
+	<g>
+		<g>
+			<line class="st6" x1="372" y1="343.1" x2="372" y2="355"/>
+			<g>
+				<polygon class="st7" points="361.5,346.1 372,328 382.5,346.1 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st6" x1="222" y1="174.9" x2="222" y2="86"/>
+			<g>
+				<polygon class="st7" points="232.5,171.9 222,190 211.5,171.9 				"/>
+			</g>
+		</g>
+	</g>
+	<rect x="336" y="355" class="st7" width="247" height="41"/>
+	<text transform="matrix(1 0 0 1 347.9999 382.7117)" class="st8 st9 st10">Inline box: 20px high</text>
+	<rect x="57" class="st7" width="305" height="41"/>
+	<text transform="matrix(1 0 0 1 69.0001 29.7117)" class="st8 st9 st10">Top half-leading: 2px high</text>
+	<rect x="152" y="45" class="st7" width="286" height="41"/>
+	<text transform="matrix(1 0 0 1 164.0001 74.7117)" class="st8 st9 st10">Content area: 16px high</text>
+	<rect x="247" y="95" class="st7" width="349" height="41"/>
+	<text transform="matrix(1 0 0 1 258.9996 124.7117)" class="st8 st9 st10">Bottom half-leading: 2px high</text>
+	<g>
+		<g>
+			<line class="st6" x1="322" y1="284.9" x2="322" y2="136"/>
+			<g>
+				<polygon class="st7" points="332.5,281.9 322,300 311.5,281.9 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st6" x1="122" y1="144.9" x2="122" y2="41"/>
+			<g>
+				<polygon class="st7" points="132.5,141.9 122,160 111.5,141.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

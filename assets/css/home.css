@@ -1,0 +1,229 @@
+/* ---------------------
+global
+-----------------------*/
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #F2F2F2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+  font-size: 1.2em;
+}
+
+
+/* ---------------------
+headings
+-----------------------*/
+
+h1,
+h2 {
+  font-family: 'Paytone One', 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 .5em;
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: none;
+  letter-spacing: normal;
+  text-transform: none;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: 3.8em;
+}
+
+h2 {
+  margin: 1.5em 0 .5em;
+  font-size: 2.2em;
+  font-weight: normal;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+h4 {
+  margin: .6em 0;
+  color: #999;
+  font-size: 90%;
+}
+
+
+/* ---------------------
+paragraphs
+-----------------------*/
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* ---------------------
+links
+-----------------------*/
+
+a {
+  color: #222;
+}
+
+a:focus {
+  color: #000;
+}
+
+a:hover {
+  color: #333;
+}
+
+a:active {
+  color: #000;
+}
+
+
+/* ---------------------
+content
+-----------------------*/
+
+.banner {
+  padding: 60px 0;
+  background: url(../img/banner.jpg) no-repeat center center;
+}
+
+.banner-title-small {
+  display: block;
+  color: #fff;
+  font-size: 1em;
+}
+
+.banner-title-large {
+  display: block;
+  color: #8CBD2E;
+  font-size: 1.6em;
+  margin-top: -.2em;
+}
+
+
+/* ---------------------
+slides
+-----------------------*/
+
+.content {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* ---------------------
+slides
+-----------------------*/
+
+.slide-container {
+  border-radius: .1em;
+  margin: 1.5em 0;
+  padding: 1.2em;
+  background: #fff;
+}
+
+.slide-container:hover {
+  background: #efefef;
+}
+
+.slide-container-link {
+  display: block;
+  text-decoration: none;
+}
+
+.slide-heading {
+  color: #333;
+  font-weight: bold;
+}
+
+.slide-number {
+  color: #759a3e;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
+  font-size: 90%;
+  font-weight: normal;
+}
+
+.slide-details {
+  margin: .6em 0;
+  color: #999;
+  font-size: 90%;
+}
+
+.slide-content {
+  color: #333;
+}
+
+.highlight {
+  color: #759a3e;
+}
+
+/* ---------------------
+filter
+-----------------------*/
+
+.filter {
+  margin: 20px 0;
+  font-size: .8em;
+}
+
+.filter-button {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: .2em;
+  margin: 0 0 0 .5em;
+  padding: .4em .6em;
+  cursor: pointer;
+  color: #444;
+  background: #ddd;
+  background-image: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.filter-button:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+div.container.all a {
+  display: block;
+}
+
+div.container.beginner a.beginner {
+  display: block;
+}
+
+div.container.intermediate a.intermediate {
+  display: block;
+}
+
+div.container.advanced a.advanced {
+  display: block;
+}
+
+div.container a {
+  display: none;
+}

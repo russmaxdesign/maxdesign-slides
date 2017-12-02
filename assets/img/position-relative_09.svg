@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D2D2D2;}
+	.st2{fill:#568312;}
+	.st3{fill:#B0C590;}
+	.st4{fill:#B04636;}
+	.st5{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#B04636;stroke-width:7.7406;stroke-miterlimit:10;}
+	.st7{font-family:'HelveticaNeue-Bold';}
+	.st8{font-size:32px;}
+	.st9{font-family:'HelveticaNeue';}
+	.st10{font-size:22px;}
+	.st11{font-size:23px;}
+</style>
+<rect class="st0" width="650" height="400"/>
+<g>
+	<rect x="26.5" y="100.5" class="st0" width="597" height="298"/>
+	<path class="st1" d="M622,102v295H28V102H622 M625,99H25v301h600V99L625,99z"/>
+</g>
+<g>
+	<rect x="46.5" y="120.5" class="st0" width="557" height="258"/>
+	<path class="st1" d="M602,122v255H48V122H602 M605,119H45v261h560V119L605,119z"/>
+</g>
+<g>
+	<rect x="66.5" y="140.5" class="st0" width="517" height="42"/>
+	<path class="st1" d="M582,142v39H68v-39H582 M585,139H65v45h520V139L585,139z"/>
+</g>
+<g>
+	<rect x="66.5" y="283.5" class="st0" width="517" height="75"/>
+	<path class="st1" d="M582,285v72H68v-72H582 M585,282H65v78h520V282L585,282z"/>
+</g>
+<g>
+	<rect x="66.5" y="194.5" class="st0" width="517" height="75"/>
+	<path class="st1" d="M582,196v72H68v-72H582 M585,193H65v78h520V193L585,193z"/>
+</g>
+<g>
+	<rect x="86.5" y="303.5" class="st0" width="477" height="35"/>
+	<path class="st1" d="M562,305v32H88v-32H562 M565,302H85v38h480V302L565,302z"/>
+</g>
+<text transform="matrix(1 0 0 1 74.9998 171.4238)" class="st7 st8">This is a heading</text>
+<text transform="matrix(1 0 0 1 95.0004 325.8535)" class="st9 st10">Lorem ipsum dolor sit amet, consectetuer adip</text>
+<g>
+	<rect x="86.5" y="214.5" class="st0" width="477" height="35"/>
+	<g>
+		<path class="st1" d="M562,216v32H88v-32H562 M565,213H85v38h480V213L565,213z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 94.9996 237.8535)" class="st9 st10">Lorem ipsum:</text>
+<text transform="matrix(1 0 0 1 427.0001 237.8535)" class="st9 st10">dolor sit amet</text>
+<rect x="47" y="25" class="st4" width="473" height="41"/>
+<text transform="matrix(1 0 0 1 62.0288 52.7109)" class="st0 st7 st11">Margin pushes element away from sides</text>
+<g>
+	<path class="st2" d="M412.5,213h-7.8v3.5h7.8V213L412.5,213z M396.9,213h-7.8v3.5h7.8V213L396.9,213z M381.4,213h-7.8v3.5h7.8V213
+		L381.4,213z M365.8,213h-7.8v3.5h7.8V213L365.8,213z M350.3,213h-7.8v3.5h7.8V213L350.3,213z M334.7,213H327v3.5h7.8V213L334.7,213
+		z M319.2,213h-7.8v3.5h7.8V213L319.2,213z M303.6,213h-7.8v3.5h7.8V213L303.6,213z M288.1,213h-7.8v3.5h7.8V213L288.1,213z
+		 M272.6,213h-7.8v3.5h7.8V213L272.6,213z M257,213h-7.8v3.5h7.8V213L257,213z M241.5,213h-7.8v3.5h7.8V213L241.5,213z M235.5,219.1
+		H232v7.8h3.5V219.1L235.5,219.1z M235.5,234.6H232v7.8h3.5V234.6L235.5,234.6z M238.9,247.5H232v2.7l0,0v-2.7v2.7l0,0v0.8h3.5l0,0
+		l0,0l0,0l0,0c1.7,0,3.4,0,3.4,0V247.5L238.9,247.5z M254.5,247.5h-7.8v3.5h7.8V247.5L254.5,247.5z M270,247.5h-7.8v3.5h7.8V247.5
+		L270,247.5z M285.6,247.5h-7.8v3.5h7.8V247.5L285.6,247.5z M301.1,247.5h-7.8v3.5h7.8V247.5L301.1,247.5z M316.6,247.5h-7.8v3.5
+		h7.8V247.5L316.6,247.5z M332.2,247.5h-7.8v3.5h7.8V247.5L332.2,247.5z M347.7,247.5H340v3.5h7.8V247.5L347.7,247.5z M363.3,247.5
+		h-7.8v3.5h7.8V247.5L363.3,247.5z M378.8,247.5h-7.8v3.5h7.8V247.5L378.8,247.5z M394.4,247.5h-7.8v3.5h7.8V247.5L394.4,247.5z
+		 M409.9,247.5h-7.8v3.5h7.8V247.5L409.9,247.5z M425.5,247.5h-7.8v3.5h7.8V247.5L425.5,247.5z M428,238h-3.5v7.8h3.5V238L428,238z
+		 M428,222.5h-3.5v7.8h3.5V222.5L428,222.5z M428,213h-7.8v3.5h7.8V213L428,213z"/>
+</g>
+<g>
+	<g>
+		<path class="st4" d="M442,208h-5v5h5V208L442,208z M432,208h-5v5h5V208L432,208z M422,208h-5v5h5V208L422,208z M412,208h-5v5h5
+			V208L412,208z M402,208h-5v5h5V208L402,208z M392,208h-5v5h5V208L392,208z M382,208h-5v5h5V208L382,208z M372,208h-5v5h5V208
+			L372,208z M362,208h-5v5h5V208L362,208z M352,208h-5v5h5V208L352,208z M342,208h-5v5h5V208L342,208z M332,208h-5v5h5V208L332,208z
+			 M322,208h-5v5h5V208L322,208z M312,208h-5v5h5V208L312,208z M302,208h-5v5h5V208L302,208z M292,208h-5v5h5V208L292,208z M282,208
+			h-5v5h5V208L282,208z M272,208h-5v5h5V208L272,208z M262,208h-5v1h-4v5h5v-1h4V208L262,208z M258,219h-5v5h5V219L258,219z
+			 M258,229h-5v5h5V229L258,229z M258,239h-5v5h5V239L258,239z M258,249h-5v5h5V249L258,249z M258,259h-5v5h5V259L258,259z M258,269
+			h-5v5h5V269L258,269z M258,279h-5v5h3v2h5v-5h-3V279L258,279z M271,281h-5v5h5V281L271,281z M281,281h-5v5h5V281L281,281z
+			 M291,281h-5v5h5V281L291,281z M301,281h-5v5h5V281L301,281z M311,281h-5v5h5V281L311,281z M321,281h-5v5h5V281L321,281z M331,281
+			h-5v5h5V281L331,281z M341,281h-5v5h5V281L341,281z M351,281h-5v5h5V281L351,281z M361,281h-5v5h5V281L361,281z M371,281h-5v5h5
+			V281L371,281z M381,281h-5v5h5V281L381,281z M391,281h-5v5h5V281L391,281z M401,281h-5v5h5V281L401,281z M411,281h-5v5h5V281
+			L411,281z M421,281h-5v5h5V281L421,281z M431,281h-5v5h5V281L431,281z M441,281h-5v5h5V281L441,281z M452,277h-5v4h-1v5h5v-4h1
+			V277L452,277z M452,267h-5v5h5V267L452,267z M452,257h-5v5h5V257L452,257z M452,247h-5v5h5V247L452,247z M452,237h-5v5h5V237
+			L452,237z M452,227h-5v5h5V227L452,227z M452,217h-5v5h5V217L452,217z M452,208h-5v5h5V208L452,208z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="264" y1="212.9" x2="264" y2="66"/>
+		<g>
+			<polygon class="st4" points="274.5,209.9 264,228 253.5,209.9 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="274.5" y="229.5" class="st3" width="156" height="35"/>
+		<path class="st2" d="M429,231v32H276v-32H429 M432,228H273v38h159V228L432,228z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 283.0001 253.418)" class="st9 st10">Inline element</text>
+</g>
+</svg>

@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>214: CSS Floats</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>214</h5>
+          <h1>CSS Floats</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before flexbox and grids were introduced, floats were <b>the best method available</b> for laying out web components and layouts.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Although floats seem simple, <b>they can be very frustrating</b> for those who do not understand the finer details.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>The nature of floats</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>float</code> property <b>takes the following values</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { float: <span class="codeHighlight">left</span>; }
+p { float: <span class="codeHighlight">right</span>; }
+p { float: <span class="codeHighlight">none</span>; }
+p { float: <span class="codeHighlight">inline-start</span>; }
+p { float: <span class="codeHighlight">inline-end</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>floated element</b> is one where the <code>float</code> value is any of these options except <code>none</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A floated element is positioned within the normal flow of the document, <b>then taken out of the flow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The element is then <b>shifted to the left or right</b> - on the current line - as far as possible.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_01.svg" alt="Unfloated item">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_02.svg" alt="Left floated item">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_03.svg" alt="Right floated item">
+          </section>
+
+          <section data-background="#fff">
+            <p>A floated element will shift to the left or right and <b>rest against one of three things</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>1. Against the edge of the <b>initial containing block</b></p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_04.svg" alt="Rest against the initial containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>2. Against the edge of a <b>containing block</b></p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_05.svg" alt="Rest against the containing block">
+          </section>
+
+          <section data-background="#fff">
+            <p>3. Against the edge of <b>another float</b></p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_06.svg" alt="Rest against another float">
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>left</code> value specifies that the element must move out of flow and <b>shift to the left</b> as far as possible.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: <span class="codeHighlight">left</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>right</code> value specifies that the element must move out of flow and <b>shift to the right</b> as far as possible.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: <span class="codeHighlight">right</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>none</code> value specifies that the element <b>must not float</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: <span class="codeHighlight">none</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>inline-start</code> value specifies that the element must move out of flow and <b>shift to the start edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: <span class="codeHighlight">inline-start</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>That is the <b>left edge</b> of its containing block with <code>ltr</code> content and the right edge of its containing block with <code>rtl</code> content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>inline-end</code> value specifies that the element must move out of flow and <b>shift to the end edge of its containing block</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: <span class="codeHighlight">inline-end</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>That is the <b>right edge</b> of its containing block with <code>ltr</code> content and the left edge of its containing block with <code>rtl</code> content.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Float some elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-01.html">exercises-start/exercise-214-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with <code>float: left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  float: left;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with <code>float: right</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  float: right;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-01.html">exercises-finished/exercise-214-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Floats and  other elements</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>To understand how floats interact with other elements, let’s use an example with <b>a heading, an image and a paragraph of text</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;h1&gt;<span class="codeComment">This is a heading</span>&lt;/h1&gt;
+&lt;img src="a.png" alt="Alt text"&gt;
+&lt;p&gt;<span class="codeComment">Lorem ipsum dolor...</span>&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Initially, all three elements will appear in <b>normal flow</b> and appear one after another down the page.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_07.svg" alt="All three elements in normal flow">
+          </section>
+
+          <section data-background="#fff">
+            <p>Inside the <code>&lt;p&gt;</code> element are <b>a series of line boxes</b>. These line boxes will become important soon.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_21.svg" alt="Line boxes inside paragraph">
+          </section>
+
+          <section data-background="#fff">
+            <p>If you set the <code>&lt;img&gt;</code> element to <code>float: left</code>, <b>four things happen</b>:</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>1. The <code>&lt;h1&gt;</code> element is <b>not affected by the floated image</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_08.svg" alt="Heading not affected by floated element below">
+          </section>
+
+          <section data-background="#fff">
+            <p>2. The <code>&lt;img&gt;</code> element will <b>move out of flow and to the left</b>, coming to rest against the left edge of the containing box.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_09.svg" alt="Image moves out of flow">
+          </section>
+
+          <section data-background="#fff">
+            <p>3. The <code>&lt;p&gt;</code> element will <b>slide up under the</b> <code>&lt;img&gt;</code> <b>element</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_10.svg" alt="Paragraph slides under image">
+          </section>
+
+          <section data-background="#fff">
+            <p>4. The line boxes inside the <code>&lt;p&gt;</code> element will <b>shorten to accommodate the float</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_11.svg" alt="Line boxes inside paragraph will shorten">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>More on floats and line boxes</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Line boxes can sometimes be very short - <b>even containing a single word</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_12.svg" alt="Very short line boxes">
+          </section>
+
+          <section data-background="#fff">
+            <p>If the space for a line box is too short to contain text, the line box will <b>move down until it fits</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_13.svg" alt="Line boxes move down to fit">
+          </section>
+
+          <section data-background="#fff">
+            <p>Sometimes, the float box is slightly taller than a specific line box, and <b>a gap may appear under the float box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_14.svg" alt="Gap under float">
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Float an image</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02.html">exercises-start/exercise-214-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example</code>. Set with <code>float: left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example {
+  float: left;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This rule will set two images to <code>float: left</code>. Notice how the second image is extremely wide, <b>so the line boxes beside it are very short</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02.html">exercises-finished/exercise-214-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Float boxes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>As soon as you apply a float  to block-level, inline or inline-block elements, <b>they become float boxes</b>, with specific characteristics.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Default width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, a float box’s width is set to <code>auto</code> so its width will <b>collapse to fit the widest content inside</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that a default block-level element will change from a block box with stretched width <b>to a float box with collapsed width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_22.svg" alt="Block box with stretched width">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_23.svg" alt="Float box with collapsed width">
+          </section>
+
+          <section data-background="#fff">
+            <p>An inline element will change from an inline box with collapsed width <b>to a float box with collapsed width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_24.svg" alt="Inline box with collapsed width">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_25.svg" alt="Float box with collapsed width">
+          </section>
+
+          <section data-background="#fff">
+            <p>In their default collapsed state, float boxes <b>use an additive model for the overall width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the collapsed width</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length or percentage widths</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Float boxes can be given <b>length or percentage widths</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: left;
+ <span class="codeHighlight"> width: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: left;
+ <span class="codeHighlight"> width: 50%;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>When given a length or percentage width value, float boxes still <b>use an additive model for the overall width</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall width</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Stretched width</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Unlike absolutely-positioned boxes, float boxes <b>cannot be stretched</b> using the <code>left</code> and <code>right</code> or <code>top</code> and <code>bottom</code> properties.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Default height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>By default, the height of float boxes <b>is collapsed</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>While in this collapsed height state, float boxes <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Length height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Float boxes can be given a height using a <b>length value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: left;
+ <span class="codeHighlight"> height: 200px;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Float boxes with length height <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Percentage height</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Float boxes can be given a height using a <b>percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  float: left;
+ <span class="codeHighlight"> height: 50%;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, the percentage height of a float box will only be applied <b>if it’s containing box has a specified height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Float boxes with percentage height <b>use an additive model for the overall height</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that <code>border</code> and <code>padding</code> are <b>added on top of the overall height</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Margin</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margins can be applied to <b>all sides of float boxes</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin applied to the top side of a float box will <b>move the box down from its original position</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_15.svg" alt="Top margin moves float down">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin applied to the left side of a left float box will <b>move the box to the right</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_16.svg" alt="Left margin moves float to the right">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin applied to the right side of a left float box will <b>move content away from the right edge of the box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_17.svg" alt="Right margin moves content away from float">
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin applied to the right side of a right float box will <b>move the box to the left</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Margin applied to the left side of a right float box will <b>move content away from the left edge of the box</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Padding</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Padding can be applied to <b>all sides of float boxes</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Borders can be applied to <b>all sides of float boxes</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Float some images with margin, padding and border</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03.html">exercises-start/exercise-214-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set with <code>margin: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  margin: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set with <code>padding: 20px</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  padding: 20px;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set with <code>border: 20px solid red</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  border: 20px solid red;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03.html">exercises-finished/exercise-214-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Clearing floats</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you don't want an element to slide up under a float box, you can <b>force the element to sit below</b>, or "clear" the float box above.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Four different</b> <code>clear</code> values that can be applied - <code>left</code>, <code>right</code>, <code>both</code> and none.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you want an element to clear <b>a left floated element</b>, use the <code>left</code> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  clear: <span class="codeHighlight">left</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_18.svg" alt="clear: left to clear left floated item above">
+          </section>
+
+          <section data-background="#fff">
+            <p>If you want an element to clear <b>a right floated element</b>, use the <code>right</code> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  clear: <span class="codeHighlight">right</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_19.svg" alt="clear: right to clear right floated item above">
+          </section>
+
+          <section data-background="#fff">
+            <p>If you want an element to clear <b>left or right floated elements</b>, use the <code>both</code> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  clear: <span class="codeHighlight">both</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/float_20.svg" alt="clear: both to clear left and right floated items above">
+          </section>
+
+          <section data-background="#fff">
+            <p>If you do not want an element to clear <b>any floated items above</b>, you could use <code>clear: none</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  clear: <span class="codeHighlight">none</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, this is the default value for all elements <b>so is not required</b> in most cases.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Clear some floats</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-04.html">exercises-start/exercise-214-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style the element with a class of <code>example1</code>. Set to clear the left floating element above using <code>clear: left</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example1 {
+  clear: left;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style the element with a class of <code>example2</code>. Set to clear the right float element above using <code>clear: right</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example2 {
+  clear: right;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style the element with a class of <code>example3</code>. Set to clear the left and right floating elements above using <code>clear: both</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+.example3 {
+  clear: both;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-04.html">exercises-finished/exercise-214-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="215-css-backgrounds.html">215: CSS Backgrounds</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>204: Applying CSS</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>204</h5>
+          <h1>Applying CSS</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>This slide deck explores a range of different methods that you can use to <b>apply CSS to web pages</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>1. Inline styles</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Inline styles</b> are applied to elements directly in the HTML markup using the <code>style</code> attribute.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2 <span class="codeHighlight">style="color: red;"</span>&gt;
+      Heading here
+    &lt;/h2&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Inline styles <b>should be avoided</b> as they are inefficient.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, if you wanted to style every <code>p</code> element in a document, you would need to use <b>multiple inline styles</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;-- Inline styles --&gt;</span>
+&lt;p <span class="codeHighlight">style="color: black;"</span>&gt;<span class="codeComment">...</span>&lt;/p&gt;
+&lt;p <span class="codeHighlight">style="color: black;"</span>&gt;<span class="codeComment">...</span>&lt;/p&gt;
+&lt;p <span class="codeHighlight">style="color: black;"</span>&gt;<span class="codeComment">...</span>&lt;/p&gt;
+&lt;p <span class="codeHighlight">style="color: black;"</span>&gt;<span class="codeComment">...</span>&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you wanted to change the text color in this example, you would <b>need to change it in multiple places</b>.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write an inline style</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-204-01.html">exercises-start/exercise-204-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write an inline CSS style</b> to set the first <code>&lt;p&gt;</code> element with a <code>color</code> value of <code>orange</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;p <span class="codeHighlight">style="color: orange;"</span>&gt; <span class="codeComment">...</span> &lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-204-01.html">exercises-finished/exercise-204-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>2. Header styles</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Header styles</b> are written inside the <code>&lt;head&gt;</code> element of HTML documents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS rules are <b>added inside</b> the <code>&lt;style&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+    <span class="codeHighlight">&lt;style&gt;
+      h2 { color: blue; }
+    &lt;/style&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Like inline styles, header styles <b>should be avoided on any real website</b> as they are inefficient and hard to maintain.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, header styles can be useful <b>when building simple tests or exercises</b>, like the ones you are using in this course.</p>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write a header style</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-204-02.html">exercises-start/exercise-204-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a header CSS style</b> to set the <code>&lt;h1&gt;</code> element with a <code>color</code> value of <code>crimson</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSS rule needs to be <b>added inside</b> the <code>&lt;style&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;style&gt;
+h1 {
+  color: crimson;
+}
+&lt;/style&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-204-02.html">exercises-finished/exercise-204-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>3. External style sheets</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>External style sheets</b> are separate CSS documents that can be “linked to” from HTML documents using the <code>&lt;link&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="a.css"&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Authors can link to <b>more than one CSS document</b> from the HTML document.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="a.css"&gt;</span>
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="b.css"&gt;</span>
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="c.css"&gt;</span>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>External style sheets are <b>far more efficient and effective</b> than inline or header styles as you can use a single CSS file for multiple HTML pages.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The rel attribute</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>rel</code> attribute is <b>required</b> within the <code>&lt;link&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It is used to <b>define the relationship</b> from the current HTML document to the linked file.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this case <code>rel="stylesheet"</code> informs the browser that <b>the file being linked to is a stylesheet</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+    &lt;link <span class="codeHighlight">rel="stylesheet"</span> href="a.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>The href attribute</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>href</code> attribute is <b>also required</b> within the <code>&lt;link&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It is used to <b>define the location</b> of the linked document.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document title&lt;/title&gt;
+    &lt;link rel="stylesheet" <span class="codeHighlight">href="a.css"</span>&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>URL paths can be <b>relative or absolute</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Relative paths --&gt;</span>
+&lt;link href=<span class="codeHighlight">"a.css"</span> rel="stylesheet"&gt;
+&lt;link href=<span class="codeHighlight">"../a.css"</span> rel="stylesheet"&gt;
+&lt;link href=<span class="codeHighlight">"/a.css"</span> rel="stylesheet"&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Absolute path --&gt;</span>
+&lt;link
+  href=<span class="codeHighlight">"http://site.com/a.css"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Link to an external style sheet</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-204-03.html">exercises-start/exercise-204-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Write a <code>&lt;link&gt;</code> element with <b>two attributes</b>: <code>rel="stylesheet"</code> and <code>href="exercise-204-03.css"</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Add a link --&gt;</span>
+&lt;link
+  rel="stylesheet"
+  href="exercise-204-03.css"&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open the <b>following CSS file</b> in an editor:<br>
+            <a href="exercises-start/exercise-204-03.css">exercises-start/exercise-204-03.css</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a rule</b> to style the <code>&lt;h1&gt;</code> with <code>color: magenta</code> and the <code>&lt;p&gt;</code> with <code>color: brown</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Add styles here */</span>
+h1 {
+  color: magenta;
+}
+
+p {
+  color: brown;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-204-03.html">exercises-finished/exercise-204-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>And also check your work against the finished <b>CSS file</b>:<br>
+            <a href="exercises-finished/exercise-204-03.css">exercises-finished/exercise-204-03.css</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>4. Media types</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>You can define which media will receive your CSS files using <b>Media types</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS2.1, there are <b>ten different media types</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For all devices --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="all"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For printers --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="print"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For speech synthesizers --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="aural"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For Braille devices --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="braille"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For Braille printers --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="embossed"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For handheld devices --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="handheld"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For projectors --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="projection"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For computer screens --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="screen"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For teletypes and terminals --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="tty"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- For television type devices --&gt;</span>
+&lt;link
+  href="a.css"
+  <span class="codeHighlight">media="tv"</span>
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Unfortunately, many of these media types are <b>not <b>well supported</b></b>. The only safe options are <code>all</code>, <code>print</code> and <code>screen</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If <b>no media type is defined</b>, the media type is assumed to be <code>all</code> - so the CSS file will be available to all types of devices.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- No media type present,
+defaults to "all" --&gt;</span>
+&lt;link
+  href="a.css"
+  rel="stylesheet"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Add some media types</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-204-04.html">exercises-start/exercise-204-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Add a <code>media</code> attribute <b>with a value of</b> <code>screen</code> to the <code>&lt;link&gt;</code> element pointing to <code>exercise-204-04-web.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;link
+  rel="stylesheet"
+  <span class="codeHighlight">media="screen"</span>
+  href="exercise-204-04-web.css"
+&gt;
+</code></pre>
+          </section>
+          <section data-background="#fff">
+            <p>Add a second <code>media</code> attribute <b>with a value of</b> <code>all</code> to the <code>&lt;link&gt;</code> element pointing to <code>exercise-204-04-all.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;link
+  rel="stylesheet"
+  <span class="codeHighlight">media="all"</span>
+  href="exercise-204-04-all.css"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Add a third <code>media</code> attribute <b>with a value of</b> <code>print</code> to the <code>&lt;link&gt;</code> element pointing to <code>exercise-204-04-print.css</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;link
+  rel="stylesheet"
+  <span class="codeHighlight">media="print"</span>
+  href="exercise-204-04-print.css"
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you look in a browser, the <code>&lt;h1&gt;</code> element <b>should be styled</b> <code>red</code>. This style comes from the CSS file with a media type of <code>screen</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Also in a browser, the <code>&lt;p&gt;</code> element <b>should be styled</b> <code>green</code>. This style comes from the CSS file with a media type of <code>all</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If you print the page, the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> elements <b>should be styled</b> <code>black</code> and be displayed in a serif font.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This style comes from the CSS file with a <b>media type</b> of <code>print</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-204-04.html">exercises-finished/exercise-204-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+          <h4>Next deck</h4>
+          <p class="credits-next">
+            <a class="credit-link" href="205-01-selectors-simple.html">205-01: Simple selectors</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

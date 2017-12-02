@@ -1,0 +1,396 @@
+/* ---------------------
+global
+-----------------------*/
+
+body {
+  color: #222;
+  background: #fff;
+  background-color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-size: 1em;
+}
+
+.reveal {
+  color: #222;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-size: 3.3em;
+  font-weight: normal;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  font-weight: inherit;
+  line-height: 1.3;
+}
+
+
+/* ---------------------
+headings
+-----------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px 0;
+  color: #222;
+  font-family: 'Paytone One', 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  text-shadow: none;
+  letter-spacing: normal;
+  text-transform: none;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  margin: 0;
+  color: #759a3e;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-size: .8em;
+  line-height: 1;
+}
+
+section.has-dark-background,
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4 {
+  color: #fff;
+}
+
+/* ---------------------
+paragraphs
+-----------------------*/
+
+p {
+  margin: 0 0 1.2em;
+  line-height: 1.3;
+}
+
+
+/* ---------------------
+image, video, iframe
+-----------------------*/
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  margin: 0;
+}
+
+
+/* ---------------------
+strong, bold, em
+-----------------------*/
+
+strong,
+b {
+  color: #568312;
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ---------------------
+pre, code
+-----------------------*/
+
+.reveal pre {
+  position: relative;
+  display: block;
+  padding: 1em;
+  font-family: consolas, courier, monospace;
+  font-size: .7em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 3;
+    -o-tab-size: 3;
+       tab-size: 3;
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+          hyphens: none;
+
+      -ms-hyphens: none;
+}
+
+.reveal code {
+  color: #0364c0;
+  font-family: consolas, courier, monospace;
+}
+
+.reveal pre code {
+  display: block;
+  overflow: auto;
+  padding: 0;
+  color: #fff;
+  word-wrap: normal;
+}
+
+.reveal pre.small {
+  font-size: .6em;
+}
+
+
+/* ---------------------
+kbd
+-----------------------*/
+
+.reveal kbd {
+  border: .03em solid #ccc;
+  border-radius: .2em;
+  padding: .2em .2em .1em;
+  color: #555;
+  background-image: linear-gradient(#fff, #eee);
+  box-shadow: .05em .05em .1em #aaa;
+  font-family: consolas, courier, monospace;
+}
+
+
+/* ---------------------
+table
+-----------------------*/
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: .7em;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  border-bottom: 1px solid #555;
+  padding: .2em .5em .2em .5em;
+  text-align: left;
+}
+
+table th.right,
+table td.right {
+  text-align: right;
+}
+
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ---------------------
+links
+-----------------------*/
+
+a {
+  color: #568312;
+}
+
+a:focus {
+  color: #000;
+}
+
+a:hover {
+  color: #44680e;
+}
+
+a:active {
+  color: #a00;
+}
+
+
+/* ---------------------
+selection
+-----------------------*/
+
+::selection {
+  color: #fff;
+  background: #568312;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #568312;
+  text-shadow: none;
+}
+
+
+/* ---------------------
+controls
+-----------------------*/
+
+.reveal .controls .navigate-left {
+  border-right-color: #568312;
+}
+
+.reveal .controls .navigate-right {
+  border-left-color: #568312;
+}
+
+.reveal .controls .navigate-up {
+  border-bottom-color: #568312;
+}
+
+.reveal .controls .navigate-down {
+  border-top-color: #568312;
+}
+
+.has-dark-background .controls .navigate-left {
+  border-right-color: #fff;
+}
+
+.has-dark-background .controls .navigate-right {
+  border-left-color: #fff;
+}
+
+.has-dark-background .controls .navigate-up {
+  border-bottom-color: #fff;
+}
+
+.has-dark-background .controls .navigate-down {
+  border-top-color: #fff;
+}
+
+
+/* ---------------------
+progress
+-----------------------*/
+
+.reveal .progress {
+  background: rgba(0, 0, 0, .2);
+}
+
+.reveal .progress span {
+  background: #629514;
+
+  -webkit-transition: width 800ms cubic-bezier(.26, .86, .44, .985);
+     -moz-transition: width 800ms cubic-bezier(.26, .86, .44, .985);
+          transition: width 800ms cubic-bezier(.26, .86, .44, .985);
+}
+
+.has-dark-background .progress span {
+  background: #fff;
+}
+
+
+/* ---------------------
+menu
+-----------------------*/
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100px;
+  padding: 10px 20px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+
+/* ---------------------
+credits
+-----------------------*/
+
+.credits,
+.credits-next {
+  font-size: 60%;
+}
+
+.credits {
+  margin-bottom: 3em;
+}
+
+a.credit-link {
+  display: inline-block;
+  margin: 0 .5em 0 0;
+  color: #999;
+}
+
+a.credit-link:hover {
+  color: #ccc;
+}
+
+a.credit-link:focus,
+a.credit-link:active {
+  color: #fff;
+}
+
+
+/* ---------------------
+classes
+-----------------------*/
+
+.font-sm {
+  font-size: 85%;
+}
+
+.font-xs {
+  font-size: 70%;
+}
+
+.codeHighlight {
+  color: yellow;
+}
+
+.codeComment {
+  color: gray;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+}
+
+.instructions {
+  font-size: 65%;
+}
+
+.instructions-heading {
+  margin: 0 0 .7em;
+}
+
+.instructions p {
+  margin: 0 0 .7em;
+}
