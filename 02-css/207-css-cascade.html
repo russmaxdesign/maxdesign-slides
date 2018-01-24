@@ -810,7 +810,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#444">
-            <h3>Order within inported, linked and header styles</h3>
+            <h3>Order within imported, linked and header styles</h3>
           </section>
 
           <section data-background="#fff">
@@ -904,11 +904,11 @@ h2 { color: black; }
 
 <span class="codeComment">/* user style sheet */</span>
 h2 { color: green; }
-h2 { color: lime important; }
+h2 { color: lime !important; }
 
 <span class="codeComment">/* author style sheet */</span>
 h2 { color: blue; }
-h2 { color: red important; }
+h2 { color: red !important; }
 </code></pre>
           </section>
 
@@ -922,7 +922,7 @@ h2 { color: black; }
 
 <span class="codeComment">/* user style sheet */</span>
 h2 { color: green; }
-<span class="codeHighlight">h2 { color: lime important; }</span>
+<span class="codeHighlight">h2 { color: lime !important; }</span>
 
 <span class="codeComment">/* author style sheet */</span>
 h2 { color: blue; }
@@ -1095,7 +1095,7 @@ SUB-SECTION
   animation: heading 3s;
 }
 
-@-webkit-keyframes heading { 
+@-webkit-keyframes heading {
   from {color: red;} to {color: lime;}
 }
 
@@ -1177,7 +1177,7 @@ h2 { color: green; }
 
 <span class="codeComment">/* author styles */</span>
 h2 { color: blue; }
-<span class="codeHighlight">h2{ animation: aaa 3s; }
+<span class="codeHighlight">h2{ animation: a 3s; }
 @keyframes a {0% {color:red;} 100% {color:lime;}}</span>
 </code></pre>
           </section>
