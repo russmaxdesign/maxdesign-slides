@@ -1,0 +1,4146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>214-02: Property - color</title>
+    <meta name="description" content="The color CSS property sets the foreground color value of an elements text content and text decorations">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>214-02</h5>
+          <h1>Property - color</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>color</code> property sets the <b>foreground color</b> of an element’s text content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It also sets the <code>color</code> of the <code>text-decoration</code> <b>unless</b> <code>&lt;'text-decoration-color'&gt;</code> is defined by the user.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSS <code>color</code> property is <b>defined with the following syntax</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;'color'&gt;</span> =
+  &lt;color&gt; | inherit
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this syntax, <code>&lt;'color'&gt;</code> is a <b>property data type</b>. It is used if you want to define the color of some text content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { <span class="codeHighlight">color</span>: red; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>&lt;color&gt;</code> is a <b>non-property data type</b> and is used to define whereever color is needed.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* The color non-property data type */</span>
+&lt;'color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+&lt;'background-color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+&lt;'border-color'&gt; = <span class="codeHighlight">&lt;color&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;color&gt;</code> non-property data type was <b>originally defined</b> in CSS 1.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It has been expanded in the <a href="https://www.w3.org/TR/CSS2/colors.html#colors">CSS 2.1</a>, <a href="https://www.w3.org/TR/2017/CR-css-color-3-20171205/#color">CSS Color Module Level 3</a> and <a href="https://drafts.csswg.org/css-color/#the-color-property">CSS Color Module Level 4</a> specifications.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This slide deck will focus on <b>how the</b> <code>&lt;color&gt;</code> <b>non-property data type is defined</b> in the CSS Color Module Level 3 and 4 specifications.</p>
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Color Module Level 3</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the <b>CSS Color Module Level 3</b> specification, the <code>&lt;color&gt;</code> non-property data type is defined as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color&gt;</span> =
+  &lt;hex-color&gt; |
+  &lt;rgb()&gt; |
+  &lt;rgba()&gt; |
+  &lt;hsl()&gt; |
+  &lt;hsla()&gt; |
+  &lt;named-color&gt; |
+  &lt;deprecated-system-color&gt; | 
+  currentcolor |
+  transparent
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s look at <b>each of these options</b> in detail.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;hex-color&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b> the <code>&lt;hex-color&gt;</code> syntax is still:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hex-color&gt;</span> = 
+  #[ rgb | rrggbb ]
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you can use a hash symbol <code>'#'</code> immediately followed by <b>either 3 or 6 hexadecimal characters</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Hexadecimal characters</b> include the numbers <code>(0-9)</code> and letters <code>(A-F)</code>, which can be written in upper or lower case.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For six-digit notation, the first pair of digits represents the <b>red channel</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second pair represents the <b>green channel</b>, and the last pair represents the <b>blue channel</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">#FFAA00</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>3-digit notation</b> is a shorter variant of the 6-digit notation.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first digit represents the <b>red channel</b>. The second digit represents the <b>green channel</b>, and the last digit represents the <b>blue channel</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">#FA0</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write a hex color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-01.html">exercises-start/exercise-214-02-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>#FFA500</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">#FFA500</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>#0FF</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">#0FF</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-01.html">exercises-finished/exercise-214-02-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;rgb()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b> the <code>&lt;rgb()&gt;</code> syntax is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;rgb()&gt;</span> = 
+  rgb([ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ])
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you can use <b>three percentage values or three numeric values</b> between the brackets in <code>"rgb()"</code>, each seperated by a comma.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first value represents the <b>red channel</b>, the second value represents the <b>green channel</b>, and the last value represents the <b>blue channel</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For <b>percentage notation</b>, the three values must between <code>0%</code> (black) and <code>100%</code> (white).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Black */</span>
+p { color: <span class="codeHighlight">rgb(0, 0, 0)</span>; }
+
+<span class="codeComment">/* White */</span>
+p { color: <span class="codeHighlight">rgb(100%, 100%, 100%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>For <b>numeric notation</b> the three values must be between <code>0</code> (black) and <code>255</code> (white).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Black */</span>
+p { color: <span class="codeHighlight">rgb(0, 0, 0)</span>; }
+
+<span class="codeComment">/* White */</span>
+p { color: <span class="codeHighlight">rgb(255, 255, 255)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write an RGB color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-02.html">exercises-start/exercise-214-02-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>rgb(255, 165, 0)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">rgb(255, 165, 0)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>rgb(100%, 65%, 0%)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">rgb(100%, 65%, 0%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that while the first rule uses numeric notation and the second rule uses percentage notation, <b>they both produce the same color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-02.html">exercises-finished/exercise-214-02-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;rgba()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b> the <code>&lt;rgba()&gt;</code> syntax is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;rgba()&gt;</span> = 
+  rgba( [ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ] , &lt;alpha-value&gt; )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you can use three percentage values or three numeric values and <b>one alpha value</b>, each seperated by a comma.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These comma-separated values are <b>all placed between the brackets</b> in <code>"rgba()"</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first value represents the <b>red channel</b>, the second value represents the <b>green channel</b>, and the third value represents the <b>blue channel</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The fourth value represents the <b>alpha channel</b>, a number value between <code>0</code> (fully transparent) and <code>1</code> (fully opaque).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Black - fully opaque */</span>
+p { color: rgba(0, 0, 0, <span class="codeHighlight">1</span>); }
+
+<span class="codeComment">/* Black - fully transparent */</span>
+p { color: rgba(0, 0, 0, <span class="codeHighlight">0</span>); }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>For <b>percentage notation</b> the three values must between <code>0%</code> (black) and <code>100%</code> (white).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Black */</span>
+p { color: rgba(<span class="codeHighlight">0%, 0%, 0%</span>, 1); }
+
+<span class="codeComment">/* White */</span>
+p { color: rgba(<span class="codeHighlight">100%, 100%, 100%</span>, 1); }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>For <b>numeric notation</b> the three values must be between <code>0</code> (black) and <code>255</code> (white).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Black */</span>
+p { color: rgba(<span class="codeHighlight">0, 0, 0</span>, 1); }
+
+<span class="codeComment">/* White */</span>
+p { color: rgba(<span class="codeHighlight">255, 255, 255</span>, 1); }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Write an RGBA color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-03.html">exercises-start/exercise-214-02-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>rgba(255, 165, 0, .5)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">rgba(255, 165, 0, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>rgba(100%, 65%, 0%, .5)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">rgba(100%, 65%, 0%, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that while the first rule uses numeric notation and the second rule uses percentage notation, <b>they both produce the same color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-03.html">exercises-finished/exercise-214-02-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;hsl()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b> the <code>&lt;hsl()&gt;</code> syntax is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hsl()&gt;</span> =
+  hsl( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt; )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you need <b>hue, saturation and a lightness values</b>, each seperated by a comma.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first value is for <b>Hue</b> and must be an integer value between <code>0</code> and <code>359</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second value is for <b>Saturation</b> and must be defined as a percentage value between <code>0%</code> and <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third value is <b>Lightness</b> and must be defined as a percentage value between <code>0%</code> and <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">hsl(280, 100%, 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Write an HSL color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-04.html">exercises-start/exercise-214-02-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>hsl(39, 100%, 50%)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">hsl(39, 100%, 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-04.html">exercises-finished/exercise-214-02-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;hsla()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b> the <code>&lt;hsla()&gt;</code> syntax is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hsla()&gt;</span> =
+  hsla( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt;, &lt;alpha-value&gt;)
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you need <b>hue, saturation, lightness and alpha-transparency values</b>, each seperated by a comma.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As with <code>hsl()</code>, the first value is for <b>Hue</b> and must be an integer value between <code>0</code> and <code>359</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second value is for <b>Saturation</b> and must be defined as a percentage value between <code>0%</code> and <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third value is <b>Lightness</b> and must be defined as a percentage value between <code>0%</code> and <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The fourth value represents the <b>alpha channel</b>, a number value between <code>0</code> (fully transparent) and <code>1</code> (fully opaque).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">hsla(280, 100%, 50%, 1)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Write an HSLA color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-05.html">exercises-start/exercise-214-02-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>hsla(39, 100%, 50%, .5)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">hsla(39, 100%, 50%, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-05.html">exercises-finished/exercise-214-02-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;named-color&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>CSS 1</b> introduced 16 color keywords:</p>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td style="background:aqua"></td>
+                  <td><dfn id="aqua">aqua</dfn></td>
+                  <td><code>#00FFFF</code></td>
+                  <td><code>0,255,255</code></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td style="background:black"></td>
+                  <td><dfn id="black">black</dfn></td>
+                  <td><code>#000000</code></td>
+                  <td><code>0,0,0</code></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td style="background:blue"></td>
+                  <td><dfn id="blue">blue</dfn></td>
+                  <td><code>#0000FF</code></td>
+                  <td><code>0,0,255</code></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td style="background:fuchsia"></td>
+                  <td><dfn id="fuchsia">fuchsia</dfn></td>
+                  <td><code>#FF00FF</code></td>
+                  <td><code>255,0,255</code></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td style="background:gray"></td>
+                  <td><dfn id="gray">gray</dfn></td>
+                  <td><code>#808080</code></td>
+                  <td><code>128,128,128</code></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td style="background:green"></td>
+                  <td><dfn id="green">green</dfn></td>
+                  <td><code>#008000</code></td>
+                  <td><code>0,128,0</code></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td style="background:lime"></td>
+                  <td><dfn id="lime">lime</dfn></td>
+                  <td><code>#00FF00</code></td>
+                  <td><code>0,255,0</code></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td style="background:maroon"></td>
+                  <td><dfn id="maroon">maroon</dfn></td>
+                  <td><code>#800000</code></td>
+                  <td><code>128,0,0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td style="background:navy"></td>
+                  <td><dfn id="navy">navy</dfn></td>
+                  <td><code>#000080</code></td>
+                  <td><code>0,0,128</code></td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td style="background:olive"></td>
+                  <td><dfn id="olive">olive</dfn></td>
+                  <td><code>#808000</code></td>
+                  <td><code>128,128,0</code></td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td style="background:purple"></td>
+                  <td><dfn id="purple">purple</dfn></td>
+                  <td><code>#800080</code></td>
+                  <td><code>128,0,128</code></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td style="background:red"></td>
+                  <td><dfn id="red">red</dfn></td>
+                  <td><code>#FF0000</code></td>
+                  <td><code>255,0,0</code></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td style="background:silver"></td>
+                  <td><dfn id="silver">silver</dfn></td>
+                  <td><code>#C0C0C0</code></td>
+                  <td><code>192,192,192</code></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td style="background:teal"></td>
+                  <td><dfn id="teal">teal</dfn></td>
+                  <td><code>#008080</code></td>
+                  <td><code>0,128,128</code></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td style="background:white"></td>
+                  <td><dfn id="white">white</dfn></td>
+                  <td><code>#FFFFFF</code></td>
+                  <td><code>255,255,255</code></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td style="background:yellow"></td>
+                  <td><dfn id="yellow">yellow</dfn></td>
+                  <td><code>#FFFF00</code></td>
+                  <td><code>255,255,0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of <b>CSS Color Module Level 3</b>, 131 new keywords were added:</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td style="background:aliceblue"></td>
+                  <td><dfn id="aliceblue">aliceblue</dfn></td>
+                  <td><code>#f0f8ff</code></td>
+                  <td><code>240,248,255</code></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td style="background:antiquewhite"></td>
+                  <td><dfn id="antiquewhite">antiquewhite</dfn></td>
+                  <td><code>#faebd7</code></td>
+                  <td><code>250,235,215</code></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td style="background:aquamarine"></td>
+                  <td><dfn id="aquamarine">aquamarine</dfn></td>
+                  <td><code>#7fffd4</code></td>
+                  <td><code>127,255,212</code></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td style="background:azure"></td>
+                  <td><dfn id="azure">azure</dfn></td>
+                  <td><code>#f0ffff</code></td>
+                  <td><code>240,255,255</code></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td style="background:beige"></td>
+                  <td><dfn id="beige">beige</dfn></td>
+                  <td><code>#f5f5dc</code></td>
+                  <td><code>245,245,220</code></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td style="background:bisque"></td>
+                  <td><dfn id="bisque">bisque</dfn></td>
+                  <td><code>#ffe4c4</code></td>
+                  <td><code>255,228,196</code></td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td style="background:blanchedalmond"></td>
+                  <td><dfn id="blanchedalmond">blanchedalmond</dfn></td>
+                  <td><code>#ffebcd</code></td>
+                  <td><code>255,235,205</code></td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td style="background:blueviolet"></td>
+                  <td><dfn id="blueviolet">blueviolet</dfn></td>
+                  <td><code>#8a2be2</code></td>
+                  <td><code>138,43,226</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td style="background:brown"></td>
+                  <td><dfn id="brown">brown</dfn></td>
+                  <td><code>#a52a2a</code></td>
+                  <td><code>165,42,42</code></td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td style="background:burlywood"></td>
+                  <td><dfn id="burlywood">burlywood</dfn></td>
+                  <td><code>#deb887</code></td>
+                  <td><code>222,184,135</code></td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td style="background:cadetblue"></td>
+                  <td><dfn id="cadetblue">cadetblue</dfn></td>
+                  <td><code>#5f9ea0</code></td>
+                  <td><code>95,158,160</code></td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td style="background:chartreuse"></td>
+                  <td><dfn id="chartreuse">chartreuse</dfn></td>
+                  <td><code>#7fff00</code></td>
+                  <td><code>127,255,0</code></td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td style="background:chocolate"></td>
+                  <td><dfn id="chocolate">chocolate</dfn></td>
+                  <td><code>#d2691e</code></td>
+                  <td><code>210,105,30</code></td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td style="background:coral"></td>
+                  <td><dfn id="coral">coral</dfn></td>
+                  <td><code>#ff7f50</code></td>
+                  <td><code>255,127,80</code></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td style="background:cornflowerblue"></td>
+                  <td><dfn id="cornflowerblue">cornflowerblue</dfn></td>
+                  <td><code>#6495ed</code></td>
+                  <td><code>100,149,237</code></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td style="background:cornsilk"></td>
+                  <td><dfn id="cornsilk">cornsilk</dfn></td>
+                  <td><code>#fff8dc</code></td>
+                  <td><code>255,248,220</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td style="background:crimson"></td>
+                  <td><dfn id="crimson">crimson</dfn></td>
+                  <td><code>#dc143c</code></td>
+                  <td><code>220,20,60</code></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td style="background:cyan"></td>
+                  <td><dfn id="cyan">cyan</dfn></td>
+                  <td><code>#00ffff</code></td>
+                  <td><code>0,255,255</code></td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td style="background:darkblue"></td>
+                  <td><dfn id="darkblue">darkblue</dfn></td>
+                  <td><code>#00008b</code></td>
+                  <td><code>0,0,139</code></td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td style="background:darkcyan"></td>
+                  <td><dfn id="darkcyan">darkcyan</dfn></td>
+                  <td><code>#008b8b</code></td>
+                  <td><code>0,139,139</code></td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td style="background:darkgoldenrod"></td>
+                  <td><dfn id="darkgoldenrod">darkgoldenrod</dfn></td>
+                  <td><code>#b8860b</code></td>
+                  <td><code>184,134,11</code></td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td style="background:darkgray"></td>
+                  <td><dfn id="darkgray">darkgray</dfn></td>
+                  <td><code>#a9a9a9</code></td>
+                  <td><code>169,169,169</code></td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td style="background:darkgreen"></td>
+                  <td><dfn id="darkgreen">darkgreen</dfn></td>
+                  <td><code>#006400</code></td>
+                  <td><code>0,100,0</code></td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td style="background:darkgrey"></td>
+                  <td><dfn id="darkgrey">darkgrey</dfn></td>
+                  <td><code>#a9a9a9</code></td>
+                  <td><code>169,169,169</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td style="background:darkkhaki"></td>
+                  <td><dfn id="darkkhaki">darkkhaki</dfn></td>
+                  <td><code>#bdb76b</code></td>
+                  <td><code>189,183,107</code></td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td style="background:darkmagenta"></td>
+                  <td><dfn id="darkmagenta">darkmagenta</dfn></td>
+                  <td><code>#8b008b</code></td>
+                  <td><code>139,0,139</code></td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td style="background:darkolivegreen"></td>
+                  <td><dfn id="darkolivegreen">darkolivegreen</dfn></td>
+                  <td><code>#556b2f</code></td>
+                  <td><code>85,107,47</code></td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td style="background:darkorange"></td>
+                  <td><dfn id="darkorange">darkorange</dfn></td>
+                  <td><code>#ff8c00</code></td>
+                  <td><code>255,140,0</code></td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td style="background:darkorchid"></td>
+                  <td><dfn id="darkorchid">darkorchid</dfn></td>
+                  <td><code>#9932cc</code></td>
+                  <td><code>153,50,204</code></td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td style="background:darkred"></td>
+                  <td><dfn id="darkred">darkred</dfn></td>
+                  <td><code>#8b0000</code></td>
+                  <td><code>139,0,0</code></td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td style="background:darksalmon"></td>
+                  <td><dfn id="darksalmon">darksalmon</dfn></td>
+                  <td><code>#e9967a</code></td>
+                  <td><code>233,150,122</code></td>
+                </tr>
+                <tr>
+                  <td>32</td>
+                  <td style="background:darkseagreen"></td>
+                  <td><dfn id="darkseagreen">darkseagreen</dfn></td>
+                  <td><code>#8fbc8f</code></td>
+                  <td><code>143,188,143</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>33</td>
+                  <td style="background:darkslateblue"></td>
+                  <td><dfn id="darkslateblue">darkslateblue</dfn></td>
+                  <td><code>#483d8b</code></td>
+                  <td><code>72,61,139</code></td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td style="background:darkslategray"></td>
+                  <td><dfn id="darkslategray">darkslategray</dfn></td>
+                  <td><code>#2f4f4f</code></td>
+                  <td><code>47,79,79</code></td>
+                </tr>
+                <tr>
+                  <td>35</td>
+                  <td style="background:darkslategrey"></td>
+                  <td><dfn id="darkslategrey">darkslategrey</dfn></td>
+                  <td><code>#2f4f4f</code></td>
+                  <td><code>47,79,79</code></td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td style="background:darkturquoise"></td>
+                  <td><dfn id="darkturquoise">darkturquoise</dfn></td>
+                  <td><code>#00ced1</code></td>
+                  <td><code>0,206,209</code></td>
+                </tr>
+                <tr>
+                  <td>37</td>
+                  <td style="background:darkviolet"></td>
+                  <td><dfn id="darkviolet">darkviolet</dfn></td>
+                  <td><code>#9400d3</code></td>
+                  <td><code>148,0,211</code></td>
+                </tr>
+                <tr>
+                  <td>38</td>
+                  <td style="background:deeppink"></td>
+                  <td><dfn id="deeppink">deeppink</dfn></td>
+                  <td><code>#ff1493</code></td>
+                  <td><code>255,20,147</code></td>
+                </tr>
+                <tr>
+                  <td>39</td>
+                  <td style="background:deepskyblue"></td>
+                  <td><dfn id="deepskyblue">deepskyblue</dfn></td>
+                  <td><code>#00bfff</code></td>
+                  <td><code>0,191,255</code></td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                  <td style="background:dimgray"></td>
+                  <td><dfn id="dimgray">dimgray</dfn></td>
+                  <td><code>#696969</code></td>
+                  <td><code>105,105,105</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>41</td>
+                  <td style="background:dimgrey"></td>
+                  <td><dfn id="dimgrey">dimgrey</dfn></td>
+                  <td><code>#696969</code></td>
+                  <td><code>105,105,105</code></td>
+                </tr>
+                <tr>
+                  <td>42</td>
+                  <td style="background:dodgerblue"></td>
+                  <td><dfn id="dodgerblue">dodgerblue</dfn></td>
+                  <td><code>#1e90ff</code></td>
+                  <td><code>30,144,255</code></td>
+                </tr>
+                <tr>
+                  <td>43</td>
+                  <td style="background:firebrick"></td>
+                  <td><dfn id="firebrick">firebrick</dfn></td>
+                  <td><code>#b22222</code></td>
+                  <td><code>178,34,34</code></td>
+                </tr>
+                <tr>
+                  <td>44</td>
+                  <td style="background:floralwhite"></td>
+                  <td><dfn id="floralwhite">floralwhite</dfn></td>
+                  <td><code>#fffaf0</code></td>
+                  <td><code>255,250,240</code></td>
+                </tr>
+                <tr>
+                  <td>45</td>
+                  <td style="background:forestgreen"></td>
+                  <td><dfn id="forestgreen">forestgreen</dfn></td>
+                  <td><code>#228b22</code></td>
+                  <td><code>34,139,34</code></td>
+                </tr>
+                <tr>
+                  <td>46</td>
+                  <td style="background:gainsboro"></td>
+                  <td><dfn id="gainsboro">gainsboro</dfn></td>
+                  <td><code>#dcdcdc</code></td>
+                  <td><code>220,220,220</code></td>
+                </tr>
+                <tr>
+                  <td>47</td>
+                  <td style="background:ghostwhite"></td>
+                  <td><dfn id="ghostwhite">ghostwhite</dfn></td>
+                  <td><code>#f8f8ff</code></td>
+                  <td><code>248,248,255</code></td>
+                </tr>
+                <tr>
+                  <td>48</td>
+                  <td style="background:gold"></td>
+                  <td><dfn id="gold">gold</dfn></td>
+                  <td><code>#ffd700</code></td>
+                  <td><code>255,215,0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>49</td>
+                  <td style="background:goldenrod"></td>
+                  <td><dfn id="goldenrod">goldenrod</dfn></td>
+                  <td><code>#daa520</code></td>
+                  <td><code>218,165,32</code></td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td style="background:greenyellow"></td>
+                  <td><dfn id="greenyellow">greenyellow</dfn></td>
+                  <td><code>#adff2f</code></td>
+                  <td><code>173,255,47</code></td>
+                </tr>
+                <tr>
+                  <td>51</td>
+                  <td style="background:grey"></td>
+                  <td><dfn id="grey">grey</dfn></td>
+                  <td><code>#808080</code></td>
+                  <td><code>128,128,128</code></td>
+                </tr>
+                <tr>
+                  <td>52</td>
+                  <td style="background:honeydew"></td>
+                  <td><dfn id="honeydew">honeydew</dfn></td>
+                  <td><code>#f0fff0</code></td>
+                  <td><code>240,255,240</code></td>
+                </tr>
+                <tr>
+                  <td>53</td>
+                  <td style="background:hotpink"></td>
+                  <td><dfn id="hotpink">hotpink</dfn></td>
+                  <td><code>#ff69b4</code></td>
+                  <td><code>255,105,180</code></td>
+                </tr>
+                <tr>
+                  <td>54</td>
+                  <td style="background:indianred"></td>
+                  <td><dfn id="indianred">indianred</dfn></td>
+                  <td><code>#cd5c5c</code></td>
+                  <td><code>205,92,92</code></td>
+                </tr>
+                <tr>
+                  <td>55</td>
+                  <td style="background:indigo"></td>
+                  <td><dfn id="indigo">indigo</dfn></td>
+                  <td><code>#4b0082</code></td>
+                  <td><code>75,0,130</code></td>
+                </tr>
+                <tr>
+                  <td>56</td>
+                  <td style="background:ivory"></td>
+                  <td><dfn id="ivory">ivory</dfn></td>
+                  <td><code>#fffff0</code></td>
+                  <td><code>255,255,240</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>57</td>
+                  <td style="background:khaki"></td>
+                  <td><dfn id="khaki">khaki</dfn></td>
+                  <td><code>#f0e68c</code></td>
+                  <td><code>240,230,140</code></td>
+                </tr>
+                <tr>
+                  <td>58</td>
+                  <td style="background:lavender"></td>
+                  <td><dfn id="lavender">lavender</dfn></td>
+                  <td><code>#e6e6fa</code></td>
+                  <td><code>230,230,250</code></td>
+                </tr>
+                <tr>
+                  <td>59</td>
+                  <td style="background:lavenderblush"></td>
+                  <td><dfn id="lavenderblush">lavenderblush</dfn></td>
+                  <td><code>#fff0f5</code></td>
+                  <td><code>255,240,245</code></td>
+                </tr>
+                <tr>
+                  <td>60</td>
+                  <td style="background:lawngreen"></td>
+                  <td><dfn id="lawngreen">lawngreen</dfn></td>
+                  <td><code>#7cfc00</code></td>
+                  <td><code>124,252,0</code></td>
+                </tr>
+                <tr>
+                  <td>61</td>
+                  <td style="background:lemonchiffon"></td>
+                  <td><dfn id="lemonchiffon">lemonchiffon</dfn></td>
+                  <td><code>#fffacd</code></td>
+                  <td><code>255,250,205</code></td>
+                </tr>
+                <tr>
+                  <td>62</td>
+                  <td style="background:lightblue"></td>
+                  <td><dfn id="lightblue">lightblue</dfn></td>
+                  <td><code>#add8e6</code></td>
+                  <td><code>173,216,230</code></td>
+                </tr>
+                <tr>
+                  <td>63</td>
+                  <td style="background:lightcoral"></td>
+                  <td><dfn id="lightcoral">lightcoral</dfn></td>
+                  <td><code>#f08080</code></td>
+                  <td><code>240,128,128</code></td>
+                </tr>
+                <tr>
+                  <td>64</td>
+                  <td style="background:lightcyan"></td>
+                  <td><dfn id="lightcyan">lightcyan</dfn></td>
+                  <td><code>#e0ffff</code></td>
+                  <td><code>224,255,255</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>65</td>
+                  <td style="background:lightgoldenrodyellow"></td>
+                  <td><dfn id="lightgoldenrodyellow">lightgoldenrodyellow</dfn></td>
+                  <td><code>#fafad2</code></td>
+                  <td><code>250,250,210</code></td>
+                </tr>
+                <tr>
+                  <td>66</td>
+                  <td style="background:lightgray"></td>
+                  <td><dfn id="lightgray">lightgray</dfn></td>
+                  <td><code>#d3d3d3</code></td>
+                  <td><code>211,211,211</code></td>
+                </tr>
+                <tr>
+                  <td>67</td>
+                  <td style="background:lightgreen"></td>
+                  <td><dfn id="lightgreen">lightgreen</dfn></td>
+                  <td><code>#90ee90</code></td>
+                  <td><code>144,238,144</code></td>
+                </tr>
+                <tr>
+                  <td>68</td>
+                  <td style="background:lightgrey"></td>
+                  <td><dfn id="lightgrey">lightgrey</dfn></td>
+                  <td><code>#d3d3d3</code></td>
+                  <td><code>211,211,211</code></td>
+                </tr>
+                <tr>
+                  <td>69</td>
+                  <td style="background:lightpink"></td>
+                  <td><dfn id="lightpink">lightpink</dfn></td>
+                  <td><code>#ffb6c1</code></td>
+                  <td><code>255,182,193</code></td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                  <td style="background:lightsalmon"></td>
+                  <td><dfn id="lightsalmon">lightsalmon</dfn></td>
+                  <td><code>#ffa07a</code></td>
+                  <td><code>255,160,122</code></td>
+                </tr>
+                <tr>
+                  <td>71</td>
+                  <td style="background:lightseagreen"></td>
+                  <td><dfn id="lightseagreen">lightseagreen</dfn></td>
+                  <td><code>#20b2aa</code></td>
+                  <td><code>32,178,170</code></td>
+                </tr>
+                <tr>
+                  <td>72</td>
+                  <td style="background:lightskyblue"></td>
+                  <td><dfn id="lightskyblue">lightskyblue</dfn></td>
+                  <td><code>#87cefa</code></td>
+                  <td><code>135,206,250</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>73</td>
+                  <td style="background:lightslategray"></td>
+                  <td><dfn id="lightslategray">lightslategray</dfn></td>
+                  <td><code>#778899</code></td>
+                  <td><code>119,136,153</code></td>
+                </tr>
+                <tr>
+                  <td>74</td>
+                  <td style="background:lightslategrey"></td>
+                  <td><dfn id="lightslategrey">lightslategrey</dfn></td>
+                  <td><code>#778899</code></td>
+                  <td><code>119,136,153</code></td>
+                </tr>
+                <tr>
+                  <td>75</td>
+                  <td style="background:lightsteelblue"></td>
+                  <td><dfn id="lightsteelblue">lightsteelblue</dfn></td>
+                  <td><code>#b0c4de</code></td>
+                  <td><code>176,196,222</code></td>
+                </tr>
+                <tr>
+                  <td>76</td>
+                  <td style="background:lightyellow"></td>
+                  <td><dfn id="lightyellow">lightyellow</dfn></td>
+                  <td><code>#ffffe0</code></td>
+                  <td><code>255,255,224</code></td>
+                </tr>
+                <tr>
+                  <td>77</td>
+                  <td style="background:limegreen"></td>
+                  <td><dfn id="limegreen">limegreen</dfn></td>
+                  <td><code>#32cd32</code></td>
+                  <td><code>50,205,50</code></td>
+                </tr>
+                <tr>
+                  <td>78</td>
+                  <td style="background:linen"></td>
+                  <td><dfn id="linen">linen</dfn></td>
+                  <td><code>#faf0e6</code></td>
+                  <td><code>250,240,230</code></td>
+                </tr>
+                <tr>
+                  <td>79</td>
+                  <td style="background:magenta"></td>
+                  <td><dfn id="magenta">magenta</dfn></td>
+                  <td><code>#ff00ff</code></td>
+                  <td><code>255,0,255</code></td>
+                </tr>
+                <tr>
+                  <td>80</td>
+                  <td style="background:mediumaquamarine"></td>
+                  <td><dfn id="mediumaquamarine">mediumaquamarine</dfn></td>
+                  <td><code>#66cdaa</code></td>
+                  <td><code>102,205,170</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>81</td>
+                  <td style="background:mediumblue"></td>
+                  <td><dfn id="mediumblue">mediumblue</dfn></td>
+                  <td><code>#0000cd</code></td>
+                  <td><code>0,0,205</code></td>
+                </tr>
+                <tr>
+                  <td>82</td>
+                  <td style="background:mediumorchid"></td>
+                  <td><dfn id="mediumorchid">mediumorchid</dfn></td>
+                  <td><code>#ba55d3</code></td>
+                  <td><code>186,85,211</code></td>
+                </tr>
+                <tr>
+                  <td>83</td>
+                  <td style="background:mediumpurple"></td>
+                  <td><dfn id="mediumpurple">mediumpurple</dfn></td>
+                  <td><code>#9370db</code></td>
+                  <td><code>147,112,219</code></td>
+                </tr>
+                <tr>
+                  <td>84</td>
+                  <td style="background:mediumseagreen"></td>
+                  <td><dfn id="mediumseagreen">mediumseagreen</dfn></td>
+                  <td><code>#3cb371</code></td>
+                  <td><code>60,179,113</code></td>
+                </tr>
+                <tr>
+                  <td>85</td>
+                  <td style="background:mediumslateblue"></td>
+                  <td><dfn id="mediumslateblue">mediumslateblue</dfn></td>
+                  <td><code>#7b68ee</code></td>
+                  <td><code>123,104,238</code></td>
+                </tr>
+                <tr>
+                  <td>86</td>
+                  <td style="background:mediumspringgreen"></td>
+                  <td><dfn id="mediumspringgreen">mediumspringgreen</dfn></td>
+                  <td><code>#00fa9a</code></td>
+                  <td><code>0,250,154</code></td>
+                </tr>
+                <tr>
+                  <td>87</td>
+                  <td style="background:mediumturquoise"></td>
+                  <td><dfn id="mediumturquoise">mediumturquoise</dfn></td>
+                  <td><code>#48d1cc</code></td>
+                  <td><code>72,209,204</code></td>
+                </tr>
+                <tr>
+                  <td>88</td>
+                  <td style="background:mediumvioletred"></td>
+                  <td><dfn id="mediumvioletred">mediumvioletred</dfn></td>
+                  <td><code>#c71585</code></td>
+                  <td><code>199,21,133</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>89</td>
+                  <td style="background:midnightblue"></td>
+                  <td><dfn id="midnightblue">midnightblue</dfn></td>
+                  <td><code>#191970</code></td>
+                  <td><code>25,25,112</code></td>
+                </tr>
+                <tr>
+                  <td>90</td>
+                  <td style="background:mintcream"></td>
+                  <td><dfn id="mintcream">mintcream</dfn></td>
+                  <td><code>#f5fffa</code></td>
+                  <td><code>245,255,250</code></td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td style="background:mistyrose"></td>
+                  <td><dfn id="mistyrose">mistyrose</dfn></td>
+                  <td><code>#ffe4e1</code></td>
+                  <td><code>255,228,225</code></td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td style="background:moccasin"></td>
+                  <td><dfn id="moccasin">moccasin</dfn></td>
+                  <td><code>#ffe4b5</code></td>
+                  <td><code>255,228,181</code></td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td style="background:navajowhite"></td>
+                  <td><dfn id="navajowhite">navajowhite</dfn></td>
+                  <td><code>#ffdead</code></td>
+                  <td><code>255,222,173</code></td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td style="background:oldlace"></td>
+                  <td><dfn id="oldlace">oldlace</dfn></td>
+                  <td><code>#fdf5e6</code></td>
+                  <td><code>253,245,230</code></td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td style="background:olivedrab"></td>
+                  <td><dfn id="olivedrab">olivedrab</dfn></td>
+                  <td><code>#6b8e23</code></td>
+                  <td><code>107,142,35</code></td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td style="background:orange"></td>
+                  <td><dfn id="orange">orange</dfn></td>
+                  <td><code>#ffa500</code></td>
+                  <td><code>255,165,0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td style="background:orangered"></td>
+                  <td><dfn id="orangered">orangered</dfn></td>
+                  <td><code>#ff4500</code></td>
+                  <td><code>255,69,0</code></td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td style="background:orchid"></td>
+                  <td><dfn id="orchid">orchid</dfn></td>
+                  <td><code>#da70d6</code></td>
+                  <td><code>218,112,214</code></td>
+                </tr>
+                <tr>
+                  <td>99</td>
+                  <td style="background:palegoldenrod"></td>
+                  <td><dfn id="palegoldenrod">palegoldenrod</dfn></td>
+                  <td><code>#eee8aa</code></td>
+                  <td><code>238,232,170</code></td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td style="background:palegreen"></td>
+                  <td><dfn id="palegreen">palegreen</dfn></td>
+                  <td><code>#98fb98</code></td>
+                  <td><code>152,251,152</code></td>
+                </tr>
+                <tr>
+                  <td>101</td>
+                  <td style="background:paleturquoise"></td>
+                  <td><dfn id="paleturquoise">paleturquoise</dfn></td>
+                  <td><code>#afeeee</code></td>
+                  <td><code>175,238,238</code></td>
+                </tr>
+                <tr>
+                  <td>102</td>
+                  <td style="background:palevioletred"></td>
+                  <td><dfn id="palevioletred">palevioletred</dfn></td>
+                  <td><code>#db7093</code></td>
+                  <td><code>219,112,147</code></td>
+                </tr>
+                <tr>
+                  <td>103</td>
+                  <td style="background:papayawhip"></td>
+                  <td><dfn id="papayawhip">papayawhip</dfn></td>
+                  <td><code>#ffefd5</code></td>
+                  <td><code>255,239,213</code></td>
+                </tr>
+                <tr>
+                  <td>104</td>
+                  <td style="background:peachpuff"></td>
+                  <td><dfn id="peachpuff">peachpuff</dfn></td>
+                  <td><code>#ffdab9</code></td>
+                  <td><code>255,218,185</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>105</td>
+                  <td style="background:peru"></td>
+                  <td><dfn id="peru">peru</dfn></td>
+                  <td><code>#cd853f</code></td>
+                  <td><code>205,133,63</code></td>
+                </tr>
+                <tr>
+                  <td>106</td>
+                  <td style="background:pink"></td>
+                  <td><dfn id="pink">pink</dfn></td>
+                  <td><code>#ffc0cb</code></td>
+                  <td><code>255,192,203</code></td>
+                </tr>
+                <tr>
+                  <td>107</td>
+                  <td style="background:plum"></td>
+                  <td><dfn id="plum">plum</dfn></td>
+                  <td><code>#dda0dd</code></td>
+                  <td><code>221,160,221</code></td>
+                </tr>
+                <tr>
+                  <td>108</td>
+                  <td style="background:powderblue"></td>
+                  <td><dfn id="powderblue">powderblue</dfn></td>
+                  <td><code>#b0e0e6</code></td>
+                  <td><code>176,224,230</code></td>
+                </tr>
+                <tr>
+                  <td>109</td>
+                  <td style="background:rosybrown"></td>
+                  <td><dfn id="rosybrown">rosybrown</dfn></td>
+                  <td><code>#bc8f8f</code></td>
+                  <td><code>188,143,143</code></td>
+                </tr>
+                <tr>
+                  <td>110</td>
+                  <td style="background:royalblue"></td>
+                  <td><dfn id="royalblue">royalblue</dfn></td>
+                  <td><code>#4169e1</code></td>
+                  <td><code>65,105,225</code></td>
+                </tr>
+                <tr>
+                  <td>111</td>
+                  <td style="background:saddlebrown"></td>
+                  <td><dfn id="saddlebrown">saddlebrown</dfn></td>
+                  <td><code>#8b4513</code></td>
+                  <td><code>139,69,19</code></td>
+                </tr>
+                <tr>
+                  <td>112</td>
+                  <td style="background:salmon"></td>
+                  <td><dfn id="salmon">salmon</dfn></td>
+                  <td><code>#fa8072</code></td>
+                  <td><code>250,128,114</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>113</td>
+                  <td style="background:sandybrown"></td>
+                  <td><dfn id="sandybrown">sandybrown</dfn></td>
+                  <td><code>#f4a460</code></td>
+                  <td><code>244,164,96</code></td>
+                </tr>
+                <tr>
+                  <td>114</td>
+                  <td style="background:seagreen"></td>
+                  <td><dfn id="seagreen">seagreen</dfn></td>
+                  <td><code>#2e8b57</code></td>
+                  <td><code>46,139,87</code></td>
+                </tr>
+                <tr>
+                  <td>115</td>
+                  <td style="background:seashell"></td>
+                  <td><dfn id="seashell">seashell</dfn></td>
+                  <td><code>#fff5ee</code></td>
+                  <td><code>255,245,238</code></td>
+                </tr>
+                <tr>
+                  <td>116</td>
+                  <td style="background:sienna"></td>
+                  <td><dfn id="sienna">sienna</dfn></td>
+                  <td><code>#a0522d</code></td>
+                  <td><code>160,82,45</code></td>
+                </tr>
+                <tr>
+                  <td>117</td>
+                  <td style="background:skyblue"></td>
+                  <td><dfn id="skyblue">skyblue</dfn></td>
+                  <td><code>#87ceeb</code></td>
+                  <td><code>135,206,235</code></td>
+                </tr>
+                <tr>
+                  <td>118</td>
+                  <td style="background:slateblue"></td>
+                  <td><dfn id="slateblue">slateblue</dfn></td>
+                  <td><code>#6a5acd</code></td>
+                  <td><code>106,90,205</code></td>
+                </tr>
+                <tr>
+                  <td>119</td>
+                  <td style="background:slategray"></td>
+                  <td><dfn id="slategray">slategray</dfn></td>
+                  <td><code>#708090</code></td>
+                  <td><code>112,128,144</code></td>
+                </tr>
+                <tr>
+                  <td>120</td>
+                  <td style="background:slategrey"></td>
+                  <td><dfn id="slategrey">slategrey</dfn></td>
+                  <td><code>#708090</code></td>
+                  <td><code>112,128,144</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>121</td>
+                  <td style="background:snow"></td>
+                  <td><dfn id="snow">snow</dfn></td>
+                  <td><code>#fffafa</code></td>
+                  <td><code>255,250,250</code></td>
+                </tr>
+                <tr>
+                  <td>122</td>
+                  <td style="background:springgreen"></td>
+                  <td><dfn id="springgreen">springgreen</dfn></td>
+                  <td><code>#00ff7f</code></td>
+                  <td><code>0,255,127</code></td>
+                </tr>
+                <tr>
+                  <td>123</td>
+                  <td style="background:steelblue"></td>
+                  <td><dfn id="steelblue">steelblue</dfn></td>
+                  <td><code>#4682b4</code></td>
+                  <td><code>70,130,180</code></td>
+                </tr>
+                <tr>
+                  <td>124</td>
+                  <td style="background:tan"></td>
+                  <td><dfn id="tan">tan</dfn></td>
+                  <td><code>#d2b48c</code></td>
+                  <td><code>210,180,140</code></td>
+                </tr>
+                <tr>
+                  <td>125</td>
+                  <td style="background:thistle"></td>
+                  <td><dfn id="thistle">thistle</dfn></td>
+                  <td><code>#d8bfd8</code></td>
+                  <td><code>216,191,216</code></td>
+                </tr>
+                <tr>
+                  <td>126</td>
+                  <td style="background:tomato"></td>
+                  <td><dfn id="tomato">tomato</dfn></td>
+                  <td><code>#ff6347</code></td>
+                  <td><code>255,99,71</code></td>
+                </tr>
+                <tr>
+                  <td>127</td>
+                  <td style="background:turquoise"></td>
+                  <td><dfn id="turquoise">turquoise</dfn></td>
+                  <td><code>#40e0d0</code></td>
+                  <td><code>64,224,208</code></td>
+                </tr>
+                <tr>
+                  <td>128</td>
+                  <td style="background:violet"></td>
+                  <td><dfn id="violet">violet</dfn></td>
+                  <td><code>#ee82ee</code></td>
+                  <td><code>238,130,238</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <table class="font-xxs">
+              <tbody>
+                <tr>
+                  <th>No.</th>
+                  <th>Color</th>
+                  <th>Name</th>
+                  <th>Hex</th>
+                  <th>RGB</th>
+                </tr>
+                <tr>
+                  <td>129</td>
+                  <td style="background:wheat"></td>
+                  <td><dfn id="wheat">wheat</dfn></td>
+                  <td><code>#f5deb3</code></td>
+                  <td><code>245,222,179</code></td>
+                </tr>
+                <tr>
+                  <td>130</td>
+                  <td style="background:whitesmoke"></td>
+                  <td><dfn id="whitesmoke">whitesmoke</dfn></td>
+                  <td><code>#f5f5f5</code></td>
+                  <td><code>245,245,245</code></td>
+                </tr>
+                <tr>
+                  <td>131</td>
+                  <td style="background:yellowgreen"></td>
+                  <td><dfn id="yellowgreen">yellowgreen</dfn></td>
+                  <td><code>#9acd32</code></td>
+                  <td><code>154,205,50</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 6: Write a keyword color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-06.html">exercises-start/exercise-214-02-06.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>orange</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">orange</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-06.html">exercises-finished/exercise-214-02-06.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>&lt;deprecated-system-color&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS2 allowed authors to specify colors in a manner that <b>integrates them into the operating system’s graphic environment</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As of CSS Color Module Level 3, these System Colors were defined as <b>deprecated</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that these colors <b>may become obsolete</b> (unusable) in future versions of CSS.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>So, you should <b>avoid using these colors</b> where possible.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">ActiveBorder</span>; }
+p { color: <span class="codeHighlight">ActiveCaption</span>; }
+p { color: <span class="codeHighlight">AppWorkspace</span>; }
+p { color: <span class="codeHighlight">Background</span>; }
+p { color: <span class="codeHighlight">ButtonFace</span>; }
+p { color: <span class="codeHighlight">ButtonHighlight</span>; }
+p { color: <span class="codeHighlight">ButtonShadow</span>; }
+p { color: <span class="codeHighlight">ButtonText</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">CaptionText</span>; }
+p { color: <span class="codeHighlight">GrayText</span>; }
+p { color: <span class="codeHighlight">Highlight</span>; }
+p { color: <span class="codeHighlight">HighlightText</span>; }
+p { color: <span class="codeHighlight">InactiveBorder</span>; }
+p { color: <span class="codeHighlight">InactiveCaption</span>; }
+p { color: <span class="codeHighlight">InactiveCaptionText</span>; }
+p { color: <span class="codeHighlight">InfoBackground</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">InfoText</span>; }
+p { color: <span class="codeHighlight">Menu</span>; }
+p { color: <span class="codeHighlight">MenuText</span>; }
+p { color: <span class="codeHighlight">Scrollbar</span>; }
+p { color: <span class="codeHighlight">ThreeDDarkShadow</span>; }
+p { color: <span class="codeHighlight">ThreeDFace</span>; }
+p { color: <span class="codeHighlight">ThreeDHighlight</span>; }
+p { color: <span class="codeHighlight">ThreeDLightShadow</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: <span class="codeHighlight">ThreeDShadow</span>; }
+p { color: <span class="codeHighlight">Window</span>; }
+p { color: <span class="codeHighlight">WindowFrame</span>; }
+p { color: <span class="codeHighlight">WindowText</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 7: Write a deprecated system color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-07.html">exercises-start/exercise-214-02-07.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>Highlight</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">Highlight</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-07.html">exercises-finished/exercise-214-02-07.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>currentcolor</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS1 and CSS2 defined the initial value of the <code>border-color</code> property to be <b>“the value of the <code>color</code> property”</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, there is no corresponding keyword, which means that there is <b>no way to specify a</b> <code>border-color</code> to match the <code>color</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* border-color issue */</span>
+p {
+  color: red;
+  border-width: 1px;
+  border-style: solid;
+  border-color: <span class="codeHighlight">"value of color property"</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS3 allows us to the <code>currentColor</code> keyword <b>for this purpose</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* currentColor example */</span>
+p {
+  color: red;
+  border-width: 1px;
+  border-style: solid;
+  border-color: <span class="codeHighlight">currentColor</span>;
+}
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 8: Write a currentcolor color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-08.html">exercises-start/exercise-214-02-08.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>color</code> value of <code>orange</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Add a declaration</b> to this rule that is <code>border: 1px solid currentcolor</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  <span class="codeHighlight">color: orange;
+  border: 1px solid currentcolor;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>color</code> value of <code>blue</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Add a declaration</b> to this rule that is <code>border: 1px solid</code> - without a color value present.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  <span class="codeHighlight">color: blue;
+  border: 1px solid;</span>
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in both cases the border is <b>the same color as the text</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-08.html">exercises-finished/exercise-214-02-08.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 3</h6>
+            <h3>transparent</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>CSS1</b> introduced the <code>transparent</code> value for the <code>background-color</code> property.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+
+<span class="codeComment">/* CSS1 transparency */</span>
+p { background-color: <span class="codeHighlight">transparent</span>; }
+
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>CSS2</b> allowed the <code>transparent</code> value to be applied to the <code>border-color</code> property.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS2 transparency */</span>
+p { border-color: <span class="codeHighlight">transparent</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>CSS3</b> allows the <code>transparent</code> keyword to be applied to any property that accepts a <b>color</b> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CSS3 transparency */</span>
+p { color: <span class="codeHighlight">transparent</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 9: Write a transparent color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-09.html">exercises-start/exercise-214-02-09.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>color</code> of <code>transparent</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  color: <span class="codeHighlight">transparent</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that the text <b>has now become invisible</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-09.html">exercises-finished/exercise-214-02-09.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Color Module Level 4</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the <b>CSS Color Module Level 4</b> specification, the <code>&lt;color&gt;</code> non-property data type is defined as:</p>
+          </section>
+
+          <section data-background="#222">
+<pre class="font-xxs"><code contenteditable="true"><span class="codeHighlight">&lt;color&gt;</span> =
+  &lt;hex-color&gt; |
+  &lt;rgb()&gt; |
+  &lt;rgba()&gt; |
+  &lt;hsl()&gt; |
+  &lt;hsla()&gt; |
+  &lt;hwb()&gt; |
+  &lt;lab()&gt; |
+  &lt;lch()&gt; |
+  &lt;gray()&gt; |
+  &lt;device-cmyk()&gt; |
+  &lt;color-mod()&gt; |
+  &lt;named-color&gt; |
+  &lt;deprecated-system-color&gt; |
+  currentcolor |
+  transparent
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Let’s look at the options <b>that have changed</b> from Level 3 or <b>have been introduced</b> in Level 4.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;hex-color&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS Color Module Level 4, <b>4 and 8-digit hex colors</b> have been added, to specify transparency.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hex-color&gt;</span> = 
+  #[ rgba | rrggbbaa ]
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>For 8-digit notation, the first six digits are <b>interpreted identically to the 6-digit notation</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The last two digits, interpreted as a hexadecimal number, <b>specify the alpha channel of the color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>00</code> represents a <b>fully transparent color</b>, and <code>ff</code> represents a fully opaque color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: #FFAA00<span class="codeHighlight">99</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The 4-digit notation is a <b>shorter variant of the 8-digit notation</b>. This notation is expanded in the same way as the 3-digit notation.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The last digit <b>specifies the alpha channel of the color</b> and is interpreted as a hexadecimal number.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For example, <code>0</code> represents a <b>fully transparent color</b>, and <code>f</code> represents a fully opaque color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p { color: #FA0<span class="codeHighlight">9</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 10: Write a level 4 hex color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-10.html">exercises-start/exercise-214-02-10.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>#FFA50077</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">#FFA50077</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>#0ff7</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">#0ff7</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-10.html">exercises-finished/exercise-214-02-10.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;rgb()&gt; and &lt;rgba()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS Color Module Level 4, <code>rgb()</code> and <code>rgba()</code> <b>are now aliases of each other</b> (both have an optional alpha).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Both <code>rgb()</code> and <code>rgba()</code> have a new syntax consisting of three <b>space-separated</b> arguments and an optional slash-separated opacity.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;rgb()&gt;</span> =
+  rgb( [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ] [ / &lt;alpha-value&gt; ]? )
+
+<span class="codeHighlight">&lt;rgba()&gt;</span> =
+  rgba( [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ] [ / &lt;alpha-value&gt; ]? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;alpha-value&gt;</code> <b>now accepts</b> <code>&lt;percentage&gt;</code> as well as <code>&lt;number&gt;</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;alpha-value&gt;</span> =
+  &lt;number&gt; | &lt;percentage&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are some examples using the <code>rgb()</code> <b>version only</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Three values only */</span>
+p { color: <span class="codeHighlight">rgb(100% 100% 100%)</span>; }
+p { color: <span class="codeHighlight">rgb(255 255 255)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">rgb(100% 100% 100% / .5)</span>; }
+p { color: <span class="codeHighlight">rgb(255 255 255 / .5)</span>; }
+
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">rgb(100% 100% 100% / 50%)</span>; }
+p { color: <span class="codeHighlight">rgb(255 255 255 / 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 11: Write some level 4 RGB colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will only work if you are using the <b>very latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-11.html">exercises-start/exercise-214-02-11.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>rgb(255 165 0)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that there are <b>no commas between each of the values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">rgb(255 165 0)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>rgb(100% 65% 0%)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">rgb(100% 65% 0%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>rgb(255 165 0 / .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that there is <b>a slash separating</b> the three RGB values and the alpha-transparency value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this case, the alpha-transparency is set with <b>a number value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">rgb(255 165 0 / .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style <code>example4</code> with a <code>background-color</code> value of <code>rgb(255 165 0 / 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example4 {
+  background-color: <span class="codeHighlight">rgb(255 165 0 / 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-11.html">exercises-finished/exercise-214-02-11.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;hsl()&gt; and &lt;hsla()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In CSS Color Module Level 4, <code>hsl()</code> and <code>hsla()</code> <b>are now aliases of each other</b> (both have an optional alpha).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Both <code>hsl()</code> and <code>hsla()</code> have a new syntax consisting of three <b>space-separated</b> arguments and an optional slash-separated opacity.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hsl()&gt;</span> =
+  hsl( &lt;hue&gt; &lt;percentage&gt; &lt;percentage&gt; [ / &lt;alpha-value&gt; ]? )
+
+<span class="codeHighlight">&lt;hsla()&gt;</span> =
+  hsla( &lt;hue&gt; &lt;percentage&gt; &lt;percentage&gt; [ / &lt;alpha-value&gt; ]? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Both <code>hsl()</code> and <code>hsla()</code> functions <b>now accept</b> <code>&lt;angle&gt;</code> as well as <code>&lt;number&gt;</code> for hues.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hue&gt;</span> =
+  &lt;number&gt; | &lt;angle&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are some examples using the <code>hsl()</code> <b>version only</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Hue as a number */</span>
+p { color: <span class="codeHighlight">hsl(280 100% 50%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Hue in degrees */</span>
+p { color: <span class="codeHighlight">hsl(280deg 100% 50%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">hsl(280 100% 50% / .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">hsl(280 100% 50% / 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 12: Write some level 4 HSL colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will only work if you are using the <b>very latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-12.html">exercises-start/exercise-214-02-12.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>hsl(39 100% 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that there are <b>no commas between each of the values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">hsl(39 100% 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>hsl(39deg 100% 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that <code>hue</code> value is <b>written as an angle</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">hsl(39deg 100% 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>hsl(39 100% 50% / .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that there is <b>a slash separating</b> the three HSL values and the alpha-transparency value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In this case, the alpha-transparency is set with <b>a number value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">hsl(39 100% 50% / .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style <code>example4</code> with a <code>background-color</code> value of <code>hsl(39 100% 50% / 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example4 {
+  background-color: <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-12.html">exercises-finished/exercise-214-02-12.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;hwb()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>&lt;hwb()&gt;</code> describes colors with a starting <b>hue</b>, then a degree of <b>whiteness</b> and <b>blackness</b> to mix into the base <b>hue</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>hwb()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">hwb()</span> =
+  hwb( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt; [, &lt;alpha-value&gt; ]? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first argument specifies the <b>hue</b>, and is interpreted identically to <code>hsl()</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Hue</b> can be defined as an <code>&lt;angle&gt;</code> or a <code>&lt;number&gt;</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;hue&gt;</span> =
+  &lt;number&gt; | &lt;angle&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second argument specifies <b>the amount of white to mix in</b>, as a percentage from <code>0%</code> (no whiteness) to <code>100%</code> (full whiteness).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third argument specifies <b>the amount of black to mix in</b>, also from <code>0%</code> (no blackness) to <code>100%</code> (full blackness).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The fourth argument specifies <b>the alpha channel of the color</b>. If omitted, it defaults to <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are <b>some examples</b> using <code>hwb()</code>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Hue as a number */</span>
+p { color: <span class="codeHighlight">hwb(280, 100%, 50%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Hue in degrees */</span>
+p { color: <span class="codeHighlight">hwb(280deg, 100%, 50%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">hwb(280, 100%, 50%, .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">hwb(280, 100%, 50%, 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 13: Write some level 4 HWB colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will probably <b>not work in even the latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a> at this point.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-13.html">exercises-start/exercise-214-02-13.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>hwb(39, 0, 0)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">hwb(39, 0, 0)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>hwb(39deg, 0, 0)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that <code>hue</code> value is <b>written as an angle</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">hwb(39deg, 0, 0)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>hwb(39, 0, 0, .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a number value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">hwb(39, 0, 0, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style <code>example4</code> with a <code>background-color</code> value of <code>hwb(39, 0, 0, 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example4 {
+  background-color: <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-13.html">exercises-finished/exercise-214-02-13.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;lab()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS allows colors to be directly expressed in <b>Lab</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/lab_01.svg" alt="Lab color diagram">
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>lab()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">lab()</span> = 
+  lab( &lt;number&gt; &lt;number&gt; &lt;number&gt; [, &lt;alpha-value&gt;]?)
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first argument <code>(l)</code> specifies the <b>CIE Lightness</b>. <code>(l)</code> is constrained to the range between <code>0</code> and <code>100</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A value of <code>0</code> would produce the <b>darkest possible color</b>, and a value of <code>100%</code> would produce the <b>lightest possible color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second argument <code>(a)</code> specifies the <b>green to red color spectrum</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A positive number would produce a <b>redder color</b>, and a negative number would produce a <b>greener color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third argument <code>(b)</code> specifies the <b>blue to yellow color spectrum</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A positive number would produce a <b>yellower color</b>, and a negative number would produce a <b>bluer color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second <code>(a)</code> and third <code>(b)</code> values are theoretically unbounded. However, in practice, <b>they do not exceed positive or negative</b> <code>160</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is an <b>optional fourth alpha value</b>, separated by a comma. If omitted, it defaults to <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are <b>some examples</b> using <code>lab()</code>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Three values only */</span>
+p { color: <span class="codeHighlight">lab(75 24 79)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">lab(75 24 79, .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">lab(75 24 79, 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 14: Write some level 4 LAB colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will probably <b>not work in even the latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a> at this point.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-14.html">exercises-start/exercise-214-02-14.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>lab(75 24 79)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">lab(75 24 79)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>lab(75 24 79, .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a number value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">lab(75 24 79, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>lab(75 24 79, 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">lab(75 24 79, 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-14.html">exercises-finished/exercise-214-02-14.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;lch()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>CSS allows colors to be directly expressed in <b>lch</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/lab_02.svg" alt="Lch color diagram">
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>lch()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">lch()</span> = 
+  lch( &lt;number&gt; &lt;number&gt; &lt;number&gt; [, &lt;alpha-value&gt;]?)
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first argument <code>(l)</code> specifies the <b>CIE Lightness</b>. <code>(l)</code> is constrained to the range between <code>0</code> and <code>100</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A value of <code>0</code> would produce the <b>darkest possible color</b>, and a value of <code>100%</code> would produce the <b>lightest possible color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second argument <code>(c)</code> specifies the <b>chroma</b> or relative saturation of the color.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This <code>(c)</code> is an unsigned number, theoretically unbounded (but in practice <b>does not exceed</b> <code>230</code>).</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third argument <code>(h)</code> specifies the <b>hue</b> and is constrained to the range between <code>0</code> and <code>360</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is an <b>optional fourth alpha value</b>, separated by a comma. If omitted, it defaults to <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are <b>some examples</b> using <code>lch()</code>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Three values only */</span>
+p { color: <span class="codeHighlight">lch(75 82 73)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">lch(75 82 73, .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">lch(75 82 73, 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 15: Write some level 4 LCH colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will probably <b>not work in even the latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a> at this point.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-15.html">exercises-start/exercise-214-02-15.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>lch(75 82 73)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">lch(75 82 73)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>lch(75 82 73, .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a number value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">lch(75 82 73, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>lch(75 82 73, 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case, the alpha-transparency is set with <b>a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">lch(75 82 73, 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-15.html">exercises-finished/exercise-214-02-15.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;gray()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>gray()</code> functional notation simplifies a <b>fully desaturated color</b> so that only a single numerical parameter is required.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>gray()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">gray()</span> = 
+  gray( &lt;number&gt;  [, &lt;alpha-value&gt;]? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first argument specifies the shade of <b>gray</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second optional argument specifies the <b>alpha channel</b> of the gray. If omitted, it defaults to <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are <b>some examples</b> using <code>gray()</code>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Gray value only */</span>
+p { color: <span class="codeHighlight">gray(50)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color: <span class="codeHighlight">gray(50, .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color: <span class="codeHighlight">gray(50, 50%)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 16: Write a level 4 gray color</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will probably <b>not work in even the latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a> at this point.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-16.html">exercises-start/exercise-214-02-16.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>gray(30)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">gray(30)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-16.html">exercises-finished/exercise-214-02-16.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;device-cmyk()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>device-cmyk()</code> function allows authors to specify a color for <b>print-based media</b> where CMYK is required.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>device-cmyk()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">device-cmyk()</span> = 
+  device-cmyk( &lt;cmyk-component&gt;#{4} , &lt;alpha-value&gt;? , &lt;color&gt;? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><code>&lt;cmyk-component&gt;</code> requires <b>four comma-separated values</b> written in order for cyan, magenta, yellow, and black components.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These values can be specified as <b>numbers or percentages</b> value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;cmyk-component&gt;</span> =
+  &lt;number&gt; | &lt;percentage&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The fifth argument specifies an optional <b>alpha channel</b> of the color. If omitted, it defaults to <code>100%</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The sixth argument specifies an optional <b>fallback color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This argument is used when the user agent cannot <b>accurately transform the CMYK color to RGB</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Here are <b>some examples</b> using <code>device-cmyk()</code>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CMYK values as numbers */</span>
+p { color:
+  <span class="codeHighlight">device-cmyk(40, 50, 20, 60)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* CMYK values as percents */</span>
+p { color:
+  <span class="codeHighlight">device-cmyk(40%, 50%, 20%, 60%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a number */</span>
+p { color:
+  <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Alpha transparency as a percent */</span>
+p { color:
+  <span class="codeHighlight">device-cmyk(40, 50, 20, 60, 50%)</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Fallback color */</span>
+p { color:
+  <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5, red)</span>; }
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 17: Write some level 4 device-cmyk colors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that this exercise will probably <b>not work in even the latest browsers</b> such as <a href="https://www.google.com.au/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox nightly</a> at this point.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-02-17.html">exercises-start/exercise-214-02-17.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>background-color</code> value of <code>device-cmyk(40, 50, 20, 60)</code></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>background-color</code> value of <code>device-cmyk(40%, 50%, 20%, 60%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case the CMYK values are <b>written as percentage values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  background-color: <span class="codeHighlight">device-cmyk(40%, 50%, 20%, 60%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a third CSS rule</b> to style <code>example3</code> with a <code>background-color</code> value of <code>device-cmyk(40, 50, 20, 60, .5)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case the alpha-trasparancy value is <b>written as a number</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example3 {
+  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fourth CSS rule</b> to style <code>example4</code> with a <code>background-color</code> value of <code>device-cmyk(40, 50, 20, 60, 50%)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that in this case the alpha-trasparancy value is <b>written as a percentage</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example4 {
+  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, 50%)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a fifth CSS rule</b> to style <code>example5</code> with a <code>background-color</code> value of <code>device-cmyk(40, 50, 20, 60, .5, red)</code></p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Note that <b>a fallback color</b> has been added as the last value.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example5 {
+  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5, red)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-02-17.html">exercises-finished/exercise-214-02-17.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#444">
+            <h6>Color Module Level 4</h6>
+            <h3>&lt;color-mod()&gt;</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>When specifying a color scheme for a site, authors often want to produce <b>an array of colors that are related to a core color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>color-mod()</code> function takes an existing color and applies <b>zero or more “color adjusters”</b> to it.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This specifies how the color is <b>manipulated in some way</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The computed value of a <code>color-mod()</code> function is the color produced by <b>applying all the</b> <code>&lt;color-adjuster&gt;</code> <b>arguments</b> to the base color.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>syntax</b> of the <code>color-mod()</code> function is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">color-mod()</span> =
+  color-mod( [ &lt;color&gt; | &lt;hue&gt; ] &lt;color-adjuster&gt;* )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means you can define a base <code>color</code> or a <code>hue</code> with <b>zero or more</b> <code>&lt;color-adjuster&gt;</code> arguements.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Using a base color */</span>
+p { color:
+  color-mod(<span class="codeHighlight">pink</span> red(20); }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Using a base hue as a number */</span>
+p { color:
+  color-mod(<span class="codeHighlight">50</span> red(20); }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Using a base hue as an angle */</span>
+p { color:
+  color-mod(<span class="codeHighlight">20deg</span> red(20); }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Multiple color-adjusters */</span>
+p { color:
+  color-mod(50 <span class="codeHighlight">red(20) green(20)</span>); }
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The syntax for <code>&lt;color-adjuster&gt;</code> is <b>very complex</b> as there are a wide range of options.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>For this reason, the options <b>will be explored one at a time</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 1</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [red( | green( | blue( | alpha( | a(] ['+' | '-']? [&lt;number&gt; | &lt;percentage&gt;] )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <b>base color</b> in the following example is set to a <code>color</code> value of <code>pink</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This base color <b>can be adjusted</b> by the <code>red</code>, <code>green</code>, <code>blue</code>, <code>alpha</code> channels. There is also a shorthand alpha channel option <code>(a)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red()</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">green()</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blue()</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">alpha()</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">a()</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The adjustment values can be positive or negative <b>numbers or percentage values</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red(20)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red(+ 20)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red(- 20)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red(20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 2</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [red( | green( | blue( | alpha( | a(] '*' &lt;percentage&gt; )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>red</code>, <code>green</code>, <code>blue</code> and <code>alpha</code> channels can be <b>multiplied by a percentage value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">red(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">green(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blue(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">alpha(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">a(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 3</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  rgb( ['+' | '-'] [&lt;number&gt; | &lt;percentage&gt;]{3} )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This method allows you to <b>adjusts the base color</b> in the <code>red</code>, <code>green</code>, and <code>blue</code> channels simultaneously.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Three numbers or percentage values are <b>required</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first value adjusting the <b>red channel</b>, the second value adjusting the <b>green channel</b>, and the third value adjusting the <b>blue channel</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(20 15 5)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(20% 15% 5%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(+ 20 15 5)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(- 20 15 5)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 4</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  rgb( ['+' | '-'] &lt;hash-token&gt; )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This method also allows you to <b>adjusts the base color</b> in the <code>red</code>, <code>green</code>, and <code>blue</code> channels simultaneously.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>However, instead of using three numbers or percentage values, the three channels are <b>specified in hexadecimal format</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(#FFAA00)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(+ #FFAA00)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(- #FFAA00)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 5</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  rgb( '*' &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>red</code>, <code>green</code>, <code>blue</code> and <code>alpha</code> channels can be <b>multiplied by a percentage value</b> simultaneously.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 6</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [hue( | h(] ['+' | '-' | '*']? &lt;angle&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option sets or adjusts the <code>hue</code> <b>of the base color</b>, when base color is interpreted as an HSL color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue( 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(+ 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(- 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(* 20deg)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 7</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [saturation( | s(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option sets or adjusts the <code>saturation</code> <b>of the base color</b>, when base color is interpreted as an HSL or HWB color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>saturation</code> keyword can also be <b>written in shorthand form</b> <code>(s)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 8</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [lightness( | l(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option sets or adjusts the <code>lightness</code> <b>of the base color</b>, when base color is interpreted as an HSL or HWB color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>lightness</code> keyword can also be <b>written in shorthand form</b> <code>(l)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 9</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [whiteness( | w(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option sets or adjusts the <code>whiteness</code> <b>of the base color</b>, when base color is interpreted as an HSL or HWB color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>whiteness</code> keyword can also be <b>written in shorthand form</b> <code>(w)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 10</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  [blackness( | b(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option sets or adjusts the <b>blackness</b> of the base color, when base color is interpreted as an HSL or HWB color.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>blackness</code> keyword can also be <b>written in shorthand form</b> <code>(b)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(* 20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 11</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  tint( &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option mixes the base color with pure white to <b>produce a lighter version of the base color</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">tint(20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 12</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  shade( &lt;percentage&gt; ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option mixes the base color with pure black to <b>produce a darker version of the base color</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">shade(20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 13</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  blend( &lt;color&gt; &lt;percentage&gt; [rgb | hsl | hwb]? ) |
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option mixes the base color with the given color to <b>produce an intermediate color</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The final optional argument <b>specifies which color space to blend the colors in</b> - <code>rgb</code>, <code>hsl</code> or <code>hwb</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% rgb)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hsl)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hwb)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Option 14</h3>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color-adjuster&gt;</span> =
+  contrast( &lt;percentage&gt;? )
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This option finds a color that contrasts with the base color <b>sufficiently to satisfy accessibility guidelines</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">contrast(20%)</span><span class="codeComment">); }</span>
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
