@@ -94,6 +94,16 @@ a:active {
 
 
 /* ---------------------
+code
+-----------------------*/
+
+code {
+  color: #666;
+  font-family: consolas, courier, monospace;
+}
+
+
+/* ---------------------
 banner
 -----------------------*/
 

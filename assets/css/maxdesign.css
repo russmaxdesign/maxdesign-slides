@@ -69,6 +69,14 @@ h5 {
   line-height: 1;
 }
 
+h6 {
+  margin: 0;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-size: .7em;
+  line-height: 1;
+}
+
 section.has-dark-background,
 section.has-dark-background h1,
 section.has-dark-background h2,
@@ -340,9 +348,9 @@ menu
   right: 0;
   border-radius: 100px;
   padding: 10px 20px;
+  color: #999;
   background: #fff;
   font-size: 14px;
-  color: #999;
 }
 
 .menu a {
@@ -366,9 +374,9 @@ credits
 
 a.credit-link {
   display: inline-block;
+  border: none;;
   margin: 0 .5em 0 0;
   color: #999;
-  border: none
 }
 
 a.credit-link:hover {
@@ -386,11 +394,15 @@ classes
 -----------------------*/
 
 .font-sm {
-  font-size: 85%;
+  font-size: 85% !important;
 }
 
 .font-xs {
-  font-size: 70%;
+  font-size: 70% !important;
+}
+
+.font-xxs {
+  font-size: 60% !important;
 }
 
 .codeHighlight {
