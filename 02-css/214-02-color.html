@@ -60,15 +60,15 @@
           </section>
 
           <section data-background="#fff">
-            <p>The <code>color</code> property sets the <b>foreground color</b> of an element’s text content.</p>
+            <p>The <code>&lt;'color'&gt;</code> property sets the <b>foreground color</b> of an element’s text content.</p>
           </section>
 
           <section data-background="#fff">
-            <p>It also sets the <code>color</code> of the <code>text-decoration</code> <b>unless</b> <code>&lt;'text-decoration-color'&gt;</code> is defined by the user.</p>
+            <p>It also sets the color of the text decoration <b>unless</b> the <code>&lt;'text-decoration-color'&gt;</code> property has been defined.</p>
           </section>
 
           <section data-background="#fff">
-            <p>The CSS <code>color</code> property is <b>defined with the following syntax</b>:</p>
+            <p>The CSS <code>&lt;'color'&gt;</code> property is <b>defined with the following syntax</b>:</p>
           </section>
 
           <section data-background="#222">
@@ -79,7 +79,11 @@
           </section>
 
           <section data-background="#fff">
-            <p>In this syntax, <code>&lt;'color'&gt;</code> is a <b>property data type</b>. It is used if you want to define the color of some text content.</p>
+            <p><code>&lt;'color'&gt;</code> is a <b>property data type</b> - identified by the quotation marks around the word.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This property data type is used to <b>define the color of text content</b>.</p>
           </section>
 
           <section data-background="#222">
@@ -89,7 +93,11 @@ p { <span class="codeHighlight">color</span>: red; }
           </section>
 
           <section data-background="#fff">
-            <p><code>&lt;color&gt;</code> is a <b>non-property data type</b> and is used to define whereever color is needed.</p>
+            <p><code>&lt;color&gt;</code> is a <b>non-property data type</b> - identified by the absence of quotation marks around the word.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This non-property data type is used to <b>define whereever color is needed by property data types</b>.</p>
           </section>
 
           <section data-background="#222">
@@ -106,7 +114,7 @@ p { <span class="codeHighlight">color</span>: red; }
           </section>
 
           <section data-background="#fff">
-            <p>It has been expanded in the <a href="https://www.w3.org/TR/CSS2/colors.html#colors">CSS 2.1</a>, <a href="https://www.w3.org/TR/2017/CR-css-color-3-20171205/#color">CSS Color Module Level 3</a> and <a href="https://drafts.csswg.org/css-color/#the-color-property">CSS Color Module Level 4</a> specifications.</p>
+            <p>It has been <b>expanded</b> in the <a href="https://www.w3.org/TR/CSS2/colors.html#colors">CSS 2.1</a>, <a href="https://www.w3.org/TR/2017/CR-css-color-3-20171205/#color">CSS Color Module Level 3</a> and <a href="https://drafts.csswg.org/css-color/#the-color-property">CSS Color Module Level 4</a> specifications.</p>
           </section>
 
           <section data-background="#fff">
@@ -277,7 +285,9 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;rgb()&gt;</span> = 
-  rgb([ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ])
+  rgb(
+    [ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ]
+  )
 </code></pre>
           </section>
 
@@ -296,7 +306,7 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeComment">/* Black */</span>
-p { color: <span class="codeHighlight">rgb(0, 0, 0)</span>; }
+p { color: <span class="codeHighlight">rgb(0%, 0%, 0%)</span>; }
 
 <span class="codeComment">/* White */</span>
 p { color: <span class="codeHighlight">rgb(100%, 100%, 100%)</span>; }
@@ -385,7 +395,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;rgba()&gt;</span> = 
-  rgba( [ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ] , &lt;alpha-value&gt; )
+  rgba(
+    [ &lt;percentage&gt;#{3} | &lt;number&gt;#{3} ]
+    , &lt;alpha-value&gt; 
+  )
 </code></pre>
           </section>
 
@@ -463,7 +476,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">rgba(255, 165, 0, .5)</span>;
+  background-color:
+    <span class="codeHighlight">rgba(255, 165, 0, .5)</span>;
 }
 </code></pre>
           </section>
@@ -475,7 +489,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">rgba(100%, 65%, 0%, .5)</span>;
+  background-color:
+        <span class="codeHighlight">rgba(100%, 65%, 0%, .5)</span>;
 }
 </code></pre>
           </section>
@@ -511,7 +526,11 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;hsl()&gt;</span> =
-  hsl( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt; )
+  hsl(
+    &lt;hue&gt;,
+    &lt;percentage&gt;,
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -557,7 +576,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">hsl(39, 100%, 50%)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39, 100%, 50%)</span>;
 }
 </code></pre>
           </section>
@@ -589,7 +609,12 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;hsla()&gt;</span> =
-  hsla( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt;, &lt;alpha-value&gt;)
+  hsla(
+    &lt;hue&gt;,
+    &lt;percentage&gt;,
+    &lt;percentage&gt;,
+    &lt;alpha-value&gt;
+  )
 </code></pre>
           </section>
 
@@ -639,7 +664,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">hsla(39, 100%, 50%, .5)</span>;
+  background-color:
+    <span class="codeHighlight">hsla(39, 100%, 50%, .5)</span>;
 }
 </code></pre>
           </section>
@@ -2355,13 +2381,13 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <p>In CSS Color Module Level 4, <b>4 and 8-digit hex colors</b> have been added, to specify transparency.</p>
+            <p>In CSS Color Module Level 4, <b>4 and 8-digit hex colors</b> have been added, to specify alpha-transparency.</p>
           </section>
 
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;hex-color&gt;</span> = 
-  #[ rgba | rrggbbaa ]
+  #[ rgb<span class="codeHighlight">a</span> | rrggbb<span class="codeHighlight">aa</span> ]
 </code></pre>
           </section>
 
@@ -2379,7 +2405,11 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-p { color: #FFAA00<span class="codeHighlight">99</span>; }
+<span class="codeComment">/* Full transparent */</span>
+p { color: #FFAA00<span class="codeHighlight">00</span>; }
+
+<span class="codeComment">/* Full opaque */</span>
+p { color: #FFAA00<span class="codeHighlight">FF</span>; }
 </code></pre>
           </section>
 
@@ -2397,7 +2427,11 @@ p { color: #FFAA00<span class="codeHighlight">99</span>; }
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-p { color: #FA0<span class="codeHighlight">9</span>; }
+<span class="codeComment">/* Full transparent */</span>
+p { color: #FA0<span class="codeHighlight">0</span>; }
+
+<span class="codeComment">/* Full opaque */</span>
+p { color: #FA0<span class="codeHighlight">F</span>; }
 </code></pre>
           </section>
 
@@ -2459,7 +2493,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <p>In CSS Color Module Level 4, <code>rgb()</code> and <code>rgba()</code> <b>are now aliases of each other</b> (both have an optional alpha).</p>
+            <p>In CSS Color Module Level 4, <code>rgb()</code> and <code>rgba()</code> <b>are now aliases of each other</b> (both have an optional alpha value).</p>
           </section>
 
           <section data-background="#fff">
@@ -2469,10 +2503,20 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;rgb()&gt;</span> =
-  rgb( [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ] [ / &lt;alpha-value&gt; ]? )
+  rgb(
+    [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ]
+    [ / &lt;alpha-value&gt; ]?
+  )
+</code></pre>
+          </section>
 
+          <section data-background="#222">
+<pre><code contenteditable="true">
 <span class="codeHighlight">&lt;rgba()&gt;</span> =
-  rgba( [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ] [ / &lt;alpha-value&gt; ]? )
+  rgba(
+    [ &lt;percentage&gt;{3} | &lt;number&gt;{3} ]
+    [ / &lt;alpha-value&gt; ]?
+  )
 </code></pre>
           </section>
 
@@ -2544,7 +2588,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">rgb(255 165 0)</span>;
+  background-color:
+    <span class="codeHighlight">rgb(255 165 0)</span>;
 }
 </code></pre>
           </section>
@@ -2556,7 +2601,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">rgb(100% 65% 0%)</span>;
+  background-color:
+    <span class="codeHighlight">rgb(100% 65% 0%)</span>;
 }
 </code></pre>
           </section>
@@ -2576,7 +2622,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">rgb(255 165 0 / .5)</span>;
+  background-color:
+    <span class="codeHighlight">rgb(255 165 0 / .5)</span>;
 }
 </code></pre>
           </section>
@@ -2592,7 +2639,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example4 {
-  background-color: <span class="codeHighlight">rgb(255 165 0 / 50%)</span>;
+  background-color:
+    <span class="codeHighlight">rgb(255 165 0 / 50%)</span>;
 }
 </code></pre>
           </section>
@@ -2628,10 +2676,24 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;hsl()&gt;</span> =
-  hsl( &lt;hue&gt; &lt;percentage&gt; &lt;percentage&gt; [ / &lt;alpha-value&gt; ]? )
+  hsl(
+    &lt;hue&gt;
+    &lt;percentage&gt;
+    &lt;percentage&gt;
+    [ / &lt;alpha-value&gt; ]?
+  )
+</code></pre>
+          </section>
 
+          <section data-background="#222">
+<pre><code contenteditable="true">
 <span class="codeHighlight">&lt;hsla()&gt;</span> =
-  hsla( &lt;hue&gt; &lt;percentage&gt; &lt;percentage&gt; [ / &lt;alpha-value&gt; ]? )
+  hsla(
+    &lt;hue&gt;
+    &lt;percentage&gt;
+    &lt;percentage&gt;
+    [ / &lt;alpha-value&gt; ]?
+  )
 </code></pre>
           </section>
 
@@ -2706,7 +2768,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">hsl(39 100% 50%)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39 100% 50%)</span>;
 }
 </code></pre>
           </section>
@@ -2722,7 +2785,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">hsl(39deg 100% 50%)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39deg 100% 50%)</span>;
 }
 </code></pre>
           </section>
@@ -2742,7 +2806,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">hsl(39 100% 50% / .5)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39 100% 50% / .5)</span>;
 }
 </code></pre>
           </section>
@@ -2758,7 +2823,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example4 {
-  background-color: <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
 }
 </code></pre>
           </section>
@@ -2793,8 +2859,13 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">hwb()</span> =
-  hwb( &lt;hue&gt;, &lt;percentage&gt;, &lt;percentage&gt; [, &lt;alpha-value&gt; ]? )
+<span class="codeHighlight">&lt;hwb()&gt;</span> =
+  hwb(
+    &lt;hue&gt;,
+    &lt;percentage&gt;,
+    &lt;percentage&gt;
+    [, &lt;alpha-value&gt; ]?
+  )
 </code></pre>
           </section>
 
@@ -2881,7 +2952,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">hwb(39, 0, 0)</span>;
+  background-color:
+    <span class="codeHighlight">hwb(39, 0, 0)</span>;
 }
 </code></pre>
           </section>
@@ -2897,7 +2969,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">hwb(39deg, 0, 0)</span>;
+  background-color:
+    <span class="codeHighlight">hwb(39deg, 0, 0)</span>;
 }
 </code></pre>
           </section>
@@ -2913,7 +2986,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">hwb(39, 0, 0, .5)</span>;
+  background-color:
+    <span class="codeHighlight">hwb(39, 0, 0, .5)</span>;
 }
 </code></pre>
           </section>
@@ -2929,7 +3003,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example4 {
-  background-color: <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
+  background-color:
+    <span class="codeHighlight">hsl(39 100% 50% / 50%)</span>;
 }
 </code></pre>
           </section>
@@ -2968,8 +3043,13 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">lab()</span> = 
-  lab( &lt;number&gt; &lt;number&gt; &lt;number&gt; [, &lt;alpha-value&gt;]?)
+<span class="codeHighlight">&lt;lab()&gt;</span> = 
+  lab(
+    &lt;number&gt;
+    &lt;number&gt;
+    &lt;number&gt;
+    [, &lt;alpha-value&gt;]?
+  )
 </code></pre>
           </section>
 
@@ -3054,7 +3134,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">lab(75 24 79)</span>;
+  background-color:
+    <span class="codeHighlight">lab(75 24 79)</span>;
 }
 </code></pre>
           </section>
@@ -3070,7 +3151,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">lab(75 24 79, .5)</span>;
+  background-color:
+    <span class="codeHighlight">lab(75 24 79, .5)</span>;
 }
 </code></pre>
           </section>
@@ -3086,7 +3168,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">lab(75 24 79, 50%)</span>;
+  background-color:
+    <span class="codeHighlight">lab(75 24 79, 50%)</span>;
 }
 </code></pre>
           </section>
@@ -3125,8 +3208,13 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">lch()</span> = 
-  lch( &lt;number&gt; &lt;number&gt; &lt;number&gt; [, &lt;alpha-value&gt;]?)
+<span class="codeHighlight">&lt;lch()&gt;</span> = 
+  lch(
+    &lt;number&gt;
+    &lt;number&gt;
+    &lt;number&gt;
+    [, &lt;alpha-value&gt;]?
+  )
 </code></pre>
           </section>
 
@@ -3203,7 +3291,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">lch(75 82 73)</span>;
+  background-color:
+    <span class="codeHighlight">lch(75 82 73)</span>;
 }
 </code></pre>
           </section>
@@ -3219,7 +3308,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">lch(75 82 73, .5)</span>;
+  background-color:
+    <span class="codeHighlight">lch(75 82 73, .5)</span>;
 }
 </code></pre>
           </section>
@@ -3235,7 +3325,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">lch(75 82 73, 50%)</span>;
+  background-color:
+    <span class="codeHighlight">lch(75 82 73, 50%)</span>;
 }
 </code></pre>
           </section>
@@ -3270,8 +3361,11 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">gray()</span> = 
-  gray( &lt;number&gt;  [, &lt;alpha-value&gt;]? )
+<span class="codeHighlight">&lt;gray()&gt;</span> = 
+  gray(
+    &lt;number&gt;
+    [, &lt;alpha-value&gt;]?
+  )
 </code></pre>
           </section>
 
@@ -3367,8 +3461,12 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">device-cmyk()</span> = 
-  device-cmyk( &lt;cmyk-component&gt;#{4} , &lt;alpha-value&gt;? , &lt;color&gt;? )
+<span class="codeHighlight">&lt;device-cmyk()&gt;</span> = 
+  device-cmyk(
+    &lt;cmyk-component&gt;#{4} ,
+    &lt;alpha-value&gt;? ,
+    &lt;color&gt;?
+  )
 </code></pre>
           </section>
 
@@ -3467,7 +3565,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example1 {
-  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60)</span>;
+  background-color:
+    <span class="codeHighlight">device-cmyk(40, 50, 20, 60)</span>;
 }
 </code></pre>
           </section>
@@ -3483,7 +3582,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example2 {
-  background-color: <span class="codeHighlight">device-cmyk(40%, 50%, 20%, 60%)</span>;
+  background-color:
+    <span class="codeHighlight">device-cmyk(40%, 50%, 20%, 60%)</span>;
 }
 </code></pre>
           </section>
@@ -3499,7 +3599,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example3 {
-  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5)</span>;
+  background-color:
+    <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5)</span>;
 }
 </code></pre>
           </section>
@@ -3515,7 +3616,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example4 {
-  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, 50%)</span>;
+  background-color:
+    <span class="codeHighlight">device-cmyk(40, 50, 20, 60, 50%)</span>;
 }
 </code></pre>
           </section>
@@ -3531,7 +3633,8 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 .example5 {
-  background-color: <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5, red)</span>;
+  background-color:
+    <span class="codeHighlight">device-cmyk(40, 50, 20, 60, .5, red)</span>;
 }
 </code></pre>
           </section>
@@ -3578,8 +3681,11 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeHighlight">color-mod()</span> =
-  color-mod( [ &lt;color&gt; | &lt;hue&gt; ] &lt;color-adjuster&gt;* )
+<span class="codeHighlight">&lt;color-mod()&gt;</span> =
+  color-mod(
+    [ &lt;color&gt; | &lt;hue&gt; ]
+    &lt;color-adjuster&gt;*
+  )
 </code></pre>
           </section>
 
@@ -3638,7 +3744,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [red( | green( | blue( | alpha( | a(] ['+' | '-']? [&lt;number&gt; | &lt;percentage&gt;] )
+  [ red( | green( | blue( | alpha( | a( ]
+    ['+' | '-']?
+    [ &lt;number&gt; | &lt;percentage&gt; ]
+  )
 </code></pre>
           </section>
 
@@ -3684,7 +3793,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [red( | green( | blue( | alpha( | a(] '*' &lt;percentage&gt; )
+  [ red( | green( | blue( | alpha( | a( ]
+    '*'
+    &lt;percentage&gt; 
+  )
 </code></pre>
           </section>
 
@@ -3713,7 +3825,11 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  rgb( ['+' | '-'] [&lt;number&gt; | &lt;percentage&gt;]{3} )
+  rgb(
+    ['+' | '-']
+    [&lt;number&gt; |
+    &lt;percentage&gt;]{3}
+  )
 </code></pre>
           </section>
 
@@ -3731,10 +3847,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(20 15 5)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(20% 15% 5%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(+ 20 15 5)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(- 20 15 5)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(20 15 5)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(20% 15% 5%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(+ 20 15 5)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(- 20 15 5)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3749,7 +3869,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  rgb( ['+' | '-'] &lt;hash-token&gt; )
+  rgb(
+    ['+' | '-']
+    &lt;hash-token&gt;
+  )
 </code></pre>
           </section>
 
@@ -3763,9 +3886,12 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(#FFAA00)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(+ #FFAA00)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(- #FFAA00)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(#FFAA00)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(+ #FFAA00)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(- #FFAA00)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3780,7 +3906,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  rgb( '*' &lt;percentage&gt; ) |
+  rgb(
+    '*'
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -3790,7 +3919,8 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">rgb(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">rgb(* 20%)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3805,7 +3935,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [hue( | h(] ['+' | '-' | '*']? &lt;angle&gt; ) |
+  [ hue( | h( ]
+    ['+' | '-' | '*']?
+    &lt;angle&gt;
+  )
 </code></pre>
           </section>
 
@@ -3815,10 +3948,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue( 20deg)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(+ 20deg)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(- 20deg)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(* 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue( 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(+ 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(- 20deg)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">hue(* 20deg)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3833,7 +3970,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [saturation( | s(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+  [ saturation( | s( ]
+    ['+' | '-' | '*']?
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -3843,10 +3983,18 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">saturation(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">saturation( 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">saturation(+ 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">saturation(- 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">saturation(* 2%)</span><span class="codeComment">);
+}</span>
 </code></pre>
           </section>
 
@@ -3856,10 +4004,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">s(* 20%)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3874,7 +4026,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [lightness( | l(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+  [ lightness( | l( ]
+    ['+' | '-' | '*']?
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -3884,10 +4039,18 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">lightness(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">lightness( 20%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">lightness(+ 20%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">lightness(- 20%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">lightness(* 20%)</span><span class="codeComment">);
+}</span>
 </code></pre>
           </section>
 
@@ -3897,10 +4060,18 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">l(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">l( 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">l(+ 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">l(- 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">l(* 2%)</span><span class="codeComment">);
+}</span>
 </code></pre>
           </section>
 
@@ -3915,7 +4086,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [whiteness( | w(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+  [ whiteness( | w( ]
+    ['+' | '-' | '*']?
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -3925,10 +4099,18 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">whiteness(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p {
+  color: color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">whiteness( 2%)</span><span class="codeComment">); 
+}</span>
+<span class="codeComment">p {
+  color: color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">whiteness(+ 2%)</span><span class="codeComment">); 
+}</span>
+<span class="codeComment">p {
+  color: color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">whiteness(- 2%)</span><span class="codeComment">); 
+}</span>
+<span class="codeComment">p {
+  color: color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">whiteness(* 2%)</span><span class="codeComment">); 
+}</span>
 </code></pre>
           </section>
 
@@ -3938,10 +4120,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w( 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(+ 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(- 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">w(* 20%)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3956,7 +4142,10 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  [blackness( | b(] ['+' | '-' | '*']? &lt;percentage&gt; ) |
+  [ blackness( | b( ]
+    ['+' | '-' | '*']?
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -3966,10 +4155,18 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">blackness(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">blackness( 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">blackness(+ 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">blackness(- 2%)</span><span class="codeComment">);
+}</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">blackness(* 2%)</span><span class="codeComment">);
+}</span>
 </code></pre>
           </section>
 
@@ -3979,10 +4176,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b( 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(+ 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(- 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>hsl(28 1% 5%) <span class="codeHighlight">b(* 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">b( 2%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">b(+ 2%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">b(- 2%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>hsl(2 1% 5%) <span class="codeHighlight">b(* 2%)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -3997,7 +4198,9 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  tint( &lt;percentage&gt; ) |
+  tint(
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -4022,7 +4225,9 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  shade( &lt;percentage&gt; ) |
+  shade(
+    &lt;percentage&gt;
+  )
 </code></pre>
           </section>
 
@@ -4047,7 +4252,11 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  blend( &lt;color&gt; &lt;percentage&gt; [rgb | hsl | hwb]? ) |
+  blend(
+    &lt;color&gt;
+    &lt;percentage&gt;
+    [rgb | hsl | hwb]?
+  )
 </code></pre>
           </section>
 
@@ -4061,10 +4270,14 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20%)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% rgb)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hsl)</span><span class="codeComment">); }</span>
-<span class="codeComment">p { color: color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hwb)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">blend(blue 20%)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">blend(blue 20% rgb)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hsl)</span><span class="codeComment">); }</span>
+<span class="codeComment">p { color:
+  color-mod(</span>pink <span class="codeHighlight">blend(blue 20% hwb)</span><span class="codeComment">); }</span>
 </code></pre>
           </section>
 
@@ -4079,7 +4292,9 @@ SUB-SECTION
           <section data-background="#222">
 <pre><code contenteditable="true">
 <span class="codeHighlight">&lt;color-adjuster&gt;</span> =
-  contrast( &lt;percentage&gt;? )
+  contrast(
+    &lt;percentage&gt;?
+  )
 </code></pre>
           </section>
 
