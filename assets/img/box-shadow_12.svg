@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EFEFEF;}
+	.st1{fill:#568312;}
+	.st2{fill:#999999;}
+	.st3{fill:#A6A6A6;}
+	.st4{fill:#B3B3B3;}
+	.st5{fill:#BFBFBF;}
+	.st6{fill:#D9D9D9;}
+	.st7{fill:#8C8C8C;}
+	.st8{fill:#00487A;}
+	.st9{fill:#B04636;}
+	.st10{fill:#FFFFFF;}
+	.st11{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st12{fill:none;}
+</style>
+<g id="base">
+	<g>
+		<g>
+			<rect x="146" y="145" class="st6" width="423" height="166"/>
+		</g>
+		<g>
+			<rect x="148" y="147" class="st5" width="419" height="162"/>
+		</g>
+		<g>
+			<rect x="150" y="149" class="st4" width="415" height="158"/>
+		</g>
+		<g>
+			<rect x="152" y="151" class="st3" width="411" height="154"/>
+		</g>
+		<g>
+			<rect x="154" y="153" class="st2" width="407" height="150"/>
+		</g>
+	</g>
+	<g>
+		<rect x="96.5" y="111.5" class="st0" width="457" height="177"/>
+		<path class="st1" d="M552,113v174H98V113H552 M555,110H95v180h460V110L555,110z"/>
+	</g>
+</g>
+<g id="feature">
+</g>
+<g id="label">
+</g>
+</svg>

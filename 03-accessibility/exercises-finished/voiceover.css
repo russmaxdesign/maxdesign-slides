@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+h1 {
+  margin: 0 0 .5em;
+}
+
+h2 {
+  margin: 1.5em 0 .5em;
+}
+
+.container {
+  max-width: 60em;
+}
+
+.header {
+  padding: 20px;
+  background: #eee;
+  font-size: 2em;
+}
+
+.nav {
+  padding: 10px 20px;
+  background: #000;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+
+.nav a {
+  color: #fff;
+}
+
+.main {
+  float: left;
+  width: 65%;
+  padding: 20px;
+}
+
+.aside {
+  float: right;
+  width: 30%;
+  padding: 20px;
+}
+
+.footer {
+  clear: both;
+  padding: 20px;
+  color: #fff;
+  background: #000;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.form-container {
+  margin: 0 0 1.5em;
+}
+
+.label {
+  display: block;
+  margin: 0 0 .3em;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #aaa;
+  padding: .3em;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.fieldset {
+  border: 0;
+  margin: 0 0 1.5em;
+  padding: 0;
+}
+
+.radio-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+}
+
+.button {
+  border: 1px solid #aaa;
+  padding: .5em 1em;
+  color: #fff;
+  background: blue;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #999;
+  padding: .5em;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #eee;
+}
+
+.role {
+  position: relative;
+  outline: 1px solid red;
+}
+
