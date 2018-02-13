@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 400" style="enable-background:new 0 0 650 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EFEFEF;}
+	.st1{fill:#568312;}
+	.st2{fill:#999999;}
+	.st3{fill:#A6A6A6;}
+	.st4{fill:#B3B3B3;}
+	.st5{fill:#BFBFBF;}
+	.st6{fill:#D9D9D9;}
+	.st7{fill:#8C8C8C;}
+	.st8{fill:#00487A;}
+	.st9{fill:#B04636;}
+	.st10{fill:#FFFFFF;}
+	.st11{fill:none;stroke:#B04636;stroke-width:7;stroke-miterlimit:10;}
+	.st12{font-family:'HelveticaNeue-Bold';}
+	.st13{font-size:23px;}
+	.st14{fill:none;}
+</style>
+<g id="base">
+	<g>
+		<rect x="96.5" y="161.5" class="st0" width="457" height="177"/>
+		<path class="st1" d="M552,163v174H98V163H552 M555,160H95v180h460V160L555,160z"/>
+	</g>
+	<g>
+		<polygon class="st7" points="552,163 98,163 98,337 118,337 118,183 552,183 		"/>
+	</g>
+	<g>
+		<polygon points="552,183 118,183 118,337 138,337 138,203 552,203 		"/>
+	</g>
+	<g>
+		<polygon class="st8" points="552,203 138,203 138,337 158,337 158,223 552,223 		"/>
+	</g>
+</g>
+<g id="feature">
+</g>
+<g id="label">
+	<rect x="94" y="7" class="st9" width="167" height="41"/>
+	<text transform="matrix(1 0 0 1 107.6667 36)" class="st10 st12 st13">Defined first</text>
+	<rect x="194" y="58" class="st9" width="201" height="41"/>
+	<text transform="matrix(1 0 0 1 207.6667 87)" class="st10 st12 st13">Defined second</text>
+	<rect x="294" y="109" class="st9" width="170" height="41"/>
+	<text transform="matrix(1 0 0 1 307.6667 138)" class="st10 st12 st13">Defined third</text>
+	<g>
+		<g>
+			<line class="st11" x1="110" y1="157.9" x2="110" y2="46.5"/>
+			<g>
+				<polygon class="st9" points="120.5,154.9 110,173 99.5,154.9 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st11" x1="210" y1="178.9" x2="210" y2="97.5"/>
+			<g>
+				<polygon class="st9" points="220.5,175.9 210,194 199.5,175.9 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st11" x1="310" y1="197.9" x2="310" y2="149.5"/>
+			<g>
+				<polygon class="st9" points="320.5,194.9 310,213 299.5,194.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

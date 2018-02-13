@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>214-03: Property - box-shadow</title>
+    <meta name="description" content="The color CSS property sets the foreground color value of an elements text content and text decorations">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/maxdesign.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>214-03</h5>
+          <h1>Property - box-shadow</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The CSS3 <code>box-shadow</code> property allows you to <b>apply one or more shadows to any box</b> - including outer and inner box shadows.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>An <b>outer box-shadow</b> casts a shadow as if the box were opaque. The shadow is drawn outside the border edge only.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_01.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>An <b>inner box-shadow</b> casts a shadow as if everything outside the box were opaque. The inner shadow is drawn inside the padding edge only.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_02.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>The box-shadow should <b>follow any curved corners</b> that have been defined with border-radius.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_15.svg" alt="">
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Syntax</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;'box-shadow'&gt;</code> property <b>syntax</b> is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;'box-shadow'&gt;</span> =
+  none | &lt;shadow&gt;#
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that the <code>&lt;shadow&gt;</code> value can be specified as <code>none</code> or using <b>one or more</b> <code>&lt;shadow&gt;</code> values, separated by commas.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;shadow&gt;</code> property <b>syntax</b> is:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;shadow&gt;</span>
+  = inset? && &lt;length&gt;{2,4} && &lt;color&gt;?
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>This means that a <code>&lt;shadow&gt;</code> <b>can be written</b> with an optional <code>inset</code> keyword value, 2-4 <code>&lt;length&gt;</code> values and an optional <code>&lt;color&gt;</code> value.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&amp;&amp;</code> symbol indicates that the optional <code>inset</code> value, the  2-4 <code>&lt;length&gt;</code> values and the optional <code>&lt;color&gt;</code> value <b>can be written in any order</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some examples of the <code>box-shadow</code> syntax <b>in action</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* all possible values specified */</span>
+p { box-shadow:
+  <span class="codeHighlight">inset 10px 10px 10px 10px red</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* different order */</span>
+p { box-shadow:
+  <span class="codeHighlight">red 10px 10px 10px 10px inset</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* no inset specified */</span>
+p { box-shadow:
+  <span class="codeHighlight">10px 10px 10px 10px red</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* no color specified */</span>
+p { box-shadow:
+  <span class="codeHighlight">10px 10px 10px 10px</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* no spread-radius specified */</span>
+p { box-shadow:
+  <span class="codeHighlight">10px 10px 10px</span>; }
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* no blue-radius specified */</span>
+p { box-shadow:
+  <span class="codeHighlight">10px 10px</span>; }
+</code></pre>
+          </section>
+
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>inset</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>inset</code> value is optional. If it is not specified, the shadow will appear <b>outside and behind the box</b> as a drop shadow.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_01.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>If the <code>inset</code> value is specified, the shadow will appear <b>inside the box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_02.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>An <code>inset</code> shadow will be positioned <b>inside the border-box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_03.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>It will sit <b>above any background-images or background colors</b>, but below the content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_04.svg" alt="">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 1: Write some basic box-shadows</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-01.html">exercises-start/exercise-214-03-01.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>10px 10px 10px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow: <span class="codeHighlight">10px 10px 10px 0 #777</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>inset 10px 10px 10px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow: <span class="codeHighlight">inset 10px 10px 10px 0 #777</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-01.html">exercises-finished/exercise-214-03-01.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>color</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;color&gt;</code> value is optional. If it is not specified, the shadow should default to the <code>&lt;color&gt;</code> value <b>used for the box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;color&gt;</code> value can be written using <b>any of the following options</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeHighlight">&lt;color&gt;</span> =
+  &lt;hex-color&gt; |
+  &lt;rgb()&gt; |
+  &lt;rgba()&gt; |
+  &lt;hsl()&gt; |
+  &lt;hsla()&gt; |
+  &lt;named-color&gt; |
+  &lt;deprecated-system-color&gt; | 
+  currentcolor |
+  transparent
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>These options are explained in the <b><a href="214-02-color.html">Property - color slide deck</a></b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 2: Write some colored box-shadows</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-02.html">exercises-start/exercise-214-03-02.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>10px 10px 10px 0 black</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow:
+    10px 10px 10px 0 <span class="codeHighlight">black</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>10px 10px 10px 0 rgba(140,140,0,.5)</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow:
+    10px 10px 10px 0 <span class="codeHighlight">rgba(140,140,0,.5)</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-02.html">exercises-finished/exercise-214-03-02.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>offset-x</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The first length value, <code>&lt;offset-x&gt;</code> defines the <b>horizontal offset</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>positive value</b> will place the shadow on the right of the box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: <span class="codeHighlight">10px</span> 0 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_05.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>negative value</b> will place the shadow on the left of the box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: <span class="codeHighlight">-10px</span> 0 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_06.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>A value of <code>0</code> will place the shadow <b>directly behind the box</b> on the horizontal axis.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;offset-x&gt;</code> is defined using a <code>&lt;length&gt;</code> value, which means the value <b>can be defined using any of the following units</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Font-relative lengths */</span>
+ch
+em
+ex
+rem
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Viewport-percentage lengths */</span>
+vh
+vw
+vmin
+vmax
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute length units */</span>
+px
+cm
+mm
+in
+pc
+pt
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 3: Set the offset-x value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-03.html">exercises-start/exercise-214-03-03.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>10px 0 5px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow: <span class="codeHighlight">10px</span> 0 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>-10px 0 5px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow: <span class="codeHighlight">-10px</span> 0 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-03.html">exercises-finished/exercise-214-03-03.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>offset-y</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The second length value, <code>&lt;offset-y&gt;</code> defines the <b>vertical offset</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>positive value</b> will place the shadow below the box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 0 <span class="codeHighlight">10px</span> 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_07.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>A <b>negative value</b> will place the shadow above the box.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 0 <span class="codeHighlight">-10px</span> 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_08.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>A value of <code>0</code> will place the shadow <b>directly behind the box</b> on the vertical axis.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;offset-y&gt;</code> is defined using a <code>&lt;length&gt;</code> value, which means the value <b>can be defined using any of the following units</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Font-relative lengths */</span>
+ch
+em
+ex
+rem
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Viewport-percentage lengths */</span>
+vh
+vw
+vmin
+vmax
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute length units */</span>
+px
+cm
+mm
+in
+pc
+pt
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 4: Set the offset-y value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-04.html">exercises-start/exercise-214-03-04.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>10px 0 5px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow: 0 <span class="codeHighlight">10px</span> 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>-10px 0 5px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow: 0 <span class="codeHighlight">-10px</span> 5px 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-04.html">exercises-finished/exercise-214-03-04.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>blur-radius</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The third length value, <code>&lt;blur-radius&gt;</code> defines <b>the amount of blur in the shadow</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This value is <b>optional</b>. If not specified, it will default to <code>0</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If set to a value of <code>0</code> the shadow <b>will be hard-edged</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 10xp 10px <span class="codeHighlight">0</span> 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_09.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>The higher the blur radius number, the <b>softer the box-shadow will be</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 10xp 10px <span class="codeHighlight">10px</span> 0 #777;
+}
+</code></pre>
+          </section>
+
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_10.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Negative values</b> are not allowed for the blur radius.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;blur-radius&gt;</code> is defined using a <code>&lt;length&gt;</code> value, which means the value <b>can be defined using any of the following units</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Font-relative lengths */</span>
+ch
+em
+ex
+rem
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Viewport-percentage lengths */</span>
+vh
+vw
+vmin
+vmax
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute length units */</span>
+px
+cm
+mm
+in
+pc
+pt
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 5: Set the blue-radius value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-05.html">exercises-start/exercise-214-03-05.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>10px 10px 0 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow: 10px 10px <span class="codeHighlight">0</span> 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>10px 10px 20px 0 #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow: 10px 10px <span class="codeHighlight">20px</span> 0 #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-05.html">exercises-finished/exercise-214-03-05.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>spread-radius</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>The fourth length value, <code>&lt;spread-radius&gt;</code> defines <b>the amount that the shadow increases or decreases</b> in size compared to the box.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This value is <b>optional</b>. If not specified, it will default to <code>0</code>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>If set to a value of <code>0</code> the shadow <b>will remain the same size as the box</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Positive values</b> cause the shadow to expand in all directions (so the shadow appears larger than the box).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 10xp 10px 10px <span class="codeHighlight">10px</span> #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_11.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Negative values</b> cause the shadow to contract in all directions (so the shadow appears smaller than the box).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow: 10xp 10px 10px <span class="codeHighlight">-10px</span> #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_12.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;spread-radius&gt;</code> is defined using a <code>&lt;length&gt;</code> value, which means the value <b>can be defined using any of the following units</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Font-relative lengths */</span>
+ch
+em
+ex
+rem
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Viewport-percentage lengths */</span>
+vh
+vw
+vmin
+vmax
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">/* Absolute length units */</span>
+px
+cm
+mm
+in
+pc
+pt
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 6: Set the spread-radius value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-06.html">exercises-start/exercise-214-03-06.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with a <code>box-shadow</code> value of <code>25px 25px 10px 10px #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow: 25px 25px 10px <span class="codeHighlight">10px</span> #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with a <code>box-shadow</code> value of <code>25px 25px 10px -10px #777</code>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow: 25px 25px 10px <span class="codeHighlight">-10px</span> #777;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-06.html">exercises-finished/exercise-214-03-06.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Multiple backgrounds</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Multiple box shadows</b> can be applied to a box. They are applied as a comma-separated list.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+p {
+  box-shadow:
+    <span class="codeHighlight">10px 10px 5px 5px black,
+    20px 20px 5px 5px yellow</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The shadow that is defined first is <b>displayed at the top</b> and the others are layered behind.</p>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_13.svg" alt="">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/box-shadow_14.svg" alt="">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#B04636">
+            <h3>Exercise 7: Create some multiple box-shadows</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>Open this <b>HTML file</b> in an editor:<br>
+            <a href="exercises-start/exercise-214-03-07.html">exercises-start/exercise-214-03-07.html</a></p>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a CSS rule</b> to style <code>example1</code> with three <code>box-shadow</code> values:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example1 {
+  box-shadow:
+    <span class="codeHighlight">5px 5px 0 0 green,
+    10px 10px 0 0 red,
+    15px 15px 0 0 blue</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Write a second CSS rule</b> to style <code>example2</code> with three <code>box-shadow</code> values:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+.example2 {
+  box-shadow:
+    <span class="codeHighlight">inset 5px 5px 0 0 green,
+    inset 10px 10px 0 0 red,
+    inset 15px 15px 0 0 blue</span>;
+}
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Check your work against the finished <b>HTML file</b>:<br>
+            <a href="exercises-finished/exercise-214-03-07.html">exercises-finished/exercise-214-03-07.html</a></p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section data-background="#222">
+          <h4>Russ Weakley</h4>
+          <p class="credits">
+            <a class="credit-link" href="http://maxdesign.com.au">Site</a>
+            <a class="credit-link" href="http://twitter.com/russmaxdesign">Twitter</a>
+            <a class="credit-link" href="https://github.com/russmaxdesign">Github</a>
+            <a class="credit-link" href="http://slideshare.net/maxdesign">Slideshare</a>
+            <a class="credit-link" href="http://linkedin.com/in/russweakley">Linkedin</a>
+          </p>
+        </section>
+
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
