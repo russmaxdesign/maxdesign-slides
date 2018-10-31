@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>103: Creating a simple HTML document</title>
+    <title>106: Creating a simple HTML document</title>
     <meta name="description" content="This slide deck takes you through creating a simple HTML document, step by step">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,7 +31,7 @@
         </div>
 
         <section data-background="#222">
-          <h5>103</h5>
+          <h5>106</h5>
           <h1>Creating a simple HTML document</h1>
         </section>
 
@@ -169,7 +169,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <p>Open this <b>HTML file</b> in an editor:<br>
-            <a href="exercises-start/exercise-103-01.html">exercises-start/exercise-103-01.html</a></p>
+            <a href="exercises-start/exercise-106-01.html">exercises-start/exercise-106-01.html</a></p>
           </section>
 
           <section data-background="#fff">
@@ -182,7 +182,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <p>Check your work against the <b>finished HTML file</b>:<br>
-            <a href="exercises-finished/exercise-103-01.html">exercises-finished/exercise-103-01.html</a></p>
+            <a href="exercises-finished/exercise-106-01.html">exercises-finished/exercise-106-01.html</a></p>
           </section>
         </section>
 
@@ -575,7 +575,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <p><b>Add the</b> <code>&lt;link&gt;</code> <b>element</b> with an <code>href</code> value of <code>"demo.css"</code>.</p>
+            <p><b>Add the</b> <code>&lt;link&gt;</code> <b>element</b> with an <code>href</code> value of <code>"exercise-106-01.css"</code>.</p>
           </section>
 
           <section data-background="#222">
@@ -585,7 +585,7 @@ SUB-SECTION
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
-    <span class="codeHighlight">&lt;link rel="stylesheet" href="demo.css"&gt;</span>
+    <span class="codeHighlight">&lt;link rel="stylesheet" href="exercise-106-01.css"&gt;</span>
   &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
@@ -616,7 +616,7 @@ SUB-SECTION
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
-    &lt;link rel="stylesheet" href="demo.css"&gt;
+    &lt;link rel="stylesheet" href="exercise-106-01.css"&gt;
   &lt;/head&gt;
   <span class="codeHighlight">&lt;body&gt;
   &lt;/body&gt;</span>
@@ -653,7 +653,7 @@ SUB-SECTION
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
-    &lt;link rel="stylesheet" href="demo.css"&gt;
+    &lt;link rel="stylesheet" href="exercise-106-01.css"&gt;
   &lt;/head&gt;
   &lt;body&gt;
     <span class="codeHighlight">&lt;div&gt;
@@ -674,7 +674,7 @@ SUB-SECTION
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
-    &lt;link rel="stylesheet" href="demo.css"&gt;
+    &lt;link rel="stylesheet" href="exercise-106-01.css"&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;div <span class="codeHighlight">class="container"</span>&gt;
@@ -1337,7 +1337,7 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-&lt;img <span class="codeHighlight">src="hammer.jpg"</span>&gt;
+&lt;img <span class="codeHighlight">src="exercise-106-01.jpg"</span>&gt;
 </code></pre>
           </section>
 
@@ -1351,7 +1351,8 @@ SUB-SECTION
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-&lt;img src="hammer.jpg" <span class="codeHighlight">alt="Claw hammer"</span>&gt;
+&lt;img src="exercise-106-01.jpg"
+  <span class="codeHighlight">alt="Claw hammer"</span>&gt;
 </code></pre>
           </section>
 
@@ -1363,18 +1364,14 @@ SUB-SECTION
             <h3>Back to the exercise...</h3>
           </section>
           <section data-background="#fff">
-            <p><b>Add an image</b> with an <code>href</code> value of <code>"hammer.png"</code> and an <code>alt</code> value of <code>"Claw hammer"</code>.</p>
+            <p><b>Add an image</b> with an <code>href</code> value of <code>"exercise-106-01.jpg"</code> and an <code>alt</code> value of <code>"Claw hammer"</code>.</p>
           </section>
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-&lt;h2&gt;We sell hammers&lt;/h2&gt;
-&lt;p&gt;We sell hammers in &lt;strong&gt;a variety
-of shapes, sizes and weights&lt;/strong&gt;
-including the &lt;em&gt;Claw Hammer&lt;/em&gt;,
-&lt;em&gt;Ball Pein Hammer&lt;/em&gt;, &lt;em&gt;Club
-Hammer&lt;/em&gt; and &lt;em&gt;Sledge Hammer&lt;/em&gt;.&lt;/p&gt;
-<span class="codeHighlight">&lt;img src="hammer.jpg" alt="Claw hammer"&gt;</span>
+&lt;p&gt;We sell hammers in...&lt;/p&gt;
+<span class="codeHighlight">&lt;img src="exercise-106-01.jpg"
+  alt="Claw hammer"&gt;</span>
 </code></pre>
           </section>
         </section>
@@ -1398,13 +1395,8 @@ Hammer&lt;/em&gt; and &lt;em&gt;Sledge Hammer&lt;/em&gt;.&lt;/p&gt;
 
           <section data-background="#222">
 <pre><code contenteditable="true">
-&lt;h2&gt;We sell hammers&lt;/h2&gt;
-&lt;p&gt;We sell hammers in &lt;strong&gt;a variety
-of shapes, sizes and weights&lt;/strong&gt;
-including the &lt;em&gt;Claw Hammer&lt;/em&gt;,
-&lt;em&gt;Ball Pein Hammer&lt;/em&gt;, &lt;em&gt;Club
-Hammer&lt;/em&gt; and &lt;em&gt;Sledge Hammer&lt;/em&gt;.&lt;/p&gt;
-&lt;img src="hammer.jpg" alt="Claw hammer"&gt;
+&lt;img src="exercise-106-01.jpg"
+  alt="Claw hammer"&gt;
 <span class="codeHighlight">&lt;h2&gt;Pricing table&lt;/h2&gt;</span>
 </code></pre>
           </section>
@@ -1862,7 +1854,6 @@ SUB-SECTION
 <span class="codeHighlight">&lt;aside&gt;&lt;/aside&gt;</span>
 </code></pre>
           </section>
-
         </section>
 
 
@@ -1989,7 +1980,6 @@ SUB-SECTION
           <section data-background="#fff">
             <p>The simple HTML document is now complete. <b>Time to learn more about HTML!</b></p>
           </section>
-
         </section>
 
 
