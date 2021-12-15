@@ -8,8 +8,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reveal.css">
-    <link rel="stylesheet" href="../assets/css/maxdesign.css">
-    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/maxdesign-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
@@ -56,25 +58,7 @@
 
         <section>
           <section data-background="#568312">
-            <h2>Introduction</h2>
-          </section>
-
-          <section data-background="#fff">
-            <p>This tutorial takes you through creating an HTML document for <b>an imaginary company</b> called "Bill's Hammers".</p>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#568312">
-            <h2>Getting a text editor</h2>
+            <h2>Getting started</h2>
           </section>
 
           <section data-background="#fff">
@@ -116,55 +100,17 @@ SUB-SECTION
               <li><a href="http://macromates.com/">Text Mate</a></li>
             </ul>
           </section>
-        </section>
-
-
 
 <!--  –––––––––––––––––––––––––
-******  SECTION ******
+SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
-
-
-        <section>
-          <section data-background="#568312">
-            <h2>Before you start</h2>
+          <section data-background="#444">
+            <h3>Opening the exercise files</h3>
           </section>
 
           <section data-background="#fff">
-            <p>Before starting, make sure you have read the following information from the <b>102 Common Terms</b> slide deck:</p>
-          </section>
-
-          <section data-background="#fff">
-            <ol>
-              <li><a href="102-common-terms.html#/4">Doctypes</a></li>
-              <li><a href="102-common-terms.html#/5">HTML elements</a></li>
-              <li><a href="102-common-terms.html#/6">Void elements</a></li>
-              <li><a href="102-common-terms.html#/7">Block-level elements</a></li>
-              <li><a href="102-common-terms.html#/8">Inline elements</a></li>
-            </ol>
-          </section>
-          <section data-background="#fff">
-            <ol start="6">
-              <li><a href="102-common-terms.html#/10">HTML attributes</a></li>
-              <li><a href="102-common-terms.html#/11">Boolean attributes</a></li>
-              <li><a href="102-common-terms.html#/12">Valid markup</a></li>
-              <li><a href="102-common-terms.html#/13">Semantic markup</a></li>
-            </ol>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#568312">
-            <h2>Opening the exercise files</h2>
+            <p>This tutorial takes you through creating an HTML document for <b>an imaginary company</b> called "Bill's Hammers".</p>
           </section>
 
           <section data-background="#fff">
@@ -196,6 +142,138 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
+            <h2>What is HTML?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML, or Hyper Text Markup Language, is the standard markup language for <b>creating web documents</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML uses elements and attributes to <b>describe the structure of web documents</b> and provide meaning to content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>We'll look at <b>elements and attributes</b> in detail as we move through the exercise.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+ SELECTOR
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Doctypes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Before displaying HTML documents, browsers need to determine <b>which version of the HTML language</b> the document uses.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This is achieved using a <code>&lt;!doctype&gt;</code> <b>declaration</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;!doctype&gt;</code> declaration <b>must appear on the first line of code</b> within an HTML document.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Which version?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p>In the past, web authors had to write HTML in <b>one of two possible versions</b> of the language - HTML 4.01 or XHTML 1.0.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In both of these cases, there were three variations - <b>strict, transitional and frameset</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>As you will see, all of these doctypes were <b>incredibly complicated</b>!</p>
+          </section>
+
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML 4.01 Strict --&gt;</span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML 4.01 Transitional --&gt;</span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML 4.01 Frameset --&gt;</span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- XHTML 1.0 Strict --&gt;</span>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- XHTML 1.0 Transitional --&gt;</span>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- XHTML 1.0 Frameset --&gt;</span>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"%gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Today, almost all web authors write in <b>HTML 5</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This newer version of HTML is <b>simpler, more flexible</b> and allows authors to use a range new elements and functions.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>To <b>declare that your document is HTML 5</b>, you must use the following declaration:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML 5 --&gt;</span>
+&lt;!doctype html&gt;</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
             <h2>Step 1: Add a doctype</h2>
           </section>
 
@@ -224,6 +302,129 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
+            <h2>HTML elements</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>HTML elements</b> are the building blocks of HTML markup. They help us define the content and structure of web documents.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>In most cases, HTML elements consist of a <b>start tag</b> (or opening tag) and an <b>end tag</b> (or closing tag).</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;p&gt;</span>This is a paragraph element.<span class="codeHighlight">&lt;/p&gt;</span>
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There is a wide range of HTML elements that can be used to <b>give content specific meaning</b> - such as headings, paragraphs, lists etc.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>These elements should always be written in <b>lower case only</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Heading levels --&gt;</span>
+<span class="codeHighlight">&lt;h1&gt;</span>Level 1 heading<span class="codeHighlight">&lt;/h1&gt;</span>
+<span class="codeHighlight">&lt;h2&gt;</span>Level 2 heading<span class="codeHighlight">&lt;/h2&gt;</span>
+<span class="codeHighlight">&lt;h3&gt;</span>Level 3 heading<span class="codeHighlight">&lt;/h3&gt;</span>
+<span class="codeHighlight">&lt;h4&gt;</span>Level 4 heading<span class="codeHighlight">&lt;/h4&gt;</span>
+<span class="codeHighlight">&lt;h5&gt;</span>Level 5 heading<span class="codeHighlight">&lt;/h5&gt;</span>
+<span class="codeHighlight">&lt;h6&gt;</span>Level 6 heading<span class="codeHighlight">&lt;/h6&gt;</span>
+</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Void elements</h3>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>Void elements</b> are different to all other HTML elements as they have no content and no end tag. </p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Line break --&gt;</span>
+&lt;br&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Using HTML 5, void elements can be <b>written in two different ways</b> - with or without the trailing forward slash.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Without trailing slashes --&gt;</span>
+&lt;br&gt;
+&lt;hr&gt;
+&lt;img&gt;
+&lt;input&gt;
+&lt;link&gt;
+&lt;meta&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- With trailing slashes --&gt;</span>
+&lt;br <span class="codeHighlight">/</span>&gt;
+&lt;hr <span class="codeHighlight">/</span>&gt;
+&lt;img <span class="codeHighlight">/</span>&gt;
+&lt;input <span class="codeHighlight">/</span>&gt;
+&lt;link <span class="codeHighlight">/</span>&gt;
+&lt;meta <span class="codeHighlight">/</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even though both of these methods can be used, it is best to <b>choose one method and use it consistently</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The full list of allowed <b>void elements</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML5 void elements - part 1 --&gt;</span>
+&lt;area&gt;
+&lt;base&gt;
+&lt;br&gt;
+&lt;col&gt;
+&lt;embed&gt;
+&lt;hr&gt;
+&lt;img&gt;
+&lt;input&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML5 void elements - part 2 --&gt;</span>
+&lt;link&gt;
+&lt;meta&gt;
+&lt;param&gt;
+&lt;source&gt;
+&lt;track&gt;
+&lt;wbr&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
             <h2>Step 2: Add the &lt;html&gt; element</h2>
           </section>
 
@@ -254,7 +455,134 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 3: Add the lang attribute</h2>
+            <h2>HTML attributes</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p><b>HTML attributes</b> are used to assign additional properties to HTML elements.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In almost all cases, attributes consist of an attribute <b>name</b> and an attribute <b>value</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Attribute name --&gt;</span>
+&lt;p <span class="codeHighlight">class</span>="intro"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Attribute value --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes <b>must appear in the start tag</b> (or within the tag in the case of void elements)</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside the start tag --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Inside void elements --&gt;</span>
+&lt;hr <span class="codeHighlight">class="special"</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>There can be <b>any number of attributes</b> applied to an HTML element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Three attributes in an element --&gt;</span>
+&lt;input
+  <span class="codeHighlight">id="email"
+  name="email"
+  type="text"</span>
+&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes must be separated by spaces and <b>can appear in any order</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attribute values can be placed inside <b>double quotes, single quotes or even no quotes</b> at all.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class="intro"</span>>
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class='intro'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- No quotes --&gt;</span>
+&lt;p <span class="codeHighlight">class=intro</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Some attributes allow <b>multiple values</b> inside the one attribute.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Two attribute --&gt;</span>
+&lt;p class="<span class="codeHighlight">intro highlight</span>"&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Attributes with more than one value <b>must be enclosed in single or double quotes</b>. They cannot be left unquoted.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Double quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">"intro highlight"</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Single quotes --&gt;</span>
+&lt;p class=<span class="codeHighlight">'intro highlight'</span>&gt;
+  Some text
+&lt;/p&gt;
+</code></pre>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -262,64 +590,72 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#444">
-            <h3>About the lang attribute</h3>
+            <h3>Boolean attributes</h3>
           </section>
 
           <section data-background="#fff">
-            <p>The <code>lang</code> attribute can be applied to the <code>&lt;html&gt;</code> element to define the <b>primary language for the entire document</b>.</p>
+            <p>In HTML 5, some attributes, called <b>boolean</b> attributes, do not require a value.</p>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;html <span class="codeHighlight">lang="en"</span>&gt;
+<pre><code contenteditable="true">&lt;input type="radio" <span class="codeHighlight">checked</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">disabled</span> /&gt;
+&lt;input type="email" <span class="codeHighlight">multiple</span> /&gt;
+&lt;input type="text" <span class="codeHighlight">readonly</span> /&gt;
+&lt;option <span class="codeHighlight">selected</span>&gt; <span class="codeComment">...</span> &lt;/option&gt;
 </code></pre>
           </section>
 
           <section data-background="#fff">
-            <p>The <code>lang</code> attribute can also be used to specify a language for <b>sections of your document</b>.</p>
+            <p>The presence of a Boolean attribute means <b>the value is true</b>.</p>
           </section>
 
           <section data-background="#fff">
-            <p>It could be for a <b>block of content</b>:</p>
+            <p>The absence of the attribute means <b>the value is false</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The full list of all possible <b>HTML5 boolean attributes</b>:</p>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;div <span class="codeHighlight">lang="fr"</span>&gt;
-  ça m'est égal...
-&lt;div&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML5 boolean attributes - part 1 --&gt;</span>
+async
+autofocus
+autoplay
+checked
+contenteditable
+controls
+default
+defer
+disabled
 </code></pre>
           </section>
 
-          <section data-background="#fff">
-            <p>Or a <b>short span of content</b>:</p>
-          </section>
-
           <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;p&gt;
-  Say <span class="codeHighlight">&lt;span lang="pt"&gt;</span>Olá<span class="codeHighlight">&lt;span&gt;</span> now...
-&lt;p&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML5 boolean attributes - part 2 --&gt;</span>
+formNoValidate
+frameborder
+hidden
+ismap
+itemscope
+loop
+multiple
+muted
+nomodule
 </code></pre>
           </section>
 
-          <section data-background="#fff">
-            <p>All language subtags are all defined in the <a href="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">Language Subtag Directory</a>.</p>
-          </section>
-
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
-          </section>
-
-          <section data-background="#fff">
-            <p>Use a value of <code>en</code> as the document will be <b>written in English</b>.</p>
-          </section>
-
           <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;!doctype html&gt;
-&lt;html <span class="codeHighlight">lang="en"</span>&gt;
-&lt;/html&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- HTML5 boolean attributes - part 3 --&gt;</span>
+novalidate
+open
+readonly
+required
+reversed
+scoped
+selected
+typemustmatch
 </code></pre>
           </section>
         </section>
@@ -333,7 +669,39 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
+            <h2>Step 3: Add the lang attribute</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>You must always set the <b>default language for your HTML documents</b> in a way that can be 'programmatically determined'.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>This is <b>acheived by adding</b> the <code>lang</code> attribute  to the <code>&lt;html&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Browsers and other applications can use this information to <b>deliver the most appropriate information to users</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;html <span class="codeHighlight">lang="en"</span>&gt;
+</code></pre>
+          </section>
+       </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
             <h2>Step 4: Add the &lt;head&gt; element</h2>
           </section>
 
@@ -350,13 +718,19 @@ SUB-SECTION
 &lt;/html&gt;
 </code></pre>
           </section>
+       </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>A note on whitespace</h3>
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Whitespace in HTML</h2>
           </section>
 
           <section data-background="#fff">
@@ -386,7 +760,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <p>The simplest method is to indent content <b>inside every block-level element</b>.</p>
+            <p>The simplest method is to indent content <b>that is placed inside another element</b>.</p>
           </section>
 
           <section data-background="#222">
@@ -397,9 +771,7 @@ SUB-SECTION
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div&gt;
-      &lt;p&gt;Hello world&lt;/p&gt;
-    &lt;/div&gt;
+    &lt;p&gt;Hello world&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -416,15 +788,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 5: Add character encoding</h2>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About character encoding</h3>
+            <h2>Character encoding</h2>
           </section>
 
           <section data-background="#fff">
@@ -458,13 +822,19 @@ SUB-SECTION
 &lt;meta charset=<span class="codeHighlight">"utf-8"</span>&gt;
 </code></pre>
           </section>
+        </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>Step 5: Add character encoding</h2>
           </section>
 
           <section data-background="#fff">
@@ -492,7 +862,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 6: Add a &lt;title&gt;</h2>
           </section>
 
@@ -527,15 +897,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 7: Add a link to the CSS file</h2>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About the &lt;link&gt; element</h3>
+            <h2>Linking to CSS files</h2>
           </section>
 
           <section data-background="#fff">
@@ -565,13 +927,19 @@ SUB-SECTION
           <section data-background="#fff">
             <p>The <code>href</code> attribute specifies the <b>location of the linked resource</b>.</p>
           </section>
+        </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>Step 7: Add a link to the CSS file</h2>
           </section>
 
           <section data-background="#fff">
@@ -585,7 +953,9 @@ SUB-SECTION
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Bill's Hammers&lt;/title&gt;
-    <span class="codeHighlight">&lt;link rel="stylesheet" href="exercise-106-01.css"&gt;</span>
+    <span class="codeHighlight">&lt;link
+      rel="stylesheet"
+      href="exercise-106-01.css"&gt;</span>
   &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
@@ -601,7 +971,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 8: Add the &lt;body&gt; element</h2>
           </section>
 
@@ -635,6 +1005,247 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
+            <h2>Semantic markup</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Semantic markup is about <b>using the appropriate HTML elements to convey meaning</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>All HTML elements have <b>a specific meaning and purpose</b>. For example:</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Semantic meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;h1&gt;</code></td>
+                  <td>Level 1 heading content</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;caption&gt;</code></td>
+                  <td>A visible caption or title for a table</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;abbr&gt;</code></td>
+                  <td>An abbreviation or acronym of a longer word or phrase</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;blockquote&gt;</code></td>
+                  <td>A section that is quoted from another source</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>Even the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements have meaning. Their purpose is to be <b>generic elements</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <table>
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Semantic meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;div&gt;</code></td>
+                  <td>Generic block-level container to specify a section</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;span&gt;</code></td>
+                  <td>Generic inline container</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section data-background="#fff">
+            <p>Designers need to understand the basics of semantic markup, <b>so they can communicate important information correctly to developers</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Designers should specify the following <b>as part of handover</b>:</p>
+            <ul>
+              <li>Desired heading levels for all headings.</li>
+              <li>Desired sections, possible landmarks and even how these sections should be labelled.</li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <p>Developers need to know how to use semantic markup <b>as it vital for</b>:</p>
+            <ul>
+              <li>Accessibility.</li>
+              <li>Searchability.</li>
+              <li>Internationalisation.</li>
+              <li>Interoperability.</li>
+            </ul>
+          </section>
+
+          <section data-background="#fff">
+            <p>Semantic markup is <b>especially important for screen readers</b> as many users rely on specific elements in order to navigate around web pages effectively.</p>
+          </section>
+       </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#568312">
+            <h2>Valid markup</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML has specific <b>grammar and syntax rules</b> defined in various HTML specifications.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>All HTML documents are supposed to <b>conform to these rules</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>“Validation” is the process of <b>testing an HTML document</b> to see whether it follows these rules.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A document that passes this process <b>without ant validation errors</b> is determined to be “valid”.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML documents <b>can be checked online</b> using the <a href="http://validator.w3.org/">W3C Markup Validation service</a>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Developers should <b>always try to produce valid, well formed markup</b> for the following reasons:</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>1. Browser consistency</h4>
+            <p>Non-valid markup relies on browsers to auto-correct your markup, and each browser does this differently.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>2. Page speed</h4>
+            <p>If your code is valid, browsers have to do less processing, therefore the page will render faster.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>3. Google search</h4>
+            <p>Google advises that invalid HTML could affect their ability to crawl and index web pages.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>4. Accessibility</h4>
+            <p>While invalid markup does not always break accessibility, there is a chance that it can cause accessibility issues.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#444">
+            <h3>Common validation errors</h3>
+          </section>
+
+          <section data-background="#fff">
+            <h4>Mistake 1</h4>
+            <p>Failing to include an <code>alt</code> attribute with <code>&lt;img&gt;</code> elements.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>Every <code>&lt;img&gt;</code> element is required to have an <code>alt</code> attribute <b>for devices that cannot access the image</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Incorrect --&gt;</span>
+<span class="codeHighlight"><s>&lt;img src="example.png"&gt;</s></span>
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Correct --&gt;</span>
+&lt;img src="example.png" <span class="codeHighlight">alt="Symbols"</span>&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <h4>Mistake 2</h4>
+            <p>Using duplicate <code>id</code> values.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>id</code> attribute is a unique identifier. Each <code>id</code> value <b>must be unique within that document.</b></p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Duplicate ID value --&gt;</span>
+&lt;div <span class="codeHighlight">id="value01"</span>&gt;&lt;/div&gt;
+&lt;div <span class="codeHighlight"><s>id="value01"</s></span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <h4>Mistake 3</h4>
+            <p>Incorrectly nesting elements</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>HTML elements cannot be <b>incorrectly nested</b> inside other elements.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Incorrect --&gt;</span>
+&lt;ul&gt;
+  &lt;li&gt;item one
+    <span class="codeHighlight"><s>&lt;li&gt;sub-item&lt;/li&gt;</s></span>
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+<span class="codeComment">&lt;!-- Correct --&gt;</span>
+&lt;ul&gt;
+  &lt;li&gt;item one
+    <span class="codeHighlight">&lt;ul&gt;</span>
+        &lt;li&gt;sub-item&lt;/li&gt;
+    <span class="codeHighlight">&lt;/ul&gt;</span>
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
             <h2>Step 9: Add a &lt;div&gt; element</h2>
           </section>
 
@@ -695,15 +1306,404 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
+            <h2>Landmarks</h2>
+          </section>
+
+          <section data-background="#fff">
+            <h4>What's the problem?</h4>
+            <p>Complex page layouts can be overwhelming for users. They may need to spend a lot of additional effort scanning the page to find the content they need.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>For Designers:</h4>
+            <p>Creating clearly defined visual page regions help two different groups of people.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>1. People with cognitive and learning disabilities:</h4>
+            <p>Page regions can help when scanning, searching and prioritising content.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>2. People with low vision</h4>
+            <p>Page regions can assist with overall orientation and navigation.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>For developers:</h4>
+            <p>Including HTML landmarks as part of your markup can be helpful for two different groups of people.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>1. Assistive technology users, such as screen reader users</h4>
+            <p>HTML landmarks can be used to identify and navigate between page regions.</p>
+          </section>
+
+          <section data-background="#fff">
+            <h4>2. Keyboard users</h4>
+            <p>HTML landmarks can be used to navigate around pages more efficiently, without the need for extensive tabbing.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>There are a range of HTL landmarks that can be used including:</p>
+          </section>
+
+          <section data-background="#fff">
+            <ul>
+              <li><code>&lt;header&gt;</code></li>
+              <li><code>&lt;footer&gt;</code></li>
+              <li><code>&lt;nav&gt;</code></li>
+              <li><code>&lt;main&gt;</code></li>
+              <li><code>&lt;aside&gt;</code></li>
+              <li><code>&lt;section&gt;</code></li>
+            </ul>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;header&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing banner landmark</title>
+              <style type="text/css">
+                .st12{fill:#ded5e6;}
+                .st13{fill:#bdabcd;}
+                .st14{font-family:'HelveticaNeue';}
+                .st15{font-size:18px;}
+                .st16{fill:red;}
+                .st17{fill:white;}
+                .st17{font-family:'HelveticaNeue-Bold';}
+              </style>
+              <rect class="st16" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15 st17">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>The HTML5 <code>&lt;header&gt;</code> element represents<b> a group of introductory or navigational aids</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;header&gt;
+&lt;/header&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;header&gt;</code> element <b>can be used multiple times</b> within a single layout.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>It could be a header as the <b>overall site header</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+  &lt;main&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;
+  &lt;/aside&gt;
+  &lt;footer&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>It could be a header as a <b>header for the</b> <code>&lt;main&gt;</code> <b>content</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;main&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+&lt;/main&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Or a header for a <code>&lt;section&gt;</code> <b>of content</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;section&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+&lt;/section&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Or even as a header for <code>&lt;aside&gt;</code> <b>content</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;aside&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+&lt;/aside&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;footer&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing footer landmark</title>
+              <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st16" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15 st17">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>The HTML5 <code>&lt;footer&gt;</code> element represents <b>a footer for its nearest ancestor</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>A footer typically contains <b>information about its section</b> such as who wrote it, links to related documents, copyright data, and the like.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;footer&gt;
+&lt;/footer&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;footer&gt;</code> element can be used multiple times within a single layout. It is mainly used as the <b>overall site footer</b>:</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  &lt;header&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+  &lt;/main&gt;
+  &lt;aside&gt;
+  &lt;/aside&gt;
+  <span class="codeHighlight">&lt;footer&gt;</span>
+  <span class="codeHighlight">&lt;/footer&gt;</span>
+&lt;/body&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;nav&gt; element</h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing nav landmark</title>
+              <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st16" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15 st17">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use the <code>&lt;nav&gt;</code> element to <b>identify the navigation landmark</b>, which contain groups of links used for site or page navigation. </p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;nav&gt;</span>
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+<span class="codeHighlight">&lt;/nav&gt;</span></code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;nav&gt;</code> element can be used <b>multiple times within a single layout</b>.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;main&gt; element</h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing main landmark</title>
+              <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st16" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15 st17">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use the <code>&lt;main&gt;</code> elements to <b>identify the main landmark</b>, which is the primary content for the page.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;main&gt;
+&lt;/main&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each page must have <b>only one</b> <code>&lt;main&gt;</code> element.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;aside&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing main landmark</title>
+              <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st16" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15 st17">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;aside&gt;</code> element represents a <b>section of a page that could be considered separate</b> from that content.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;aside&gt;
+&lt;/aside&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>The <code>&lt;aside&gt;</code> element should <b>not be contained inside other landmark elements</b> or roles.</p>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#222">
+            <h3>The &lt;section&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <svg version="1.1" id="Layer_8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+              <title>Diagram showing main landmark</title>
+              <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+              <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+              <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+              <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+              <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+              <rect class="st16" x="20" y="200" width="460" height="120"></rect>
+              <rect class="st16" x="530" y="200" width="200" height="120"></rect>
+              <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+              <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+              <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+              <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+              <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+              <text transform="matrix(1 0 0 1 40 235)" class="st14 st15 st17">Section</text>
+              <text transform="matrix(1 0 0 1 550 235)" class="st14 st15 st17">Section</text>
+            </svg>
+          </section>
+
+          <section data-background="#fff">
+            <p>Use the <code>&lt;section&gt;</code> element to <b>identify a region landmark</b>. It should only be used if the page region is sufficiently important that users may want to navigate to it.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;section&gt;
+&lt;/section&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each <code>&lt;section&gt;</code> element should be identified, typically by <b><a href="https://www.w3.org/TR/html52/sections.html#the-section-element" target="_blank">including a heading that is a direct child element</a></b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;section&gt;
+  <span class="codeHighlight">&lt;h3&gt;Section heading&lt;/h3&gt;</span>
+&lt;/section&gt;</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
             <h2>Step 10: Add a &lt;header&gt; element</h2>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;header&gt;</code> element <b>typically contains the section’s heading</b>.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;header&gt;</code> element can also contain other content, such as <b>a site logo or search form</b>.</p>
           </section>
 
           <section data-background="#fff">
@@ -720,33 +1720,6 @@ SUB-SECTION
 &lt;/body&gt;
 </code></pre>
           </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About nesting elements correctly</h3>
-          </section>
-
-          <section data-background="#fff">
-            <p>When writing HTML elements, it is important to <b>correctly nesting elements</b> inside other elements.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>In the following example, the <code>&lt;header&gt;</code> element has been <b>incorrectly nested</b> inside the <code>&lt;div&gt;</code> element.</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;body&gt;
-  &lt;div class="container"&gt;
-    <span class="codeHighlight">&lt;header&gt;</span>
-  &lt;/div&gt;
-    <span class="codeHighlight"><s> &lt;/header&gt; </s></span>
-&lt;/body&gt;
-</code></pre>
-          </section>
         </section>
 
 
@@ -759,15 +1732,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 11: Add an &lt;h1&gt; element</h2>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About headings</h3>
+            <h2>Heading elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -857,13 +1822,19 @@ SUB-SECTION
 <span class="codeHighlight">&lt;h2&gt;</span>Section 2<span class="codeHighlight">&lt;/h2&gt;</span>
 </code></pre>
           </section>
+        </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>Step 11: Add an <h1> element</h2>
           </section>
 
           <section data-background="#fff">
@@ -892,7 +1863,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 12: Add a &lt;nav&gt; element</h2>
           </section>
 
@@ -928,7 +1899,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 13: Add a &lt;ul&gt; element</h2>
           </section>
 
@@ -962,7 +1933,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 14: Add some &lt;li&gt; elements</h2>
           </section>
 
@@ -997,43 +1968,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 15: Add links to list items</h2>
-          </section>
-
-          <section data-background="#fff">
-            <p>Each of these list items should be <b>links to different pages</b>.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The content inside each list item needs to be <b>wrapped inside</b> an <code>&lt;a&gt;</code> element.</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;nav&gt;
-  &lt;ul&gt;
-    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>Home<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
-    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>About<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
-    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>Contact<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <p>In order to <b>convert these</b> <code>&lt;a&gt;</code> <b>elements into links</b>, add an <code>href</code> attribute.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>This attribute is used to <b>specify the location</b> of a web resource.</p>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About file paths</h3>
+            <h2>File paths</h2>
           </section>
 
           <section data-background="#fff">
@@ -1119,13 +2054,43 @@ SUB-SECTION
 &lt;a <span class="codeHighlight">href="#intro"</span>&gt;Link to page fragment&lt;/a&gt;
 </code></pre>
           </section>
+        </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>Back to the exercise</h3>
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>Step 15: Add links to list items</h2>
+          </section>
+
+          <section data-background="#fff">
+            <p>Each of these list items should be <b>links to different pages</b>.</p>
+          </section>
+
+          <section data-background="#fff">
+            <p>The content inside each list item needs to be <b>wrapped inside</b> an <code>&lt;a&gt;</code> element.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>Home<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
+    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>About<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
+    &lt;li&gt;<span class="codeHighlight">&lt;a&gt;</span>Contact<span class="codeHighlight">&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <p>In order to <b>convert these</b> <code>&lt;a&gt;</code> <b>elements into links</b>, add an <code>href</code> attribute.</p>
           </section>
 
           <section data-background="#fff">
@@ -1154,7 +2119,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 16: Add a &lt;main&gt; element</h2>
           </section>
 
@@ -1190,7 +2155,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 17: Add an &lt;h2&gt; element</h2>
           </section>
 
@@ -1216,7 +2181,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 18: Add a &lt;p&gt; element</h2>
           </section>
 
@@ -1246,7 +2211,7 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 19: Add a &lt;strong&gt; element</h2>
           </section>
 
@@ -1275,7 +2240,7 @@ sizes and weights<span class="codeHighlight">&lt;/strong&gt;</span>...
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 20: Add some &lt;em&gt; elements</h2>
           </section>
 
@@ -1305,16 +2270,8 @@ Hammer<span class="codeHighlight">&lt;/em&gt;</span>, <span class="codeHighlight
 
 
         <section>
-          <section data-background="#568312">
+          <section data-background="#7F1001">
             <h2>Step 21: Add an &lt;img&gt; element</h2>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About the &lt;img&gt; element</h3>
           </section>
 
           <section data-background="#fff">
@@ -1349,20 +2306,6 @@ SUB-SECTION
             <p>The second attribute is the <code>alt</code> attribute - which <b>provides a text alternative</b> for devices that cannot load the image.</p>
           </section>
 
-          <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;img src="exercise-106-01.jpg"
-  <span class="codeHighlight">alt="Claw hammer"</span>&gt;
-</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
-          </section>
           <section data-background="#fff">
             <p><b>Add an image</b> with an <code>href</code> value of <code>"exercise-106-01.jpg"</code> and an <code>alt</code> value of <code>"Claw hammer"</code>.</p>
           </section>
@@ -1385,8 +2328,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 21: Add a new &lt;h2&gt; element</h2>
+          <section data-background="#7F1001">
+            <h2>Step 22: Add a new &lt;h2&gt; element</h2>
           </section>
 
           <section data-background="#fff">
@@ -1412,7 +2355,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#568312">
-            <h2>Step 22: Add a &lt;table&gt; element</h2>
+            <h2>The &lt;table&gt; element</h2>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -1499,44 +2442,6 @@ SUB-SECTION
 &lt;table&gt;
   &lt;caption&gt;&lt;/caption&gt;
   <span class="codeHighlight">&lt;thead&gt;&lt;/thead&gt;</span>
-&lt;/table&gt;
-</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#444">
-            <h3>About the &lt;tfoot&gt; element</h3>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;tfoot&gt;</code> element is used to <b>group the footer content</b> inside a data table.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;tfoot&gt;</code> element <b>must have one or more</b> <code>&lt;tr&gt;</code> elements inside.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;tfoot&gt;</code> element <b>must be placed after</b> any <code>&lt;caption&gt;</code> or <code>&lt;thead&gt;</code>.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;tfoot&gt;</code> element <b>must come before</b> any <code>&lt;tbody&gt;</code> or <code>&lt;tr&gt;</code> elements.</p>
-          </section>
-
-          <section data-background="#fff">
-            <p>The <code>&lt;tfoot&gt;</code> is <b>only needed if the table is long</b> and an additional reference at the bottom of the table would be helpful</p>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">
-&lt;table&gt;
-  &lt;caption&gt;&lt;/caption&gt;
-  &lt;thead&gt;&lt;/thead&gt;
-  <span class="codeHighlight">&lt;tfoot&gt;&lt;/tfoot&gt;</span>
 &lt;/table&gt;
 </code></pre>
           </section>
@@ -1651,13 +2556,19 @@ SUB-SECTION
 &lt;/table&gt;
 </code></pre>
           </section>
+        </section>
+
+
 
 <!--  –––––––––––––––––––––––––
-SUB-SECTION
+******  SECTION ******
 ––––––––––––––––––––––––––  -->
 
-          <section data-background="#444">
-            <h3>Back to the exercise...</h3>
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>Step 23: Add a &lt;table&gt; element</h2>
           </section>
 
           <section data-background="#fff">
@@ -1682,8 +2593,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 23: Add a &lt;thead&gt; element</h2>
+          <section data-background="#7F1001">
+            <h2>Step 24: Add a &lt;thead&gt; element</h2>
           </section>
 
           <section data-background="#fff">
@@ -1710,8 +2621,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 24: Add a &lt;tbody&gt; element</h2>
+          <section data-background="#7F1001">
+            <h2>Step 25: Add a &lt;tbody&gt; element</h2>
           </section>
 
           <section data-background="#fff">
@@ -1740,8 +2651,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 25: Add some &lt;tr&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 26: Add some &lt;tr&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1774,8 +2685,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 26: Add some &lt;th&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 27: Add some &lt;th&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1803,8 +2714,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 27: Add some &lt;td&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 28: Add some &lt;td&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1838,8 +2749,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 28: Add an &lt;aside&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 29: Add an &lt;aside&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1865,8 +2776,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 29: Add an &lt;h2&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 30: Add an &lt;h2&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1891,8 +2802,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 30: Add a &lt;blockquote&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 31: Add a &lt;blockquote&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
@@ -1934,8 +2845,8 @@ SUB-SECTION
 
 
         <section>
-          <section data-background="#568312">
-            <h2>Step 31: Add a &lt;footer&gt; elements</h2>
+          <section data-background="#7F1001">
+            <h2>Step 32: Add a &lt;footer&gt; elements</h2>
           </section>
 
           <section data-background="#fff">
